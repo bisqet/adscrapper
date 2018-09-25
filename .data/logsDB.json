@@ -33,6 +33,15 @@
     "Tue Sep 25 2018 22:15:19 GMT+0000 (UTC) - search results page loaded",
     "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - found main table of results",
     "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - Found # ads: 20",
-    "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - Fetching http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3598944"
+    "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - Fetching http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3598944",
+    "Tue Sep 25 2018 22:58:51 GMT+0000 (UTC) - search results page loaded",
+    "Tue Sep 25 2018 22:58:52 GMT+0000 (UTC) - found main table of results",
+    "Tue Sep 25 2018 22:58:52 GMT+0000 (UTC) - Found # ads: 20",
+    "Tue Sep 25 2018 22:58:52 GMT+0000 (UTC) - Fetching http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3598944",
+    "Tue Sep 25 2018 22:59:08 GMT+0000 (UTC) - ad info screenshot created /tmp/3598944-info.png",
+    "Tue Sep 25 2018 22:59:08 GMT+0000 (UTC) - Fetching images and map data",
+    "Tue Sep 25 2018 22:59:12 GMT+0000 (UTC) - webhook bot data =>  {\"id\":\"3598944\",\"address\":\"ראשון לציון - אסתר המלכה\",\"price\":\"8,000 ₪\",\"rooms\":\"6\",\"entranceDate\":\"מיידי\",\"floor\":\"קרקע\",\"adDate\":\"26.09.18\",\"link\":\"http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3598944\",\"data\":{\"city\":\"ראשון לציון\",\"hood\":\"נוה חוף\",\"fullAddress\":\"אסתר המלכה 10\",\"sqrmeter\":\"200\"},\"meta\":{\"images\":[\"https://yad2puppetv2.glitch.me/3598944-info.png\",\"http://images.yad2.co.il/Pic/201809/05/2_2/o/o2_2_2_728381_20180905140937.jpg\",\"http://images.yad2.co.il/Pic/201809/05/2_2/o/o2_2_3_728214_20180905140928.jpg\",\"http://images.yad2.co.il/Pic/201809/05/2_2/o/o2_2_4_722464_20180905140920.jpg\",\"http://images.yad2.co.il/Pic/201809/05/2_2/o/o2_2_5_725013_20180905140917.jpg\",\"http://images.yad2.co.il/Pic/201809/05/2_2/o/o2_2_5_728137_20180905150925.jpg\"],\"map\":{\"lat\":31.994851,\"lng\":34.743418,\"zoom\":16}}}",
+    "Tue Sep 25 2018 22:59:12 GMT+0000 (UTC) - Pausing for 15 seconds...",
+    "Tue Sep 25 2018 22:59:27 GMT+0000 (UTC) - Fetching http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4e6b78055626156fd5319d16d7509fa9bd5"
   ]
 }
