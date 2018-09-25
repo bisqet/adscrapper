@@ -1,0 +1,22 @@
+{
+  "logs": [
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - search results page loaded",
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - found main table of results",
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - Found # ads: 20",
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - done, found 0 new ads",
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - main then",
+    "Mon Sep 24 2018 04:49:23 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Mon Sep 24 2018 04:51:14 GMT+0000 (UTC) - search results page loaded",
+    "Mon Sep 24 2018 04:51:15 GMT+0000 (UTC) - found main table of results",
+    "Mon Sep 24 2018 04:51:15 GMT+0000 (UTC) - Found # ads: 20",
+    "Mon Sep 24 2018 04:51:15 GMT+0000 (UTC) - done, found 0 new ads",
+    "Mon Sep 24 2018 04:51:16 GMT+0000 (UTC) - main then",
+    "Mon Sep 24 2018 04:51:16 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Mon Sep 24 2018 04:51:31 GMT+0000 (UTC) - search results page loaded",
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - found main table of results",
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - Found # ads: 20",
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - done, found 0 new ads",
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - main then",
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - Pausing for 900 seconds..."
+  ]
+}
