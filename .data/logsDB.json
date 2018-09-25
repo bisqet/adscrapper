@@ -17,6 +17,22 @@
     "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - Found # ads: 20",
     "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - done, found 0 new ads",
     "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - main then",
-    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - Pausing for 900 seconds..."
+    "Mon Sep 24 2018 04:51:32 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Tue Sep 25 2018 19:36:02 GMT+0000 (UTC) - main catch - error: Error: Failed to launch chrome!\n/root/adscrapper/node_modules/puppeteer/.local-chromium/linux-588429/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n",
+    "Tue Sep 25 2018 19:36:02 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Tue Sep 25 2018 19:43:13 GMT+0000 (UTC) - main catch - error: Error: Failed to launch chrome!\n/root/adscrapper/node_modules/puppeteer/.local-chromium/linux-588429/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n",
+    "Tue Sep 25 2018 19:43:13 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Tue Sep 25 2018 19:55:43 GMT+0000 (UTC) - main catch - error: Error: Failed to launch chrome!\n/root/adscrapper/node_modules/puppeteer/.local-chromium/linux-588429/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n",
+    "Tue Sep 25 2018 19:55:43 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Tue Sep 25 2018 20:37:30 GMT+0000 (UTC) - search results page loaded",
+    "Tue Sep 25 2018 20:37:30 GMT+0000 (UTC) - found main table of results",
+    "Tue Sep 25 2018 20:37:31 GMT+0000 (UTC) - Found # ads: 20",
+    "Tue Sep 25 2018 20:37:31 GMT+0000 (UTC) - done, found 0 new ads",
+    "Tue Sep 25 2018 20:37:31 GMT+0000 (UTC) - main then",
+    "Tue Sep 25 2018 20:37:31 GMT+0000 (UTC) - Pausing for 900 seconds...",
+    "Tue Sep 25 2018 22:15:19 GMT+0000 (UTC) - search results page loaded",
+    "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - found main table of results",
+    "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - Found # ads: 20",
+    "Tue Sep 25 2018 22:15:20 GMT+0000 (UTC) - Fetching http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3598944"
   ]
 }

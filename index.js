@@ -37,7 +37,7 @@ function log() {
 function delay(mseconds) {
   log('Pausing for', mseconds / 1000, 'seconds...' );
   return new Promise(resolve => {
-    setTimeout(() => resolve(), mseconds); 
+    setTimeout(() => resolve(), mseconds/10); 
   });
 }
 
