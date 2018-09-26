@@ -202,7 +202,7 @@ const main = (async (yad2ResultsURL) => {
         json: true,
         body: ad
       };
-      bot.say(userId, 'Hello World');
+      bot.say(FB_ID_TO_SEND_MESSAGES, 'Hello World');
       request(reqOptions);
       await delay(15000);
     } else {
