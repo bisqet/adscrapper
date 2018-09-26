@@ -6,8 +6,7 @@
   "version": "0.0.1",
   "description": "What am I about??",
   "scripts": {
-    "start": "npm run server | npm run cron",
-    "server": "http-server /tmp",
+    "start": "npm run cron",
     "cron": "node index.js"
   },
   "dependencies": {
