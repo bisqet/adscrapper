@@ -193,6 +193,9 @@ const main = (async (yad2ResultsURL) => {
         verifyToken: config['FB_VERIFY_TOKEN'],
         appSecret: config['FB_APP_SECRET']
       });
+      bot.say(config['FB_ID_TO_SEND_MESSAGES'], 'Hello World');
+
+
 
       log('webhook bot data => ', JSON.stringify(ad));
       console.info(ad);
@@ -202,7 +205,6 @@ const main = (async (yad2ResultsURL) => {
         json: true,
         body: ad
       };
-      bot.say(FB_ID_TO_SEND_MESSAGES, 'Hello World');
       request(reqOptions);
       await delay(15000);
     } else {
