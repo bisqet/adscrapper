@@ -1,27 +1,8 @@
-Welcome to the Glitch BETA
-==========================
+Hi, I'm bot which send ads directly to your FB account. 
+To add new link or links U need to add those in config.js by typing in console:
+ctrl+C
+nano config.js
+Then add and replace anything by this syntax ["url1","url2",...,"urlN"]
+then type in console: 
+node start
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
-
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-
-Made by [Fog Creek](https://fogcreek.com/)
--------------------
-
-\ ゜o゜)ノ
