@@ -6,6 +6,8 @@ const puppeteer = require('puppeteer');
 const request = require('request');
 const low = require('lowdb');
 const config = require('./config.js');
+const BootBot = require('bootbot');
+
 
 
 // LowDB init 
@@ -185,6 +187,13 @@ const main = (async (yad2ResultsURL) => {
       .write();
       
       // messanger
+
+      const bot = new BootBot({
+        accessToken: config['FB_ACCESS_TOKEN'],
+        verifyToken: config['FB_VERIFY_TOKEN'],
+        appSecret: config['FB_APP_SECRET']
+      });
+
       log('webhook bot data => ', JSON.stringify(ad));
       console.info(ad);
       const reqOptions = {
@@ -193,6 +202,7 @@ const main = (async (yad2ResultsURL) => {
         json: true,
         body: ad
       };
+      bot.say(userId, 'Hello World');
       request(reqOptions);
       await delay(15000);
     } else {
