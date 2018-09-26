@@ -1,6 +1,6 @@
 const config = {
 	"yad2ResultsURL" : [
-		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=2,1,48,47,49,73,9,11,3,4,71,10,51,78,92,98,8&arrCity=&arrHomeTypeID=5&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&EnterDate=&Info="
+		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=47&City=&HomeTypeID=&fromRooms=3.5&untilRooms=4.5&fromPrice=6000&untilPrice=7600&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&Parking=1&Elevator=1&EnterDate=&Info=&PriceOnly=1&ImgOnly=1"
 	]
 }
 module.exports = config;
