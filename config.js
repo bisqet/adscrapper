@@ -4,6 +4,7 @@ const config = {
 	],
 	"FB_APP_SECRET":"d37d82748ed14fad276c8260bb9bff7e",
 	"FB_ACCESS_TOKEN":"EAAGX9pMT4ZCIBAPbvMPDtyz1NAosaDzLiefDcMUsww7Iy0LqhKRPn8YVRXZALqCPZApAlx4ZCMSZAZAxQs42TUINgtZBlBUs8vJOOXPSQ28T8Bmet2A4IBkZClkoM07QyYj4ypNdS73vS7QxTOygo9G5tjR7xv2G3H4mUtdrRZCcOhAZDZD",
-	"FB_VERIFY_TOKEN":"hMeormPlassentfEormwiernllsegdaGT"
+	"FB_VERIFY_TOKEN":"hMeormPlassentfEormwiernllsegdaGT",
+	"FB_ID_TO_SEND_MESSAGES":"100018802206622"
 }
 module.exports = config;
