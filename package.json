@@ -13,6 +13,7 @@
     "body-parser": "^1.18.3",
     "bootbot": "^1.0.16",
     "express": "^4.16.3",
+    "facebook-chat-api": "^1.6.0",
     "http-server": "^0.11.1",
     "lowdb": "^1.0.0",
     "puppeteer": "^1.6.0",
