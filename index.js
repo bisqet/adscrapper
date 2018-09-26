@@ -65,7 +65,7 @@ const waitForCaptchaInput = () => {
   });
 }
 
-const publicFolder = '/tmp/';
+const publicFolder = './public/';
 // north tlv 3.5 - 4.5 from 6000 - 8500 with parking and elevator
 const main = (async (yad2ResultsURL) => {
   const browser = await puppeteer.launch({
