@@ -227,19 +227,19 @@ async function mainWrapper(yad2ResultsURL) {
         await main(curUrl)
             .then(async() => {
                 log('main then');
-                await delay(60000 * 15); // every 15 min
                 log('done [then]');
-                log('calling main again!');
             })
             .catch(async(err) => {
                 log('main catch - error:', err);
-                await delay(60000 * 15); // every 15 min
                 log('done [err]');
-                log('calling main again!');
             });
+        await delay(60000); // every 0ne min
     }
+    await delay(60000 * 30); // every 15 min
+    log('calling main again!');
     mainWrapper(yad2ResultsURL);
 }
+
 const yad2ResultsURL = config.yad2ResultsURL;
 console.log(`Checking for those URLs: ${yad2ResultsURL}`)
 mainWrapper(yad2ResultsURL);
