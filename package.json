@@ -7,7 +7,7 @@
   "description": "What am I about??",
   "scripts": {
     "start": "npm run cron & npm run static",
-    "static": "http-server /public",
+    "static": "http-server ./public/ -p 3000",
     "cron": "node index.js"
   },
   "dependencies": {
