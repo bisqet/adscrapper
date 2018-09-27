@@ -224,6 +224,8 @@ const main = (async(yad2ResultsURL) => {
 async function mainWrapper(yad2ResultsURL) {
     for (let i in yad2ResultsURL) {
         let curUrl = yad2ResultsURL[i];
+	log(`Current scrape for ${curUrl}`)
+	log(`This is ${i+1} link`)
         await main(curUrl)
             .then(async() => {
                 log('main then');
@@ -235,11 +237,11 @@ async function mainWrapper(yad2ResultsURL) {
             });
         await delay(60000); // every 0ne min
     }
-    await delay(60000 * 30); // every 15 min
+    await delay(60000 * 30); // every 30 min
     log('calling main again!');
     mainWrapper(yad2ResultsURL);
 }
 
 const yad2ResultsURL = config.yad2ResultsURL;
-console.log(`Checking for those URLs: ${yad2ResultsURL}`)
+console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
 mainWrapper(yad2ResultsURL);
