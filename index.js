@@ -177,7 +177,7 @@ const main = (async(yad2ResultsURL) => {
                     map: mapOptions
                 };
             });
-            adMetaData.images.unshift(`https://yad2puppetv2.glitch.me/${ad.id}-info.png`);
+            adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
             ad.meta = adMetaData;
 
             // write to DB
