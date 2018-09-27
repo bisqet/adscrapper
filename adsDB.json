@@ -354,6 +354,91 @@
           "zoom": 16
         }
       }
+    },
+    {
+      "id": "3574595",
+      "address": "רמת גן - אלוף דוד",
+      "price": "8,800 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "3",
+      "adDate": "27.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3574595",
+      "data": {
+        "city": "רמת גן",
+        "hood": "רמת חן",
+        "fullAddress": "אלוף דוד 181",
+        "sqrmeter": "160"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3574595-info.png"
+        ],
+        "map": {
+          "lat": 32.053184,
+          "lng": 34.817445,
+          "zoom": 16
+        }
+      }
+    },
+    {
+      "id": "3158644",
+      "address": "רמת גן - רזיאל",
+      "price": "7,000 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "27.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3158644",
+      "data": {
+        "city": "רמת גן",
+        "hood": "רמת חן",
+        "fullAddress": "רזיאל 01"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3158644-info.png",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_1_716984_20180805080819.jpg",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_2_717786_20180805080820.jpg",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_3_714998_20180805080819.jpg"
+        ],
+        "map": {
+          "lat": 32.059271,
+          "lng": 34.82154,
+          "zoom": 16
+        }
+      }
+    },
+    {
+      "id": "3563882",
+      "address": "רמת גן - השלושים ושלושה",
+      "price": "9,000 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "21.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3563882",
+      "data": {
+        "city": "רמת גן",
+        "hood": "רמת חן",
+        "fullAddress": "השלושים ושלושה 16",
+        "sqrmeter": "500"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3563882-info.png",
+          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_1_714214_20180731230727.jpg",
+          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_2_713274_20180731230743.jpg",
+          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_3_714911_20180731230756.jpg",
+          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_4_732215_20180731230716.jpg",
+          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_5_738260_20180731230758.jpg"
+        ],
+        "map": {
+          "lat": 32.055736,
+          "lng": 34.815259,
+          "zoom": 16
+        }
+      }
     }
   ]
 }
