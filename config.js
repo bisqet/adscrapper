@@ -1,6 +1,6 @@
 const config = {
-	"yad2ResultsURL" : [
-		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4%2C10&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
+	yad2ResultsURL : [
+		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=10&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
 		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=&arrArea=&arrCity=1970&Neighborhood=%F8%EE%FA+%E7%EF&arrHomeTypeID=5%2C32%2C55&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
 		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=%F8%EE%FA+%E0%F4%F2%EC&arrHomeTypeID=5%2C32%2C55&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
 		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=%EB%F4%F8+%E0%E6%22%F8&arrHomeTypeID=5%2C32%2C55&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",

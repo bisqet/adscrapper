@@ -224,8 +224,8 @@ const main = (async(yad2ResultsURL) => {
 async function mainWrapper(yad2ResultsURL) {
     for (let i in yad2ResultsURL) {
         let curUrl = yad2ResultsURL[i];
-	log(`Current scrape for ${curUrl}`)
-	log(`This is ${i+1} link`)
+	    log(`Current scrape for ${curUrl}`);
+	    log(`This is ${i+1} link`);
         await main(curUrl)
             .then(async() => {
                 log('main then');
