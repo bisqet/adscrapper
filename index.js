@@ -300,7 +300,7 @@ async function sqrFilter(sqr){
 
 async function cityFilter(city){
     if(!city)return true;
-    const {acceptable,noacceptable} = config.cityFilter;
+    const {acceptable,noacceptable, mode} = config.cityFilter;
     for(i in acceptable){
         if(acceptable[i]==city){
             return true
