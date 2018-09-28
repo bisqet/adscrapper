@@ -193,10 +193,10 @@ const main = (async(yad2ResultsURL) => {
                 return data;
             });
 
-            if(!sqrFilter()){
+            if(!(await sqrFilter(adDetails.sqrmeter))){
                 continue;
             }
-            if(!cityFilter()){
+            if(!(await cityFilter(adDetails.city))){
                 continue;
             }
             ad.data = adDetails;
@@ -280,7 +280,7 @@ async function mainWrapper(yad2ResultsURL) {
     mainWrapper(yad2ResultsURL);
 }
 
-function sqrFilter(sqr){
+async function sqrFilter(sqr){
     const filter = config.sqrFilter;
     try{
         log(`SQRfilter IS: ${filter}`);
@@ -295,7 +295,7 @@ function sqrFilter(sqr){
     }
 }
 
-function cityFilter(city){
+async function cityFilter(city){
     const filter = config.cityFilter;
     try{
         log(`CITYfilter IS: ${filter}`);
