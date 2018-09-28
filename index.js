@@ -82,15 +82,7 @@ const main = (async(yad2ResultsURL) => {
     // check for captcha
     const searchSource = await page.content();
     if (searchSource.indexOf('Are you human?') > -1) {
-        log("ERROR CAPTCHA!!!");
-        const reqOptions = {
-                uri: 'https://flatbot.glitch.me/captchaErr',
-                method: 'POST',
-                json: true,
-                body: {"url":yad2ResultsURL}
-            };
-        request(reqOptions);
-        await delay(15000);
+        await sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":yad2ResultsURL});
         return;
         /*/ get the image
         const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
@@ -291,20 +283,30 @@ async function mainWrapper(yad2ResultsURL) {
 function sqrFilter(sqr){
     const filter = config.sqrFilter;
     try{
+        log(`SQRfilter IS: ${filter}`);
+        log(`SQR IS: ${sqr}`);
+        log(`RESULT IS: ${!!(eval(filter))}`);
         return !!(eval(filter));
     }catch(err){
+        await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
         log("ERROR WITH PARSING SQRFILTER!!!");
         log(err);
+        return false;
     }
 }
 
 function cityFilter(city){
     const filter = config.cityFilter;
     try{
+        log(`CITYfilter IS: ${filter}`);
+        log(`CITY IS: ${sqr}`);
+        log(`RESULT IS: ${city == (eval(city))}`);
         return city == (eval(city));
     }catch(err){
+        await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
         log("ERROR WITH PARSING CITYFILTER!!!");
         log(err);
+        return false;
     }
 }
 
@@ -313,3 +315,15 @@ function cityFilter(city){
 const yad2ResultsURL = config.yad2ResultsURL;
 console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
 mainWrapper(yad2ResultsURL);
+
+function sendErrorMessage(err){
+    log("ERROR CAPTCHA!!!");
+    const reqOptions = {
+        uri: 'https://flatbot.glitch.me/errorMessage',
+        method: 'POST',
+        json: true,
+        body: err
+    };
+    request(reqOptions);
+    await delay(15000);
+}
