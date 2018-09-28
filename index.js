@@ -114,6 +114,7 @@ const main = (async(yad2ResultsURL) => {
     const parsedAds = await page.evaluate(() => {
         const adsResults = [];
         const ads = $("#main_table .main_table tr.showPopupUnder");
+        console.info(ads);
         ads.each(function(i, ad) {
             // get the href attribute of each link
             var adResult = {};
@@ -129,6 +130,7 @@ const main = (async(yad2ResultsURL) => {
             });
             adsResults.push(adResult);
         });
+        console.info(adsResults, adsResults.length)
         return adsResults;
     });
 
