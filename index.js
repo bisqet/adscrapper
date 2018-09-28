@@ -166,7 +166,7 @@ const main = (async(yad2ResultsURL) => {
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (td.lastChild.textContent.match('מ"ר בנוי')!==null) { data.sqrin = td.nextElementSibling.innerText; }
                             if (td.lastChild.textContent.match('מ"ר גינה:')!==null) { data.sqrgarden = td.nextElementSibling.innerText}
-                            if (td.lastChild.textContent.match('השכרה לטווח ארוך')!==null) { data.term = td.children[0].classList.value == "v_checked"?"Long":"SHORT"; }
+                            if (td.lastChild.textContent.match('השכרה לטווח ארוך')!==null) { data.term = td.children[0].classList.value == "v_checked"?"ארוך":"קצר!!"; }
                         });
                         let container = dataBlock.nextElementSibling;
                         data.more = container.lastElementChild.innerText;
