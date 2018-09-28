@@ -155,9 +155,9 @@ const main = (async(yad2ResultsURL) => {
                         }
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (idx === 3) { data.city = $(td).text().trim(); }
-                            if (exception!==0 && idx === 5-exception) { data.hood = $(td).text().trim() }
+                            if (exception === 0 && idx === 5-exception) { data.hood = $(td).text().trim() }
                             if (idx === 9-exception) { data.fullAddress = $(td).text().trim() }
-                            if (idx === 19-exception) { ata.sqrmeter = $(td).text().trim(); }
+                            if (idx === 19-exception) { data.sqrmeter = $(td).text().trim(); }
                         });
                     };
                     if (index === 1) {
@@ -166,7 +166,7 @@ const main = (async(yad2ResultsURL) => {
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (td.lastChild.textContent.match('מ"ר בנוי')!==null) { data.sqrin = td.nextElementSibling.innerText; }
                             if (td.lastChild.textContent.match('מ"ר גינה:')!==null) { data.sqrgarden = td.nextElementSibling.innerText}
-                            if (td.lastChild.textContent.match('השכרה לטווח ארוך')!==null) { data.term = td.children[0].classList.value == "v_checked"?"Lond":"SHORT"; }
+                            if (td.lastChild.textContent.match('השכרה לטווח ארוך')!==null) { data.term = td.children[0].classList.value == "v_checked"?"Long":"SHORT"; }
                         });
                         let container = dataBlock.nextElementSibling;
                         data.more = container.lastElementChild.innerText;
@@ -175,7 +175,7 @@ const main = (async(yad2ResultsURL) => {
                         for(let i = 0; i<container.children[2].childNodes.length;i++){
                             let cell = container.children[2].childNodes[i];
                             if(cell.textContent.match('ארנונה לחודשיים') !== null){
-                                data["tax/m"] = cell.nextSibling.innerText.slice(1)/2
+                                data["tax/m"] = cell.nextSibling.innerText.slice(1).replace(",","")/2
                             }
                             if(cell.textContent.match('תשלום לועד בית') !== null){
                                 data.vaad = cell.nextSibling.innerText.slice(1)
@@ -214,8 +214,8 @@ const main = (async(yad2ResultsURL) => {
 
             //messenger
 
-            log('webhook bot data => ', JSON.stringify(ad));
-            console.info(ad);
+            //log('webhook bot data => ', JSON.stringify(ad));
+            //console.info(ad);
             const reqOptions = {
                 uri: 'https://flatbot.glitch.me/pushNewAd',
                 method: 'POST',
@@ -249,7 +249,7 @@ const main = (async(yad2ResultsURL) => {
 });
 
 async function mainWrapper(yad2ResultsURL) {
-    for (let i in yad2ResultsURL) {
+    for (let i = 0; i < yad2ResultsURL; i++) {
         let curUrl = yad2ResultsURL[i];
 	    log(`Current scrape for ${curUrl}`);
 	    log(`This is ${i+1} link`);

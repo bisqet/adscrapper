@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npm run cron & npm run static",
     "static": "http-server ./public/ -p 3000",
-    "cron": "node index.js"
+    "cron": "pm2 start index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
