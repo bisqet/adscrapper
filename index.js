@@ -194,7 +194,7 @@ const main = (async(yad2ResultsURL) => {
             });
             console.log(adDetails.sqrmeter)
             console.log(adDetails)
-            if(!(await sqrFilter(adDetails.sqrmeter))){
+            if(!(await sqrFilter(parseInt(adDetails.sqrmeter)))){
                 continue;
             }
             if(!(await cityFilter(adDetails.city))){
