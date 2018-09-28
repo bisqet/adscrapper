@@ -130,7 +130,7 @@ const main = (async(yad2ResultsURL) => {
             });
             adsResults.push(adResult);
         });
-        console.info(adsResults, adsResults.length)
+        log(adsResults, adsResults.length)
         return adsResults;
     });
 
