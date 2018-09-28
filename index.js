@@ -187,12 +187,13 @@ const main = (async(yad2ResultsURL) => {
                     };
                 });
 
-                // console.log('nadlan data', JSON.stringify(data));
+                 console.log('nadlan data', JSON.stringify(data));
                 // remove info divs scrollbars for screenshots
                 $('.details_block_296 .details_block_body div:nth-child(2)').css({ height: 'inherit' });
                 return data;
             });
-
+            console.log(adDetails.sqrmeter)
+            console.log(adDetails)
             if(!(await sqrFilter(adDetails.sqrmeter))){
                 continue;
             }
@@ -282,6 +283,7 @@ async function mainWrapper(yad2ResultsURL) {
 
 async function sqrFilter(sqr){
     const filter = config.sqrFilter;
+    console.log(sqr);
     try{
         log(`SQRfilter IS: ${filter}`);
         log(`SQR IS: ${sqr}`);
@@ -299,7 +301,7 @@ async function cityFilter(city){
     const filter = config.cityFilter;
     try{
         log(`CITYfilter IS: ${filter}`);
-        log(`CITY IS: ${sqr}`);
+        log(`CITY IS: ${city}`);
         log(`RESULT IS: ${city == (eval(city))}`);
         return city == (eval(city));
     }catch(err){
