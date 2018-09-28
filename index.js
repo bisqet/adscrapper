@@ -316,7 +316,7 @@ const yad2ResultsURL = config.yad2ResultsURL;
 console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
 mainWrapper(yad2ResultsURL);
 
-function sendErrorMessage(err){
+async function sendErrorMessage(err){
     log("ERROR CAPTCHA!!!");
     const reqOptions = {
         uri: 'https://flatbot.glitch.me/errorMessage',
