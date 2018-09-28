@@ -334,3 +334,5 @@ async function sendErrorMessage(err){
     request(reqOptions);
     await delay(15000);
 }
+
+sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":"https://google.com"});
