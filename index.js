@@ -158,9 +158,9 @@ const main = (async(yad2ResultsURL) => {
                         }
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (idx === 3) { data.city = $(td).text().trim(); }
-                            if (exception === 0 && idx === 5-exception) { data.hood = $(td).text().trim() }
-                            if (idx === 9-exception) { data.fullAddress = $(td).text().trim() }
-                            if (idx === 19-exception) { data.sqrmeter = $(td).text().trim(); }
+                            if (exception===0 && idx === 5-exception) { data.hood = $(td).text().trim() }
+                            if (idx === 9+exception) { data.fullAddress = $(td).text().trim() }
+                            if (idx === 19+exception) { data.sqrmeter = $(td).text().trim(); }
                         });
                     };
                     if (index === 1) {
@@ -282,6 +282,7 @@ async function mainWrapper(yad2ResultsURL) {
 }
 
 async function sqrFilter(sqr){
+    if(!sqr)return true;
     const filter = config.sqrFilter;
     console.log(sqr);
     try{
@@ -298,6 +299,7 @@ async function sqrFilter(sqr){
 }
 
 async function cityFilter(city){
+    if(!city)return true;
     const filter = config.cityFilter;
     try{
         log(`CITYfilter IS: ${filter}`);
