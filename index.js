@@ -117,6 +117,7 @@ const main = (async(yad2ResultsURL) => {
             var adResult = {};
             adResult.id = $(ad).attr("id").split("_").splice(-1)[0];
             $(ad).find('td').each(function(idx, td) {
+                if (idx === 4) { adResult.type = $(td).text().trim(); }
                 if (idx === 8) { adResult.address = $(td).text().trim(); }
                 if (idx === 10) { adResult.price = $(td).text().trim(); }
                 if (idx === 12) { adResult.rooms = $(td).text().trim(); }
@@ -249,7 +250,7 @@ const main = (async(yad2ResultsURL) => {
 });
 
 async function mainWrapper(yad2ResultsURL) {
-    for (let i = 0; i < yad2ResultsURL; i++) {
+    for (let i = 0; i < yad2ResultsURL.length; i++) {
         let curUrl = yad2ResultsURL[i];
 	    log(`Current scrape for ${curUrl}`);
 	    log(`This is ${i+1} link`);
