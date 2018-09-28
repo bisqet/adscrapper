@@ -148,12 +148,39 @@ const main = (async(yad2ResultsURL) => {
                 const data = {};
                 $('.innerDetailsDataGrid').each((index, dataBlock) => {
                     if (index === 0) {
+                        let exception = 0
+                        if($(dataBlock).find('td')[5].innerText.match(/[0-9]/)==null){
+                            exception = -2;
+                            data.hood = "*";
+                        }
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (idx === 3) { data.city = $(td).text().trim(); }
-                            if (idx === 5) { data.hood = $(td).text().trim(); }
-                            if (idx === 9) { data.fullAddress = $(td).text().trim(); }
-                            if (idx === 19) { data.sqrmeter = $(td).text().trim(); }
+                            if (exception!==0 && idx === 5-exception) { data.hood = $(td).text().trim() }
+                            if (idx === 9-exception) { data.fullAddress = $(td).text().trim() }
+                            if (idx === 19-exception) { ata.sqrmeter = $(td).text().trim(); }
                         });
+                    };
+                    if (index === 1) {
+                        data.sqrin = "*";
+                        data.sqrgarden = "*";
+                        $(dataBlock).find('td').each(function(idx, td) {
+                            if (td.lastChild.textContent.match('מ"ר בנוי')!==null) { data.sqrin = td.nextElementSibling.innerText; }
+                            if (td.lastChild.textContent.match('מ"ר גינה:')!==null) { data.sqrgarden = td.nextElementSibling.innerText}
+                            if (td.lastChild.textContent.match('השכרה לטווח ארוך')!==null) { data.term = td.children[0].classList.value == "v_checked"?"Lond":"SHORT"; }
+                        });
+                        let container = dataBlock.nextElementSibling;
+                        data.more = container.lastElementChild.innerText;
+                        data["tax/m"] ="*";
+                        data.vaad = "*";
+                        for(let i = 0; i<container.children[2].childNodes.length;i++){
+                            let cell = container.children[2].childNodes[i];
+                            if(cell.textContent.match('ארנונה לחודשיים') !== null){
+                                data["tax/m"] = cell.nextSibling.innerText.slice(1)/2
+                            }
+                            if(cell.textContent.match('תשלום לועד בית') !== null){
+                                data.vaad = cell.nextSibling.innerText.slice(1)
+                            }
+                        }
                     };
                 });
                 // console.log('nadlan data', JSON.stringify(data));
