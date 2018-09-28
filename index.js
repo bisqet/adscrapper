@@ -153,7 +153,7 @@ const main = (async(yad2ResultsURL) => {
                     if (index === 0) {
                         $(dataBlock).find('td').each(function(idx, td) {
                             if (td.textContent.match('ישוב')!==null) { data.city = td.nextElementSibling.innerText; }
-                            if (td.textContent.match("שכונה:")!==null) { data.hood = td.nextElementSibling.innerText }
+                            if (td.textContent.match("שכונה:")!==null&&td.textContent.match("על השכונה:")===null) { data.hood = td.nextElementSibling.innerText }
                             if (td.textContent.match("כתובת:")!==null) { data.fullAddress = td.nextElementSibling.innerText }
                             if (td.textContent.match('גודל במ"ר:')!==null) { data.sqrmeter = parseInt(td.nextElementSibling.innerText) }
                         });
@@ -329,5 +329,3 @@ async function sendErrorMessage(err){
     request(reqOptions);
     await delay(15000);
 }
-
-sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":"https://google.com"});
