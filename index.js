@@ -151,16 +151,11 @@ const main = (async(yad2ResultsURL) => {
                 const data = {};
                 $('.innerDetailsDataGrid').each((index, dataBlock) => {
                     if (index === 0) {
-                        let exception = 0
-                        if($(dataBlock).find('td')[5].innerText.match(/[0-9]/)==null){
-                            exception = -2;
-                            data.hood = "*";
-                        }
                         $(dataBlock).find('td').each(function(idx, td) {
-                            if (idx === 3) { data.city = $(td).text().trim(); }
-                            if (exception===0 && idx === 5-exception) { data.hood = $(td).text().trim() }
-                            if (idx === 9+exception) { data.fullAddress = $(td).text().trim() }
-                            if (idx === 19+exception) { data.sqrmeter = $(td).text().trim(); }
+                            if (td.textContent.match('ישוב')!==null) { data.city = td.nextElementSibling.innerText; }
+                            if (td.textContent.match("שכונה:")!==null) { data.hood = td.nextElementSibling.innerText }
+                            if (td.textContent.match("כתובת:")!==null) { data.fullAddress = td.nextElementSibling.innerText }
+                            if (td.textContent.match('גודל במ"ר:')!==null) { data.sqrmeter = parseInt(td.nextElementSibling.innerText) }
                         });
                     };
                     if (index === 1) {
@@ -194,7 +189,7 @@ const main = (async(yad2ResultsURL) => {
             });
             console.log(adDetails.sqrmeter)
             console.log(adDetails)
-            if(!(await sqrFilter(parseInt(adDetails.sqrmeter)))){
+            if(!(await sqrFilter(adDetails.sqrmeter))){
                 continue;
             }
             if(!(await cityFilter(adDetails.city))){
