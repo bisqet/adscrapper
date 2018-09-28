@@ -304,8 +304,8 @@ async function cityFilter(city){
     try{
         log(`CITYfilter IS: ${filter}`);
         log(`CITY IS: ${city}`);
-        log(`RESULT IS: ${city == (eval(city))}`);
-        return city == (eval(city));
+        log(`RESULT IS: ${city == (eval(filter))}`);
+        return city == (eval(filter));
     }catch(err){
         await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
         log("ERROR WITH PARSING CITYFILTER!!!");
