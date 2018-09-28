@@ -82,7 +82,17 @@ const main = (async(yad2ResultsURL) => {
     // check for captcha
     const searchSource = await page.content();
     if (searchSource.indexOf('Are you human?') > -1) {
-        // get the image
+        log("ERROR CAPTCHA!!!");
+        const reqOptions = {
+                uri: 'https://flatbot.glitch.me/captchaErr',
+                method: 'POST',
+                json: true,
+                body: {"url":yad2ResultsURL}
+            };
+        request(reqOptions);
+        await delay(15000);
+        return;
+        /*/ get the image
         const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
         const { buffer } = parseDataUrl(captchaImg);
         fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
@@ -102,7 +112,7 @@ const main = (async(yad2ResultsURL) => {
         await page.waitFor(3000);
         //await page.click('#submitObject'); // Clicking the link will indirectly cause a navigation
         //const res = await navigationPromise; // The navigationPromise resolves after navigation has finished
-        //console.log(await res.text());   
+        //console.log(await res.text()); */  
     }
 
     // start scraping
@@ -184,11 +194,19 @@ const main = (async(yad2ResultsURL) => {
                         }
                     };
                 });
+
                 // console.log('nadlan data', JSON.stringify(data));
                 // remove info divs scrollbars for screenshots
                 $('.details_block_296 .details_block_body div:nth-child(2)').css({ height: 'inherit' });
                 return data;
             });
+
+            if(!sqrFilter()){
+                continue;
+            }
+            if(!cityFilter()){
+                continue;
+            }
             ad.data = adDetails;
 
             // screenshot the data
@@ -269,6 +287,28 @@ async function mainWrapper(yad2ResultsURL) {
     log('calling main again!');
     mainWrapper(yad2ResultsURL);
 }
+
+function sqrFilter(sqr){
+    const filter = config.sqrFilter;
+    try{
+        return !!(eval(filter));
+    }catch(err){
+        log("ERROR WITH PARSING SQRFILTER!!!");
+        log(err);
+    }
+}
+
+function cityFilter(city){
+    const filter = config.cityFilter;
+    try{
+        return city == (eval(city));
+    }catch(err){
+        log("ERROR WITH PARSING CITYFILTER!!!");
+        log(err);
+    }
+}
+
+
 
 const yad2ResultsURL = config.yad2ResultsURL;
 console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)

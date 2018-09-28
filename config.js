@@ -9,4 +9,6 @@ const config = {
 		"http://www.yad2.co.il/Nadlan/rent.php?AreaID=2&City=&HomeTypeID=5&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&villages=1&EnterDate=&Info="
 	]
 }
+config.sqrFilter = "sqr>90&&sqr<160"//&& - and; || - or; ! - not; >= - more or equal
+config.cityFilter = "רמת גן||בני עטרות||גנות"//&& - and; || - or; ! - not;
 module.exports = config;

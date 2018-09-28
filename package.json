@@ -7,8 +7,9 @@
   "description": "What am I about??",
   "scripts": {
     "start": "npm run cron & npm run static",
+    "statistic": "pm2 index.js & npm run static",
     "static": "http-server ./public/ -p 3000",
-    "cron": "pm2 start index.js"
+    "cron": "node index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
