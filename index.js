@@ -300,18 +300,21 @@ async function sqrFilter(sqr){
 
 async function cityFilter(city){
     if(!city)return true;
-    const filter = config.cityFilter;
-    try{
-        log(`CITYfilter IS: ${filter}`);
-        log(`CITY IS: ${city}`);
-        log(`RESULT IS: ${city == (eval(filter))}`);
-        return city == (eval(filter));
-    }catch(err){
-        await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
-        log("ERROR WITH PARSING CITYFILTER!!!");
-        log(err);
-        return false;
+    const {acceptable,noacceptable} = config.cityFilter;
+    for(i in acceptable){
+        if(acceptable[i]==city){
+            return true
+        }
     }
+    for(i in noacceptable){
+        if(noacceptable[i]==city){
+            return false
+        }
+    }
+    if(mode===0){
+        return false
+    }
+    return true
 }
 
 

@@ -10,5 +10,9 @@ const config = {
 	]
 }
 config.sqrFilter = "sqr>90&&sqr<160"//&& - and; || - or; ! - not; >= - more or equal
-config.cityFilter = "'רמת גן'||'בני עטרות'||'גנות'"//&& - and; || - or; ! - not;
+config.cityFilter = {
+	acceptable:['גנות'],
+	noacceptable:['רמת גן'],
+	mode:0
+}//0 - only acceptable towns. 1 - no disacceptable towns
 module.exports = config;
