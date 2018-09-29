@@ -292,7 +292,7 @@ async function sqrFilter(sqr){
     try{
         log(`SQRfilter IS: ${filter}`);
         log(`SQR IS: ${sqr}`);
-        log(`RESULT IS: ${!!(eval(filter))}`);
+        log(`SQR RESULT IS: ${!!(eval(filter))}`);
         return !!(eval(filter));
     }catch(err){
         await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
@@ -305,19 +305,25 @@ async function sqrFilter(sqr){
 async function cityFilter(city){
     if(!city)return true;
     const {acceptable,disacceptable, mode} = config.cityFilter;
+    log(`CITIES disacceptable IS: ${disacceptable}`);
+    log(`CITY IS: ${city}`);
     for(i in acceptable){
         if(acceptable[i]==city){
+            log(`CITY RESUL IS: TRUE`);
             return true
         }
     }
     for(i in disacceptable){
         if(disacceptable[i]==city){
+            log(`CITY RESUL IS: FALSE`);
             return false
         }
     }
     if(mode===0){
+        log(`CITY RESUL IS: FALSE`);
         return false
     }
+    log(`CITY RESUL IS: TRUE`);
     return true
 }
 
