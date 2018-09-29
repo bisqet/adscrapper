@@ -80,7 +80,10 @@ const main = (async(yad2ResultsURL) => {
     log('search results page loaded');
 
     // check for captcha
+    await page.waitFor("#main_table", { timeout: 120000 });
+    log("main table found")
     const searchSource = await page.content();
+    log("searchSource found")
     if (searchSource.indexOf('Are you human?') > -1) {
         await sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":yad2ResultsURL});
         return;
@@ -108,9 +111,8 @@ const main = (async(yad2ResultsURL) => {
     }
 
     // start scraping
-    await page.waitFor("#main_table", { timeout: 120000 });
+
     await page.screenshot({ path: publicFolder + 'homepage.png' });
-    log('found main table of results');
     const parsedAds = await page.evaluate(() => {
         const adsResults = [];
         const ads = $("#main_table .main_table tr.showPopupUnder");
@@ -130,10 +132,9 @@ const main = (async(yad2ResultsURL) => {
             });
             adsResults.push(adResult);
         });
-        log(adsResults, adsResults.length)
         return adsResults;
     });
-
+    log(adsResults)
     log('Found # ads:', parsedAds.length);
     let count = 0;
     for (const ad of parsedAds) {
