@@ -15,10 +15,10 @@ config.sqrFilter = "true"//&& - and; || - or; ! - not; >= - more or equal; true 
 config.cityFilter = {
 	acceptable:[],
 	disacceptable:[
-	`"גבעת כ""ח"`,
+	`גבעת כח`,
 	`ראש העין`,
 	`בני ברק`,
-	`"יד רמב""ם"`,
+	`יד רמב ם`,
 	`לפיד`,
 	`בית חנן`,
 	`כפר בן נון`,
