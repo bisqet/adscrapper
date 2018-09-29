@@ -134,7 +134,7 @@ const main = (async(yad2ResultsURL) => {
         });
         return adsResults;
     });
-    log(adsResults)
+    log(parsedAds)
     log('Found # ads:', parsedAds.length);
     let count = 0;
     for (const ad of parsedAds) {
