@@ -9,10 +9,10 @@ const config = {
 		"http://www.yad2.co.il/Nadlan/rent.php?AreaID=2&City=&HomeTypeID=5&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&villages=1&EnterDate=&Info="
 	]
 }
-config.sqrFilter = "sqr>150&&sqr<200"//&& - and; || - or; ! - not; >= - more or equal
+config.sqrFilter = "sqr>=90"//&& - and; || - or; ! - not; >= - more or equal
 config.cityFilter = {
-	acceptable:['גנות'],
-	disacceptable:['רמת גן'],
+	acceptable:[''],
+	disacceptable:[''],
 	mode:1
 }//0 - only acceptable towns. 1 - only no disacceptable towns
 module.exports = config;
