@@ -75,6 +75,7 @@ const main = (async(yad2ResultsURL) => {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
+    await page.on('domcontentloaded',()=>{console.log('domcontentloaded')});
     await page.waitFor(10000);
     await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
     log('search results page loaded');
@@ -90,7 +91,6 @@ const main = (async(yad2ResultsURL) => {
     log("main table found")
     const searchSource = await page.content();
     log("searchSource found")
-    await page.waitFor(10000);
     if (searchSource.indexOf('Are you human?') > -1) {
         await sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":yad2ResultsURL});
         return;
