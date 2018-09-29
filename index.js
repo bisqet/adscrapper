@@ -75,6 +75,7 @@ const main = (async(yad2ResultsURL) => {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
+    await page.on('domcontentloaded');
     await page.waitFor(10000);
     await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
     log('search results page loaded');
@@ -309,21 +310,21 @@ async function cityFilter(city){
     log(`CITY IS: ${city}`);
     for(i in acceptable){
         if(acceptable[i]==city){
-            log(`CITY RESUL IS: TRUE`);
+            log(`CITY RESULT IS: TRUE`);
             return true
         }
     }
     for(i in disacceptable){
         if(disacceptable[i]==city){
-            log(`CITY RESUL IS: FALSE`);
+            log(`CITY RESULT IS: FALSE`);
             return false
         }
     }
     if(mode===0){
-        log(`CITY RESUL IS: FALSE`);
+        log(`CITY RESULT IS: FALSE`);
         return false
     }
-    log(`CITY RESUL IS: TRUE`);
+    log(`CITY RESULT IS: TRUE`);
     return true
 }
 
