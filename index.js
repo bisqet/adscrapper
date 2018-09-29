@@ -80,7 +80,13 @@ const main = (async(yad2ResultsURL) => {
     log('search results page loaded');
 
     // check for captcha
-    await page.waitFor("#main_table", { timeout: 120000 });
+    let err = 0;
+    await page.waitFor("#main_table", { timeout: 120000 }).catch(()=>{
+        err = 1;
+        browser.close();
+    });
+    if(err){return;}
+
     log("main table found")
     const searchSource = await page.content();
     log("searchSource found")
