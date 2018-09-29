@@ -76,9 +76,6 @@ const main = (async(yad2ResultsURL) => {
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
     await page.on('domcontentloaded',()=>{console.log('domcontentloaded')});
-    await page.waitFor(10000);
-    await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
-    log('search results page loaded');
 
     // check for captcha
     let err = 0;
@@ -124,6 +121,7 @@ const main = (async(yad2ResultsURL) => {
         const adsResults = [];
         const ads = $("#main_table .main_table tr.showPopupUnder");
         console.info(ads);
+        debugger;
         ads.each(function(i, ad) {
             // get the href attribute of each link
             var adResult = {};
@@ -141,8 +139,8 @@ const main = (async(yad2ResultsURL) => {
         });
         return adsResults;
     });
-    log(parsedAds)
     log('Found # ads:', parsedAds.length);
+    return;
     let count = 0;
     for (const ad of parsedAds) {
         const existingAd = adsDB.get('ads')
