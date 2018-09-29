@@ -75,7 +75,7 @@ const main = (async(yad2ResultsURL) => {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
-    await page.on('domcontentloaded');
+    await page.on('domcontentloaded',()=>{console.log('domcontentloaded')});
     await page.waitFor(10000);
     await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
     log('search results page loaded');
