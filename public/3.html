@@ -1,0 +1,2230 @@
+
+        <div style="display:none" id="sbbhscc"></div>
+          <script type="text/javascript">
+            var sbbvscc='';
+            var sbbgscc='';
+            function genPid() {return String.fromCharCode(65)+String.fromCharCode(84) ; };
+          </script>
+        <div id="sbbfrcc" style="position: absolute; top: -10px; left: 30px; font-size:1px"><iframe id="SBBCrossIframe" title="SBBCrossIframe" lang="en" aria-hidden="true" scrolling="NO" src="http://www.yad2.co.il/sbbi/?sbbpg=sbbShell&amp;gprid=AT" style="visibility: hidden; border: 0px; height: 1px; width: 0px;"></iframe></div>
+  <script type="text/javascript">(function(XHR){var open=XHR.prototype.open;var send=XHR.prototype.send;var parser=document.createElement('a');XHR.prototype.open=function(method, url, async, user, pass){if(typeof async=='undefined'){async=true;}parser.href=url;if(parser.host==''){parser.href=parser.href;}this.ajax_hostname=parser.hostname;open.call(this, method, url, async, user, pass);};XHR.prototype.send=function(data){if(location.hostname==this.ajax_hostname)this.setRequestHeader("X-MOD-SBB-CTYPE", "xhr");send.call(this, data);}})(XMLHttpRequest);if(typeof(fetch)!="undefined"){var nsbbfetch=fetch;fetch=function(url, init){function sbbSd(url, domain){if(/^(http)|^(\/\/)/.test(url)){return url.indexOf(domain)!=-1;}return true;}if(sbbSd(url, document.domain)){init=typeof init !=='undefined' ? init :{};if(typeof(init.headers)==="undefined"){init.headers={};}init.headers['X-MOD-SBB-CTYPE']='fetch';}return nsbbfetch(url, init);};}function sbbgc(check_name){var start=document.cookie.indexOf(check_name+"=");var oVal='';var len=start+check_name.length+1;if((!start)&&(document.cookie.substring(0,check_name.length)!=check_name)){oVal='';}else if(start==-1){oVal='';}else{var end=document.cookie.indexOf(';',len);if(end==-1)end=document.cookie.length;var oVal=document.cookie.substring(len,end);};return oVal;}function addmg(inm,ext){var primgobj=document.createElement('IMG');primgobj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+"/sbbi/?sbbpg="+inm+(ext?"&"+ext:"");var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(primgobj);};function addprid(prid){var oldVal=sbbgc("PRLST");if((oldVal.indexOf(prid)==-1)&&(oldVal.split('/').length<5)){if(oldVal!='')oldVal+='/';document.cookie='PRLST='+oldVal+escape(prid)+';path=/';}}var sbbeccf=function(){this.sp3="jass";this.sf1=function(vd){return sf2(vd)+32;};var sf2=function(avd){return avd*12;};this.sf4=function(yavd){return yavd+2;};var strrp=function(str, key, value){if(str.indexOf('&'+key+'=')> -1 || str.indexOf(key+'=')==0){var idx=str.indexOf('&'+key+'=');if(idx==-1)idx=str.indexOf(key+'=');var end=str.indexOf('&', idx+1);var newstr;if(end !=-1)newstr=str.substr(0, idx)+str.substr(end+(idx ? 0 : 1))+'&'+key+'='+value;else newstr=str.substr(0, idx)+'&'+key+'='+value;return newstr;}else return str+'&'+key+'='+value;};var strgt=function(name, text){if(typeof text !='string')return "";var nameEQ=name+"=";var ca=text.split(/[;&]/);for(var i=0;i < ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1, c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length, c.length);}return "";};this.sfecgs={sbbgh:function(){var domain=document.location.host;if(domain.indexOf('www.')==0)domain=domain.replace('www.', '');return domain;}, f:function(name, value){var fv="";if(window.globalStorage){var host=this.sbbgh();try{if(typeof(value)!="undefined")globalStorage[host][name]=value;else{fv=globalStorage[host][name];if(typeof(fv.toString)!="undefined")fv=fv.toString();}}catch(e){}}return fv;}, name:"sbbrf"};this.sfecls={f:function(name, value){var fv="";try{if(window.localStorage){if(typeof(value)!="undefined")localStorage.setItem(name, value);else{fv=localStorage.getItem(name);if(typeof(fv.toString)!="undefined")fv=fv.toString();}}}catch(e){}return fv;}, name:"sbbrf"};this.sbbcv=function(invl){try{var invalArr=invl.split("-");if(invalArr.length>1){if(invalArr[0]=="A"||invalArr[0]=="D"){invl=invalArr[1];}else invl="";}if(invl==null||typeof(invl)=="undefined"||invl=="falseImgUT"||invl=="undefined"||invl=="null"||invl!=encodeURI(invl))invl="";if(typeof(invl).toLowerCase()=="string")if(invl.length>20)if(invl.substr(0,2)!="h4")invl="";}catch(ex){invl="";}return invl;};this.sbbsv=function(fv){for(var elm in this){if(this[elm].name=="sbbrf"){this[elm].f("altutgv2",fv);}}document.cookie="UTGv2="+fv+';expires=Tue, 31 Dec 2030 00:00:00 UTC;path=/';};this.sbbgv=function(){var valArr=Array();var currVal="";for(var elm in this){if(this[elm].name=="sbbrf"){currVal=this[elm].f("altutgv2");currVal=this.sbbcv(currVal);if(currVal!="")valArr[currVal]=(typeof(valArr[currVal])!="undefined"?valArr[currVal]+1:1);}}var lb=0;var fv="";for(var val in valArr){if(valArr[val]>lb){fv=val;lb=valArr[val]}}if(fv=="")fv=sbbgc("UTGv2");fv=this.sbbcv(fv);if(fv!="")this.sbbsv(fv);else this.sbbsv("h456a1025f427616f0ac5048d2839e91d550");return fv;};};function m2vr(m1,m2){var i=0;var rc="";var est="ghijklmnopqrstuvwyz";var rnum;var rpl;var charm1=m1.charAt(i);var charm2=m2.charAt(i);while(charm1!=""||charm2!=""){rnum=Math.floor(Math.random()* est.length);rpl=est.substring(rnum,rnum+1);rc+=(charm1==""?rpl:charm1)+(charm2==""?rpl:charm2);i++;charm1=m1.charAt(i);charm2=m2.charAt(i);}return rc;}function sbbls(prid){try{var eut=sbbgc("UTGv2");window.sbbeccfi=new sbbeccf();window.sbbgs=sbbeccfi.sbbgv();if(eut!=sbbgs && sbbgs!="" && typeof(sbbfcr)=="undefined"){addmg('utMedia',"vii="+m2vr("6df1e1c2a6c83b7abf9fe13b1e264e01",sbbgs));}var sbbiframeObj=document.createElement('IFRAME');var dfx=new Date();sbbiframeObj.id='SBBCrossIframe';sbbiframeObj.title='SBBCrossIframe';sbbiframeObj.tabindex='-1';sbbiframeObj.lang='en';sbbiframeObj.style.visibility='hidden';sbbiframeObj.setAttribute('aria-hidden', 'true');sbbiframeObj.style.border='0px';if(document.all){sbbiframeObj.style.position='absolute';sbbiframeObj.style.top='-1px';sbbiframeObj.style.height='1px';sbbiframeObj.style.width='28px';}else{sbbiframeObj.style.height='1px';sbbiframeObj.style.width='0px';}sbbiframeObj.scrolling="NO";sbbiframeObj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+'/sbbi/?sbbpg=sbbShell&gprid='+prid+'';var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(sbbiframeObj);}catch(ex){;}}try{var y=unescape(sbbvscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));document.getElementById('sbbhscc').innerHTML=y;var x=unescape(sbbgscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));}catch(e){x='function genPid(){return "jser";}';}try{if(window.gprid==undefined)document.write('<'+'script type="text/javascri'+'pt">'+x+"var gprid=genPid();addprid(gprid);var sbbfcr=true;sbbls(gprid);<"+"/script>");}catch(e){addprid("dwer");}</script><script type="text/javascript">var gprid=genPid();addprid(gprid);var sbbfcr=true;sbbls(gprid);</script>
+<div id="ag_div">
+
+</div>
+
+
+ <!-- eRate Tag v1.0.0 PERFORMANCE -->
+                    <script type="text/javascript">
+                        var erate_perId =  [36,"75","74","71","69"],
+                            erate_rdclick = "",erate_rr = true;
+                            erateScript = document.createElement("script");
+                            
+                            erateScript.src = "//media.erate.co.il/erate.pb.js?rnd="+Math.floor(Math.random()*99999999999);                                
+                            erateScript.async = true;
+                            document.head.appendChild(erateScript);
+                    </script>
+              <!-- EOF eRate Tag v1.0.0 --><script type="text/javascript">
+    try {
+        window.Fusion.space("prestitial");
+    }
+    catch(e) {}
+    
+    try {
+        window.Fusion.space('toster');
+    } catch(e) {}
+</script><div id="prestitial___ID___1" class="Desktop_Prestitial"></div>
+
+<div id="GamboBanner" style="z-index: 5; overflow: hidden; position: fixed; top: 0px; left: 0px; width: 125px; min-height: 700px; height: auto !important; display: none;" class="forceHidden2" data-forcehidden="1">
+    <div style="position: absolute; left: 0px; top: 0px;" id="left_mega">
+        <script type="text/javascript"> window.Fusion.space("mega"); window.Fusion.space("mega_t"); </script><div id="mega___ID___1" class="Desktop_Mega forceHidden2" data-google-query-id="CLDY_vnP4d0CFcLBwAodxMUBmA" style="display: none;" data-forcehidden="1"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Mega_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Mega_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Mega_0" width="1" height="1" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+    </div>
+</div>
+
+<div id="rtower" style="z-index: 5; overflow: hidden; position: fixed; top: 0px; right: 0px; min-height: 700px; height: auto !important; display: none;" class="forceHidden2" data-forcehidden="1">
+    <div style="" id="right_mega">
+        <script type="text/javascript"> window.Fusion.space("right_mega"); window.Fusion.space("right_mega_t"); </script><div id="right_mega___ID___1" class="Desktop_Right_Mega forceHidden2" data-google-query-id="CLHY_vnP4d0CFcLBwAodxMUBmA" style="display: none;" data-forcehidden="1"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Right_Mega_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Right_Mega_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Right_Mega_0" width="1" height="1" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+    </div>
+</div>
+
+<!-- Begin wrap -->
+<div id="wrap">
+
+
+<div id="king_kong_contaner" style="margin-right: auto; margin-left: auto;">
+    <div id="king_kong_btn_close" style="display: none; padding-right:0px;"><img width="51" height="23" style="cursor: pointer;" onclick="javascript:close_king_kong();" src="//images.yad2.co.il/Pic/yad2new/banner_image/close_kingkong.gif"></div>
+    <div id="king_kong">
+                <script type="text/javascript">
+            window.Fusion.space("king_kong");
+            window.Fusion.space("king_kong_t");
+        </script><div id="king_kong___ID___1" class="Desktop_King_Kong" data-google-query-id="CMXY_vnP4d0CFcLBwAodxMUBmA" style="display: none;"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_King_Kong_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_King_Kong_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_King_Kong_0" width="977" height="330" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+           </div>
+    <div id="background_container">
+        <script type="text/javascript">
+            window.Fusion.space("background");
+        </script>
+    </div>
+</div>
+
+	
+<!-- Begin header -->
+<div id="header">
+
+    
+        <div class="logo" style="float: left;">
+                            <iframe scrolling="no" frameborder="0" src="http://images.yad2.co.il/Pic/yad2new/logos/Sukkot.html" height="98" width="240"></iframe>
+                    </div>
+        <div class="page_title">
+        <table>
+            <tbody><tr>
+                <td colspan="2">
+                                            <!-- Begin top menu -->
+                        <ul class="top_menu">
+
+                                <li class="lineItem_accessibility">
+<a href="http://www.yad2.co.il/accessibility.php">
+    <img src="//images.yad2.co.il/Pic/yad2new/index/accessibility.png" style="width:11px;position:relative;top:1px;">
+    נגישות</a>
+</li>
+<li class="separator_accessibility">|</li>                            
+                                                        <li>
+                                <a href="#מדריכים">
+                                    מדריכים                                </a>
+                            </li>
+                            <li>|</li>
+                            <li>
+
+                                <a href="#מודעות מלוח דירות להשכרה">
+                                    מודעות מלוח דירות להשכרה                                </a>
+                            </li>
+                            <li>|</li>
+                            <li>
+                                <a href="#חיפוש דירות להשכרה">
+                                    חיפוש דירות להשכרה                                </a>
+
+                            </li>
+
+                        </ul> <!-- End top menu -->
+                                    </td>
+            </tr>
+            <tr>
+                <td>
+                                        <a href="/Nadlan/rent.php"><img class="mador_image" src="//images.yad2.co.il/Pic/yad2new/page/nadlan_board.jpg" alt="דירות להשכרה"></a>
+                    <h1><a href="http://www.yad2.co.il/Nadlan/rent.php"><h1>דירות להשכרה</h1></a></h1>
+
+                    <div id="top_logo_sponsor" class="sponsor" style="display: none;">
+                        בחסות:
+                    </div>
+                    <div style="vertical-align: middle; float: right; margin-top: 4px;">
+                        <script type="text/javascript"> window.Fusion.space("top_logo"); </script><div id="top_logo___ID___1" class="Desktop_Top_Logo" data-google-query-id="CLLY_vnP4d0CFcLBwAodxMUBmA" style="display: none;"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Logo_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Logo_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Logo_0" width="126" height="37" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+                    </div>
+                </td>
+            </tr>
+            <tr height="2">
+                <td colspan="2" valign="bottom">
+                    <img src="//images.yad2.co.il/Pic/yad2new/page/page_title_sep.jpg" alt="" style="margin-top:10px;">
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+</div> <!-- End header -->
+
+    <!-- Begin menu -->
+    <div id="menu">
+
+        <ul>
+            <li>
+                <a href="http://www.yad2.co.il/" onclick="stat( '../', 463, '', '' );">
+                    <span class="center"><img src="//images.yad2.co.il/Pic/yad2new/page/icon_home_blue.gif" alt="ראשי">ראשי</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.yad2.co.il/Cars/Car.php" onclick="stat( '../', 464, '', '' );">
+                    <span class="center">רכב</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="http://www.yad2.co.il/Nadlan/sales.php" onclick="stat( '../', 465, '', '' );">
+                    <span class="left">&nbsp;</span>
+                    <span class="center"><img src="//images.yad2.co.il/Pic/yad2new/index/arrow_down_white.gif" alt="">נדל"ן</span>
+                    <span class="right">&nbsp;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.yad2.co.il/Yad2/Yad2.php" onclick="stat( '../', 466, '', '' );">
+                    <span class="center">יד שניה</span>
+                </a>
+
+            </li>
+
+            <li>
+                <a href="https://www.drushim.co.il/" target="_blank" onclick="stat( '../', 467, '', '' );">
+                    <span class="center">פורטל דרושים</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.yad2.co.il/Pets/Pets.php" onclick="stat( '../', 468, '', '' );">
+                    <span class="center">חיות מחמד</span>
+                </a>
+
+            </li>
+
+            <li>
+                <a href="http://www.pro.yad2.co.il" onclick="stat( '../', 469, '', '' );">
+                    <span class="center">בעלי מקצוע</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=37" onclick="stat( '../', 1608, '', '' );">
+                    <span class="center">עסקים למכירה</span>
+                </a>
+
+            </li>
+
+            <li>
+                <a href="http://pricelist.yad2.co.il" target="_blank" onclick="stat( '../', 471, '', '' );">
+                    <span class="center">מחירון רכב</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="http://homeprices.yad2.co.il" target="_blank" onclick="stat( '../', 3866, '', '' );">
+                    <span class="center">מדד הנדל"ן</span>
+                </a>
+            </li>
+
+          
+            <li class="nobg">
+                <div class="more" onclick="open_div('more_box');stat( '../', 474, '', '' );">
+                    <img src="//images.yad2.co.il/Pic/yad2new/index/arrow_down.gif" alt=""> עוד...
+                </div>
+
+            </li>
+        </ul>
+                <div class="more_box" id="more_box" style="display: none;">
+            <div class="more_box_wrap">
+                <ul class="more_box_menu">
+                    <li><a href="http://maps.yad2.co.il" onclick="stat( '../', 473, '', '' );">מפות</a></li>
+                    <li><a href="http://newcar.yad2.co.il" target="_blank" onclick="stat( '../', 475, '', '' );">קטלוג רכב חדש</a></li>
+                    <li><a href="http://yad1.yad2.co.il?site=_in_x2_py2_3099_r_More" target="_blank" onclick="yad1Promo('Toolbar_MoreSites');stat( '../', 476, '', '' );">דירות חדשות</a></li>
+                    <li><a href="http://www.yad2.co.il/Tourism/Tourism.php" rel="nofollow" onclick="stat( '../', 477, '', '' );">תיירות ונופש</a></li>
+                    <li><a href="http://www.yad2.co.il/Yad2/Yad2Gallery.php?SalesCatID=50" onclick="stat( '../', 478, '', '' );">מוצרי סלולר ודיגיטל</a></li>
+                    <li><a href="http://www.yad2.co.il/Limudim/Limudim.php" onclick="stat( '', 265, '', '' );">לימודים</a></li>
+                    <li><a href="http://www.yad2.co.il/Ozeret/Main.php" onclick="stat( '../', 480, '', '' );">עוזרות ומטפלות</a></li>
+                    <li><a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=11" onclick="stat( '../', 481, '', '' );">לתינוק ולילד</a></li>
+                    <li><a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=59" onclick="stat( '../', 482, '', '' );">למסירה - הכל בחינם!</a></li>
+                    <li><a href="http://tires.yad2.co.il" onclick="stat( '', 5275, '', '' );">השוואת מחירי צמיגים</a></li>
+<!--                    <li><a href="https://care.yad2.co.il" onclick="stat( '../', 7435, '', '' );">פורטל הגיל השלישי</a></li>-->
+
+                    <li><a href="http://yad38.yad2.co.il/?yad2_source=odUpperMenu" onclick="stat( '../', 7471, '', '' );" target="_blank">yad38</a></li>
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+            <div class="more_box_bottom"></div>
+        </div>
+
+    </div> <!-- End menu -->
+
+
+<!-- Begin menu strip -->
+<div id="menu_strip" class="menu_strip_nadlan">
+
+    <ul><li class="nosep" style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 937, '', '');" href="http://www.yad2.co.il/Nadlan/sales.php" id="tab_sales">
+								<span class="left"></span>
+								<span class="center">דירות למכירה</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li class="active" style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 938, '', '');" href="http://www.yad2.co.il/Nadlan/rent.php" id="tab_rent">
+								<span class="left"></span>
+								<span class="center">דירות להשכרה</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 940, '', '');" href="http://www.yad2.co.il/Nadlan/partners.php" id="tab_partners">
+								<span class="left"></span>
+								<span class="center">שותפים</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 941, '', '');" href="http://www.yad2.co.il/Nadlan/business.php" id="tab_business">
+								<span class="left"></span>
+								<span class="center">מסחרי</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 942, '', '');" href="http://www.yad2.co.il/Nadlan/kones.php?yad2_source=SubMenu_Nadlan_Link" id="tab_kones" target="_blank">
+								<span class="left"></span>
+								<span class="center">כונס נכסים</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="$('#tivuch_sm').toggle()" href="javascript:void(0)" id="tab_tivuch">
+								<span class="left"></span>
+								<span class="center"><img src="//images.yad2.co.il/Pic/yad2new/index/arrow_down_white.gif" style="margin-left:5px;margin-bottom:3px;">דירות מתיווך</span>
+								<span class="right"></span>
+							</a>
+							<div id="tivuch_sm" style="display:none;position:absolute; top: 36px; right: -1px; background:url(http://images.yad2.co.il/Pic/yad2new/index/tab_submenu_box.png) bottom center no-repeat;width:150px;height: auto !important; min-height:70px; padding: 8px 0px 13px 0px; z-index: 9999999;"><ul id="tivuch_sm" class="more_box_menu" style="margin: 0px; padding: 0px !important;"><li style="height: 22px;"><a onclick="stat('../../', 943, '', '');" href="/Nadlan/tivsales.php" style="text-indent:14px; line-height: 183%;">תיווך מכירה</a></li><li style="height: 22px;"><a onclick="stat('../../', 944, '', '');" href="/Nadlan/tivrent.php" style="text-indent:14px; line-height: 183%;">תיווך השכרה</a></li><li style="height: 22px;"><a onclick="stat('../../', 945, '', '');" href="/Nadlan/tivbusiness.php" style="text-indent:14px; line-height: 183%;">תיווך מסחרי</a></li></ul></div>
+						</li><li style="position:relative;outline:none;padding-left:0px;padding-right:0;margin-left:0;margin-right:0;z-index:100">
+							<a onclick="stat('../../', 1537, '', '');" href="http://www.yad2.co.il/Nadlan/studentsMap.php" id="tab_students">
+								<span class="left"></span>
+								<span class="center">דיור לסטודנטים</span>
+								<span class="right"></span>
+							</a>
+							
+						</li><li class="yad1" style="position:relative;outline:none">
+						<a onclick="stat('../../', 1018, '', '');" href="http://homeprices.yad2.co.il" id="tab_neighbors_pricelist">							
+							<span class="left"></span>
+							<span class="center">מדד הנדל"ן</span>
+							<span class="right"></span>
+						</a>
+						
+					</li><li class="yad1" style="position:relative;outline:none" onclick="yad1Promo('Nadlan_Toolbar')">
+						<a onclick="stat('../../', 946, '', '');" href="http://yad1.yad2.co.il?site=_in_x2_py2_3010_r_SubMenu" id="tab_yad1" target="_blank">							
+							<span class="left"></span>
+							<span class="center"><img height="36" src="http://images.yad2.co.il/Pic/yad2new/page/yad1_logo_subnav.jpg" border="0" align="center" style="padding-bottom: 4px;">דירות חדשות</span>
+							<span class="right"></span>
+						</a>
+						
+					</li><li class="yad38" style="position:relative;outline:none">
+						<a onclick="stat('../../', 7470, '', '');" href="http://yad38.yad2.co.il/?yad2_source=tabNadlan?site=Nadlan_rent_SubMenu_Yad38_Link" id="tab_yad38" target="_blank">
+							<span class="left"></span>
+							<span class="center"><img height="30" src="http://images.yad2.co.il/Pic/yad2new/page/icon_yad38_new.png" border="0" align="center" style="padding-top: 1px;"><span style="vertical-align: sub; margin:0 3px;">תמ"א 38</span></span>
+							<span class="right"></span>
+						</a>
+						
+					</li></ul>
+</div> <!-- End menu strip -->
+
+<div class="clear"></div>
+
+<!-- Begin intro block -->
+    <div class="intro_block">
+        <p class="text">
+            לוח
+								<a href="http://www.yad2.co.il/Nadlan/rent.php">דירות להשכרה</a>
+
+					יד2 מציע לכם מגוון אפשרויות למגורים בשכירות ברחבי הארץ. 
+					בלוח תמצאו דירות להשכרה, דירות גן להשכרה, דירות יוקרה להשכרה ונכסים נוספים – בתים, וילות, פנטהאוזים, קוטג'ים ועוד.
+					 חפשו בלוח או לחצו על הקישורים בהמשך למיקוד החיפוש אחר <b> דירה להשכרה</b>:
+					 <a href="http://www.yad2.co.il/Nadlan/rent.php?City=%FA%EC+%E0%E1%E9%E1+%E9%F4%E5">
+					דירות להשכרה בתל אביב</a>, 
+					<a href="http://www.yad2.co.il/Nadlan/rent.php?City=%E7%E9%F4%E4">
+					דירות להשכרה בחיפה</a>, 
+					<a href="http://www.yad2.co.il/Nadlan/rent.php?City=%E9%F8%E5%F9%EC%E9%ED">
+					דירות להשכרה בירושלים</a>,<br>
+					<a href="http://www.yad2.co.il/Nadlan/rent.php?City=%E1%E0%F8+%F9%E1%F2">
+					 דירות להשכרה בבאר 
+					שבע</a>,
+					<a href="http://www.yad2.co.il/Nadlan/rent.php?City=%F8%E0%F9%E5%EF+%EC%F6%E9%E5%EF">
+					 דירות להשכרה בראשון לציון</a>		
+												
+											
+										
+									        </p>
+        <div id="SharingBox" style="position: absolute; bottom: 0px;left:2px;">
+						<table width="100%" dir="ltr">
+							<tbody><tr>
+    							<!--<td valign="top" style="padding-top:1px;"><g:plusone href="http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=%EB%F4%F8 %E0%E6%22%F8&arrHomeTypeID=1%2C3%2C5%2C6%2C4%2C7%2C39%2C49%2C51%2C11%2C32%2C55%2C61%2C31%2C44%2C43%2C33%2C60%2C45%2C50%2C30%2C41&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=&ref=google+" count="false"></g:plusone></td>-->
+    							<td><a onclick="stat( '../', '1636', '', '' )" ;="" target="_blank" href="http://twitter.com/share?original_referer=www.yad2.co.il&amp;url=http%3A%2F%2Fwww.yad2.co.il%2FNadlan%2Frent.php%3FmultiSearch%3D1%26arrArea%3D%26arrCity%3D1970%26Neighborhood%3D%25EB%25F4%25F8+%25E0%25E6%2522%25F8%26arrHomeTypeID%3D1%252C3%252C5%252C6%252C4%252C7%252C39%252C49%252C51%252C11%252C32%252C55%252C61%252C31%252C44%252C43%252C33%252C60%252C45%252C50%252C30%252C41%26fromRooms%3D4%26untilRooms%3D%26fromPrice%3D1000%26untilPrice%3D9000%26PriceType%3D1%26FromFloor%3D%26ToFloor%3D%26fromSquareMeter%3D%26untilSquareMeter%3D%26EnterDate%3D%26Info%3D%26ref%3Dtwit"><img src="http://images.yad2.co.il/Pic/yad2new/page/tw_share.png" border="0" width="25" height="24"></a></td>
+    							<td width="100%"><!-- width=100% - Fix for IE7 --><a style="cursor:pointer" onclick="stat( '../', '1635', '', '' );window.open('http://www.facebook.com/sharer.php?u=http://www.yad2.co.il%2FNadlan%2Frent.php%3Ft%3D1538272585%26utm_source%3Dfacebook%26utm_medium%3Dshare%26utm_content%3DNadlan%26utm_campaign%3DToVertical','','resizable=1,width=600px,height=400px')" ;="" target="_blank"><img src="http://images.yad2.co.il/Pic/yad2new/page/facebook_share.png" border="0" width="23" height="24"></a></td>
+							</tr>
+						</tbody></table>
+					</div>    </div> <!-- End intro block -->
+
+
+<a name="חיפוש דירות להשכרה"></a>
+
+<!-- Begin plasma banner -->
+
+<script type="text/javascript">
+	//var shouldDisplayTopBanners = SpecialSlotsManager.shouldDisplayTopBanners();
+//	var shouldDisplayPlasma = SpecialSlotsManager.shouldDisplayPlasma();
+	if (typeof SpecialSlotsManager !== "undefined"){
+		SpecialSlotsManager.updatePageEntries();
+	}
+</script>
+
+<div id="top_banners_spacer" class="clear" style="height: 8px;"></div>
+<div id="top_banners" class="pie" style="background-color: #DDDDDD; border-radius:6px; width:978px; padding-top:8px; padding-bottom:8px; margin-left: auto; margin-right: auto; margin-bottom: 8px; position: relative; overflow: hidden">
+	<div id="contaner2" style="float: right; width: 980px; text-align: center;">
+		<div id="top_contaner" style="float: right; width: 728px; margin-right: 10px;">
+			<script type="text/javascript">
+                if (typeof window.Fusion !== "undefined"){
+                    try {
+                        
+                        window.Fusion.space("top_banner");
+                        window.Fusion.space("top_takeover");
+						window.Fusion.space("top_banner_for_king");
+                    }
+                    catch(e) {}
+                }
+
+			</script><div id="top_banner___ID___1" class="Desktop_Top_Banner" style="display: block;" data-google-query-id="CKSWtfvP4d0CFcPbwAodghcF1Q"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_1__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_1" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_1" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div><div id="top_banner_for_king___ID___1" class="Desktop_Top_Banner" data-google-query-id="CMbY_vnP4d0CFcLBwAodxMUBmA" style="display: none;"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Banner_0" width="728" height="91" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+		</div>
+		<div id="small_top_contaner" style="float: left;width: 220px; margin-left: 10px;"><script type="text/javascript">if(typeof window.Fusion !== "undefined") window.Fusion.space("small_top"); </script><div id="small_top___ID___1" class="Desktop_Small_Top" style="display: block;" data-google-query-id="CKOWtfvP4d0CFcPbwAodghcF1Q"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Small_Top_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Small_Top_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Small_Top_0" width="220" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></div>
+	</div>
+	
+	<div id="contaner1" align="center" style="margin: 0 auto; width: 967px; /*padding-right:7px;*/">
+				<div id="contaner_plasma" style="/*float: right;*/ width: 930px;"><script type="text/javascript">if(typeof window.Fusion !== "undefined"){ window.Fusion.space("plasma"); window.Fusion.space("plasma_t");}</script><div id="plasma___ID___1" class="Desktop_Plasma" data-google-query-id="CLPY_vnP4d0CFcLBwAodxMUBmA" style="display: none;"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Plasma_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Plasma_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Plasma_0" width="930" height="180" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div></div>
+	</div>
+	
+
+	<div class="clear"></div>
+</div>
+<!-- End plasma banner -->
+
+<div class="clear"></div><form method="get" name="form1" id="search_form" style="margin:0px;">
+<div class="search_block_advance" id="search_block" style="height: 151px;">
+
+	<div class="search_block_top">
+
+        <div class="search_title">
+            <h2 class="searchTitle" data-text="חיפוש בלוח דירות להשכרה בחסות:">חיפוש בלוח דירות להשכרה</h2><span id="sponsorship_search_title" style="margin-right: 5px">בחסות:</span>
+        </div>
+
+        <div class="search_sponsor">
+            <script type="text/javascript"> window.Fusion.space("sponsorship_search"); </script><div id="sponsorship_search___ID___1" class="Desktop_Sponsorship_Search" data-google-query-id="CLTY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Sponsorship_Search_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Sponsorship_Search_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Sponsorship_Search_0" width="315" height="25" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+        </div>
+		
+		<div class="search_tabs">
+			
+			<div onclick="Yad2.Search.SwitchAdvance(true);Yad2.Search.Nadlan.Rent.SwitchAdvance(true);Yad2.MultiSearch.Construct.Nadlan.Rent();" id="tab_advance" class="active">
+				<span class="left">&nbsp;</span>
+				<span class="center">חיפוש מתקדם/מרובה</span>
+				<span class="right">&nbsp;</span>
+			</div>
+
+			<div onclick="Yad2.Search.SwitchAdvance(false);Yad2.Search.Nadlan.Rent.SwitchAdvance(false);Yad2.MultiSearch.Destruct.Nadlan.Rent();" class="" id="tab_normal">
+				<span class="left">&nbsp;</span>
+				<span class="center">חיפוש רגיל</span>
+				<span class="right">&nbsp;</span>
+			</div>
+			
+							<div class="SearchMapTab" id="tab_map" onmousedown="stat('/',3372);" onclick="$('#search_form').prop('action','rentMap.php').submit();">
+					הצג על גבי מפה
+				</div>
+						
+		</div>
+		
+	</div>
+	
+	<div id="s11" name="s11" class="search_block_main">
+				<input type="hidden" name="multiSearch" id="isMultiSearch" value="1">
+		<table width="965" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+			<tbody><tr height="75" id="tr_search">
+				<td>
+					<table cellspacing="0" cellpadding="0" width="830" class="table_search">
+						<tbody><tr>
+							<td>
+								<table cellspacing="0" cellpadding="0" width="830">
+									<tbody><tr>
+																				<td align="right" id="td_area" name="td_area" style="width: 142px;">
+										<div id="multi-search-wrapper" style="position: relative;">
+											אזור<br>
+											<select name="AreaID" id="Area" dir="rtl" class="normal-search-element " disabled="disabled" style="display: none;"><option value="">כל האזורים</option><option value="25" style="font-weight: bold; color: red">צפון</option><option value="5" style="font-weight: bold; color: black">חיפה והסביבה</option><option value="6" style="font-weight: bold; color: black">קריות והסביבה</option><option value="68" style="font-weight: bold; color: black">עכו - נהריה והסביבה</option><option value="20" style="font-weight: bold; color: black">גליל עליון</option><option value="14" style="font-weight: bold; color: black">הכנרת והסביבה</option><option value="53" style="font-weight: bold; color: black">כרמיאל והסביבה</option><option value="91" style="font-weight: bold; color: black">נצרת - שפרעם והסביבה</option><option value="96" style="font-weight: bold; color: black">ראש פינה החולה</option><option value="74" style="font-weight: bold; color: black">גליל תחתון</option><option value="83" style="font-weight: bold; color: black">הגולן</option><option value="101" style="font-weight: bold; color: red">חדרה זכרון ועמקים</option><option value="67" style="font-weight: bold; color: black">זכרון וחוף הכרמל</option><option value="15" style="font-weight: bold; color: black">חדרה והסביבה</option><option value="16" style="font-weight: bold; color: black">קיסריה והסביבה</option><option value="87" style="font-weight: bold; color: black">יקנעם טבעון והסביבה</option><option value="93" style="font-weight: bold; color: black">עמק בית שאן</option><option value="13" style="font-weight: bold; color: black">עפולה והעמקים</option><option value="97" style="font-weight: bold; color: black">רמת מנשה</option><option value="19" style="font-weight: bold; color: red">השרון</option><option value="17" style="font-weight: bold; color: black">נתניה והסביבה</option><option value="18" style="font-weight: bold; color: black">רמת השרון - הרצליה</option><option value="42" style="font-weight: bold; color: black">רעננה - כפר סבא</option><option value="54" style="font-weight: bold; color: black">הוד השרון והסביבה</option><option value="81" style="font-weight: bold; color: black">דרום השרון</option><option value="70" style="font-weight: bold; color: black">צפון השרון</option><option value="2" style="font-weight: bold; color: red">מרכז</option><option value="1" style="font-weight: bold; color: black">תל אביב</option><option value="48" style="font-weight: bold; color: black">תל אביב - מרכז</option><option value="47" style="font-weight: bold; color: black">תל אביב - צפון</option><option value="49" style="font-weight: bold; color: black">תל אביב - דרום</option><option value="73" style="font-weight: bold; color: black">תל אביב -  מזרח</option><option value="9" style="font-weight: bold; color: black">ראשון לציון והסביבה</option><option value="11" style="font-weight: bold; color: black">חולון - בת ים</option><option value="3" style="font-weight: bold; color: black">רמת גן - גבעתיים</option><option value="4" style="font-weight: bold; color: black">פתח תקווה והסביבה</option><option value="71" style="font-weight: bold; color: black">ראש העין והסביבה</option><option value="10" style="font-weight: bold; color: black">בקעת אונו</option><option value="51" style="font-weight: bold; color: black">רמלה - לוד</option><option value="78" style="font-weight: bold; color: black">בני ברק - גבעת שמואל</option><option value="92" style="font-weight: bold; color: black">עמק  איילון</option><option value="98" style="font-weight: bold; color: black">שוהם והסביבה</option><option value="8" style="font-weight: bold; color: black">מודיעין והסביבה</option><option value="100" style="font-weight: bold; color: red">אזור ירושלים</option><option value="7" style="font-weight: bold; color: black">ירושלים</option><option value="69" style="font-weight: bold; color: black">בית שמש והסביבה</option><option value="86" style="font-weight: bold; color: black">הרי יהודה - מבשרת והסביבה</option><option value="90" style="font-weight: bold; color: black">מעלה אדומים והסביבה</option><option value="75" style="font-weight: bold; color: red">יהודה שומרון ובקעת הירדן</option><option value="88" style="font-weight: bold; color: black">ישובי דרום ההר</option><option value="45" style="font-weight: bold; color: black">ישובי שומרון</option><option value="80" style="font-weight: bold; color: black">גוש עציון</option><option value="79" style="font-weight: bold; color: black">בקעת הירדן וצפון ים המלח</option><option value="77" style="font-weight: bold; color: black">אריאל וישובי יהודה</option><option value="41" style="font-weight: bold; color: red">שפלה מישור חוף דרומי</option><option value="12" style="font-weight: bold; color: black">נס ציונה - רחובות</option><option value="21" style="font-weight: bold; color: black">אשדוד - אשקלון והסביבה</option><option value="52" style="font-weight: bold; color: black">גדרה - יבנה והסביבה</option><option value="72" style="font-weight: bold; color: black">קרית גת והסביבה</option><option value="99" style="font-weight: bold; color: black">שפלה</option><option value="43" style="font-weight: bold; color: red">דרום</option><option value="22" style="font-weight: bold; color: black">באר שבע והסביבה</option><option value="24" style="font-weight: bold; color: black">אילת וערבה</option><option value="89" style="font-weight: bold; color: black">ישובי הנגב</option><option value="85" style="font-weight: bold; color: black">הנגב המערבי</option><option value="82" style="font-weight: bold; color: black">דרום ים המלח</option><option value="46" style="font-weight: bold; color: red">חו"ל</option></select><div class="multi-search-container" id="multi-search-Area-wrap"><input type="hidden" name="arrArea" id="arrArea" value=""><div onclick="Yad2.MultiSearch.UI.Toggle('Area', 'Yad2.MultiSearch.Actions.Nadlan.DisableArea();')" id="multi-search-Area-input" style="width: 130px; display: block;" class="multi-search-element disabled">לחץ לבחירה</div><div id="multi-search-Area-container" style="z-index: 900; display: none;"><div class="multi-search-tab" style="width: 135px;"><div class="leftcurv"></div></div><div id="multi-search-Area-box" class="multi-search-box-flat"><div class="multi-search-close" onclick="Yad2.MultiSearch.UI.Toggle('Area', 'Yad2.MultiSearch.Actions.Nadlan.DisableArea();')"></div><div class="multi-search-title">בחר <span id="multi-search-Area-title">אזורים</span></div><div class="multi-search-inner-gray"><div id="multi-search-Area-scrollable-content" class="multi-search-scrollable-content" style="width: auto; min-width: 180px"><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',25);" data-multi-search-isparent="true" type="checkbox" id="chkArea_25" value="25"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_25" for="chkArea_25">צפון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_5" value="5"><label style="margin-right: 4px;" id="lblArea_5" for="chkArea_5">חיפה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_6" value="6"><label style="margin-right: 4px;" id="lblArea_6" for="chkArea_6">קריות והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_68" value="68"><label style="margin-right: 4px;" id="lblArea_68" for="chkArea_68">עכו - נהריה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_20" value="20"><label style="margin-right: 4px;" id="lblArea_20" for="chkArea_20">גליל עליון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_14" value="14"><label style="margin-right: 4px;" id="lblArea_14" for="chkArea_14">הכנרת והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_53" value="53"><label style="margin-right: 4px;" id="lblArea_53" for="chkArea_53">כרמיאל והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_91" value="91"><label style="margin-right: 4px;" id="lblArea_91" for="chkArea_91">נצרת - שפרעם והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_96" value="96"><label style="margin-right: 4px;" id="lblArea_96" for="chkArea_96">ראש פינה החולה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_74" value="74"><label style="margin-right: 4px;" id="lblArea_74" for="chkArea_74">גליל תחתון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="25" type="checkbox" id="chkArea_83" value="83"><label style="margin-right: 4px;" id="lblArea_83" for="chkArea_83">הגולן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',101);" data-multi-search-isparent="true" type="checkbox" id="chkArea_101" value="101"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_101" for="chkArea_101">חדרה זכרון ועמקים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_67" value="67"><label style="margin-right: 4px;" id="lblArea_67" for="chkArea_67">זכרון וחוף הכרמל</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_15" value="15"><label style="margin-right: 4px;" id="lblArea_15" for="chkArea_15">חדרה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_16" value="16"><label style="margin-right: 4px;" id="lblArea_16" for="chkArea_16">קיסריה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_87" value="87"><label style="margin-right: 4px;" id="lblArea_87" for="chkArea_87">יקנעם טבעון והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_93" value="93"><label style="margin-right: 4px;" id="lblArea_93" for="chkArea_93">עמק בית שאן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_13" value="13"><label style="margin-right: 4px;" id="lblArea_13" for="chkArea_13">עפולה והעמקים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="101" type="checkbox" id="chkArea_97" value="97"><label style="margin-right: 4px;" id="lblArea_97" for="chkArea_97">רמת מנשה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',19);" data-multi-search-isparent="true" type="checkbox" id="chkArea_19" value="19"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_19" for="chkArea_19">השרון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_17" value="17"><label style="margin-right: 4px;" id="lblArea_17" for="chkArea_17">נתניה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_18" value="18"><label style="margin-right: 4px;" id="lblArea_18" for="chkArea_18">רמת השרון - הרצליה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_42" value="42"><label style="margin-right: 4px;" id="lblArea_42" for="chkArea_42">רעננה - כפר סבא</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_54" value="54"><label style="margin-right: 4px;" id="lblArea_54" for="chkArea_54">הוד השרון והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_81" value="81"><label style="margin-right: 4px;" id="lblArea_81" for="chkArea_81">דרום השרון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="19" type="checkbox" id="chkArea_70" value="70"><label style="margin-right: 4px;" id="lblArea_70" for="chkArea_70">צפון השרון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',2);" data-multi-search-isparent="true" type="checkbox" id="chkArea_2" value="2"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_2" for="chkArea_2">מרכז</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_1" value="1"><label style="margin-right: 4px;" id="lblArea_1" for="chkArea_1">תל אביב</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_48" value="48"><label style="margin-right: 4px;" id="lblArea_48" for="chkArea_48">תל אביב - מרכז</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_47" value="47"><label style="margin-right: 4px;" id="lblArea_47" for="chkArea_47">תל אביב - צפון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_49" value="49"><label style="margin-right: 4px;" id="lblArea_49" for="chkArea_49">תל אביב - דרום</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_73" value="73"><label style="margin-right: 4px;" id="lblArea_73" for="chkArea_73">תל אביב -  מזרח</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_9" value="9"><label style="margin-right: 4px;" id="lblArea_9" for="chkArea_9">ראשון לציון והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_11" value="11"><label style="margin-right: 4px;" id="lblArea_11" for="chkArea_11">חולון - בת ים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_3" value="3"><label style="margin-right: 4px;" id="lblArea_3" for="chkArea_3">רמת גן - גבעתיים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_4" value="4"><label style="margin-right: 4px;" id="lblArea_4" for="chkArea_4">פתח תקווה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_71" value="71"><label style="margin-right: 4px;" id="lblArea_71" for="chkArea_71">ראש העין והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_10" value="10"><label style="margin-right: 4px;" id="lblArea_10" for="chkArea_10">בקעת אונו</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_51" value="51"><label style="margin-right: 4px;" id="lblArea_51" for="chkArea_51">רמלה - לוד</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_78" value="78"><label style="margin-right: 4px;" id="lblArea_78" for="chkArea_78">בני ברק - גבעת שמואל</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_92" value="92"><label style="margin-right: 4px;" id="lblArea_92" for="chkArea_92">עמק  איילון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_98" value="98"><label style="margin-right: 4px;" id="lblArea_98" for="chkArea_98">שוהם והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="2" type="checkbox" id="chkArea_8" value="8"><label style="margin-right: 4px;" id="lblArea_8" for="chkArea_8">מודיעין והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',100);" data-multi-search-isparent="true" type="checkbox" id="chkArea_100" value="100"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_100" for="chkArea_100">אזור ירושלים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="100" type="checkbox" id="chkArea_7" value="7"><label style="margin-right: 4px;" id="lblArea_7" for="chkArea_7">ירושלים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="100" type="checkbox" id="chkArea_69" value="69"><label style="margin-right: 4px;" id="lblArea_69" for="chkArea_69">בית שמש והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="100" type="checkbox" id="chkArea_86" value="86"><label style="margin-right: 4px;" id="lblArea_86" for="chkArea_86">הרי יהודה - מבשרת והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="100" type="checkbox" id="chkArea_90" value="90"><label style="margin-right: 4px;" id="lblArea_90" for="chkArea_90">מעלה אדומים והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',75);" data-multi-search-isparent="true" type="checkbox" id="chkArea_75" value="75"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_75" for="chkArea_75">יהודה שומרון ובקעת הירדן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="75" type="checkbox" id="chkArea_88" value="88"><label style="margin-right: 4px;" id="lblArea_88" for="chkArea_88">ישובי דרום ההר</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="75" type="checkbox" id="chkArea_45" value="45"><label style="margin-right: 4px;" id="lblArea_45" for="chkArea_45">ישובי שומרון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="75" type="checkbox" id="chkArea_80" value="80"><label style="margin-right: 4px;" id="lblArea_80" for="chkArea_80">גוש עציון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="75" type="checkbox" id="chkArea_79" value="79"><label style="margin-right: 4px;" id="lblArea_79" for="chkArea_79">בקעת הירדן וצפון ים המלח</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="75" type="checkbox" id="chkArea_77" value="77"><label style="margin-right: 4px;" id="lblArea_77" for="chkArea_77">אריאל וישובי יהודה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',41);" data-multi-search-isparent="true" type="checkbox" id="chkArea_41" value="41"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_41" for="chkArea_41">שפלה מישור חוף דרומי</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="41" type="checkbox" id="chkArea_12" value="12"><label style="margin-right: 4px;" id="lblArea_12" for="chkArea_12">נס ציונה - רחובות</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="41" type="checkbox" id="chkArea_21" value="21"><label style="margin-right: 4px;" id="lblArea_21" for="chkArea_21">אשדוד - אשקלון והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="41" type="checkbox" id="chkArea_52" value="52"><label style="margin-right: 4px;" id="lblArea_52" for="chkArea_52">גדרה - יבנה והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="41" type="checkbox" id="chkArea_72" value="72"><label style="margin-right: 4px;" id="lblArea_72" for="chkArea_72">קרית גת והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="41" type="checkbox" id="chkArea_99" value="99"><label style="margin-right: 4px;" id="lblArea_99" for="chkArea_99">שפלה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="Yad2.MultiSearch.Actions.checkGroup('Area',43);" data-multi-search-isparent="true" type="checkbox" id="chkArea_43" value="43"><label style="margin-right: 4px;font-weight: bold; color: red;" id="lblArea_43" for="chkArea_43">דרום</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="43" type="checkbox" id="chkArea_22" value="22"><label style="margin-right: 4px;" id="lblArea_22" for="chkArea_22">באר שבע והסביבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="43" type="checkbox" id="chkArea_24" value="24"><label style="margin-right: 4px;" id="lblArea_24" for="chkArea_24">אילת וערבה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="43" type="checkbox" id="chkArea_89" value="89"><label style="margin-right: 4px;" id="lblArea_89" for="chkArea_89">ישובי הנגב</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="43" type="checkbox" id="chkArea_85" value="85"><label style="margin-right: 4px;" id="lblArea_85" for="chkArea_85">הנגב המערבי</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" data-multi-search-name="Area" onclick="return Yad2.MultiSearch.Actions.Select('Area',this);" data-multi-search-parent="43" type="checkbox" id="chkArea_82" value="82"><label style="margin-right: 4px;" id="lblArea_82" for="chkArea_82">דרום ים המלח</label></div></div></div><div class="multi-search-select" onclick="Yad2.MultiSearch.UI.Toggle('Area', 'Yad2.MultiSearch.Actions.Nadlan.DisableArea();')"></div><div class="multi-search-actions"><table style="border-collapse: collapse;" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="multi-search-clearall" onclick="Yad2.MultiSearch.Actions.ClearAll('Area');"><u>נקה הכל</u></div></td><td><div class="multi-search-selectall" onclick="Yad2.MultiSearch.Actions.SelectAll('Area');"><u>בחר הכל</u></div></td></tr></tbody></table></div></div></div></div>										</div>
+										</td>
+										
+										<td valign="top" id="td_city" name="td_city">
+											<div class="multi-search-wrapper">
+												ישוב<br>
+												<input onkeyup="Yad2.Search.Nadlan.DisableArea(this);Yad2.Search.Nadlan.ToggleNeighborhood('City','Neighborhood');" data-name="יישוב" autocomplete="off" type="text" id="City" name="City" value="" class="normal-search-element" style="width: 75px; display: none;" disabled="disabled"><div data-sautocomplete="true" class="sAutocomplete_wrap" id="City_autocomplete" style="display: none;"><div class="sAutocomplete" id="City_autocomplete_inner" style="width: 130px;"></div></div><div class="multi-search-container" id="multi-search-City-wrap"><input type="hidden" name="arrCity" id="arrCity" value="1970"><div onclick="Yad2.MultiSearch.UI.Toggle('City', 'Yad2.MultiSearch.Actions.Nadlan.DisableCities();')" id="multi-search-City-input" style="width: 75px; display: block;" class="multi-search-element">רמת גן</div><div id="multi-search-City-container" style="z-index: 900; display: none;"><div class="multi-search-tab" style="width: 80px;"><div class="leftcurv"></div></div><div id="multi-search-City-box" class="multi-search-box-autocomplete"><div class="multi-search-close" onclick="Yad2.MultiSearch.UI.Toggle('City', 'Yad2.MultiSearch.Actions.Nadlan.DisableCities();')"></div><div class="multi-search-title">בחר <span id="multi-search-City-title">ישובים</span></div><div class="multi-search-inner-gray"><div id="multi-search-City-scrollable-content" class="multi-search-scrollable-content" style="width: auto; min-width: 125px"><div class="city_autocomplete_popup" style="display: none;"><div class="overlay"></div><div class="content"><div onclick="Yad2.MultiSearch.Fields.Nadlan.City.ToggleNoCitiesLightbox($('#ms_City'), false);" class="close"></div></div></div><div class="msAutocompleteWrap"><div class="msAutocomplete"><div class="msAutocompleteInput">הקלד ישוב <br><input autocomplete="off" type="text" id="ms_City" value=""></div><ul id="msAutocompleteList_City" class="msAutocompleteList"></ul></div><div class="msAutocompleteSelected"><div class="title">ישובים שנבחרו:</div><ul class="msAutocompleteSelectedList" id="msAutocompleteSelectedList_City"><li id="msAutocompleteSelectedCity_1970"><span class="msAutocompleteSelectedRemove" onclick="Yad2.MultiSearch.Actions.Nadlan.RemoveCity(1970)"></span><span class="msAutocompleteSelectedTitle">רמת גן</span></li></ul></div></div></div></div><div class="multi-search-select" onclick="Yad2.MultiSearch.UI.Toggle('City', 'Yad2.MultiSearch.Actions.Nadlan.DisableCities();')"></div><div class="multi-search-actions"><table style="border-collapse: collapse;" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="multi-search-clearall" onclick="Yad2.MultiSearch.Actions.ClearAll('City');"><u>נקה הכל</u></div></td></tr></tbody></table></div></div></div></div>
+											</div>
+										</td>
+										
+										<td id="td_hood" valign="top" name="td_hood">
+											<div class="multi-search-wrapper">
+												שכונה<br>
+                                                <input data-name="שכונה" autocomplete="off" type="text" id="Neighborhood" name="Neighborhood" value="כפר אז&quot;ר" class="normal-search-element" style="width: 75px;"><div data-sautocomplete="true" class="sAutocomplete_wrap" id="Neighborhood_autocomplete" style="display: none;"><div class="sAutocomplete" id="Neighborhood_autocomplete_inner" style="width: 130px;"></div></div>
+											</div>
+										</td>
+										
+										<td align="right" id="td_homeType" name="td_homeType">
+											<div class="multi-search-wrapper">
+												סוג נכס<br>
+												<select name="HomeTypeID" id="HomeTypeID" dir="rtl" disabled="disabled" style="display: none;"><option value="">הכל</option><option value="1" &nbsp;="">דירה</option><option value="3" &nbsp;="">דירת גן</option><option value="5" &nbsp;="">פרטי/קוטג'</option><option value="6" &nbsp;="">גג/פנטהאוז</option><option value="4" &nbsp;="">סטודיו/לופט</option><option value="7" &nbsp;="">דופלקס</option><option value="39" &nbsp;="">דו משפחתי</option><option value="49" &nbsp;="">מרתף/פרטר</option><option value="51" &nbsp;="">טריפלקס</option><option value="11" &nbsp;="">יחידת דיור</option><option value="32" &nbsp;="">משק חקלאי/נחלה</option><option value="55" &nbsp;="">משק עזר</option><option value="61" &nbsp;="">דיור מוגן</option><option value="31" &nbsp;="">החלפת דירות</option><option value="44" &nbsp;="">בניין מגורים</option><option value="43" &nbsp;="">סאבלט</option><option value="33" &nbsp;="">מגרשים</option><option value="60" &nbsp;="">בית מלון</option><option value="45" &nbsp;="">מחסן</option><option value="50" &nbsp;="">קב' רכישה/ זכות לנכס</option><option value="30" &nbsp;="">חניה</option><option value="41" &nbsp;="">כללי</option></select><div class="multi-search-container" id="multi-search-HomeTypeID-wrap"><input type="hidden" name="arrHomeTypeID" id="arrHomeTypeID" value="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41"><div onclick="Yad2.MultiSearch.UI.Toggle('HomeTypeID')" id="multi-search-HomeTypeID-input" style="width: 142px; display: block;" class="multi-search-element">נבחרו (22) סוגי נכס</div><div id="multi-search-HomeTypeID-container" style="z-index: 900; display: none;"><div class="multi-search-tab" style="width: 147px;"><div class="leftcurv"></div></div><div id="multi-search-HomeTypeID-box" class="multi-search-box-flat"><div class="multi-search-close" onclick="Yad2.MultiSearch.UI.Toggle('HomeTypeID')"></div><div class="multi-search-title">בחר <span id="multi-search-HomeTypeID-title">סוגי נכס</span></div><div class="multi-search-inner-gray"><div id="multi-search-HomeTypeID-scrollable-content" class="multi-search-scrollable-content" style="width: auto; min-width: 192px"><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_1" value="1" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_1" for="chkHomeTypeID_1">דירה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_3" value="3" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_3" for="chkHomeTypeID_3">דירת גן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_5" value="5" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_5" for="chkHomeTypeID_5">פרטי/קוטג'</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_6" value="6" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_6" for="chkHomeTypeID_6">גג/פנטהאוז</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_4" value="4" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_4" for="chkHomeTypeID_4">סטודיו/לופט</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_7" value="7" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_7" for="chkHomeTypeID_7">דופלקס</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_39" value="39" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_39" for="chkHomeTypeID_39">דו משפחתי</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_49" value="49" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_49" for="chkHomeTypeID_49">מרתף/פרטר</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_51" value="51" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_51" for="chkHomeTypeID_51">טריפלקס</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_11" value="11" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_11" for="chkHomeTypeID_11">יחידת דיור</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_32" value="32" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_32" for="chkHomeTypeID_32">משק חקלאי/נחלה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_55" value="55" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_55" for="chkHomeTypeID_55">משק עזר</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_61" value="61" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_61" for="chkHomeTypeID_61">דיור מוגן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_31" value="31" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_31" for="chkHomeTypeID_31">החלפת דירות</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_44" value="44" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_44" for="chkHomeTypeID_44">בניין מגורים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_43" value="43" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_43" for="chkHomeTypeID_43">סאבלט</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_33" value="33" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_33" for="chkHomeTypeID_33">מגרשים</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_60" value="60" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_60" for="chkHomeTypeID_60">בית מלון</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_45" value="45" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_45" for="chkHomeTypeID_45">מחסן</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_50" value="50" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_50" for="chkHomeTypeID_50">קב' רכישה/ זכות לנכס</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_30" value="30" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_30" for="chkHomeTypeID_30">חניה</label></div><div style="margin-bottom: 3px;"><input style="vertical-align: middle;" onclick="return Yad2.MultiSearch.Actions.Select('HomeTypeID',this);" data-multi-search-name="HomeTypeID" type="checkbox" id="chkHomeTypeID_41" value="41" checked="checked"><label style="margin-right: 4px;" id="lblHomeTypeID_41" for="chkHomeTypeID_41">כללי</label></div></div></div><div class="multi-search-select" onclick="Yad2.MultiSearch.UI.Toggle('HomeTypeID')"></div><div class="multi-search-actions"><table style="border-collapse: collapse;" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="multi-search-clearall" onclick="Yad2.MultiSearch.Actions.ClearAll('HomeTypeID');"><u>נקה הכל</u></div></td><td><div class="multi-search-selectall" onclick="Yad2.MultiSearch.Actions.SelectAll('HomeTypeID');"><u>בחר הכל</u></div></td></tr></tbody></table></div></div></div></div>											</div>
+										</td>
+										
+										<td id="td_rooms" align="right" style="display:">
+											מחדרים<br>
+											<select name="fromRooms" id="fromRooms" dir="rtl" onchange="Yad2.Fields.changeInputOrders(this.id,'untilRooms');"><option value="">בחר</option><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4" selected="selected">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>										</td>
+										
+										<td id="td_until_rooms" align="right" style="display:">
+											עד חדרים<br>
+											<select name="untilRooms" id="untilRooms" dir="rtl" onchange="Yad2.Fields.changeInputOrders('fromRooms',this.id);"><option value="">בחר</option><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>										</td>
+										
+										<td style="width: 45px;">
+											ממחיר<br>
+											<input type="text" size="8" style="width: 36px;" name="fromPrice" id="fromPrice" value="1000" onchange="Yad2.Fields.changeInputOrders(this.id,'untilPrice');if (!(Yad2.Fields.checkNumbersOnly(this.value))) this.value='';" onkeypress="return Yad2.Fields.checkIsKeyNumber(event);">
+										</td>
+										
+										<td style="width: 43px;">
+											עד מחיר<br>
+											<input type="text" size="8" style="width: 36px;" name="untilPrice" id="untilPrice" value="9000" onchange="Yad2.Fields.changeInputOrders('fromPrice',this.id);if (!(Yad2.Fields.checkNumbersOnly(this.value))) this.value='';" onkeypress="return Yad2.Fields.checkIsKeyNumber(event);">
+										</td>
+										
+										<td style="width: 43px;">
+											מטבע<br>
+											<select name="PriceType" id="PriceType" dir="rtl" class="margintop_1px">
+												<option value="1" selected="selected">₪</option>
+												<option value="0">$</option>
+											</select>
+										</td>
+										<td align="right" valign="top">
+											מקומה<br>
+											<select name="FromFloor" id="FromFloor" dir="rtl" onchange="Yad2.Fields.changeInputOrders(this.id,'ToFloor');"><option value="">בחר</option><option value="">הכל</option><option value="-100">מרתף/פרטר</option><option value="-1">קרקע</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20+</option></select>										</td>
+										<td align="right" valign="top">
+											עד קומה<br>
+											<select name="ToFloor" id="ToFloor" dir="rtl" onchange="Yad2.Fields.changeInputOrders('FromFloor',this.id);"><option value="">בחר</option><option value="">הכל</option><option value="-100">מרתף/פרטר</option><option value="-1">קרקע</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20+</option></select>										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<table border="0" cellspacing="0" cellpadding="0" style="width:830px;border-collapse: collapse;">
+									<tbody><tr>
+										<td style="width: 100%;">
+											<span id="village" style="display:none;">
+												
+																								<input type="checkbox" style="position:relative;top:6px" name="villages" id="villages" value="1" disabled="">
+														<span>&nbsp;הצג רק מושבים וקיבוצים</span>
+											</span>
+											<table cellspacing="0" cellpadding="0" style="width: 100%;" id="table_advance_search">
+												
+													
+														<tbody><tr>
+															<td width="137">
+																<span id="multivillage" style="">
+																																<input type="checkbox" style="position:relative;top:6px" name="villages" id="multivillages" disabled="" value="1">
+																		<span>&nbsp;הצג רק מושבים וקיבוצים</span>
+																</span>
+															</td>
+															<td valign="top" width="65">
+																ממ"ר<br>
+																<input style="width: 55px;" type="text" size="4" name="fromSquareMeter" id="fromSquareMeter" value="" onchange="checkOrder(this.id,'untilSquareMeter',this.id,'text');" onkeypress="return checkIsNumber(event);">
+															</td>
+															
+															<td valign="top" width="65">
+																עד מ"ר<br>
+																<input style="width: 55px;" type="text" size="4" name="untilSquareMeter" id="untilSquareMeter" value="" onchange="checkOrder('fromSquareMeter',this.id,this.id,'text');" onkeypress="return checkIsNumber(event);">
+															</td>
+															
+															<td valign="bottom" width="96">
+															<div id="multiWrap" style="width: 93px;border-bottom: none;position:relative;z-index: 99;">
+															<span id="optionsTitle">אפשרויות נוספות<br></span>
+																<div id="optionsGroup" data-role="multi-group-btn" onclick="showOptions(this.id)" class="multi-search-element" style="width: 85px;margin:0 auto;z-index: 99;">לחץ לבחירה</div>
+																<div id="bottomLine" style="display:none;width: 100%;height: 5px;background: #ffffff;z-index: 66666666666666666666666;position: absolute;bottom: -5px;left: 0;"></div>
+															</div>
+															
+<div id="multi-optionsGroup" class="multi-search-box-flat" style="margin:0 !important; display:none;z-index: 99;" data-role="multi-group-part">
+    <div class="multi-search-close" onclick="hideOptions('optionsGroup')" data-role="multi-group-part">
+    </div>
+    <div class="multi-search-title" data-role="multi-group-part">אפשרויות
+        <span id="multi-search-sub-title" data-role="multi-group-part">נוספות</span>
+    </div>
+    <div class="multi-search-inner-gray" data-role="multi-group-part">
+        <div id="multi-search-options-scrollable-content" class="multi-search-scrollable-content" style="width: auto; min-width: 180px;" data-role="multi-group-part">
+            
+            
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Furniture" data-role="multi-group-part" type="checkbox" name="Furniture" value="1" style="position:relative; top:6px;">
+                            <label for="Furniture" data-role="multi-group-part" style="cursor:pointer;">ריהוט</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Parking" data-role="multi-group-part" type="checkbox" name="Parking" value="1" style="position:relative; top:6px;">
+                            <label for="Parking" data-role="multi-group-part" style="cursor:pointer;">חניה</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Elevator" data-role="multi-group-part" type="checkbox" name="Elevator" value="1" style="position:relative; top:6px;">
+                            <label for="Elevator" data-role="multi-group-part" style="cursor:pointer;">מעלית</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Grating" data-role="multi-group-part" type="checkbox" name="Grating" value="1" style="position:relative; top:6px;">
+                            <label for="Grating" data-role="multi-group-part" style="cursor:pointer;">סורגים</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="AirConditioner" data-role="multi-group-part" type="checkbox" name="AirConditioner" value="1" style="position:relative; top:6px;">
+                            <label for="AirConditioner" data-role="multi-group-part" style="cursor:pointer;">מיזוג</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="mamad" data-role="multi-group-part" type="checkbox" name="mamad" value="1" style="position:relative; top:6px;">
+                            <label for="mamad" data-role="multi-group-part" style="cursor:pointer;">ממ"ד</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="patio" data-role="multi-group-part" type="checkbox" name="patio" value="1" style="position:relative; top:6px;">
+                            <label for="patio" data-role="multi-group-part" style="cursor:pointer;">מרפסת</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="sunpatio" data-role="multi-group-part" type="checkbox" name="sunpatio" value="1" style="position:relative; top:6px;">
+                            <label for="sunpatio" data-role="multi-group-part" style="cursor:pointer;">מרפסת שמש</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Meshupatz" data-role="multi-group-part" type="checkbox" name="Meshupatz" value="1" style="position:relative; top:6px;">
+                            <label for="Meshupatz" data-role="multi-group-part" style="cursor:pointer;">משופצת</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="storeroom" data-role="multi-group-part" type="checkbox" name="storeroom" value="1" style="position:relative; top:6px;">
+                            <label for="storeroom" data-role="multi-group-part" style="cursor:pointer;">מחסן</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="handicapped" data-role="multi-group-part" type="checkbox" name="handicapped" value="1" style="position:relative; top:6px;">
+                            <label for="handicapped" data-role="multi-group-part" style="cursor:pointer;">גישה לנכים</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="PetsInHouse" data-role="multi-group-part" type="checkbox" name="PetsInHouse" value="1" style="position:relative; top:6px;">
+                            <label for="PetsInHouse" data-role="multi-group-part" style="cursor:pointer;">חיות</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="Partner" data-role="multi-group-part" type="checkbox" name="Partner" value="1" style="position:relative; top:6px;">
+                            <label for="Partner" data-role="multi-group-part" style="cursor:pointer;">מ.שותפים</label>
+                        </div>       
+
+                
+                        <div style="margin-bottom: 3px;" class="option" data-role="multi-group-part">
+                            <input id="LongTerm" data-role="multi-group-part" type="checkbox" name="LongTerm" value="1" style="position:relative; top:6px;">
+                            <label for="LongTerm" data-role="multi-group-part" style="cursor:pointer;">השכרה לטווח ארוך</label>
+                        </div>       
+
+                        </div>
+    </div>
+    <div style="position:relative;top: 25px;" data-role="multi-group-part">
+    <div class="multi-search-clearall" onclick="Yad2.MultiSearch.Actions.ClearAll('options');" data-role="multi-group-part"><u data-role="multi-group-part">נקה הכל</u></div>
+    <div class="multi-search-selectall" onclick="Yad2.MultiSearch.Actions.SelectAll('options');" data-role="multi-group-part"><u data-role="multi-group-part">בחר הכל</u></div>
+    <div class="multi-search-select" style="display:inline-block; top:-5px;" onclick="hideOptions('optionsGroup')" data-role="multi-group-part"></div>
+    </div>
+</div>
+															</td>
+															
+															<td width="70" align="center" valign="top">
+																כניסה מיידית<br>
+																<input type="checkbox" name="Immediate" id="Immediate" onclick="Hide_show_EnterDate();" value="1">
+															</td>
+															<td align="right" valign="top" id="td_EnterDate" name="td_EnterDate" width="80">
+																כניסה מתאריך<br>
+																<input type="text" name="EnterDate" id="EnterDate" style="width:70px" value="" onclick="if(this.value==''){this.value='30-09-2018'}">
+															</td>
+															
+														</tr>								
+												
+											</tbody></table>
+										</td>
+										<td align="right" valign="top" id="td_freetext">
+											טקסט חופשי: <br>
+											<input type="text" style="width: 281px;" name="Info" id="Info" size="30" value="">
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						
+					</tbody></table>
+				</td>
+				
+				<td valign="bottom" width="125">
+					<div id="SearchButton" class="showPopupUnder">
+                        <input type="button" class="submit" onclick="submitSearch(this);" value="">
+					</div>
+				</td>
+			</tr>
+			
+			<tr id="tr_sharing">
+				<td valign="bottom">
+					<table cellspacing="0" cellpadding="0" border="0" style="margin-top: 7px; border-collapse: collapse;" table-layout="fixed">
+						<tbody><tr>
+							<td style="padding-left: 10px;">
+								<table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+									<tbody><tr>
+										<td style="padding-left: 0px; padding-right: 0px;">
+											<input onclick="if (this.checked) { stat( '../', 3441, '', '' ); };submitSearch(this,'rent.php');" style="padding-left: 0; padding-right: 0;margin-left: 3px;" type="checkbox" id="PriceOnly" name="PriceOnly" value="1">
+										</td>
+										<td>
+								 			<label for="PriceOnly">הצג מודעות עם מחיר בלבד</label>
+								 		</td>
+								 	</tr>
+								 </tbody></table>
+							</td>
+														<td style="padding-left: 10px;">
+								<table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+									<tbody><tr>
+										<td style="padding-left: 0px; padding-right: 0px;">
+											<input onclick="if (this.checked) { stat( '../', 3442, '', '' ); };submitSearch(this,'rent.php');" style="padding-left: 0; padding-right: 0;margin-left: 3px" type="checkbox" id="ImgOnly" name="ImgOnly" value="1">
+										</td>
+										<td>
+								 			<label for="ImgOnly">הצג מודעות עם תמונות בלבד</label>
+								 		</td>
+								 	</tr>
+								 </tbody></table>
+							</td>
+							<td style="padding-left: 10px; vertical-align: middle;">
+								<table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+									<tbody><tr>
+										<td>
+                                            <input style="vertical-align: middle;margin-left: 3px" type="checkbox" id="GalleryView" name="GalleryView" value="1" onclick="if (this.checked) { stat( '../', 3443, '', '' ); };submitSearch(this,'rentGallery.php');">
+										</td>
+										<td>
+								 			<label for="GalleryView">הצג כגלרית תמונות</label>
+								 		</td>
+								 	</tr>
+								 </tbody></table>
+							</td>
+							<td>
+							<input style="margin-top:2px;margin-left: 3px" type="checkbox" id="PandorDoors" name="PandorDoors" onclick="if (this.checked) { stat( '../', 3594, '', '' ); };" value="1">
+								<!-- &nbsp;<img style="padding-bottom: 3px;" src="http://images.yad2.co.il/Pic/pandor/DlatotPandor.png" alt="דלתות פנדור"> -->
+							</td>
+							<td>
+								<label for="PandorDoors">דלתות פנדור</label>
+							</td>
+								<td style="padding-right: 10px; vertical-align: middle;">
+																	<table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;">
+																		<tbody><tr>
+																			<td valign="bottom">
+																				<input style="margin-top:2px;margin-left: 3px" type="checkbox" id="asset_exclusive" name="asset_exclusive" value="1">
+																					</td>
+																			<td>
+																				<label for="asset_exclusive">בבלעדיות</label>
+																			</td>
+																		</tr>
+																	</tbody></table>
+																</td>							<td style="width:50px;">&nbsp;</td>
+														<td style="padding-left: 10px; vertical-align: middle;">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+				<tbody><tr>
+					<td align="left" style="font-weight:bold;">שתף חיפוש ב:&nbsp;&nbsp;</td>					<td><a class="facebook Sagi" style="cursor:pointer" onclick="stat( '../', '110', '', '' );window.open('https://www.facebook.com/sharer.php?u=http://www.yad2.co.il/Nadlan/rent.php%3Ft%3D1538272585%26multiSearch%3D1%26arrArea%3D%26arrCity%3D1970%26Neighborhood%3D%25EB%25F4%25F8+%25E0%25E6%2522%25F8%26arrHomeTypeID%3D1%252C3%252C5%252C6%252C4%252C7%252C39%252C49%252C51%252C11%252C32%252C55%252C61%252C31%252C44%252C43%252C33%252C60%252C45%252C50%252C30%252C41%26fromRooms%3D4%26untilRooms%3D%26fromPrice%3D1000%26untilPrice%3D9000%26PriceType%3D1%26FromFloor%3D%26ToFloor%3D%26fromSquareMeter%3D%26untilSquareMeter%3D%26EnterDate%3D%26Info%3D%26utm_source%3Dfacebookshar%26utm_medium%3Dfbsearch%26utm_content%3DNadlan','','resizable=1,width=600px,height=400px');" target="_blank"><img src="http://images.yad2.co.il/Pic/yad2new/page/icon_facebook.png" border="0" width="17" height="20"></a>                                        </td>
+					<td>&nbsp;</td>					                    
+                    <td><a class="twitter" href="http://twitter.com/share?original_referer=www.yad2.co.il&amp;url=http%3A%2F%2Fwww.yad2.co.il%2FNadlan%2Frent.php%3FmultiSearch%3D1%26arrArea%3D%26arrCity%3D1970%26Neighborhood%3D%25EB%25F4%25F8+%25E0%25E6%2522%25F8%26arrHomeTypeID%3D1%252C3%252C5%252C6%252C4%252C7%252C39%252C49%252C51%252C11%252C32%252C55%252C61%252C31%252C44%252C43%252C33%252C60%252C45%252C50%252C30%252C41%26fromRooms%3D4%26untilRooms%3D%26fromPrice%3D1000%26untilPrice%3D9000%26PriceType%3D1%26FromFloor%3D%26ToFloor%3D%26fromSquareMeter%3D%26untilSquareMeter%3D%26EnterDate%3D%26Info%3D%26ref%3Dtwit%26utm_source%3Dfacebookshar%26utm_medium%3Dfbfeed%26utm_content%3D" onclick="stat( '../', '111', '', '' );" target="_blank"><img src="http://images.yad2.co.il/Pic/yad2new/page/icon_twitter.png" border="0" width="17" height="20"></a></td>
+					<td>&nbsp;&nbsp;</td>					<td>
+										</td>
+
+                   <!-- <td><g:plusone href="http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=%EB%F4%F8 %E0%E6%22%F8&arrHomeTypeID=1%2C3%2C5%2C6%2C4%2C7%2C39%2C49%2C51%2C11%2C32%2C55%2C61%2C31%2C44%2C43%2C33%2C60%2C45%2C50%2C30%2C41&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=" count="false" annotation="none" size="small"></g:plusone></td> -->
+				</tr>
+			</tbody></table>			
+										</td>
+						</tr>
+					</tbody></table>
+				</td>
+				
+				<td valign="bottom">
+					<img style="margin-left: 2px;" id="lastsearch_button" width="122" height="23" class="last_search" onclick="toggle_lastsearch();" src="http://images.yad2.co.il/Pic/yad2new//page/lastsearch_button_open.jpg" alt="חיפושים אחרונים">
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+</form>
+
+<div id="search_block_bottom" style="display: none;"></div>
+
+<script type="text/javascript">
+	advance_search(1, false);
+	Yad2.Search.Nadlan.Rent.SwitchAdvance(true);
+	Yad2.MultiSearch.Construct.Nadlan.Rent();
+	document.getElementById('isMultiSearch').disabled = false;
+</script>
+
+<script type="text/javascript">
+        Yad2.Fields.Autocomplete.City("City", null, function() {
+        Yad2.Search.Nadlan.ToggleNeighborhood('City','Neighborhood');
+    });
+    Yad2.Fields.Autocomplete.Neighborhood("Neighborhood");
+</script>
+
+
+<script type="text/javascript">
+	$(document).ready(function($)
+	{
+		ScrollInit(1);
+	});
+</script>
+
+<div id="lastsearch_block">
+	
+<div class="lastsearch_block" style="position:relative;" id="lastsearch">
+	<!-- Results -->
+	<div id="lastsearch_scroller" style="float: right; width: 741px; height: 68px; margin-right: 185px; margin-top: 10px; overflow: hidden;">
+		<div style="height: 240px; width: 100%;">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; font-size: 12px; font-family: arial; font-weight: normal; color: #1F1F1F;">
+																	<tbody><tr class="showPopupUnder" style="height: 24px; background: #fff;">
+											<td width="17" style="padding-right: 3px; padding-left: 3px;">1.</td>
+											<td width="635" align="right">
+												<a title="" href="/Nadlan/rent.php?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=%EB%F4%F8 %E0%E6%22%F8&amp;arrHomeTypeID=1%2C3%2C5%2C6%2C4%2C7%2C39%2C49%2C51%2C11%2C32%2C55%2C61%2C31%2C44%2C43%2C33%2C60%2C45%2C50%2C30%2C41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSqua" onclick="stat( '../', 213, '', '' );" style="color: #1F1F1F; text-decoration: none;" onmouseover="showMySearchTip(this,1)" onmouseout="hideMySearchTip(this,1)">ישוב:1:רמת גן  | כפר אז"ר  | סוגי נכס:22:דירה,דירת גן,סטודיו/לופט,פרטי...</a>
+											</td>
+
+                                            
+                                            <td></td><td></td>
+
+															                                                                        <td align="left" style="padding-left: 10px;width:125px"></td><td></td>
+                                        
+
+
+                                            
+
+
+											<td align="left" style="padding-left: 10px;">
+												<a class="search_link showPopupUnder" title="" href="/Nadlan/rent.php?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=%EB%F4%F8 %E0%E6%22%F8&amp;arrHomeTypeID=1%2C3%2C5%2C6%2C4%2C7%2C39%2C49%2C51%2C11%2C32%2C55%2C61%2C31%2C44%2C43%2C33%2C60%2C45%2C50%2C30%2C41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSqua" onclick="stat( '../', 213, '', '' );">חפש</a>
+											</td>
+										</tr>
+																			
+									
+									
+										<tr style="height: 24px; background: #F7F7F7;">
+											<td width="17" style="padding-right: 3px; padding-left: 3px;">2.</td>
+											<td width="635">לא בוצע חיפוש</td>	
+																							
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>	
+																					
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+									
+																			
+									
+									
+										<tr style="height: 24px; background: #fff;">
+											<td width="17" style="padding-right: 3px; padding-left: 3px;">3.</td>
+											<td width="635">לא בוצע חיפוש</td>	
+																							
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>	
+																					
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+									
+																</tbody></table>
+		</div>
+	</div>
+	<!-- End Results -->
+	
+		<div class="close_lastsearch">
+		<a href="javascript:toggle_lastsearch();">X סגור</a>
+	</div>
+	
+				<div id="mytooltip1" class="mytooltip pie" onmouseout="$('.mytooltip').hide()">
+			0<br>			</div>
+		</div>
+
+</div><!-- Begin banners -->
+			<table dir="ltr" class="search_banners" style="border: 0px solid black; border-collapse: collapse; margin-top: 5px; height:64px;" cellspacing="0" cellpadding="0" width="980" align="center">
+				<tbody><tr>
+					<td class="nopad"><script type="text/javascript"> try {window.Fusion.space('top_button_1');} catch(e) {} </script><div id="top_button_1___ID___1" class="Desktop_Top_Button_1" data-google-query-id="CLzY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_1_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_1_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_2');} catch(e) {} </script><div id="top_button_2___ID___1" class="Desktop_Top_Button_2" data-google-query-id="CL3Y_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_2_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_2_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_3');} catch(e) {} </script><div id="top_button_3___ID___1" class="Desktop_Top_Button_3" data-google-query-id="CL7Y_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_3_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_3_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_3_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_4');} catch(e) {} </script><div id="top_button_4___ID___1" class="Desktop_Top_Button_4" data-google-query-id="CL_Y_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_4_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_4_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_4_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_5');} catch(e) {} </script><div id="top_button_5___ID___1" class="Desktop_Top_Button_5" data-google-query-id="CMDY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_5_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_5_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_5_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_6');} catch(e) {} </script><div id="top_button_6___ID___1" class="Desktop_Top_Button_6" data-google-query-id="CMHY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_6_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_6_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_6_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_7');} catch(e) {} </script><div id="top_button_7___ID___1" class="Desktop_Top_Button_7" data-google-query-id="CMLY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_7_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_7_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_7_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td><td><script type="text/javascript"> try {window.Fusion.space('top_button_8');} catch(e) {} </script><div id="top_button_8___ID___1" class="Desktop_Top_Button_8" data-google-query-id="CMPY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_8_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_8_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Top_Button_8_0" width="114" height="62" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div></td>				</tr>
+			</tbody></table>
+    
+        <a name="מודעות מלוח דירות להשכרה"></a>
+        
+        <!-- Begin breadcrumb -->
+        <ul id="breadcrumb">
+            <li><a href="http://www.yad2.co.il">ראשי</a></li>
+<li class="sep">&gt;</li>
+<li><a href="http://www.yad2.co.il/Nadlan/rent.php">לוח דירות להשכרה</a></li>
+<li class="sep">&gt;</li>
+<li>דירות 4 חדרים</li>
+<li class="sep">&gt;</li>
+            <li class="ads">נמצאו 
+                0             מודעות</li>
+        </ul>
+        
+        <div class="clear"></div>
+        
+        <!-- Begin main frame -->
+        <div id="mainFrame">
+            
+            <!-- Begin right column -->
+            <div class="right_column">
+                
+                <div id="Hotpics">
+<table width="780" height="251" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+<tbody><tr>
+<td valign="middle" align="right">
+<div class="hotpic_block_new">
+<div class="hotpic_block_title"><h2 class="hotpic_block_title">חם בלוח – מודעות נדל"ן השכרה אחרונות</h2></div>
+<table class="hotpic" style="border-collapse: collapse; margin-top: 8px;" width="446" border="0" cellpadding="0" cellspacing="0" dir="rtl">
+<tbody><tr>
+<td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','65ceae7080d7a4e2f650de28ca4758f2ed8','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_1_729464_20180930020900-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','65ceae7080d7a4e2f650de28ca4758f2ed8','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            דירה 4 חדרים - באר שבע...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td><td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','1e626aef5790f0c6df0a1be47ef8da23853','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_1_735559_20180930020907-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','1e626aef5790f0c6df0a1be47ef8da23853','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            דירה 3.5 חדרים - אשדוד...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td><td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','4e80508ff65d9dfaae7a55fa724fa4b59e5','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_2_725268_20180930010942-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','4e80508ff65d9dfaae7a55fa724fa4b59e5','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            דירה 3.5 חדרים - קרית ...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td></tr><tr><td colspan="3"><img src="http://images.yad2.co.il/Pic/site_images/yad2/imageInsidePage/spacer.gif" width="1" height="1" border="0" alt=""></td></tr><tr><td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','23309931552d1da6438c737da7f8db66fbe','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_1_727524_20180930010930-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','23309931552d1da6438c737da7f8db66fbe','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            יחידת דיור 3 חדרים - ב...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td><td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','167695de16cf112d0a7ed978137ebf4754f','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_1_726636_20180930000920-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','167695de16cf112d0a7ed978137ebf4754f','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            דירה 4 חדרים - הרי יהו...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td><td width="33%" align="center" valign="top" style="padding-top: 2px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" style="cursor: pointer;border-collapse: collapse;">
+                                                <tbody><tr>
+                                                    <td height="80" align="center" valign="middle">
+                                                        <div style="width: 90px; height: auto !important; min-height: 80px; border: 1px solid #6C7886;">
+                                                            <table height="80" width="90" style="border-collapse: collapse;" cellspacing="0" cellpadding="0">
+                                                                <tbody><tr>
+                                                                    <td height="80" width="90" valign="middle" align="center">
+                                                                        <a style="display: inline-block; cursor: pointer;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','17eabf103dd8e74f40354be135f516354cb','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                                            <img src="http://images.yad2.co.il/Pic/201809/30/2_2/s/o2_2_1_718947_20180930000900-s.jpg" border="0" style="border: solid 0px #5B6C73">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody></table>
+                                                        </div>      
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a style="cursor: pointer; color: #424242;" onclick="window.parent.openHotPic('','2','2','/Nadlan/hotPicrent.php','17eabf103dd8e74f40354be135f516354cb','7ca6fc1b204be51fb30a1ec7e428161a','',null,'825');">
+                                                            יחידת דיור 3 חדרים - פ...
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td></tr>
+</tbody></table>
+</div>
+</td>
+<td valign="middle" align="left">
+    <div id="tv"><script type="text/javascript"> window.Fusion.space("tv"); window.Fusion.space("tv_t"); </script><div id="tv___ID___1" class="Desktop_TV" data-google-query-id="CLXY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_TV_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_TV_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_TV_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div></div>
+</td>
+</tr>
+</tbody></table>
+</div>    <script type="text/javascript">
+        function countClicks(orderId2,AreaID,infoTrId,BannerID){
+            var elm = $("#"+infoTrId);
+
+            if( elm.length > 0 && !elm.data('platinumCounted') ){
+                if(BannerID!=null && !isNaN(BannerID)){
+                    stat( '../',BannerID, '', '' );
+                }
+                $.ajax({
+                    type:'POST',
+                    url: '../ClicksCounter.php',
+                    data: 'AreaID='+AreaID+'&OrderID2='+orderId2,
+                    success: function() {
+                        elm.data("platinumCounted", true);
+                    }
+                });
+            }
+
+        }
+    </script>
+                
+                <div id="my_table" style="display: none;"></div>
+                <div id="main_table">
+<!-- Begin div wrapper -->
+<div style="margin-right: auto; margin-left: auto; width: 780px;" id="all_results_table">
+
+    
+    <div class="show_results_from">
+                <div style="clear: both; height: 20px;"></div> <!-- Spacer -->
+            </div>
+    
+    
+    <div class="clear"></div>
+    
+    <div class="mainTable_top">
+        <div class="mainTable_top_right">
+            <table width="100%" style="border-collapse: collapse;">
+                <tbody><tr>
+                    <!--<td valign="middle" align="right">
+                        <a style="display: none;" id="print_2_2_fav_ads" href="javascript:void(0);" onclick="printAds('','2','2');"><img style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/yad2new/page/print_marked_button.jpg" alt="הדפס מסומנות" /></a>
+                        <a style="display: none;" id="remove_2_2_fav_ads" href="javascript:void(0);" onclick="delete_all_favorites('../','2','2');"><img style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/yad2new/page/remove_marked_button.jpg" alt="נקה מודעות מסומנות" /></a>
+                    </td>-->
+                    
+<script>
+
+    function hover_img1(img){
+//    debugger;
+        $img = $(img);
+
+        if($img.is('[print_orginal]')){
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/hover_print.png');
+        }else if($img.is('[remove_original]')){
+
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/Hover_garbager.png');
+        }else if($img.is('[sendFavourite_original]')){//normal_envelope
+
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/hover_envelope.png')
+        }
+    }
+
+    function out_img1(img){
+        $img = $(img);
+//        debugger;
+        if($img.is('[print_orginal]')){
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/normal_print.png');
+        }else if($img.is('[remove_original]')){
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/normal_garbage.png');
+        }else if($img.is('[sendFavourite_original]')){//normal_envelope
+            $img.attr('src','http://images.yad2.co.il/Pic/icones_fav/normal_envelope.png')
+        }
+    }
+
+</script>
+
+    <td valign="middle" align="right">
+        <a style="display: none;text-decoration: none" id="print_2_2_fav_ads" class="print_btn " href="javascript:void(0);" onclick="printAds('','2','2');">
+            <img print_orginal="" onmouseover="hover_img1(this);" onmouseout="out_img1(this);" style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/icones_fav/normal_print.png" title="הדפס מסומנות" alt="הדפס מסומנות">
+        </a>
+        <a style="display: none;text-decoration: none" id="remove_2_2_fav_ads" class="remove_btn " href="javascript:void(0);" onclick="delete_both_favorites('../','2','2','2');">
+            <img remove_original="" onmouseover="hover_img1(this);" onmouseout="out_img1(this);" style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/icones_fav/normal_garbage.png" alt="נקה מודעות מסומנות" title="נקה מודעות מסומנות">
+        </a>
+        <a style="display: none;text-decoration: none" id="sendToMail_2_2_fav_ads" class="sendFavourite_btn" href="javascript:void(0);" onclick="toggleSendFavoritesToMail('/','2','2');">
+            <img sendfavourite_original="" onmouseover="hover_img1(this);" onmouseout="out_img1(this);" style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/icones_fav/normal_envelope.png" title="שלח מסומנות למייל" alt="שלח מסומנות למייל">
+        </a>
+    </td>
+                    <td valign="middle" align="left">
+                        <table cellpadding="7" cellspacing="0" style="border-collapse: collapse;">
+                            <tbody><tr>
+                                <td>
+                                    <a onmousedown="stat('/',3445);" style="color: #707D89; font-size: 11px; text-decoration: none;" href="rent.php?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז\" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&quot;">
+                                        <img style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/yad2new/page/btnTable_selected_19x19.jpg" alt="תצוגת טבלה">
+                                        תצוגת טבל
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a onmousedown="stat('/',3444);" style="color: #707D89; font-size: 11px; text-decoration: none;" href="rentGallery.php?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז\" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&quot;">
+                                        <img style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/yad2new/page/btnGallery_19x19.jpg" alt="תצוגת גלריה">
+                                        תצוגת גלרי
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a onmousedown="stat('/',3373);" style="color: #707D89; font-size: 11px; text-decoration: none;" href="rentMap.php?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז\" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&quot;">
+                                        <img style="vertical-align: middle;" src="http://images.yad2.co.il/Pic/yad2new/page/btnMap_19x19.jpg" alt="תצוגה על גבי מפה">
+                                        תצוגה על גבי מפ
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        <div class="mainTable_top_left">
+            <div style="float: right;">
+                <a class="my_favorites_button" href="javascript:void(0);" onclick="load_my_favorites('../','2','2','1');"><span>המודעות המסומנות שלי</span></a>
+            </div>
+            <div style="float: left;">
+                <a class="all_results_button all_results_button_selected" href="javascript:void(0);"><span>כל התוצאות</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_table_wrap">
+
+        <table class="main_table" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+            <tbody><tr>
+                                <th style="width: 24px;" align="center">
+                <img src="http://images.yad2.co.il/Pic/yad2new/page/star_icon.png" alt="">                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 24px;" align="center">
+                <img src="http://images.yad2.co.il/Pic/yad2new/page/notes_icon.png" alt="">                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 60px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=type&quot;">סוג הנכס</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 95px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=area&quot;">אזור בארץ</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 115px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=address&quot;">כתובת</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 55px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=price&quot;">שכירות</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 23px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=rooms&quot;">חד'</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 48px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=enter&quot;">כניסה</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 32px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=floor&quot;">קומה</a>                </th>                   
+                <th width="2"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 37px;" align="">
+                <a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=pic&quot;">תמונה</a>                </th>                   
+                <th width="30"><img src="http://images.yad2.co.il/Pic/yad2new/page/main_table_th_sep.jpg" width="2" alt=""></th>                <th style="width: 75px;" align="">
+                <table class="TabOrder"><tbody><tr><td class="right"></td><td class="center"><a href="?multiSearch=1&amp;arrArea=&amp;arrCity=1970&amp;Neighborhood=כפר אז" ר&arrhometypeid="1,3,5,6,4,7,39,49,51,11,32,55,61,31,44,43,33,60,45,50,30,41&amp;fromRooms=4&amp;untilRooms=&amp;fromPrice=1000&amp;untilPrice=9000&amp;PriceType=1&amp;FromFloor=&amp;ToFloor=&amp;fromSquareMeter=&amp;untilSquareMeter=&amp;EnterDate=&amp;Info=&amp;AreaID=&amp;City=&amp;HomeTypeID=&amp;Order=date&quot;">תאריך</a></td><td class="left"></td></tr></tbody></table>                </th>                   
+                                <th style="width: 48px;" align="">
+                                </th>                   
+                            </tr>
+
+                            <tr class="normal">
+                    <td colspan="22" width="774" valign="top" align="center" style="vertical-align: middle; height: 200px; background: #F1F1F1;">
+                        <div class="no_ads_title">
+                                                            לא נמצאו מודעות התואמות את החיפוש
+                                                        </div>
+                    </td>
+                </tr>
+                    </tbody></table>
+
+        <div class="clear"></div>
+    </div> <!-- End main table wrap -->
+
+            <div class="mainTable_paging pie" style="height: 35px;">
+        </div>
+       
+</div> <!-- End div wrapper --></div>
+                
+                                
+                <div id="tiv_my_table" style="display: none;"></div>
+                <div id="tiv_main_table">
+                                    </div>
+
+            </div> <!-- End right column -->
+                    
+            <!-- Begin left column -->
+            <div class="left_column">
+            
+                
+<!-- Begin block_ad_options -->
+<div class="block_ad_options">
+    
+    
+    <div class="add_ad"><a href="https://my.yad2.co.il/newOrder/index.php" rel="nofollow"><img width="182" height="37" src="http://images.yad2.co.il/Pic/yad2new/index/add_ad_new.jpg" alt="פרסם מודעה"></a></div>
+
+    <div class="delete_ad"><a href="https://my.yad2.co.il/newOrder/index.php?action=personalAreaIndex" rel="nofollow"><img width="90" height="31" src="http://images.yad2.co.il/Pic/yad2new/index/delete_ad.jpg" alt="מחיקת מודעה"></a></div>
+
+    <div class="edit_ad"><a href="https://my.yad2.co.il/newOrder/index.php?action=personalAreaIndex" rel="nofollow"><img width="91" height="31" src="http://images.yad2.co.il/Pic/yad2new/index/edit_ad.jpg" alt="עריכת מודעה"></a></div>
+
+
+    <div class="clear"></div>
+</div> <!-- End block_ad_options -->
+
+<div class="clear"></div>
+
+<div id="top_login_block" style="padding: 0 ;">    <!--	----------------------  ADD BY ILAN L      08122014      ------------------------>
+    <style>
+        .Addclass0pxMarginLeft{
+            margin-left:0px;
+            margin-bottom:0px !important;
+        }
+    </style>
+    <script type="text/javascript" src="http://www.yad2.co.il/js-new/yad2common.js"></script>
+    <script type="text/javascript" src="http://www.yad2.co.il/js-new/yad2.login.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+        $( "#forgetEmail" ).focus(function() {
+            jQuery("#forgetEmail").css("direction","ltr");
+        });
+        function CheckForgotPasswordMail(f) {
+        }
+
+        function CheckEmail123(src) {
+            if( src.length>0 ){
+                var emailReg = "^[\\w-_\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]$";
+                var regex = new RegExp(emailReg);
+                return regex.test(src);
+            }else{
+                return false;
+            }
+        }
+
+        function CheckForgotPasswordForm123(mail){
+            if( mail.length=0){
+                alert('הזן דוא"ל בבקשה.');
+                jQuery("#forgetEmail").focus();
+                return false;
+            }else if(!CheckEmail123(mail)){
+                alert('הזן דוא"ל חוקי בבקשה.');
+                jQuery("#forgetEmail").focus();
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        jQuery("#forgotPasswordForm").on("submit", function(event) {
+            event.preventDefault();
+
+            var mail = $('#forgetEmail').val();
+
+            loginJS.forgetPassword(true,"//"+window.location.hostname+"/newOrder/index.php?action=forgetPassword",false,function(){
+
+
+            });
+
+        });
+
+
+            function numberOnly(str) {
+
+                var pattern = /^\d+$/;
+                var inputCaptchaVal =str.value;
+                 var $testResult = pattern.test(inputCaptchaVal);
+                    if ((!$testResult)&&(inputCaptchaVal.length>0)){
+                        alert("אנא הקפד להזין ספרות בלבד");
+                        str.value = "";
+                        jQuery('#pw_inputCaptcha').attr("placeholder", 'הקלד ספרות').blur();
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+
+        function cleanPlaceHolder(str){
+            str.value = "";
+        }
+
+    </script>
+    <!--	----------------------  ADD BY ILAN L      08122014      ------------------------>
+    <form name="LoginForm" action="https://my.yad2.co.il/login.php" onsubmit="return CheckLoginForm(this);" method="post">
+        <!--<form name="LoginForm" action="--><!--" onsubmit="return CheckLoginForm(this);" method="post">-->
+        <!-- Begin login block -->
+        <div class="login_block">
+
+            <table class="login">
+                <tbody><tr>
+                    <td>
+                                                    <input type="text" name="Username" id="login_email" value="כתובת דוא''ל" onfocus="input_default('login_email', 'כתובת דוא\'\'ל');" onblur="input_default('login_email', 'כתובת דוא\'\'ל');">
+                                            </td>
+                </tr>
+                <tr id="mockpass">
+                    <td>
+                        <input type="text" value="סיסמה" onfocus="document.getElementById('mockpass').style.display='none'; document.getElementById('realpass').style.display=''; document.getElementById('Irealpass').focus();">
+                    </td>
+                </tr>
+                <tr id="realpass" style="display: none;">
+                    <td>
+                        <input type="password" name="Password" id="Irealpass" onblur="if(this.value=='') {document.getElementById('mockpass').style.display=''; document.getElementById('realpass').style.display='none';}">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left"><input type="submit" name="login" value="" class="login"></td>
+                </tr>
+            </tbody></table>
+
+        </div> <!-- End login block -->
+    </form>
+
+    <!-- Begin register & forgot password block -->
+    <div class="user_options" style="height: 35px">
+        <div class="user_register">
+            <img width="74" height="35" onclick="parent.location.href='https://my.yad2.co.il/registration.php';" style="cursor: pointer;" id="register_button" src="http://images.yad2.co.il/Pic/yad2new/index/register.jpg" alt="הרשמה">
+        </div>
+
+        <div class="user_forgot_password">
+            <img width="107" height="35" onclick="javascript:forgot_password();" style="cursor: pointer;" id="forgot_password_button" src="http://images.yad2.co.il/Pic/yad2new/index/forgot_password.jpg" alt="שכחתי סיסמא">
+        </div>
+
+    </div>
+    <div class="clear"></div>
+
+    <div class="forgot_password_block" id="forgot_password" style="display: none;height:142px;float: left;margin-top: 0px;margin-bottom:10px; background-image:url('http://images.yad2.co.il/Pic/yad2new/index/forgot_password_block2.png');">
+        <form name="forgotPasswordForm" id="forgotPasswordForm" method="post" onsubmit="return false;">
+
+
+            <table class="forgot_password">
+
+                <tbody><tr class="hideOnMailSuccess">
+                    <td class="padding">
+                        הזן את כתובת הדוא”ל שלך ואנו<br>
+                        נשלח לך את הסיסמא
+                    </td>
+                </tr>
+                <tr class="hideOnMailSuccess">
+                    <td><input type="text" name="SendMail" id="forgetEmail" value="הזן דוא''ל" onfocus="input_default('forgetEmail', 'הזן דוא\'\'ל');" onblur="input_default('forgetEmail', 'הזן דוא\'\'ל');"></td>
+
+                </tr>
+
+           <style>.insertCaptchaForgotPWRow{display:table-row}</style>                <tr class="insertCaptchaForgotPWRow" style="margin-top:5px;margin-bottom: 2px"> <td><span>הקלד את הקוד המוצג</span></td></tr>
+                <tr class="insertCaptchaForgotPWRow">
+
+                    <td><img id="ForgotPWcaptcha" alt="הקלד קוד" width="72" height="29" src="//www.yad2.co.il/mailsecure.php?t=1538272597" style="width:75px;height: 23px;">
+
+                        <input type="text" name="pw_inputCaptcha" id="pw_inputCaptcha" placeholder="הקלד קוד" style="width:80px;height: 21px;float: left">
+                    </td>
+                </tr>
+
+
+                <tr class="hideOnMailSuccess">
+                    <td align="left">
+                        <input id="forgot" style="cursor: pointer" type="submit" name="forgot" value="" class="forgot_button">
+
+
+
+
+                    </td>
+                </tr>
+                <tr><td><div id="mailResponse" style="padding-top: 54px;font-size: 16px;font-weight: bold;text-align: center;display: none"></div></td></tr>
+
+
+
+
+
+            </tbody></table>
+        </form>
+        <div class="clear"></div>
+    </div> <!-- End register & forgot password block -->
+</div>
+
+<script type="text/javascript">
+
+//    function CheckForgotPasswordMail(f){
+//        var resultValidationMail = CheckForgotPasswordForm(f);
+//    }
+
+
+    $.ajax({
+        url: '../login_block.php?referBack=http%3A%2F%2Fwww.yad2.co.il%2FNadlan%2Frent.php%3FmultiSearch%3D1%26arrArea%3D%26arrCity%3D1970%26Neighborhood%3D%25EB%25F4%25F8+%25E0%25E6%2522%25F8%26arrHomeTypeID%3D1%252C3%252C5%252C6%252C4%252C7%252C39%252C49%252C51%252C11%252C32%252C55%252C61%252C31%252C44%252C43%252C33%252C60%252C45%252C50%252C30%252C41%26fromRooms%3D4%26untilRooms%3D%26fromPrice%3D1000%26untilPrice%3D9000%26PriceType%3D1%26FromFloor%3D%26ToFloor%3D%26fromSquareMeter%3D%26untilSquareMeter%3D%26EnterDate%3D%26Info%3D',
+        success: function(data)
+        {
+            var abc = document.getElementById('top_login_block')
+            document.getElementById('top_login_block').innerHTML = data;
+            setTimeout(function(){
+                jQuery("#forgotPasswordForm").on('submit', function(event) {
+                    var mail  = $(this).find('input[name=SendMail]').val();
+                    event.preventDefault();
+                    function CheckEmail123(src) {
+                        if( src.length>0 ){
+                            var emailReg = "^[\\w-_\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]$";
+                            var regex = new RegExp(emailReg);
+                            return regex.test(src);
+                        }else{
+                            return false;
+                        }
+                    }
+                    function CheckForgotPasswordForm123(mail){
+                        if( mail.length=0){
+                            alert('הזן דוא"ל בבקשה.')
+                            jQuery("#forgot_email").focus();
+                            return false;
+                        }else if(!CheckEmail123(mail)){
+                            alert('הזן דוא"ל חוקי בבקשה.')
+                            jQuery("#forgot_email").focus();
+                            return false;
+                        }else{
+                            return true;
+                        }
+                    }
+                    var resultValidationMail = CheckForgotPasswordForm123(mail);
+                    if(resultValidationMail) {
+                        jQuery.ajax({
+                            url: '//'+window.location.hostname+'/newOrder/index.php?action=forgetPassword',
+                            type: 'POST',
+                            dataType:'json',
+                            async: false,
+                            data: { email: mail} ,
+                            success: function(response) {
+                                if ((typeof response === "object") && (response.error == false)) {
+                                    jQuery("#mailResponse").html(response.msg).css("display","block");
+                                    jQuery(".hideOnMailSuccess").hide();
+                                }else{
+                                    var $mailResponse = jQuery("#mailResponse");
+                                    $mailResponse.html("בעיה בשליחת הנתונים").css("display","block");
+                                    jQuery(".hideOnMailSuccess").hide();
+                                    setTimeout(function(){
+                                        jQuery(".forgot_password_block").find(".hideOnMailSuccess").show();
+                                        jQuery(".trMailResponse").find(".hideOnMailSuccess").show();
+                                        jQuery("tr.mailResponse").hide();
+                                        jQuery("#mailResponse").hide();
+                                    },2000);
+                                }
+                            },
+                            error:function(){
+                                var $mailResponse = jQuery("#mailResponse");
+                                $mailResponse.html("בעיה בשליחת הנתונים").css("display","block");
+                                jQuery(".hideOnMailSuccess").hide();
+                                setTimeout(function(){
+                                    jQuery(".forgot_password_block").find(".hideOnMailSuccess").show();
+                                    jQuery(".trMailResponse").find(".hideOnMailSuccess").show();
+                                    jQuery("tr.mailResponse").hide();
+                                    jQuery("#mailResponse").hide();
+                                },2000);
+                            }
+                        });
+                    }
+                });
+            },1000);
+
+        }
+    });
+
+
+</script>
+
+    <!-- Begin block_ad_options -->
+    <div class="block_ad_options">
+
+        
+        
+    </div> <!-- End block_ad_options -->
+
+
+    <script type="text/javascript">
+        var Fusion_inner_mega_t = false;
+        var Fusion_inner_mega = false;
+		try {
+			if ( window.Fusion.adComponents.hasOwnProperty("inner_mega_t") && window.Fusion.adComponents["inner_mega_t"][0] )
+			{
+				if(window.Fusion.adComponents["inner_mega_t"][0].attributes["Payload"]!=undefined)
+				{
+					adt_inner_mega();
+					var Fusion_inner_mega_t = true;
+				}
+			}
+			
+			if ( window.Fusion.adComponents.hasOwnProperty("inner_mega") && window.Fusion.adComponents["inner_mega"][0])
+			{
+				if(window.Fusion.adComponents["inner_mega"][0].attributes["Payload"]!=undefined)
+				{
+					adt_inner_mega();
+					var Fusion_inner_mega = true;
+				}
+			}
+		}
+		catch(err){}
+    </script>
+
+    <!-- Begin mega banner -->
+    <div class="left_banner" id="left_mega_banner_inside" style="padding-top: 0px !important; margin-bottom: 0px;">
+        <div class="pie" id="left_inner_mega" align="center" style="padding-bottom:5px;padding-top:5px;position:relative;background-color: #DDDDDD; border-radius:6px;">
+            <script type="text/javascript"> window.Fusion.space("inner_mega"); window.Fusion.space("inner_mega_t"); </script><div id="inner_mega___ID___1" class="Desktop_Inner_Mega" data-google-query-id="CLrY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Inner_Mega_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Inner_Mega_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Inner_Mega_0" width="160" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+        </div>
+    <div class="nadlan-apartments-deals-wrap" style="margin-top: 10px;">
+    <div class="main-title">דירות שנמכרו באזור</div>
+    <div class="sub-title">מנתוני רשות המיסים</div>
+    <div class="apartments-wrap">
+                    <div class="property">
+                <a href="http://homeprices.yad2.co.il/street/בת-ים/השר-שפירא-15" target="_blank">
+                    <div class="rooms-vis">
+                        <img src="http://images.yad2.co.il/Pic/yad2new/neighbors/house-background.png" alt="עסקת מחירון דירות">
+                        <div class="rooms-number">4</div>
+                    </div>
+                    <div class="deal-price">₪1,850,000</div>
+                    <div class="deal-address">השר שפירא 15,<br> בת ים</div>
+                    <div class="deal-sale-date">01.08.2018</div>
+                </a>
+
+            </div>
+                    <div class="property">
+                <a href="http://homeprices.yad2.co.il/street/ריחן/ריחן-1" target="_blank">
+                    <div class="rooms-vis">
+                        <img src="http://images.yad2.co.il/Pic/yad2new/neighbors/house-background.png" alt="עסקת מחירון דירות">
+                        <div class="rooms-number">4</div>
+                    </div>
+                    <div class="deal-price">₪1,379,567</div>
+                    <div class="deal-address">ריחן 1,<br> ריחן</div>
+                    <div class="deal-sale-date">31.07.2018</div>
+                </a>
+
+            </div>
+                    <div class="property">
+                <a href="http://homeprices.yad2.co.il/street/ריחן/ריחן-1" target="_blank">
+                    <div class="rooms-vis">
+                        <img src="http://images.yad2.co.il/Pic/yad2new/neighbors/house-background.png" alt="עסקת מחירון דירות">
+                        <div class="rooms-number">4</div>
+                    </div>
+                    <div class="deal-price">₪1,363,000</div>
+                    <div class="deal-address">ריחן 1,<br> ריחן</div>
+                    <div class="deal-sale-date">31.07.2018</div>
+                </a>
+
+            </div>
+                    <div class="property">
+                <a href="http://homeprices.yad2.co.il/street/נהריה/הרצל-107" target="_blank">
+                    <div class="rooms-vis">
+                        <img src="http://images.yad2.co.il/Pic/yad2new/neighbors/house-background.png" alt="עסקת מחירון דירות">
+                        <div class="rooms-number">4</div>
+                    </div>
+                    <div class="deal-price">₪1,277,500</div>
+                    <div class="deal-address">הרצל 107,<br> נהריה</div>
+                    <div class="deal-sale-date">31.07.2018</div>
+                </a>
+
+            </div>
+        
+    </div>
+    <div class="all-apartments-wrap">
+        <a href="http://homeprices.yad2.co.il" target="_blank">לכל הדירות שנמכרו באזור</a>
+    </div>
+</div><div class="left_column magazine_block">
+            <a href="http://magazine.yad2.co.il/" target="_blank" style="text-decoration: none;">
+                <div class="title_magBlock">
+                    <div class="logo">
+                        <img src="http://images.yad2.co.il/Pic/yad2new/magazine/logo.jpg" alt="לוגו יד2" title="לוגו יד2">
+                    </div>
+                    <div class="text">מגזין</div>
+                </div>
+            </a>
+            <div class="bottomPart">
+                <ul class="items_magazine">
+                                                <li class="item_magazine_2527">
+                                <a class="imageItem" href="http://magazine.yad2.co.il/real-estate/%d7%94%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%95%d7%a6%d7%a8-%d7%9c%d7%a8%d7%9b%d7%99%d7%a9%d7%94-%d7%9e%d7%9b%d7%95%d7%a0%d7%a1-%d7%a0%d7%9b%d7%a1%d7%99%d7%9d/2527?yad2_source=Nadlan_leftside" target="_blank">
+                                    <img src="https://img.yad2.co.il/magazine/2017/06/370x250.jpg?w=146&amp;h=92&amp;c=3" alt="נדל&quot;ן" title="נדל&quot;ן">
+                                </a>
+                                <a class="titleItem" href="http://magazine.yad2.co.il/real-estate/%d7%94%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%95%d7%a6%d7%a8-%d7%9c%d7%a8%d7%9b%d7%99%d7%a9%d7%94-%d7%9e%d7%9b%d7%95%d7%a0%d7%a1-%d7%a0%d7%9b%d7%a1%d7%99%d7%9d/2527?yad2_source=Nadlan_leftside" target="_blank">המדריך המקוצר לרכישה מכונס נכסים</a>
+                            </li>
+                                                        <li class="item_magazine_1115">
+                                <a class="imageItem" href="http://magazine.yad2.co.il/real-estate/5-%d7%a6%d7%a2%d7%93%d7%99%d7%9d-%d7%9c%d7%a7%d7%a0%d7%99%d7%99%d7%aa-%d7%a0%d7%9b%d7%a1-%d7%9e%d7%9b%d7%95%d7%a0%d7%a1-%d7%a0%d7%9b%d7%a1%d7%99%d7%9d/1115?yad2_source=Nadlan_leftside" target="_blank">
+                                    <img src="https://img.yad2.co.il/magazine/2017/03/370x250-003.jpg?w=146&amp;h=92&amp;c=3" alt="נדל&quot;ן" title="נדל&quot;ן">
+                                </a>
+                                <a class="titleItem" href="http://magazine.yad2.co.il/real-estate/5-%d7%a6%d7%a2%d7%93%d7%99%d7%9d-%d7%9c%d7%a7%d7%a0%d7%99%d7%99%d7%aa-%d7%a0%d7%9b%d7%a1-%d7%9e%d7%9b%d7%95%d7%a0%d7%a1-%d7%a0%d7%9b%d7%a1%d7%99%d7%9d/1115?yad2_source=Nadlan_leftside" target="_blank">5 צעדים לקניית נכס מכונס נכסים</a>
+                            </li>
+                                                        <li class="item_magazine_8875">
+                                <a class="imageItem" href="http://magazine.yad2.co.il/real-estate/%d7%9c%d7%90-%d7%a0%d7%a8%d7%93%d7%9e%d7%aa-%d7%94%d7%9e%d7%92%d7%9e%d7%95%d7%aa-%d7%94%d7%9e%d7%95%d7%91%d7%99%d7%9c%d7%95%d7%aa-%d7%91%d7%a0%d7%93%d7%9c%d7%9f-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99/8875?yad2_source=Nadlan_leftside" target="_blank">
+                                    <img src="https://img.yad2.co.il/magazine/2018/05/370x250-003.jpg?w=146&amp;h=92&amp;c=3" alt="נדל&quot;ן" title="נדל&quot;ן">
+                                </a>
+                                <a class="titleItem" href="http://magazine.yad2.co.il/real-estate/%d7%9c%d7%90-%d7%a0%d7%a8%d7%93%d7%9e%d7%aa-%d7%94%d7%9e%d7%92%d7%9e%d7%95%d7%aa-%d7%94%d7%9e%d7%95%d7%91%d7%99%d7%9c%d7%95%d7%aa-%d7%91%d7%a0%d7%93%d7%9c%d7%9f-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99/8875?yad2_source=Nadlan_leftside" target="_blank">איפה הכי שווה לגור היום בתל אביב?</a>
+                            </li>
+                                            </ul>
+            </div>
+        </div><div class="left_column_banner" style=" text-align: center;margin-top: 15px;">
+        <script type="text/javascript">
+            window.Fusion.space("left_column_banner");
+        </script><div id="left_column_banner___ID___1" class="Desktop_Left_Column_Banner" data-google-query-id="COLjg4DQ4d0CFcfcwAodWDgH1A"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Left_Column_Banner_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Left_Column_Banner_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Left_Column_Banner_0" width="181" height="362" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+    </div></div>
+<div class="clear" style="height: 10px;"></div>
+
+
+
+    
+        <!--<div class="clear"></div>
+        <div style="margin: 0 auto; margin-top: 10px; text-align: center;" >
+            <a href="http://www.yad2.co.il/redir_banner.php?BannerID=5056&URL=http%3A%2F%2Fwww.grent.co.il%2F%3Fpage_id%3D281" target="_blank">
+                <img src="http://images.yad2.co.il/Pic/good_rent/left_column_box.jpg" alt="השכרה טובה"/>
+            </a>
+        </div>-->
+        <!--    --------------------------------- il  ----------------->
+    <div class="clear"></div>
+    <div style="margin: 0 auto; margin-top: 10px; text-align: center;">
+<!--        <a href="http://yarid.yad2.co.il/?MediaTitle=yad2_dec15&utm_source=yad2_inside_banner_sidebox" target="_blank">-->
+<!--            <img src="http://images.yad2.co.il/Pic/yad2new/nadlanbox.jpg" alt="ביטוח דירה"/>-->
+<!--        </a>-->
+    </div>
+<!--    --------------------------------- il  ----------------->
+    <div class="clear"></div>
+    <div style="margin: 0 auto; margin-top: 10px; text-align: center;">
+<!--        <a href="--><!--" target="_blank">-->
+<!--            <img src="http://images.yad2.co.il/Pic/yad2new/Banner/shirbitBituach/bituahDira.jpg" alt="ביטוח דירה"/>-->
+<!--        </a>-->
+    </div>
+
+    <!--<iframe id="facebookIframe" src="//--><!--/templatesLeftColumn/default/facebookBox.php" width='190' height='340' scrolling='no' frameborder="0" style=""></iframe>-->
+      <!-- Begin Facebook like box -->
+    <!-- <div class="clear"></div>
+    <div id="facebookBox" style="clear:both;padding-right:3px;display: none; margin-top:10px;">
+        <img src="http://images.yad2.co.il/Pic/yad2new/ajax-loader.gif" />
+    </div> -->
+
+<div id="leftSekindo" style="margin-right: 3px;margin-top:10px;border:1px solid #d2d2d2;text-align:center;background-color:#f1f1f1;display:none;">
+			<!-- <div style="font-weight:bold;">פרסם כאן</div> -->
+			<div id="left_sekindo1"></div>
+			<div id="left_sekindo2"></div>
+			<div id="left_sekindo3"></div>
+			<div id="left_sekindo4"></div>
+			</div>
+
+    <link rel="stylesheet" href="../css/magazine.css" type="text/css">
+            
+        <script type="text/javascript">
+    jQuery(document).ready(function () {
+        setTimeout(function (){
+             return false;            
+			/*console.log(jQuery(".right_column").height());
+			console.log(jQuery(".left_column").height());
+			console.log(jQuery(window).width());*/
+			if(jQuery(window).width()>=1230){
+				var sekindoSizes  = {"680px":4,"510px":3,"340px":2,"170px":1};
+				var divIds = new Array("left_sekindo1","left_sekindo2","left_sekindo3","left_sekindo4");
+				var sp_names = new Array("side_button","side_button","side_button","side_button");
+				var roomForSekindo = ((jQuery(".right_column").height()) - jQuery(".left_column").height());
+				//console.log(roomForSekindo);
+
+				for(var sekindoHeightPX in sekindoSizes){
+					sekindoHeight = parseInt(sekindoHeightPX.replace("px",""));
+				 if(/*sekindoHeight === 350 || */roomForSekindo >= sekindoHeight){
+						for (var i=0; i<divIds.length;i++ )
+						{
+							//console.log($("#"+divIds[i]));
+							if (i <  divIds.length -1)
+							{
+							   $("#"+divIds[i]).after($("<div />").css({'width':"140px",'margin':"0 auto",'border-bottom':'1px solid #d2d2d2'}));
+							}
+							$("#"+divIds[i]).show();
+							$("#leftSekindo").show();
+						}
+
+                        if (typeof adtReloadAds === "function")
+						    adtReloadAds(divIds, sp_names);
+						break;
+				  }else{
+					  /*console.log(roomForSekindo);
+					  console.log(sekindoHeight);*/
+					  sp_names.splice(0, 1);
+					  divIds.splice(0, 1);
+				  }
+				}
+			}
+
+        },4000);
+
+        /***************************************************
+         *** Show Campaign Jobs  Virtual Fail Side Banner ***
+         ***************************************************/
+
+        /***                                    ***
+         * Showing side banner if left column
+         *  width + 200 px smaller than right column
+         ***                                   ***/
+        $('.side-banner-virtual-fair').css({"display": "none"});
+        setTimeout(function(){
+            var rightBlockHeight = $('.right_column').outerHeight(true);
+            var leftColumnHeight = $('.left_column').outerHeight(true);
+            // console.log(leftColumnHeight);
+            if ((leftColumnHeight+200) < rightBlockHeight ) {
+
+                $('.side-banner-virtual-fair').css({"display": "block"});
+            }
+
+
+        },1000);
+
+        /***                                ***
+         * Showing side banner when add is open
+         * and hiding when all ads are close
+         ***                                ***/
+        $('.main_table tr').click(function(){
+
+            setTimeout(function(){
+
+                var rightBlocksHeight = $('.right_column').outerHeight(true);
+                var leftColumnsHeight = $('.left_column').outerHeight(true);
+
+                if ($('.Info:visible').length == 0 && rightBlocksHeight < leftColumnsHeight + 200 ){
+                    $('.side-banner-virtual-fair').css({"display": "none"});
+                }
+
+                if ($('.Info:visible').length>0){
+                    var trInfoHeight = $('.Info:visible').outerHeight(true);
+
+                    if (trInfoHeight > 1) {
+                        $('.side-banner-virtual-fair').css({"display": "block"});
+                    } else {
+                        $('.side-banner-virtual-fair').css({"display": "none"});
+                    }
+                }
+            },1000)
+
+
+
+
+        });
+    });
+</script>
+            
+            </div> <!-- End left column -->
+
+            <div class="clear" style="height: 10px;"></div>
+            <div id="ad_martef" style="float: right; padding-bottom:5px;">
+    <script type="text/javascript"> window.Fusion.space("martef"); </script><div id="martef___ID___1" class="Desktop_Martef" data-google-query-id="CLvY_vnP4d0CFcLBwAodxMUBmA"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Martef_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Martef_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Martef_0" width="978" height="300" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+</div>
+
+<!--div for calculating clickie height-->
+<div id="ad_martef_bottom"></div>
+
+            <div class="clear" style="height: 10px;"></div>
+
+            
+<iframe src="http://yad1.yad2.co.il/innerYad2_new_v_1.php?SubCatID=2" bgcolor="#EEEFF3" width="980" height="193" frameborder="0" scrolling="no" style="margin:0px"></iframe>
+            <div class="clear" style="height: 10px;"></div>
+            
+            <!-- Begin walla strip -->
+						<div class="walla_strip" style="background: #EEEFF3; width:100%; border-radius: 6px; height:28px; margin-top:0px;">
+							</div>
+						<!-- End walla strip -->
+
+            <div class="clear" style="height: 10px;"></div>
+            <script type="text/javascript">
+
+
+            localStorage.removeItem("impressionObj");
+
+            dataLayer.push({"event" : "feedAdImp",
+                "feedAdImpArr": "",
+                //"CatID": "<?=$CatID?>",
+               // "SubCatID": "<?=$SubCatID?>"
+            });
+        </script>            
+<a name="מדריכים"></a>
+<div style="float: right; width:483px;">
+<div class="articles_block magazine_desktop_footer">
+        <div class="articles_block_top">
+            <a target="_blank" class="text magazineURL" href="http://magazine.yad2.co.il">
+            <div class="logo float-right">
+              <img src="http://images.yad2.co.il/Pic/yad2new/magazine/logo.jpg" alt="לוגו יד2" title="לוגו יד2">
+            </div>
+            <div class="text float-right">מגזין</div>
+            </a>
+            <div class="float-left">
+                <a target="_blank" class="text magazineURL" href="http://magazine.yad2.co.il/category/real-estate">לכתבות נוספות<span class="arrow_mag">&nbsp;&nbsp;◀</span></a>
+            </div>
+
+            <div class="cb"></div>
+        </div>
+        <div class="articles_block_body" style="height: auto !important; min-height: 206px;">
+                                <div class="MagazinePostFooter">
+                        <a target="_blank" href="http://magazine.yad2.co.il/real-estate/%d7%94%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%95%d7%a6%d7%a8-%d7%9c%d7%a8%d7%9b%d7%99%d7%a9%d7%94-%d7%9e%d7%9b%d7%95%d7%a0%d7%a1-%d7%a0%d7%9b%d7%a1%d7%99%d7%9d/2527?yad2_source=Nadlan_bottom" style="text-decoration: none;color:black;">
+                            <div class="image float-right MagazinePostImages">
+                                <img src="https://img.yad2.co.il/magazine/2017/06/370x250.jpg?w=66&amp;h=50&amp;c=3" width="66" height="50">
+                            </div>
+                            <div class="info">
+                                <div class="title">המדריך המקוצר לרכישה מכונס נכסים</div>
+                                <div class="intro"><p>מהי רכישה מכונס נכסים, מדוע זה משתלם מאוד – ואיך תצליחו גם אתם להשיג נכס במחירים סופר אטרקטיביים. כל מה שחשוב לדעת על רכישה באמצ...</p></div>
+
+                            </div>
+                            <div class="cb"></div>
+                        </a>
+                    </div>
+
+                                        <div class="MagazinePostFooter">
+                        <a target="_blank" href="http://magazine.yad2.co.il/shopping/10-%d7%94%d7%9e%d7%a1%d7%9e%d7%9b%d7%99%d7%9d-%d7%a9%d7%97%d7%95%d7%91%d7%94-%d7%9c%d7%91%d7%93%d7%95%d7%a7-%d7%9c%d7%a4%d7%a0%d7%99-%d7%94%d7%a9%d7%a7%d7%a2%d7%94-%d7%91%d7%a2%d7%a1%d7%a7/7777?yad2_source=Nadlan_bottom" style="text-decoration: none;color:black;">
+                            <div class="image float-right MagazinePostImages">
+                                <img src="https://img.yad2.co.il/magazine/2018/03/6_370x250.jpg?w=66&amp;h=50&amp;c=3" width="66" height="50">
+                            </div>
+                            <div class="info">
+                                <div class="title">10 המסמכים שחובה לבדוק לפני השקעה בעסק</div>
+                                <div class="intro"><p>לפני שניגשים להשקעה בעסק, חובה לדעת לאן נכנסים והאם בכלל משתלם לנו. 
+</p></div>
+
+                            </div>
+                            <div class="cb"></div>
+                        </a>
+                    </div>
+
+                                        <div class="MagazinePostFooter">
+                        <a target="_blank" href="http://magazine.yad2.co.il/real-estate/%d7%99%d7%9c%d7%93%d7%99%d7%9d-%d7%a7%d7%95%d7%a0%d7%99%d7%9d-%d7%93%d7%99%d7%a8%d7%94/4102?yad2_source=Nadlan_bottom" style="text-decoration: none;color:black;">
+                            <div class="image float-right MagazinePostImages">
+                                <img src="https://img.yad2.co.il/magazine/2017/09/ילדים-קונים-דירה.jpg?w=66&amp;h=50&amp;c=3" width="66" height="50">
+                            </div>
+                            <div class="info">
+                                <div class="title">ילדים קונים: דירה</div>
+                                <div class="intro"><p>אתם לא תנחשו על איזה בית חולמים הילדים שלנו 
+</p></div>
+
+                            </div>
+                            <div class="cb"></div>
+                        </a>
+                    </div>
+
+                    </div>
+<div class="articles_block_bottom"></div>
+</div>
+    </div><div style="float: left; width: 483px;">
+	
+		
+	<div class="articles_block">
+			<div class="articles_block_top">
+				<table cellspacing="0" cellpadding="0" width="100%">
+					<tbody><tr><td align="right" valign="top">
+							<div class="title">
+								<a target="_blank" href="http://home.walla.co.il/" onclick="stat( '../', 4, '', '' );">
+									<img src="http://images.yad2.co.il/Pic/yad2new/page/walla_articles_logos/wallaDecorationNew.png" alt="נדלן" border="0">
+								</a>
+							</div>
+						</td>
+				</tr></tbody></table>			
+			</div>
+			
+			<div class="articles_block_body" style="height: auto !important; min-height: 204px;">
+			<table class="articles">
+			<tbody><tr height="68px">
+				<td class="image">
+					<a href="http://home.walla.co.il?w=/4400/2793946" onclick="stat( '../', 154, '', '' );" style="border:0px;" target="_blank"><img style="border:0px;" src="http://msc.wcdn.co.il/archive/1792482-19.jpg" width="67" height="51" alt="על הגובה: הפנטהאוז הגבוה ביותר במערב"></a></td>
+				<td class="subject">
+					<a href="http://home.walla.co.il?w=/4400/2793946" onclick="stat( '../', 154, '', '' );" style="font-size: 13px; font-family: Arial;color:#121212;text-decoration: none;" target="_blank"><b>על הגובה: הפנטהאוז הגבוה ביותר במערב</b></a><br>
+					<span style="font-size: 12px; font-family: Arial;color:#686868;text-decoration: none;">96 קומות שצופות לכל מנהטן, ברוקלין, קווינס וניו ג’רזי ופנטהאוז אחד מטריף עם קירות שקופים ונוף ב-95...</span>
+				</td>
+			</tr>
+			
+			<tr class="grey" height="68px">
+				<td class="image">
+					<a href="http://home.walla.co.il?w=/4424/2793047" onclick="stat( '../', 154, '', '' );" style="border:0px;" target="_blank"><img style="border:0px;" src="http://msc.wcdn.co.il/archive/1790048-19.jpg" width="67" height="51" alt="החווה החדשה של ביל גייטס"></a></td>
+				<td class="subject">
+					<a href="http://home.walla.co.il?w=/4424/2793047" onclick="stat( '../', 154, '', '' );" style="font-size: 13px; font-family: Arial;color:#121212;text-decoration: none;" target="_blank"><b>החווה החדשה של ביל גייטס</b></a><br>
+					<span style="font-size: 12px; font-family: Arial;color:#686868;text-decoration: none;">מייסד מייקרוסופט המיליארדר מתחדש בחווה עצומה בניו מקסיקו שתהפוך בקרוב למתקן מפונפן של מרוצי סוסים...</span>
+				</td>
+			</tr>
+			
+			<tr height="68px">
+				<td class="image">
+					<a href="http://home.walla.co.il?w=/4411/2793055" onclick="stat( '../', 154, '', '' );" style="border:0px;" target="_blank"><img style="border:0px;" src="http://msc.wcdn.co.il/archive/1791751-19.jpg" width="67" height="51" alt="9 ספרי עיצוב להעביר איתם את הסתיו"></a></td>
+				<td class="subject">
+					<a href="http://home.walla.co.il?w=/4411/2793055" onclick="stat( '../', 154, '', '' );" style="font-size: 13px; font-family: Arial;color:#121212;text-decoration: none;" target="_blank"><b>9 ספרי עיצוב להעביר איתם את הסתיו</b></a><br>
+					<span style="font-size: 12px; font-family: Arial;color:#686868;text-decoration: none;">האוויר התקרר, התה מתחיל לקבל תנופה, גם הכירבולית יצאה מהארון וכל שנותר הוא להתרפק על ספרים עם יפות...</span>
+				</td>
+			</tr>
+			</tbody></table></div><div class="articles_block_bottom"></div></div></div>
+
+
+<div style="float: left; width: 483px;">
+	</div>
+
+
+            <div class="clear" style="height: 10px;"></div>
+
+            <div><script type="text/javascript">window.Fusion.space("bottom_banner"); </script><div id="bottom_banner___ID___1" class="Desktop_Bottom_Banner" data-google-query-id="COHjg4DQ4d0CFcfcwAodWDgH1A"><div id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Bottom_Banner_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Bottom_Banner_0" title="3rd party ad content" name="google_ads_iframe_/22346962/desktop/realestate/rent/Desktop_Bottom_Banner_0" width="980" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;"></iframe></div></div></div>
+
+<!--<div style="margin:0px;margin-top:10px; margin-bottom:10px;">
+    <iframe width="980" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="///dfpV3/DFP.php?setSystem=dfp&onlyInstance=bottom_banner" style="border: 0px; vertical-align: bottom;"></iframe>
+</div>-->            <div class="clear" style="height: 10px;"></div>
+           
+            <script type="text/javascript">/**
+ * Created by sagi on 02/10/2017.
+ */
+var Yad2Exposures = function () {
+        this.clickedAds = [];
+        this.savePageData = function (pageData) {
+            jQuery.ajax({
+                url: "//www.yad2.co.il/ajax/yad2_exposures.php?action=view",
+                dataType: 'jsonp',
+                type: 'post',
+                data: {
+                    'PageData': pageData
+                }
+            });
+        };
+
+        this.logAdClick = function (adData) {
+            var s = JSON.stringify(adData);
+            if ($.inArray(s,this.clickedAds) !== -1){
+                return;
+            }
+            this.clickedAds.push(s);
+            jQuery.ajax({
+                url: "//www.yad2.co.il/ajax/yad2_exposures.php?action=aklaka",
+                dataType: 'jsonp',
+                type: 'post',
+                data: {
+                    'adData': adData
+                }
+            });
+        };
+        this.init = function () {
+            var ___originalshow_ad = window.show_ad;
+            var ___originalopenHotPic = window.openHotPic;
+            var self = this;
+            return;
+          window.show_ad = function (CatID, SubCatID, File, RecordID, AdID, height, prefix, more) {
+              var target = event.target ? event.target : event.srcElement;
+
+              var $tr = $(target);
+              if ($tr.prop("tagName") !== "TR"){
+                  $tr = $tr.parents("tr:first");
+              }
+              var ot = 1;
+              if ($tr.hasClass('yellow')){
+                  ot = 3;
+              }
+              else if($tr.hasClass('orange')){
+                  ot = 2;
+              }
+              var adData = {
+                  'CatID' : CatID,
+                  'SubCatID' : SubCatID,
+                  'RecordID' : AdID,
+                  'OrderTypeID' : ot,
+                  'PositionID' : 4
+              };
+
+              self.logAdClick(adData);
+              ___originalshow_ad(CatID, SubCatID, File, RecordID, AdID, height, prefix, more);
+          };
+
+          window.openHotPic = function (path, CatID, SubCatID, FileName, RecordID, Code, more, width, height) {
+              var adData = {
+                  'CatID' : CatID,
+                  'SubCatID' : SubCatID,
+                  'RecordID' : RecordID,
+                  'PositionID' : 5
+
+              };
+              self.logAdClick(adData);
+              ___originalopenHotPic(path, CatID, SubCatID, FileName, RecordID, Code, more, width, height);
+          };
+        };
+
+        this.init();
+};
+var ye = new Yad2Exposures();ye.savePageData([{"CatID":2,"SubCatID":2,"RecordID":"65ceae7080d7a4e2f650de28ca4758f2ed8","CustID":"3418347","PositionID":1,"OrderTypeID":"1"},{"CatID":2,"SubCatID":2,"RecordID":"1e626aef5790f0c6df0a1be47ef8da23853","CustID":"5787865","PositionID":1,"OrderTypeID":"1"},{"CatID":2,"SubCatID":2,"RecordID":"4e80508ff65d9dfaae7a55fa724fa4b59e5","CustID":"2134888","PositionID":1,"OrderTypeID":"1"},{"CatID":2,"SubCatID":2,"RecordID":"23309931552d1da6438c737da7f8db66fbe","CustID":"2532521","PositionID":1,"OrderTypeID":"1"},{"CatID":2,"SubCatID":2,"RecordID":"167695de16cf112d0a7ed978137ebf4754f","CustID":"5527361","PositionID":1,"OrderTypeID":"1"},{"CatID":2,"SubCatID":2,"RecordID":"17eabf103dd8e74f40354be135f516354cb","CustID":"6195734","PositionID":1,"OrderTypeID":"1"}])</script>    <script>
+        if (dataLayer){
+            dataLayer.push({
+                'event': 'Yad2 test to GA',
+                'y2ExpName' : 'Responsive',
+                'y2ExpVar' : 'not_in_test'
+            });
+        }
+
+    </script>
+    
+<!-- Begin footer -->
+			<div id="footer" style="margin-top: 0px;">
+			
+				<div class="links">
+					<a href="http://my.yad2.co.il/Order/Order1.php">הוספת מודעה</a> |
+					<a href="javascript:void(0);" onclick="openWindow('http://www.yad2.co.il/Contact.php', 'Contact', 540, 570);">צור קשר</a> | 
+					<a href="javascript:void(0);" onclick="javascript:add_favorite();">הוסף למועדפים</a> | 
+					<a href="javascript:void(0);" onclick="openWindow('http://www.yad2.co.il/TellAFriend.php', 'TellAFriend', 540, 500);">המלץ לחבר</a> | 
+					<a href="javascript:void(0);" onclick="javascript:set_homepage();">הפוך לדף הבית</a> | 
+					<a href="javascript:void(0);" onclick="openWindow('http://www.yad2.co.il/Pirsum/index.php', 'Pirsum', 950, 750);">פרסם באתר</a> | 
+					<a href="javascript:void(0);" onclick="openWindow('http://www.yad2.co.il/Takanon.php', 'Takanon', 1020, 750);">תקנון האתר</a> |
+					<a href="javascript:void(0);" onclick="openWindow('http://www.yad2.co.il/privacypolicy.php', 'Mediniut', 1020, 750);">מדיניות פרטיות</a> |
+					<a href="http://www.yad2.co.il/SiteMap.php">מפת האתר</a> |
+
+<!--					<a href="http://maps.yad2.co.il" target="_blank">מפות</a>-->
+                                        <a href="SiteMapRent.php">לוח דירות להשכרה</a> |
+												<a href="http://m.yad2.co.il/accessibility.php" onclick="document.cookie = 'accessibility = 1;domain=yad2.co.il;';">נגישות</a>
+
+                </div>
+				
+				<div class="kuchi">
+					<img src="http://images.yad2.co.il/Pic/yad2new/index/kuchi.jpg" alt="עיצוב אתרים"> 
+					<a href="http://www.kuchi.co.il" rel="nofollow"><span style="vertical-align:middle">עיצוב אתרים</span></a>
+				</div>
+				
+				<div class="clear"></div>
+				
+				<div class="right">
+				
+					<div class="cat_title">
+						מומלצים
+					</div>
+						<ul>
+						    <li><a href="http://www.net-working.co.il/tools/" rel="nofollow" target="_blank">קידום אתרים</a></li>
+						                                    <li class="sep">|</li>
+                            	<li><a href="http://maps.yad2.co.il" target="_blank" rel="nofollow">מפות</a></li>
+														 <li class="sep">|</li><li><a href="http://homeprices.yad2.co.il" target="_blank" rel="nofollow">מחירון דירות</a></li>						</ul>
+						<br>
+					<div class="cat_title">
+						שימושי
+					</div>
+					   <ul>
+					       <li><a href="javascript:void(0);" onclick="window.open('http://www.rail.co.il');">רכבת ישראל</a></li><li class="sep">|</li><li><a href="javascript:void(0);" onclick="window.open('http://www.iaa.gov.il/Rashat/he-IL/Airports/BenGurion/', 'iaa');">נתב"ג</a></li><li class="sep">|</li><li><a href="javascript:void(0);" onclick="window.open('http://he.wikipedia.org', 'wikipedia');">אנציקלופדיה</a></li><li class="sep">|</li><li><a href="javascript:void(0);" onclick="window.open('http://milon.morfix.co.il/default.aspx', 'milonmorfix');">תרגום לאנגלית</a></li><li class="sep">|</li><li><a href="javascript:void(0);" onclick="window.open('http://www.shaonolami.co.il');">שעון עולמי</a></li>					   </ul>
+				</div>
+				
+				<div class="left">
+				
+					<div class="links_block">
+						<div class="cat_title">רכב</div>
+						<div class="cat_text">
+							<a href="http://pricelist.yad2.co.il/NewCars.php" target="_blank">רכב חדש</a>,
+							<a href="http://pricelist.yad2.co.il" target="_blank">מחירון רכב</a>,
+							<a href="http://www.yad2.co.il/Cars/Car_kones.php">רכב מכונס</a>,
+							<a href="http://www.yad2.co.il/MiniSites/yad2car_rental/" target="_blank">השכרת רכב</a>,
+							<a href="http://www.yad2.co.il/Marine/watercraft.php">כלי שייט</a>
+						</div>
+					</div>
+										
+										<div class="links_block">
+						<div class="cat_title">נדל"ן</div>
+						<div class="cat_text">
+							<a href="http://www.yad2.co.il/Nadlan/rent.php">דירות להשכרה</a>,
+							<a href="http://www.yad2.co.il/Nadlan/sales.php">דירות למכירה</a>,
+							<a href="http://yad1.yad2.co.il?site=" target="_blank" onclick="yad1Promo('Footer')">דירות חדשות</a>,
+							<a href="http://yad1.yad2.co.il/?ProjectTypeID=28&amp;site=" target="_blank" onclick="yad1Promo('Footer')">קבוצות רכישה</a>,
+							<a href="http://www.yad2.co.il/Nadlan/kones.php">דירות מכונס</a>
+						</div>
+					</div>
+					
+					<div class="links_block">
+						<div class="cat_title">יד שנייה</div>
+						<div class="cat_text">
+							<a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=50&amp;SalesSubCatID=29&amp;ManufacturID=2151">מכשירי סלולר</a>,
+							<a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=6&amp;SalesSubCatID=750">אייפד</a>,
+							<a href="http://www.yad2.co.il/Yad2/Yad2.php" target="_blank">קניות</a>,
+							<a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=1">מוצרי חשמל</a>,
+							<a href="http://www.yad2.co.il/Yad2/Yad2.php?SalesCatID=50&amp;SalesSubCatID=34">מחשבים ניידים</a>,
+
+						</div>
+					</div>
+					
+					
+				</div>
+				
+				<div class="clear"></div>
+				
+				<div class="copyrights">
+					כל הזכויות שמורות לחברת
+					קורל תל
+					מפעילת לוח יד 2 - לוח מודעות: דרושים, דירות להשכרה,
+					 דירות למכירה, בתים למכירה, בתים להשכרה, העברת בתים,
+					  <a href="http://www.pro.yad2.co.il/vuckv">הובלות</a>,
+					  לימודים, קניות, חיות מחמד,
+					  <a href="http://pro.yad2.co.il">בעלי מקצוע</a>,
+                                           <a href="http://ezba.co.il/" target="_blank">אצבע</a>,
+					  תיירות ועוד'.
+					 אין לעשות שימוש בכל התכנים המופיעים בלוח יד 2 ללא קבלת אישור מפורש בכתב. 
+				</div>
+			
+			</div> <!-- End footer -->
+			
+                <!--do not modify this script -->
+    <div class="nanorep_loadingData" id="nanoRepProxyContainer" aria-live="polite" style="position:absolute;top:-500px;left:0px;"></div>
+    <script type="text/javascript">var _nRepData = _nRepData || []; _nRepData['kb'] = '633845537773281250'; _nRepData['float'] = {account: 'yad2', cdcVersion: 3, cdcFrame: '', scriptVersion: '3.48.1.4'}
+        /* API here */;
+        (function(){var windowLoadFunc = function(){var _nRepData = window._nRepData || [];_nRepData['windowLoaded'] = true;if (typeof(_nRepData['windowOnload']) === 'function') _nRepData['windowOnload']();};if (window.attachEvent)window.attachEvent('onload', windowLoadFunc);else if (window.addEventListener)window.addEventListener('load', windowLoadFunc, false);var sc = document.createElement('script');sc.type = 'text/javascript';sc.async = true;sc.defer = true;sc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'my.nanorep.com/widget/scripts/float.js';var _head = document.getElementsByTagName('head')[0];_head.appendChild(sc);})();
+    </script>
+    <!-- BEGIN LivePerson Monitor. -->
+    <script type="text/javascript">window.lpTag=window.lpTag||{},"undefined"==typeof window.lpTag._tagCount?(window.lpTag={site:'72457022'||"",section:lpTag.section||"",tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:"1.8.0",_tagCount:1,protocol:"https:",events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0==e?(this._defB=this._defB||[],this._defB.push(t)):1==e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+"//"+(this.ovr&&this.ovr.domain?this.ovr.domain:"lptag.liveperson.net")+"/tag/tag.js?site="+this.site);var a=document.createElement("script");a.setAttribute("charset",e?e:"UTF-8"),i&&a.setAttribute("id",i),a.setAttribute("src",n),document.getElementsByTagName("head").item(0).appendChild(a)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent("onload",function(){t._domReady("domReady")}):(window.addEventListener("DOMContentLoaded",function(){t._domReady("contReady")},!1),window.addEventListener("load",function(){t._domReady("domReady")},!1)),"undefined"==typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger("LPT","DOM_READY",{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;</script>
+    <!-- END LivePerson Monitor. -->
+            
+        </div> <!-- End main frame -->
+        	<div class="modal-wrap" id="modal-wrap">
+		<a href="javascript:void(0)" class="close-modal">
+			<img src="http://images.yad2.co.il/Pic/car-modal/close1.png" height="20" width="20" alt="">
+		</a>
+		<div class="modal-head">
+			<h1>שימו לב</h1>
+		</div>
+		<div class="modal-content">
+			<img class="modal-pic" src="http://images.yad2.co.il/Pic/car-modal/contact-modal1.png" height="114" width="114" alt="קונים חכם ביד2">
+				<ul>
+
+											<li>אנו ממליצים להמנע מהעברת כספים טרם</li>
+											<li>נפגשתם עם המוכר ובקרתם בנכס</li>
+											<li>ולהיזהר מעסקאות בהם מעורבים</li>
+											<li>מוכרים הנמצאים בחו”ל</li>
+										<!-- <li>אנו ממליצים להמנע מהעברת כספים בטרם</li>
+					<li>בדיקת הרכב ולהיזהר מעסקאות בהם</li>
+					<li>מעורבים רכבים הנמצאים בחו&rdquo;ל.</li> -->
+				</ul>
+				<button class="modal-next-step close-modal">קראתי <img src="http://images.yad2.co.il/Pic/car-modal/arr1.png" width="16" height="16" alt=""></button>
+		</div>
+	</div>
+        
+        <div style="display: none;">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TR5MMJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TR5MMJ');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- facebook Code for Remarketing tag -->
+<!--    -----------------------    add new part by ilanl 17.12.2014--------------------->
+
+<!--    -------------------     remark by ilanl 17.12.2014  ---------------------->
+
+<!-- Google Code for Remarketing tag 1 -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1071910561;
+var google_conversion_label = "DEE3COL9wAMQoZ2Q_wM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1071910561/?value=0&amp;label=DEE3COL9wAMQoZ2Q_wM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Google Code for Remarketing tag 2 -->
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 1012665202;
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+	/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+	<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1012665202/?value=0&amp;guid=ON&amp;script=0"/>
+	</div>
+</noscript>
+
+
+<!-- Global site tag (gtag.js) - Google AdWords: 996433928 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-996433928"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-996433928');
+</script>
+
+    
+
+</div>
+
+<script type="text/javascript">
+	try {
+        window.Fusion.space("popunder");
+    }
+    catch(e) {}
+
+	try {
+        window.Fusion.space("dc1");
+    }
+    catch(e) {}
+ </script>
+
+
+        
+
+        <script type="text/javascript">
+                        
+            load_last_search(2,2);
+        </script>
+    
+    
+
+    
+</div><iframe id="google_osd_static_frame_7531186069040" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><div style="width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999999;display:none;"></div>
