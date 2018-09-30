@@ -76,6 +76,11 @@ const main = (async(yad2ResultsURL) => {
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
 
+    await page.waitFor(10000);
+ 
+    await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
+    log('search results page loaded');
+
     // check for captcha
     let err = 0;
     await page.waitFor("#main_table", { timeout: 120000 }).catch(()=>{
@@ -83,9 +88,6 @@ const main = (async(yad2ResultsURL) => {
         browser.close();
     });
     if(err){return;}
-
-    let bodyHTML = await page.evaluate(() => document.body.innerHTML);
-    fs.writeFileSync(`${yad2ResultsURL}.html`, bodyHTML)
 
     log("main table found")
     const searchSource = await page.content();
@@ -122,10 +124,8 @@ const main = (async(yad2ResultsURL) => {
     const parsedAds = await page.evaluate(() => {
         const adsResults = [];
         const ads = $("#main_table .main_table tr.showPopupUnder");
-        console.info(ads);
-        debugger;
         ads.each(function(i, ad) {
-            // get the href attribute of each link 
+            // get the href attribute of each link
             var adResult = {};
             adResult.id = $(ad).attr("id").split("_").splice(-1)[0];
             $(ad).find('td').each(function(idx, td) {
@@ -142,7 +142,6 @@ const main = (async(yad2ResultsURL) => {
         return adsResults;
     });
     log('Found # ads:', parsedAds.length);
-    return;
     let count = 0;
     for (const ad of parsedAds) {
         const existingAd = adsDB.get('ads')
@@ -331,7 +330,7 @@ async function cityFilter(city){
 
 
 const yad2ResultsURL = config.yad2ResultsURL;
-console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
+console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n\n')}`)
 mainWrapper(yad2ResultsURL);
 
 async function sendErrorMessage(err){
