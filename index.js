@@ -75,7 +75,6 @@ const main = (async(yad2ResultsURL) => {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
-    await page.on('domcontentloaded',()=>{console.log('domcontentloaded')});
 
     // check for captcha
     let err = 0;
@@ -84,6 +83,9 @@ const main = (async(yad2ResultsURL) => {
         browser.close();
     });
     if(err){return;}
+
+    let bodyHTML = await page.evaluate(() => document.body.innerHTML);
+    fs.writeFileSync('index.html', bodyHTML)
 
     log("main table found")
     const searchSource = await page.content();
@@ -123,7 +125,7 @@ const main = (async(yad2ResultsURL) => {
         console.info(ads);
         debugger;
         ads.each(function(i, ad) {
-            // get the href attribute of each link
+            // get the href attribute of each link 
             var adResult = {};
             adResult.id = $(ad).attr("id").split("_").splice(-1)[0];
             $(ad).find('td').each(function(idx, td) {
