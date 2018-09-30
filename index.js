@@ -75,9 +75,7 @@ const main = (async(yad2ResultsURL) => {
     const page = await browser.newPage();
     page.setDefaultNavigationTimeout(120000 * 2);
     await page.goto(yad2ResultsURL);
-
     await page.waitFor(10000);
- 
     await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
     log('search results page loaded');
 
@@ -124,6 +122,7 @@ const main = (async(yad2ResultsURL) => {
     const parsedAds = await page.evaluate(() => {
         const adsResults = [];
         const ads = $("#main_table .main_table tr.showPopupUnder");
+        console.info(ads);
         ads.each(function(i, ad) {
             // get the href attribute of each link
             var adResult = {};
@@ -141,6 +140,7 @@ const main = (async(yad2ResultsURL) => {
         });
         return adsResults;
     });
+    log(parsedAds)
     log('Found # ads:', parsedAds.length);
     let count = 0;
     for (const ad of parsedAds) {
@@ -267,8 +267,8 @@ const main = (async(yad2ResultsURL) => {
 async function mainWrapper(yad2ResultsURL) {
     for (let i = 0; i < yad2ResultsURL.length; i++) {
         let curUrl = yad2ResultsURL[i];
-	    log(`Current scrape for ${curUrl}`);
-	    log(`This is ${i+1} link`);
+        log(`Current scrape for ${curUrl}`);
+        log(`This is ${i+1} link`);
         await main(curUrl)
             .then(async() => {
                 log('main then');
@@ -309,7 +309,7 @@ async function cityFilter(city){
     log(`CITY IS: ${city}`);
     for(i in acceptable){
         if(acceptable[i]==city){
-            log(`CITY RESULT IS: TRUE`);
+            log(`CITY RESULTT IS: TRUE`);
             return true
         }
     }
@@ -330,7 +330,7 @@ async function cityFilter(city){
 
 
 const yad2ResultsURL = config.yad2ResultsURL;
-console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n\n')}`)
+console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
 mainWrapper(yad2ResultsURL);
 
 async function sendErrorMessage(err){
