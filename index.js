@@ -67,8 +67,9 @@ const waitForCaptchaInput = () => {
 }
 
 const publicFolder = './public/';
-// north tlv 3.5 - 4.5 from 6000 - 8500 with parking and elevator
+
 const main = (async(yad2ResultsURL) => {
+    try{
     const browser = await puppeteer.launch({
         args: ['--no-sandbox']
     });
@@ -262,6 +263,10 @@ const main = (async(yad2ResultsURL) => {
     }
     log('done, found', count, 'new ads');
     await browser.close();
+    }catch(err){
+        browser.close();
+        throw new Error(err);
+    }
 });
 
 async function mainWrapper(yad2ResultsURL) {
