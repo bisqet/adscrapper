@@ -85,7 +85,7 @@ const main = (async(yad2ResultsURL) => {
     if(err){return;}
 
     let bodyHTML = await page.evaluate(() => document.body.innerHTML);
-    fs.writeFileSync('index.html', bodyHTML)
+    fs.writeFileSync(`${yad2ResultsURL}.html`, bodyHTML)
 
     log("main table found")
     const searchSource = await page.content();
