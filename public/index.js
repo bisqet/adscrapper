@@ -16,6 +16,8 @@ app.use(bodyParser());
 
 
 app.use(_.get('/*', async (ctx, next) => {
+		console.log("request handled");
+		
     fs.readFile('./index.html', 'utf8', (err, data) => {
         ctx.body = data;
     });
