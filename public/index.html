@@ -5,15 +5,15 @@
     <title>YAD2 ADS SCRAPPER</title>
     <style>
 .title{
-	color: #00b6ef;
+  color: #00b6ef;
   font-size: 4rem;
 }
 .sendButtonContainer{
-	margin-top: 15px;
+  margin-top: 15px;
 }
 .sendButton{
-	width: 315px;
-	transition: all .5s;
+  width: 315px;
+  transition: all .5s;
   padding: 9px 35px !important;
   text-transform: capitalize;
   position: relative;
@@ -27,15 +27,15 @@
 .group {
   position: relative;
   height: 64px;
-  margin-bottom: 5px;
 }
 
 input {
-	margin: 0 auto;
+  margin: 0 auto;
+  text-align: center;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  width: 600px;
   border: none;
   border-bottom: 1px solid #757575;
 }
@@ -45,7 +45,7 @@ input:focus {
 }
 
 label {
-	margin: 0 auto;
+  margin: 0 auto;
   color: #999;
   font-size: 18px;
   font-weight: normal;
@@ -69,10 +69,10 @@ input:valid~label {
 }
 
 .bar {
-	margin: 0 auto;
+  margin: 0 auto;
   position: relative;
   display: block;
-  width: 315px;
+  width: 615px;
 }
 
 .bar:before,
@@ -82,7 +82,7 @@ input:valid~label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #5264AE;
+  background: #5264ae;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -95,7 +95,13 @@ input:valid~label {
 .bar:after {
   right: 50%;
 }
-
+.section{
+  margin-bottom: 15px;
+}
+.textarea{
+  width: 100%;
+  height: 200px;
+}
 
 /* active state */
 
@@ -106,7 +112,7 @@ input:focus~.bar:after {
 #settingsBar{
   text-align: center;
   width: 50%;
-  font-family:"-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"";
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 @media (max-width: 530px) {
   #settingsBar{
@@ -120,24 +126,24 @@ input:focus~.bar:after {
 <body>
     <main>
         <section id="settingsBar">
-            <div>
+            <div class="section">
                 <label>LINKS TO SCRAPE</label>
                 <textarea class="textarea"></textarea>
             </div>
             <div>
-                <div class="group">
+                <div class="group section">
                     <input type="text" required>
                     <span class="bar"></span>
                     <label>city filter</label>
                 </div>
             </div>
             <div>
-                <div class="group">
+                <div class="group section">
                     <input type="text" required>
                     <span class="bar"></span>
                     <label>Acceptable</label>
                 </div>
-                <div class="group">
+                <div class="group section">
                     <input type="text" required>
                     <span class="bar"></span>
                     <label>Unacceptable</label>
