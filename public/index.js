@@ -406,6 +406,7 @@ app.post('/changeSettings', (req, res) => {
 app.get('/startServer', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
     if (isWakeUpable == "true"){
+          res.send("SERVER STARTED");
             cmd.get(
             `cd /root/adscrapper/
             npm run scrapper`,
@@ -415,7 +416,6 @@ app.get('/startServer', (req, res) => {
                   messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
                   return;
                 }
-                res.send("SERVER STARTED");
             }
         );  
     }else{
