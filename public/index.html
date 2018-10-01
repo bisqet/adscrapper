@@ -111,12 +111,13 @@ input:focus~.bar:after {
 }
 #settingsBar{
   text-align: center;
-  width: 50%;
+  width: 90%;
+  margin: auto;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 @media (max-width: 530px) {
   #settingsBar{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -129,7 +130,7 @@ input:focus~.bar:after {
             <div class="section">
                 <textarea id="scrapeLinks" class="textarea"></textarea>
                 <label class="scrapeLink">Links to scrape</label>
-            </div>-
+            </div>
             <div>
                 <div class="section">
                     <textarea id="unacceptableCities" class="textarea"></textarea>
@@ -139,7 +140,7 @@ input:focus~.bar:after {
             </div>
             <div>
                 <div class="group section">
-                    <input id="sqrfilter"  type="text">
+                    <input id="sqrfilterContainer"  type="text">
                     <span class="bar"></span>
                     <label>SQR filter</label>
                     <div style="font-size: small; color: #999 ">f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
@@ -148,17 +149,14 @@ input:focus~.bar:after {
             </div>
             <div class="sendButtonContainer">
                 <button id="changeSettingsButton" class="sendButton">CHANGE SETTINGS</button>
-                <button id="clearDBButton" class="sendButton" style="">CHANGE SETTINGS</button>
+                <button id="clearDBButton" class="sendButton" style="">CLEAR DB</button>
             </div>
-        </section>
-        <section id="console">
-        	<iframe src="https://manager.linode.com/linodes/weblish/linode10288541"></iframe>
         </section>
     </main>
    	<script type="text/javascript">
    	 	//scrapeLinks unacceptableCities sqrfilter
    	 	changeSettingsButton.addEventListener('click', changeSettings);
-   	 	clearDBDutton.addEventListener('click', clearDB);
+   	 	clearDBButton.addEventListener('click', clearDB);
 
 
    	 	function clearDB(){
@@ -180,7 +178,7 @@ input:focus~.bar:after {
    	 	function changeSettings(){
    	 		const links = scrapeLinks.value.split("\n");
    	 		const unacceptable = unacceptableCities.value.split("\n")
-   	 		const sqrfilter = sqrfilter.value;
+   	 		const sqrfilter = sqrfilterContainer.value;
    	 		fetch("/changeSettings", {
    	 			method:"POST",
    	 			body:{
