@@ -279,10 +279,10 @@ app.post('/changeSettings', (req, res) => {
         if (err) {
             log(err);
             res.send('FAILED TO CHANGE SETTINGS.');
-            messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'http://172.104.211.48:3000' });
+            messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'https://linode.com' });
             return;
         }
-        messageBot.customMessage({ 'err': 'SETTINGS CHANGED', 'url': 'http://172.104.211.48:3000' });
+        messageBot.customMessage({ 'err': 'SETTINGS CHANGED', 'url': 'https://linode.com' });
 
         log('SETTINGS CHANGED');
 
@@ -298,10 +298,10 @@ app.get('/clearDB', (req, res) => {
         if (err) {
             log(err);
             res.send('FAILED TO CLEAR DB.');
-            messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB', 'url': 'http://172.104.211.48:3000' });
+            messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB', 'url': 'https://linode.com' });
             return;
         }
-        messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'http://172.104.211.48:3000' });
+        messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'https://linode.com' });
 
         log('DB CLEARED');
 
@@ -318,10 +318,10 @@ app.get('/restartServer', (req, res) => {
         if (err) {
             log(err);
             res.send('FAILED RESTART SERVER');
-            messageBot.customMessage({ 'err': 'FAILED RESTART SERVER', 'url': 'http://172.104.211.48:3000' });
+            messageBot.customMessage({ 'err': 'FAILED RESTART SERVER', 'url': 'https://linode.com' });
             return;
         }
-        messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
+        messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
 
         log('SERVER RESTARTED');
 
