@@ -311,7 +311,7 @@ async function cityFilter(city){
 
 
 const yad2ResultsURL = config.yad2ResultsURL;
-log(`Checking for URLs:\n ${yad2ResultsURL.join('\n\n')}`)
+//log(`Checking for URLs:\n ${yad2ResultsURL.join('\n\n')}`)
 mainWrapper(yad2ResultsURL);
 
 async function sendErrorMessage(err){
