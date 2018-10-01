@@ -281,7 +281,7 @@ function indexApp() {
             await browser.close();
             await delay(60000); // every 0ne min
         }
-        await delay(60000 * 30); // every 30 min
+        await delay(60000 * 60); // every 30 min
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
     }

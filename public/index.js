@@ -309,7 +309,7 @@ input:focus~.bar:after {
             })
         }
         function startServer(){
-            if(currentServerStatus){
+            if(currentServerStatus=="stopping"){
                 snackBar.innerText = "Server is running now.";
                 snackBar.classList = 'active red';
                 setTimeout(()=>{snackBar.classList = ''}, 2000)
