@@ -241,7 +241,7 @@ input:focus~.bar:after {
                 setTimeout(()=>{snackBar.classList = ""}, 2000)
             })
         }
-        scrapeLinks.value = `${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''`;
+        scrapeLinks.value = `${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}`;
         unacceptableCities.value = `${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join('\n'):''}`
     </script>
 </body>
