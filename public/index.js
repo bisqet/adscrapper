@@ -14,7 +14,6 @@ const app = express();
 
 
 app.use(bodyParser())
-app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
@@ -290,6 +289,7 @@ app.get('/clearDB', (req, res) => {
 
 });
 
+app.use(express.static('public'));
 
 
 app.listen(3000, function () {
