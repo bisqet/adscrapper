@@ -6,6 +6,7 @@ if (!module.parent) {
         const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "" ? false : true
         if (isRestartNeeded) {
             process.on("exit", function() {
+                fs.writeFileSync('.restartNeeded',"" ,'utf8');
                 require("child_process").spawn(process.argv.shift(), process.argv, {
                     cwd: process.cwd(),
                     detached: true,
