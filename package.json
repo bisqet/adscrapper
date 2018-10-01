@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "description": "What am I about??",
   "scripts": {
-    "start": "npm run scrapper & & npm run staticAndGui",
+    "start": "npm run scrapper & npm run staticAndGui",
     "static": "http-server ./public/ -p 3000",
     "scrapper": "node index.js",
     "staticAndGui": "node ./public/index.js"
