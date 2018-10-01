@@ -3,6 +3,7 @@ const bodyParser = require('koa-bodyparser');
 const config = require('../config.js');
 const request = require('request');
 const fs = require('await-fs');
+const syncFs = require('fs');
 const messageBot = require('../messageBot.js')
 const log = require('../log.js');
 
@@ -16,11 +17,7 @@ app.use(bodyParser());
 
 
 app.use(_.get('/*', async (ctx, next) => {
-
-    ctx.body = await fs.readFile('./index.html', 'utf8', (err, data) => {
-        return data;
-    });
-    return;
+    ctx.body = syncFs.readFileSync('./index.html', 'utf8')
 }));
 
 app.use(_.post('/changeSettings', async (ctx, next) => {
