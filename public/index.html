@@ -192,8 +192,8 @@ input:focus~.bar:after {
    	 		fetch("/clearDB").then((res)=>{
    	 			return res.text()
    	 		}).then((res)=>{
-   	 			snackbar.innerText = res;
-   	 			snackbar.classList = "active";
+   	 			snackBar.innerText = res;
+   	 			snackBar.classList = "active";
    	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
    	 		})
    	 	}
@@ -215,8 +215,8 @@ input:focus~.bar:after {
    	 		}).then((res)=>{
    	 			return res.text()
    	 		}).then((res)=>{
-   	 			snackbar.innerText = res;
-   	 			snackbar.classList = "active";
+   	 			snackBar.innerText = res;
+   	 			snackBar.classList = "active";
    	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
    	 		})
    	 	}
