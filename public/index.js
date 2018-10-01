@@ -14,12 +14,13 @@ const app = express();
 
 
 app.use(bodyParser())
+app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-		console.log("request handled");
-		//ctx.res.end("GG!");
-    res.send(syncFs.readFileSync('./index.html', 'utf8'));
+        console.log("request handled");
+        //ctx.res.end("GG!");
+    res.send(syncFs.readFileSync('./public/index.html', 'utf8'));
     //next();
 });
 
@@ -68,5 +69,5 @@ app.post('/clearDB', (req, res) => {
 
 
 app.listen(3000, function () {
-	log("GUI SERVER LISTENING ON 3000 PORT")
+    log("GUI SERVER LISTENING ON 3000 PORT")
 });
