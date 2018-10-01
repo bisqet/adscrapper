@@ -177,6 +177,13 @@ input:focus~.bar:after {
     margin-top: 5px;
     width: 635px;
       }
+      .startServer{
+        display: block;
+        background: #ff3a3a;
+        margin: auto;
+        margin-top: 5px;
+        width: 635px;
+      }
     </style>
 </head>
 
@@ -207,6 +214,7 @@ input:focus~.bar:after {
                 <button id='changeSettingsButton' class='sendButton'>CHANGE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
                 <button id='restartServerButton' class='restartServer sendButton' style=''>RESTART SERVER</button>
+                <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
         </section>
     </main>
@@ -216,6 +224,7 @@ input:focus~.bar:after {
         changeSettingsButton.addEventListener('click', changeSettings);
         clearDBButton.addEventListener('click', clearDB);
         restartServerButton.addEventListener('click', restartServer);
+        startServerButton.addEventListener('click', startServer)
 
         function clearDB(){
             fetch('/clearDB').then((res)=>{
@@ -223,6 +232,15 @@ input:focus~.bar:after {
             }).then((res)=>{
                 snackBar.innerText = res;
                 snackBar.classList = 'active';
+                setTimeout(()=>{snackBar.classList = ''}, 2000)
+            })
+        }
+        function startServer(){
+            fetch('/startServer').then((res)=>{
+                return res.text()
+            }).then((res)=>{
+                snackBar.innerText = res;
+                snackBar.classList = 'active red';
                 setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
@@ -290,6 +308,17 @@ app.post('/changeSettings', (req, res) => {
         return;
     });
 });
+app.get('/startServer', (req, res) => {
+
+    const cmd = "node index.js";
+
+    const exec = require('child_process').exec;
+
+    exec(cmd, function() {
+
+    });
+        
+});
 
 app.get('/clearDB', (req, res) => {
 
@@ -302,7 +331,7 @@ app.get('/clearDB', (req, res) => {
             return;
         }
         messageBot.clearDB();
-        
+
         messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'https://linode.com' });
 
         log('DB CLEARED');

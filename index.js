@@ -88,14 +88,14 @@ function indexApp() {
         await page.goto(yad2ResultsURL);
 
         // check for captcha
-        await page.waitFor("#main_table", { timeout: 120000 })
-
+        await page.waitFor("#main_table", { timeout: 180000 })
         //log("main table found")
 
         const searchSource = await page.content();
         //log("searchSource found");
 
         if (searchSource.indexOf('Are you human?') > -1) {
+            log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!!!", "url": yad2ResultsURL });
             return;
             /*/ get the image
@@ -276,6 +276,7 @@ function indexApp() {
                 })
                 .catch(async (err) => {
                     log('ERROR HAPPENED', err);
+                    i--;
                 });
             await browser.close();
             await delay(60000); // every 0ne min
