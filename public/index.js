@@ -310,7 +310,7 @@ app.post('/changeSettings', (req, res) => {
 });
 app.get('/startServer', (req, res) => {
 
-    const cmd = "node ../index.js";
+    const cmd = "npm run scrapper";
 
     const exec = require('child_process').exec;
 
