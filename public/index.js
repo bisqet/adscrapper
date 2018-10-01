@@ -177,19 +177,19 @@ input:focus~.bar:after {
     <main>
         <section id="settingsBar">
             <div class="section">
-                <textarea id="scrapeLinks" class="textarea" value="${config.yad2ResultsURL.join("\n")}"></textarea>
+                <textarea id="scrapeLinks" class="textarea" value="${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join("\n"):''}"></textarea>
                 <label class="scrapeLink">Links to scrape</label>
             </div>
             <div>
                 <div class="section">
-                    <textarea id="unacceptableCities" class="textarea" value="${config.cityFilter.unacceptable.join("\n")}"></textarea>
+                    <textarea id="unacceptableCities" class="textarea" value="${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join("\n"):''}"></textarea>
                     <span class="bar"></span>
                     <label class="scrapeLink">Unacceptable cities</label>
                 </div>
             </div>
             <div>
                 <div class="group section">
-                    <input id="sqrfilterContainer"  type="text" value="${config.sqrFilter}">
+                    <input id="sqrfilterContainer"  type="text" value="${config.sqrFilter!==undefined?config.sqrFilter:''}">
                     <span class="bar"></span>
                     <label>SQR filter</label>
                     <div style="font-size: small; color: #999 ">f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
