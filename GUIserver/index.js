@@ -3,8 +3,8 @@ const bodyParser = require('koa-bodyparser');
 const config = require('../config.js');
 const request = require('request');
 const fs = require('fs');
-const messageBot = require('./messageBot.js')
-const log = require('./log.js');
+const messageBot = require('../messageBot.js')
+const log = require('../log.js');
 
 
 const _ = require('koa-route');
