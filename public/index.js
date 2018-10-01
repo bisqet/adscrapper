@@ -180,11 +180,10 @@ input:focus~.bar:after {
     width: 315px;
       }
       .startServer{
-        background: #ff3a3a;
         margin: auto;
         margin-top: 5px;
         width: 315px;
-        background-color:#5264ae;
+        background-color:#8ae25d;
       }
 
 .custom-radios div {
@@ -367,7 +366,7 @@ input:focus~.bar:after {
                   res = "color-3"
                 }
               }
-                res === "color-1"?(serverIndicator.checked = "true", currentServerStatus = ""):serverIndicator.checked = "false";
+                res === "color-1"?(serverIndicator.checked = true, currentServerStatus = ""):serverIndicator.checked = false;
 
                 serverIndicator.id = res;
                 labelForStatus.for = res;
@@ -403,6 +402,7 @@ app.post('/changeSettings', (req, res) => {
         return;
     });
 });
+
 app.get('/startServer', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
     if (isWakeUpable == "true"){
@@ -415,8 +415,11 @@ app.get('/startServer', (req, res) => {
                   messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
                   return;
                 }
+                res.send("SERVER STARTED");
             }
         );  
+    }else{
+      res.send("SERVER CAN'T BE STARTED RIGHT NOW.");
     }
 
         
