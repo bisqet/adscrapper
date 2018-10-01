@@ -373,7 +373,7 @@ input:focus~.bar:after {
                 labelForStatus.for = res;
             })
         }
-        setInterval(checkServerAvailibility,1000);
+        setInterval(checkServerAvailibility,5000);
 
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
