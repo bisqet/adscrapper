@@ -20,7 +20,7 @@ app.use(_.post('/changeSettings', async (ctx, next) => {
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
-    fs.writeFile("../config.js", stringifiedBody, "utf8"(err, data) => {
+    fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
         if (err) {
             log(err);
             ctx.body = "FAILED TO CHANGE SETTINGS.";
