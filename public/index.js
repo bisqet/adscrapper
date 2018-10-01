@@ -350,7 +350,7 @@ input:focus~.bar:after {
     function changeSettings() {
         const links = scrapeLinks.value.split('\\n');
         const unacceptable = unacceptableCities.value.split('\\n');
-        const acceptable = acceptableCities.value.split('\n').map(cityWithHoods=>{
+        const acceptable = acceptableCities.value.split('\\n').map(cityWithHoods=>{
           const res = cityWithHoods.split(' | ')
           if(res.length==1)return res[0]
           return res
