@@ -405,7 +405,7 @@ input:focus~.bar:after {
                 }
             }
             res === "color-1" ? (serverIndicator.checked = true, currentServerStatus = "") : serverIndicator.checked = false;
-
+            if(res === "color-4")currentServerStatus = "";
             serverIndicator.id = res;
             labelForStatus.for = res;
         })
