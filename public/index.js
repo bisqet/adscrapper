@@ -18,7 +18,7 @@ const router = new Router();
 
 router.get('/*', (ctx, next) => {
 		console.log("request handled");
-		ctx.res.end("GG!");
+		this.res.end("GG!");
     //ctx.body = syncFs.readFileSync('./index.html', 'utf8');
     //next();
 });
