@@ -5,12 +5,12 @@ if (!module.parent) {
 } //check if it required -- NOT LAUNCH SCRAPPER
 
 function indexApp() {
+    const fs = require('fs');
     const util = require('util');
     const readFile = util.promisify(fs.readFile);
     const deleteFile = util.promisify(fs.unlink);
     const puppeteer = require('puppeteer');
     const request = require('request');
-    const fs = require('fs');
     const log = require('./log.js');
     const low = require('lowdb');
     const config = require('./config.js');
