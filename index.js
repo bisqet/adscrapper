@@ -199,6 +199,7 @@ const main = (async(yad2ResultsURL, browser) => {
             // get the images and the map location
             //log('Fetching images and map data');
             await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
+            try{
             const adMetaData = await page.evaluate(() => {
                 return {
                     images: ImageArr ? ImageArr : [],
@@ -206,6 +207,9 @@ const main = (async(yad2ResultsURL, browser) => {
                 };
             });
             adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
+            }catch(err){
+                adMetaData = {};
+            }
             ad.meta = adMetaData;
 
             // write to DB
@@ -235,8 +239,8 @@ const main = (async(yad2ResultsURL, browser) => {
     }
     log(`Total skipped-duplicate - due to DB: ${parsedAds.length-count}`);
     log('Total skipped due to city filter: ', filteredByCity );
-    log('Total skipped due to SQR filter: ', filteredBySqr);
-    log('Total msgs: ', count);
+    //log('Total skipped due to SQR filter: ', filteredBySqr);
+    log('Total msgs: ', count-filteredByCity-filteredBySqr);
 });
 
 async function mainWrapper(yad2ResultsURL) {
