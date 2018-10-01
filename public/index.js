@@ -362,7 +362,7 @@ input:focus~.bar:after {
           fetch('/checkServerAvailibility').then((res)=>{
                 return res.text()
             }).then((res)=>{
-              if(currentServerStatus==stopping){
+              if('currentServerStatus=='stopping'){
                 if(res==="color-4"){
                   res = "color-3"
                 }
