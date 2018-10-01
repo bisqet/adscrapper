@@ -219,8 +219,8 @@ input:focus~.bar:after {
             })
         }
         function changeSettings(){
-            const links = scrapeLinks.value.split('\n')
-            const unacceptable = unacceptableCities.value.split('\n')
+            const links = scrapeLinks.value.split('\n');
+            const unacceptable = unacceptableCities.value.split('\n');
             const sqrfilter = sqrfilterContainer.value;
             fetch('/changeSettings', {
                 method:'POST',
