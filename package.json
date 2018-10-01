@@ -12,6 +12,7 @@
     "gui": "node ./public/index.js"
   },
   "dependencies": {
+    "await-fs": "^1.0.0",
     "http-server": "^0.11.1",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
