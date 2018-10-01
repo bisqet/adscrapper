@@ -62,21 +62,21 @@ function indexApp() {
             }, 30000); // two minutes
         });
     }
-    fs.writeFileSync('.isServerWakeUpable',"false" ,'utf8');
+    fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
 
     const main = (async (yad2ResultsURL, browser) => {
         reload('./config.js');
         const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
-        fs.writeFileSync('.restartNeeded',"false" ,'utf8');
+        fs.writeFileSync('.restartNeeded', "false", 'utf8');
         if (isStopNeeded) {
             await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
             log("SERVER STOPPED");
             await delay(3000);
 
             process.on("exit", async function() {
-                fs.writeFileSync('.isServerWakeUpable',"true" ,'utf8');
+                fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
             });
             process.exit();
         }
@@ -208,7 +208,7 @@ function indexApp() {
                     filteredBySqr++;
                     continue;
                 }
-                if (!(await cityFilter(adDetails.city))) {
+                if (!(await cityFilter(adDetails.city, adDetails.hood))) {
                     filteredByCity++;
                     continue;
                 }
@@ -222,19 +222,19 @@ function indexApp() {
                 // get the images and the map location
                 //log('Fetching images and map data');
                 await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
-                    const adMetaData = await page.evaluate(() => {
-                        if(mapOptions===undefined){
-                            mapOptions = [];
-                        }
-                        if(ImageArr === undefined){
-                            ImageArr =[]
-                        }
-                        return {
-                            images: ImageArr,
-                            map: mapOptions
-                        };
-                    });
-                    adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
+                const adMetaData = await page.evaluate(() => {
+                    if (mapOptions === undefined) {
+                        mapOptions = [];
+                    }
+                    if (ImageArr === undefined) {
+                        ImageArr = []
+                    }
+                    return {
+                        images: ImageArr,
+                        map: mapOptions
+                    };
+                });
+                adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
                 ad.meta = adMetaData;
 
                 // write to DB
@@ -295,42 +295,61 @@ function indexApp() {
     async function sqrFilter(sqr) {
         if (!sqr) return true;
         const filter = config.sqrFilter;
-        if (filter === "all"||filter === "") return true
+        if (filter === "all" || filter === "") return true
         try {
             log(`SQRfilter IS: ${filter}`);
             log(`SQR IS: ${sqr}`);
-             log(`SQR RESULT IS: ${!!(eval(filter))}`);
+            log(`SQR RESULT IS: ${!!(eval(filter))}`);
             return !!(eval(filter));
         } catch (err) {
             await sendErrorMessage({ err: "ERROR WITH PARSING CITYFILTER!!!" })
-             log("ERROR WITH PARSING SQRFILTER!!!");
+            log("ERROR WITH PARSING SQRFILTER!!!");
             log(err);
             return false;
         }
     }
 
-    async function cityFilter(city) {
+    async function cityFilter(city, hood) {
         if (!city) return true;
         const { acceptable, unacceptable, mode } = config.cityFilter;
         //log(`CITIES unacceptable IS: ${unacceptable}`);
         //log(`CITY IS: ${city}`);
-        for (i in acceptable) {
-            if (acceptable[i] == city) {
-                //log(`CITY RESULTT IS: TRUE`);
-                return true
+        /*{
+            [cityName, hoodname, hoodname],
+            [cityName, hoodname, hoodname],
+            "cityName"
+        }*/
+
+        if (mode === 0) {
+
+            for (let i in acceptable) {
+                if(acceptable[i]===city){
+                    return true;
+                }//cities without approved hoods will be approved
+                if(typeof acceptable[i]!=="object"){
+                    return false;
+                }//check is this city without hoods or no
+                for (let o in acceptable[i]) {
+
+                    if (o === 0 && acceptable[i][o] !== city) {
+                        break;
+                    }
+                    if (acceptable[i][o] == hood) {
+                        return true
+                    }
+
+                }
+
             }
+            return false
         }
-        for (i in unacceptable) {
+
+        for (let i in unacceptable) {
             if (unacceptable[i] == city) {
                 //log(`CITY RESULT IS: FALSE`);
                 return false
             }
         }
-        if (mode === 0) {
-            //log(`CITY RESULT IS: FALSE`);
-            return false
-        }
-        //log(`CITY RESULT IS: TRUE`);
         return true
     }
 
