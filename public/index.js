@@ -233,6 +233,9 @@ input:focus~.bar:after {
   bottom: 5px;
   right: 5px;
 }
+.bg{
+  display:none;
+}
 
     </style>
 </head>
@@ -247,8 +250,10 @@ input:focus~.bar:after {
             <div>
                 <div class='section'>
                     <textarea id='unacceptableCities' class='textarea' value=''></textarea>
+                    <textarea id='acceptableCities' class='textarea bg' value=''></textarea>
                     <span class='bar'></span>
                     <label class='scrapeLink'>Unacceptable cities</label>
+                    <label class='scrapeLink'>Acceptable cities</label>
                 </div>
             </div>
             <div>

@@ -73,6 +73,8 @@ function indexApp() {
         if (isStopNeeded) {
             await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
             log("SERVER STOPPED");
+            await delay(3000);
+
             process.on("exit", async function() {
                 fs.writeFileSync('.isServerWakeUpable',"true" ,'utf8');
             });
@@ -289,14 +291,14 @@ function indexApp() {
         const filter = config.sqrFilter;
         if (filter === "all"||filter === "") return true
         try {
-            //log(`SQRfilter IS: ${filter}`);
-            //log(`SQR IS: ${sqr}`);
-            // log(`SQR RESULT IS: ${!!(eval(filter))}`);
+            log(`SQRfilter IS: ${filter}`);
+            log(`SQR IS: ${sqr}`);
+             log(`SQR RESULT IS: ${!!(eval(filter))}`);
             return !!(eval(filter));
         } catch (err) {
             await sendErrorMessage({ err: "ERROR WITH PARSING CITYFILTER!!!" })
-            // log("ERROR WITH PARSING SQRFILTER!!!");
-            //log(err);
+             log("ERROR WITH PARSING SQRFILTER!!!");
+            log(err);
             return false;
         }
     }
