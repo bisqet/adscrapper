@@ -6,6 +6,8 @@ module.exports = (pid) => {
     const exec = require('child_process').exec;
 
     exec(cmd, function() {
-        process.kill(pid);
+    	exec(`kill ${pid}`, function() {
+    		
+    	});
     });
 }
