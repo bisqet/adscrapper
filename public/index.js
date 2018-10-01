@@ -206,7 +206,7 @@ input:focus~.bar:after {
             <div class='sendButtonContainer'>
                 <button id='changeSettingsButton' class='sendButton'>CHANGE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
-                <button id='restartServerButton' class='sendButton restartServer' style=''>RESTART SERVER</button>
+                <button id='restartServerButton' class='restartServer sendButton' style=''>RESTART SERVER</button>
             </div>
         </section>
     </main>
