@@ -186,11 +186,7 @@ input:focus~.bar:after {
         width: 315px;
         background-color:#5264ae;
       }
-.custom-radios {
-  position: fixed;
-  bottom:5px;
-  right:5px;
-}
+
 .custom-radios div {
   display: inline-block;
 }
@@ -277,7 +273,7 @@ input:focus~.bar:after {
             </div>
         </section>
         <section>
-          <div class="custom-radios">
+          <div class="custom-radios serverStatus">
             <div>
               <input type="radio" id="color-1" name="color" value="color-1" checked>
               <label id = 'labelForStatus'for="color-1">
@@ -429,7 +425,7 @@ app.get('/startServer', (req, res) => {
 
 app.get('/checkServerAvailibility', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8");
-    return isWakeUpable==="true"?"color-4":"color-1"
+    res.send(isWakeUpable==="true"?"color-4":"color-1");
 });
 
 
