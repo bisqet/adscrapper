@@ -411,8 +411,9 @@ app.get('/startServer', (req, res) => {
             npm run scrapper`,
             function(err, data, stderr){
                 if(err){
-                messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
-                    return;
+                  console.log(stderr)
+                  //messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
+                  return;
                 }
                 messageBot.customMessage({ 'err': 'SERVER STARTED', 'url': 'https://linode.com' });
             }
