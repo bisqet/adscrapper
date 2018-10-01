@@ -19,7 +19,7 @@ const router = new Router();
 router.get('/*', async (ctx, next) => {
 		console.log("request handled");
     ctx.body = syncFs.readFileSync('./index.html', 'utf8');
-    return;
+    next();
 });
 
 router.post('/changeSettings', async (ctx, next) => {
