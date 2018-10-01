@@ -367,7 +367,7 @@ input:focus~.bar:after {
                   res = "color-3"
                 }
               }
-                res === "color-1"?serverIndicator.checked = "true", currentServerStatus = "":serverIndicator.checked = "false";
+                res === "color-1"?(serverIndicator.checked = "true", currentServerStatus = ""):serverIndicator.checked = "false";
 
                 serverIndicator.id = res;
                 labelForStatus.for = res;
