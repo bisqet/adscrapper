@@ -18,7 +18,6 @@ app.use(bodyParser())
 
 
 app.get('/', (req, res) => {
-        console.log('request handled');
         //ctx.res.end('GG!');
     res.send(`<!DOCTYPE html>
 <html>

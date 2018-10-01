@@ -9,7 +9,7 @@ const config = require('./config.js');
 const messageBot = require('./messageBot.js')
 const log = require('./log.js');
 
-
+module.exports = process.pid;//to relaunch server.
 // LowDB init 
 // const FileSync = require('lowdb/adapters/FileSync');
 // const adapter = new FileSync('./.data/db.json');
@@ -320,4 +320,3 @@ async function sendErrorMessage(err){
 }
 
 
-module.exports = process.pid;//to relaunch server.
