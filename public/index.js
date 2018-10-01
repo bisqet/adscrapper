@@ -253,7 +253,7 @@ input:focus~.bar:after {
             </div>
             <div>
                 <div class='group section'>
-                    <input id='sqrfilterContainer'  type='text' value='${config.sqrFilter!==undefined?config.sqrFilter:''}'>
+                    <input id='sqrfilterContainer'  type='text' value=''>
                     <span class='bar'></span>
                     <label>SQR filter</label>
                     <div style='font-size: small; color: #999 '>f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
@@ -376,6 +376,7 @@ input:focus~.bar:after {
 
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
+        sqrfilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
 </body>
 
