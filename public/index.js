@@ -408,7 +408,7 @@ app.post('/changeSettings', (req, res) => {
     });
 });
 app.get('/startServer', (req, res) => {
-    const isWakeUpable = syncFs.readFileSync('../.isServerWakeUpable', "utf8")
+    const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
     if (isWakeUpable == "true"){
             cmd.get(
             `cd ../
@@ -428,7 +428,7 @@ app.get('/startServer', (req, res) => {
 
 
 app.get('/checkServerAvailibility', (req, res) => {
-    const isWakeUpable = syncFs.readFileSync('../.isServerWakeUpable', "utf8");
+    const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8");
     return isWakeUpable==="true"?"color-4":"color-1"
 });
 
