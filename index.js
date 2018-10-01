@@ -61,22 +61,19 @@ function indexApp() {
             }, 30000); // two minutes
         });
     }
+    fs.writeFileSync('.isServerWakeUpable',"false" ,'utf8');
 
     const publicFolder = './public/';
 
     const main = (async (yad2ResultsURL, browser) => {
         reload('./config.js');
-        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
+        const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         fs.writeFileSync('.restartNeeded',"false" ,'utf8');
-        if (isRestartNeeded) {
-            await messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
+        if (isStopNeeded) {
+            await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
+            log("SERVER STOPPED");
             process.on("exit", async function() {
-                log("SERVER RESTARTED");
-                require("child_process").spawn(process.argv.shift(), process.argv, {
-                    cwd: process.cwd(),
-                    detached: true,
-                    stdio: "inherit"
-                });
+                fs.writeFileSync('.isServerWakeUpable',"true" ,'utf8');
             });
             process.exit();
         }

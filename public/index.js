@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 const restart = require("../restartServer.js");
 const scrapperPID = require("../index.js");
 
+const cmd = require('node-cmd') 
+
+
 const express = require('express');
 const app = express();
 
@@ -170,19 +173,19 @@ input:focus~.bar:after {
           margin: auto;
         }
       }
-      .restartServer{
+      .stopServer{
         display: block;
     background: #ff3a3a;
     margin: auto;
     margin-top: 5px;
-    width: 635px;
+    width: 315px;
       }
       .startServer{
         display: block;
         background: #ff3a3a;
         margin: auto;
         margin-top: 5px;
-        width: 635px;
+        width: 315px;
       }
     </style>
 </head>
@@ -191,7 +194,7 @@ input:focus~.bar:after {
     <main>
         <section id='settingsBar'>
             <div class='section'>
-                <textarea id='scrapeLinks' class='textarea' value=''></textarea>
+                <textarea id='scrapeLinks' class='textarea' value='' style='font-size:80%'></textarea>
                 <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
@@ -211,9 +214,9 @@ input:focus~.bar:after {
                 </div>
             </div>
             <div class='sendButtonContainer'>
-                <button id='changeSettingsButton' class='sendButton'>CHANGE SETTINGS</button>
+                <button id='changeSettingsButton' class='sendButton'>SAVE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
-                <button id='restartServerButton' class='restartServer sendButton' style=''>RESTART SERVER</button>
+                <button id='restartServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
         </section>
@@ -309,16 +312,41 @@ app.post('/changeSettings', (req, res) => {
     });
 });
 app.get('/startServer', (req, res) => {
+    const isWakeUpable = fs.readFileSync('../.isServerWakeUpable')
+    if (isWakeUpable == "true"){
+            cmd.get(
+            `cd ../
+            npm run scrapper`,
+            function(err, data, stderr){
+                if(err){
+                messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
+                    return;
+                }
+                messageBot.customMessage({ 'err': 'SERVER STARTED', 'url': 'https://linode.com' });
+            }
+        );  
+    }
 
-    const cmd = "npm run scrapper";
+        
+});
+app.get('/stopServer', (req, res) => {
 
-    const exec = require('child_process').exec;
+    fs.writeFile('.restartNeeded', "true", 'utf8', (err, data) => {
+        if (err) {
+            log(err);
+            res.send('FAILED STOP SERVER');
+            messageBot.customMessage({ 'err': 'FAILED STOP SERVER', 'url': 'https://linode.com' });
+            return;
+        }
+        messageBot.customMessage({ 'err': 'SERVER WILL BE STOPPED IN NEXT TICK', 'url': 'https://linode.com' });
 
-    exec(cmd, function() {
-        log("SERVER STARTING")
+        log('SERVER WILL BE STOPPED IN NEXT TICK');
+
+        res.send('SERVER WILL BE STOPPED IN NEXT TICK');        
     });
         
 });
+
 
 app.get('/clearDB', (req, res) => {
 
