@@ -70,7 +70,7 @@ function indexApp() {
         if (isRestartNeeded) {
             process.on("exit", function() {
                 log("SERVER RESTARTED");
-                messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
+                await messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
                 require("child_process").spawn(process.argv.shift(), process.argv, {
                     cwd: process.cwd(),
                     detached: true,
