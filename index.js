@@ -318,3 +318,6 @@ async function sendErrorMessage(err){
     log(err);
     messageBot.customMessage(err)
 }
+
+
+module.exports = process.pid;//to relaunch server.

@@ -5,7 +5,8 @@ const syncFs = require('fs');
 const messageBot = require('../messageBot.js')
 const log = require('../log.js');
 const bodyParser = require('body-parser');
-
+const restart = require("../restartServer.js");
+const scrapperPID = require("../index.js");
 
 const express = require('express');
 const app = express();
@@ -150,7 +151,7 @@ input:focus~.bar:after {
         left: 0;
         right: 0;
         padding: 12px;
-        background-color: ;
+        background-color: #5264ae;
         color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         text-align: center;
@@ -242,7 +243,7 @@ input:focus~.bar:after {
             })
         }
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
-        unacceptableCities.value = \`${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
+        unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     </script>
 </body>
 
@@ -264,9 +265,10 @@ app.post('/changeSettings', (req, res) => {
         }
         messageBot.customMessage({ 'err': 'SETTINGS CHANGED. SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
 
-        log('SETTINGS CHANGED. SERVER RESTARTED');
+        log('SETTINGS CHANGED\nSERVER RESTARTED');
+        restart(scrapperPID);
 
-        res.send('SETTINGS CHANGED.\n SERVER RESTARTED');
+        res.send('SETTINGS CHANGED\nSERVER RESTARTED');
         return;
     });
 });
@@ -278,14 +280,15 @@ app.get('/clearDB', (req, res) => {
         if (err) {
             log(err);
             res.send('FAILED TO CLEAR DB.');
-            messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB.', 'url': 'http://172.104.211.48:3000' });
+            messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB', 'url': 'http://172.104.211.48:3000' });
             return;
         }
         messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'http://172.104.211.48:3000' });
 
-        log('DB CLEARED.\n SERVER RESTARTED');
+        log('DB CLEARED\nSERVER RESTARTED');
+        restart(scrapperPID);
 
-        res.send('DB CLEARED.\n SERVER RESTARTED');
+        res.send('DB CLEARED\nSERVER RESTARTED');
         
     });
 
