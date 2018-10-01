@@ -232,7 +232,10 @@ input:focus~.bar:after {
             const sqrfilter = sqrfilterContainer.value;
             fetch('/changeSettings', {
                 method:'POST',
-                body:{
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                body:JSON.stringify({
                     yad2ResultsURL:links,
                     cityFilter:{
                         unacceptable:unacceptable,
@@ -240,7 +243,7 @@ input:focus~.bar:after {
                         mode:1
                     },
                     sqrfilter:sqrfilter
-                }
+                })
             }).then((res)=>{
                 return res.text()
             }).then((res)=>{
@@ -309,15 +312,22 @@ app.get('/clearDB', (req, res) => {
 });
 
 
-app.get('/restartServer', (req, res) => {
+app.get('/restartServer', (req, res) => {//scrapperPID
 
-        restart(scrapperPID);
-
+    fs.writeFile('.restartNeeded', scrapperPID, 'utf8', (err, data) => {
+        if (err) {
+            log(err);
+            res.send('FAILED RESTART SERVER');
+            messageBot.customMessage({ 'err': 'FAILED RESTART SERVER', 'url': 'http://172.104.211.48:3000' });
+            return;
+        }
         messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
 
         log('SERVER RESTARTED');
 
-        res.send('SERVER RESTARTED');
+        res.send('SERVER RESTARTED');        
+    });
+
         
 
 });

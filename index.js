@@ -1,10 +1,23 @@
 module.exports = process.pid; //to relaunch server.
+const fs = require('fs');
 if (!module.parent) {
     indexApp();
+    setInterval(() => {
+        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "" ? false : true
+        if (isRestartNeeded) {
+            process.on("exit", function() {
+                require("child_process").spawn(process.argv.shift(), process.argv, {
+                    cwd: process.cwd(),
+                    detached: true,
+                    stdio: "inherit"
+                });
+            });
+            process.exit();
+        }
+    }, 5000);
 } //check if it required -- NOT LAUNCH SCRAPPER
 
 function indexApp() {
-    const fs = require('fs');
     const util = require('util');
     const readFile = util.promisify(fs.readFile);
     const deleteFile = util.promisify(fs.unlink);
