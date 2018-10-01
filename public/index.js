@@ -13,7 +13,7 @@ const app = express();
 
 
 
-app.use(bodyParser().json())
+app.use(bodyParser())
 
 
 app.get('/', (ctx, next) => {
