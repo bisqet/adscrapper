@@ -14,13 +14,11 @@ const log = require('../log.js');
 const app = new Koa();
 const router = new Router();
 
-app.use(bodyParser())
-	.use(router.routes())
-  .use(router.allowedMethods());
+
 
 router.get('/*', async (ctx, next) => {
-
-    ctx.body = syncFs.readFileSync('./index.html', 'utf8')
+		console.log("request handled");
+    ctx.body = syncFs.readFileSync('./index.html', 'utf8');
     return;
 });
 
@@ -69,7 +67,9 @@ return;
 
 });
 
-
+app.use(bodyParser())
+	.use(router.routes())
+  .use(router.allowedMethods());
 
 app.listen(8081);
 
