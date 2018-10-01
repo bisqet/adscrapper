@@ -1,23 +1,7 @@
 module.exports = process.pid; //to relaunch server.
-const fs = require('fs');
-const log = require('./log.js');
+
 if (!module.parent) {
     indexApp();
-    setInterval(() => {
-        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
-        fs.writeFileSync('.restartNeeded',"false" ,'utf8');
-        if (isRestartNeeded) {
-            process.on("exit", function() {
-                log("SERVER RESTARTED");
-                require("child_process").spawn(process.argv.shift(), process.argv, {
-                    cwd: process.cwd(),
-                    detached: true,
-                    stdio: "inherit"
-                });
-            });
-            process.exit();
-        }
-    }, 10000);
 } //check if it required -- NOT LAUNCH SCRAPPER
 
 function indexApp() {
@@ -26,7 +10,8 @@ function indexApp() {
     const deleteFile = util.promisify(fs.unlink);
     const puppeteer = require('puppeteer');
     const request = require('request');
-
+    const fs = require('fs');
+    const log = require('./log.js');
     const low = require('lowdb');
     const config = require('./config.js');
     const messageBot = require('./messageBot.js')
@@ -79,6 +64,21 @@ function indexApp() {
     const publicFolder = './public/';
 
     const main = (async (yad2ResultsURL, browser) => {
+
+        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
+        fs.writeFileSync('.restartNeeded',"false" ,'utf8');
+        if (isRestartNeeded) {
+            process.on("exit", function() {
+                log("SERVER RESTARTED");
+                messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
+                require("child_process").spawn(process.argv.shift(), process.argv, {
+                    cwd: process.cwd(),
+                    detached: true,
+                    stdio: "inherit"
+                });
+            });
+            process.exit();
+        }
 
         const page = await browser.newPage();
 

@@ -227,8 +227,8 @@ input:focus~.bar:after {
             })
         }
         function changeSettings(){
-            const links = scrapeLinks.value.split('\\\n');
-            const unacceptable = unacceptableCities.value.split('\\\n');
+            const links = scrapeLinks.value.split('\\n');
+            const unacceptable = unacceptableCities.value.split('\\n');
             const sqrfilter = sqrfilterContainer.value;
             fetch('/changeSettings', {
                 method:'POST',
@@ -321,11 +321,10 @@ app.get('/restartServer', (req, res) => {
             messageBot.customMessage({ 'err': 'FAILED RESTART SERVER', 'url': 'https://linode.com' });
             return;
         }
-        messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
 
-        log('SERVER RESTARTED');
+        log('SERVER WILL BE RESTARTED IN NEXT TICK');
 
-        res.send('SERVER RESTARTED');        
+        res.send('SERVER WILL BE RESTARTED IN NEXT TICK');        
     });
 
         
