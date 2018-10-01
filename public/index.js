@@ -407,7 +407,7 @@ app.get('/startServer', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
     if (isWakeUpable == "true"){
             cmd.get(
-            `cd ../
+            `cd /root/adscrapper/
             npm run scrapper`,
             function(err, data, stderr){
                 if(err){
