@@ -268,7 +268,7 @@ input:focus~.bar:after {
 
 
             <div>
-                <button id='restartServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
+                <button id='stopServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
         </section>
@@ -289,7 +289,7 @@ input:focus~.bar:after {
         //scrapeLinks unacceptableCities sqrfilter
         changeSettingsButton.addEventListener('click', changeSettings);
         clearDBButton.addEventListener('click', clearDB);
-        restartServerButton.addEventListener('click', restartServer);
+        stopServerButton.addEventListener('click', stopServer);
         startServerButton.addEventListener('click', startServer)
 
         let currentServerStatus = ""
