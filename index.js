@@ -5,9 +5,9 @@ if (!module.parent) {
     indexApp();
     setInterval(() => {
         const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
+        fs.writeFileSync('.restartNeeded',"false" ,'utf8');
         if (isRestartNeeded) {
             process.on("exit", function() {
-                fs.writeFileSync('.restartNeeded',"false" ,'utf8');
                 log("SERVER RESTARTED");
                 require("child_process").spawn(process.argv.shift(), process.argv, {
                     cwd: process.cwd(),
@@ -17,7 +17,7 @@ if (!module.parent) {
             });
             process.exit();
         }
-    }, 5000);
+    }, 10000);
 } //check if it required -- NOT LAUNCH SCRAPPER
 
 function indexApp() {
