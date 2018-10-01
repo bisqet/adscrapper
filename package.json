@@ -9,7 +9,7 @@
     "start": "npm run scrapper & npm run static & npm run gui",
     "static": "http-server ./public/ -p 3000",
     "scrapper": "node index.js",
-    "gui": "node ./GUIserver/index.js"
+    "gui": "node ./public/index.js"
   },
   "dependencies": {
     "http-server": "^0.11.1",
