@@ -170,6 +170,13 @@ input:focus~.bar:after {
           margin: auto;
         }
       }
+      .restartServer{
+        display: block;
+    background: #ff3a3a;
+    margin: auto;
+    margin-top: 5px;
+    width: 635px;
+      }
     </style>
 </head>
 
@@ -199,6 +206,7 @@ input:focus~.bar:after {
             <div class='sendButtonContainer'>
                 <button id='changeSettingsButton' class='sendButton'>CHANGE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
+                <button id='restartServerButton' class='restartServer' style=''>RESTART SERVER</button>
             </div>
         </section>
     </main>
@@ -207,7 +215,7 @@ input:focus~.bar:after {
         //scrapeLinks unacceptableCities sqrfilter
         changeSettingsButton.addEventListener('click', changeSettings);
         clearDBButton.addEventListener('click', clearDB);
-
+        restartServerButton.addEventListener('click', restartServer);
 
         function clearDB(){
             fetch('/clearDB').then((res)=>{
@@ -241,6 +249,15 @@ input:focus~.bar:after {
                 setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
+        function restartServer(){
+            fetch('/restartServer').then((res)=>{
+                return res.text()
+            }).then((res)=>{
+                snackBar.innerText = res;
+                snackBar.classList = 'active red';
+                setTimeout(()=>{snackBar.classList = ''}, 2000)
+            })
+        }
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     </script>
@@ -262,12 +279,11 @@ app.post('/changeSettings', (req, res) => {
             messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'http://172.104.211.48:3000' });
             return;
         }
-        messageBot.customMessage({ 'err': 'SETTINGS CHANGED. SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
+        messageBot.customMessage({ 'err': 'SETTINGS CHANGED', 'url': 'http://172.104.211.48:3000' });
 
-        log('SETTINGS CHANGED\nSERVER RESTARTED');
-        restart(scrapperPID);
+        log('SETTINGS CHANGED');
 
-        res.send('SETTINGS CHANGED\nSERVER RESTARTED');
+        res.send('SETTINGS CHANGED');
         return;
     });
 });
@@ -284,12 +300,25 @@ app.get('/clearDB', (req, res) => {
         }
         messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'http://172.104.211.48:3000' });
 
-        log('DB CLEARED\nSERVER RESTARTED');
-        restart(scrapperPID);
+        log('DB CLEARED');
 
-        res.send('DB CLEARED\nSERVER RESTARTED');
+        res.send('DB CLEARED');
         
     });
+
+});
+
+
+app.get('/restartServer', (req, res) => {
+
+        restart(scrapperPID);
+
+        messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
+
+        log('SERVER RESTARTED');
+
+        res.send('SERVER RESTARTED');
+        
 
 });
 
