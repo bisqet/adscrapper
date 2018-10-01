@@ -1,9 +1,9 @@
-const config = require('../config.js');
+const config = require('./config.js');
 const request = require('request');
 const fs = require('await-fs');
 const syncFs = require('fs');
 const messageBot = require('../messageBot.js')
-const log = require('../log.js');
+const log = require('./log.js');
 const bodyParser = require('body-parser');
 
 
