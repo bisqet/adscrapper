@@ -29,10 +29,10 @@ app.post('/changeSettings', (req, res) => {
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
-    await fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
+    fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
         if (err) {
             log(err);
-            ctx.body = "FAILED TO CHANGE SETTINGS.";
+            res.send("FAILED TO CHANGE SETTINGS.");
             messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "172.104.211.48:8081" });
             return;
         }
@@ -40,19 +40,18 @@ app.post('/changeSettings', (req, res) => {
 
         log("SETTINGS CHANGED. SERVER RESTARTED");
 
-        ctx.body = "SETTINGS CHANGED. SERVER RESTARTED";
+        res.send("SETTINGS CHANGED. SERVER RESTARTED");
         return;
     });
-    return;
 });
 
 app.post('/clearDB', (req, res) => {
 
 
-    await fs.writeFile('../adsDB.json', '', 'utf8', (err, data) => {
+    fs.writeFile('../adsDB.json', '', 'utf8', (err, data) => {
         if (err) {
             log(err);
-            ctx.body = "FAILED TO CLEAR DB.";
+            res.send("FAILED TO CLEAR DB.");
             messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "172.104.211.48:8081" });
             return;
         }
@@ -60,11 +59,9 @@ app.post('/clearDB', (req, res) => {
 
         log("DB CLEARED");
 
-        ctx.body = "DB CLEARED";
+        res.send("DB CLEARED");
         
     });
-
-return;
 
 });
 
