@@ -122,7 +122,7 @@ input:focus~.bar:after {
   }
 }
 
-     	#snackbar{
+     	#snackBar{
         display: block;
         position: fixed;
         bottom: 0;
@@ -139,12 +139,12 @@ input:focus~.bar:after {
         transition-duration: 0.2s;
         visibility: hidden;
       }
-      #snackbar.active {
+      #snackBar.active {
         visibility: visible;
         transform: translate3d(0, 0, 0);
       }
       @media (min-width: 460px) {
-        #snackbar {
+        #snackBar {
           width: 320px;
           margin: auto;
         }
@@ -194,7 +194,7 @@ input:focus~.bar:after {
    	 		}).then((res)=>{
    	 			snackBar.innerText = res;
    	 			snackBar.classList = "active";
-   	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
+   	 			setTimeout(()=>{snackBar.classList = ""}, 2000)
    	 		})
    	 	}
    	 	function changeSettings(){
@@ -217,7 +217,7 @@ input:focus~.bar:after {
    	 		}).then((res)=>{
    	 			snackBar.innerText = res;
    	 			snackBar.classList = "active";
-   	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
+   	 			setTimeout(()=>{snackBar.classList = ""}, 2000)
    	 		})
    	 	}
 

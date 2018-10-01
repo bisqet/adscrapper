@@ -30,14 +30,14 @@ app.post('/changeSettings', (req, res) => {
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
-    fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
+    fs.writeFile("./config.js", stringifiedBody, "utf8", (err, data) => {
         if (err) {
             log(err);
             res.send("FAILED TO CHANGE SETTINGS.");
-            messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "1http://172.104.211.48:3000" });
+            messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "http://172.104.211.48:3000" });
             return;
         }
-        messageBot.customMessage({ "err": "SETTINGS CHANGED. SERVER RESTARTED", "url": "1http://172.104.211.48:3000" });
+        messageBot.customMessage({ "err": "SETTINGS CHANGED. SERVER RESTARTED", "url": "http://172.104.211.48:3000" });
 
         log("SETTINGS CHANGED. SERVER RESTARTED");
 
@@ -49,14 +49,14 @@ app.post('/changeSettings', (req, res) => {
 app.get('/clearDB', (req, res) => {
 
 
-    fs.writeFile('../adsDB.json', '', 'utf8', (err, data) => {
+    fs.writeFile('./adsDB.json', '', 'utf8', (err, data) => {
         if (err) {
             log(err);
             res.send("FAILED TO CLEAR DB.");
-            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "1http://172.104.211.48:3000" });
+            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "http://172.104.211.48:3000" });
             return;
         }
-        messageBot.customMessage({ "err": "DB CLEARED", "url": "1http://172.104.211.48:3000" });
+        messageBot.customMessage({ "err": "DB CLEARED", "url": "http://172.104.211.48:3000" });
 
         log("DB CLEARED");
 
