@@ -151,7 +151,7 @@ input:focus~.bar:after {
         left: 0;
         right: 0;
         padding: 12px;
-        background-color: var(--app-secondary-color);
+        background-color: ;
         color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         text-align: center;
@@ -265,7 +265,7 @@ app.post('/changeSettings', (req, res) => {
 
         log("SETTINGS CHANGED. SERVER RESTARTED");
 
-        res.send("SETTINGS CHANGED. SERVER RESTARTED");
+        res.send("SETTINGS CHANGED.\n SERVER RESTARTED");
         return;
     });
 });
@@ -282,9 +282,9 @@ app.get('/clearDB', (req, res) => {
         }
         messageBot.customMessage({ "err": "DB CLEARED", "url": "http://172.104.211.48:3000" });
 
-        log("DB CLEARED");
+        log("DB CLEARED.\n SERVER RESTARTED");
 
-        res.send("DB CLEARED");
+        res.send("DB CLEARED.\n SERVER RESTARTED");
         
     });
 
