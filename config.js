@@ -11,10 +11,10 @@ const config = {
 		"http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=71&City=&HomeTypeID=5&fromRooms=4&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&LongTerm=1&EnterDate=&Info=",
 	]
 }
-config.sqrFilter = "true"//&& - and; || - or; ! - not; >= - more or equal; true - accept all
+config.sqrFilter = "all"//&& - and; || - or; ! - not; >= - more or equal; all - accept all
 config.cityFilter = {
 	acceptable:[],
-	disacceptable:[
+	unacceptable:[
 	`גבעת כ"ח`,
 	`ראש העין`,
 	`בני ברק`,
@@ -29,4 +29,5 @@ config.cityFilter = {
 ],
 	mode:1
 }//0 - only acceptable towns. 1 - only no disacceptable towns
+
 module.exports = config;

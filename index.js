@@ -6,7 +6,8 @@ const puppeteer = require('puppeteer');
 const request = require('request');
 const low = require('lowdb');
 const config = require('./config.js');
-
+const messageBot = require('./messageBot.js')
+const log = require('./log.js');
 
 
 // LowDB init 
@@ -20,23 +21,10 @@ const adapterAds = new FileSync('./adsDB.json');
 const adsDB = low(adapterAds);
 adsDB.defaults({ ads: [] })
     .write();
-const adapterLogs = new FileSync('./.data/logsDB.json');
-const logsDB = low(adapterLogs);
-logsDB.defaults({ logs: [] })
-    .write();
-
-// console + logsDB logging
-function log() {
-    const text = Array.prototype.join.call(arguments, ' ');
-    console.log(text);
-    logsDB.get('logs')
-        .push(Date() + ' - ' + text)
-        .write();
-};
 
 // functions
 function delay(mseconds) {
-    log('Pausing for', mseconds / 1000, 'seconds...');
+    //log('Pausing for', mseconds / 1000, 'seconds...');
     return new Promise(resolve => {
         setTimeout(() => resolve(), mseconds);
     });
@@ -68,29 +56,22 @@ const waitForCaptchaInput = () => {
 
 const publicFolder = './public/';
 
-const main = (async(yad2ResultsURL) => {
-    try{
-    const browser = await puppeteer.launch({
-        args: ['--no-sandbox']
-    });
+const main = (async(yad2ResultsURL, browser) => {
+
     const page = await browser.newPage();
+
     page.setDefaultNavigationTimeout(120000 * 2);
+
     await page.goto(yad2ResultsURL);
-    await page.waitFor(10000);
-    await page.screenshot({ path: publicFolder + 'searchResultsx.png' });
-    log('search results page loaded');
 
     // check for captcha
-    let err = 0;
-    await page.waitFor("#main_table", { timeout: 120000 }).catch(()=>{
-        err = 1;
-        browser.close();
-    });
-    if(err){return;}
+    await page.waitFor("#main_table", { timeout: 120000 })
 
-    log("main table found")
+    //log("main table found")
+
     const searchSource = await page.content();
-    log("searchSource found")
+    //log("searchSource found");
+
     if (searchSource.indexOf('Are you human?') > -1) {
         await sendErrorMessage({"err":"ERROR CAPTCHA!!!", "url":yad2ResultsURL});
         return;
@@ -141,9 +122,10 @@ const main = (async(yad2ResultsURL) => {
         });
         return adsResults;
     });
-    log(parsedAds)
-    log('Found # ads:', parsedAds.length);
+    log('Total ads on page:', parsedAds.length);
     let count = 0;
+    let filteredBySqr = 0;
+    let filteredByCity = 0;
     for (const ad of parsedAds) {
         const existingAd = adsDB.get('ads')
             .find({ id: ad.id })
@@ -153,9 +135,11 @@ const main = (async(yad2ResultsURL) => {
             // new ad
             count += 1;
             ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
-            log('Fetching', ad.link);
+            //log('Fetching', ad.link);
             await page.goto(ad.link);
-            await page.waitFor(10000);
+
+            await page.waitFor(15000);
+
             await page.waitFor("#mainFrame", { timeout: 60000 * 5 }); // max 5 minutes
             const adDetails = await page.evaluate(() => {
                 const data = {};
@@ -192,17 +176,17 @@ const main = (async(yad2ResultsURL) => {
                     };
                 });
 
-                 console.log('nadlan data', JSON.stringify(data));
                 // remove info divs scrollbars for screenshots
                 $('.details_block_296 .details_block_body div:nth-child(2)').css({ height: 'inherit' });
                 return data;
             });
-            console.log(adDetails.sqrmeter)
-            console.log(adDetails)
+
             if(!(await sqrFilter(adDetails.sqrmeter))){
+                filteredBySqr++;
                 continue;
             }
             if(!(await cityFilter(adDetails.city))){
+                filteredByCity++;
                 continue;
             }
             ad.data = adDetails;
@@ -210,10 +194,10 @@ const main = (async(yad2ResultsURL) => {
             // screenshot the data
             const infoElement = await page.$('#mainFrame > div.right_column > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)');
             await infoElement.screenshot({ path: `${publicFolder}${ad.id}-info.png` });
-            log('ad info screenshot created ' + `${publicFolder}${ad.id}-info.png`);
+            //log('ad info screenshot created ' + `${publicFolder}${ad.id}-info.png`);
 
             // get the images and the map location
-            log('Fetching images and map data');
+            //log('Fetching images and map data');
             await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
             const adMetaData = await page.evaluate(() => {
                 return {
@@ -233,25 +217,13 @@ const main = (async(yad2ResultsURL) => {
 
             //log('webhook bot data => ', JSON.stringify(ad));
             //console.info(ad);
-            const reqOptions = {
-                uri: 'https://flatbot.glitch.me/pushNewAd',
-                method: 'POST',
-                json: true,
-                body: ad
-            };
-            request(reqOptions);
+            messageBot.pushNewAd(ad)
             await delay(15000);
         } else {
             // existing ad, check for price change
             // if changed update the new price and alert
             if (existingAd.price != ad.price) {
-                const reqOptions = {
-                    uri: 'https://flatbot.glitch.me/pushAdUpdate',
-                    method: 'POST',
-                    json: true,
-                    body: ad
-                };
-                request(reqOptions);
+                messageBot.pushAdUpdate(ad);
                 log('found existing ad with price change, sending update ');
                 adsDB.get('ads')
                     .find({ id: existingAd.id })
@@ -261,91 +233,84 @@ const main = (async(yad2ResultsURL) => {
 
         }
     }
-    log('done, found', count, 'new ads');
-    await browser.close();
-    }catch(err){
-        browser.close();
-        throw new Error(err);
-    }
+    log(`Total skipped-duplicate - due to DB: ${parsedAds.length-count}`);
+    log('Total skipped due to city filter: ', filteredByCity );
+    log('Total skipped due to SQR filter: ', filteredBySqr);
+    log('Total msgs: ', count);
 });
 
 async function mainWrapper(yad2ResultsURL) {
     for (let i = 0; i < yad2ResultsURL.length; i++) {
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox']
+        });
         let curUrl = yad2ResultsURL[i];
-        log(`Current scrape for ${curUrl}`);
-        log(`This is ${i+1} link`);
-        await main(curUrl)
+        //log(`Current scrape for ${curUrl}`);
+        log(`URL №${i+1}`);
+        await main(curUrl, browser)
             .then(async() => {
-                log('main then');
-                log('done [then]');
+                log('Successful.');
             })
             .catch(async(err) => {
-                log('main catch - error:', err);
-                log('done [err]');
+                log('ERROR HAPPENED', err);
             });
+        await browser.close();
         await delay(60000); // every 0ne min
     }
     await delay(60000 * 30); // every 30 min
-    log('calling main again!');
+    //log('calling main again!');
     mainWrapper(yad2ResultsURL);
 }
 
 async function sqrFilter(sqr){
     if(!sqr)return true;
     const filter = config.sqrFilter;
-    console.log(sqr);
+    if(filter === "all")return true
     try{
-        log(`SQRfilter IS: ${filter}`);
-        log(`SQR IS: ${sqr}`);
-        log(`SQR RESULT IS: ${!!(eval(filter))}`);
+        //log(`SQRfilter IS: ${filter}`);
+        //log(`SQR IS: ${sqr}`);
+       // log(`SQR RESULT IS: ${!!(eval(filter))}`);
         return !!(eval(filter));
     }catch(err){
         await sendErrorMessage({err: "ERROR WITH PARSING CITYFILTER!!!"})
-        log("ERROR WITH PARSING SQRFILTER!!!");
-        log(err);
+       // log("ERROR WITH PARSING SQRFILTER!!!");
+        //log(err);
         return false;
     }
 }
 
 async function cityFilter(city){
     if(!city)return true;
-    const {acceptable,disacceptable, mode} = config.cityFilter;
-    log(`CITIES disacceptable IS: ${disacceptable}`);
-    log(`CITY IS: ${city}`);
+    const {acceptable,unacceptable, mode} = config.cityFilter;
+    //log(`CITIES unacceptable IS: ${unacceptable}`);
+    //log(`CITY IS: ${city}`);
     for(i in acceptable){
         if(acceptable[i]==city){
-            log(`CITY RESULTT IS: TRUE`);
+            //log(`CITY RESULTT IS: TRUE`);
             return true
         }
     }
-    for(i in disacceptable){
-        if(disacceptable[i]==city){
-            log(`CITY RESULT IS: FALSE`);
+    for(i in unacceptable){
+        if(unacceptable[i]==city){
+            //log(`CITY RESULT IS: FALSE`);
             return false
         }
     }
     if(mode===0){
-        log(`CITY RESULT IS: FALSE`);
+        //log(`CITY RESULT IS: FALSE`);
         return false
     }
-    log(`CITY RESULT IS: TRUE`);
+    //log(`CITY RESULT IS: TRUE`);
     return true
 }
 
 
 
 const yad2ResultsURL = config.yad2ResultsURL;
-console.log(`Checking for those URLs: ${yad2ResultsURL.join('\n')}`)
+log(`Checking for URLs:\n ${yad2ResultsURL.join('\n\n')}`)
 mainWrapper(yad2ResultsURL);
 
 async function sendErrorMessage(err){
-    log("ERROR CAPTCHA!!!");
-    const reqOptions = {
-        uri: 'https://flatbot.glitch.me/errorMessage',
-        method: 'POST',
-        json: true,
-        body: err
-    };
-    request(reqOptions);
-    await delay(15000);
+    log(err);
+    messageBot.customMessage(err)
 }
