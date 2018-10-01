@@ -17,8 +17,8 @@ app.use(bodyParser())
 
 
 app.get('/', (req, res) => {
-        console.log("request handled");
-        //ctx.res.end("GG!");
+        console.log('request handled');
+        //ctx.res.end('GG!');
     res.send(`<!DOCTYPE html>
 <html>
 
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
   padding: 9px 35px !important;
   text-transform: capitalize;
   position: relative;
-  font-family: "'Karla', Arial, sans-serif";
+  font-family: ''Karla', Arial, sans-serif';
   font-weight: 700;
   background: #5264ae;
   color: #fff !important;
@@ -134,7 +134,7 @@ input:focus~.bar:after {
   text-align: center;
   width: 90%;
   margin: auto;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 @media (max-width: 530px) {
   #settingsBar{
@@ -175,55 +175,55 @@ input:focus~.bar:after {
 
 <body>
     <main>
-        <section id="settingsBar">
-            <div class="section">
-                <textarea id="scrapeLinks" class="textarea" value=""></textarea>
-                <label class="scrapeLink">Links to scrape</label>
+        <section id='settingsBar'>
+            <div class='section'>
+                <textarea id='scrapeLinks' class='textarea' value=''></textarea>
+                <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
-                <div class="section">
-                    <textarea id="unacceptableCities" class="textarea" value=""></textarea>
-                    <span class="bar"></span>
-                    <label class="scrapeLink">Unacceptable cities</label>
+                <div class='section'>
+                    <textarea id='unacceptableCities' class='textarea' value=''></textarea>
+                    <span class='bar'></span>
+                    <label class='scrapeLink'>Unacceptable cities</label>
                 </div>
             </div>
             <div>
-                <div class="group section">
-                    <input id="sqrfilterContainer"  type="text" value="${config.sqrFilter!==undefined?config.sqrFilter:''}">
-                    <span class="bar"></span>
+                <div class='group section'>
+                    <input id='sqrfilterContainer'  type='text' value='${config.sqrFilter!==undefined?config.sqrFilter:''}'>
+                    <span class='bar'></span>
                     <label>SQR filter</label>
-                    <div style="font-size: small; color: #999 ">f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
+                    <div style='font-size: small; color: #999 '>f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
                     </div>
                 </div>
             </div>
-            <div class="sendButtonContainer">
-                <button id="changeSettingsButton" class="sendButton">CHANGE SETTINGS</button>
-                <button id="clearDBButton" class="sendButton" style="">CLEAR DB</button>
+            <div class='sendButtonContainer'>
+                <button id='changeSettingsButton' class='sendButton'>CHANGE SETTINGS</button>
+                <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
             </div>
         </section>
     </main>
-    <footer id="snackBar"></footer>
-    <script type="text/javascript">
+    <footer id='snackBar'></footer>
+    <script type='text/javascript'>
         //scrapeLinks unacceptableCities sqrfilter
         changeSettingsButton.addEventListener('click', changeSettings);
         clearDBButton.addEventListener('click', clearDB);
 
 
         function clearDB(){
-            fetch("/clearDB").then((res)=>{
+            fetch('/clearDB').then((res)=>{
                 return res.text()
             }).then((res)=>{
                 snackBar.innerText = res;
                 snackBar.classList = 'active';
-                setTimeout(()=>{snackBar.classList = ""}, 2000)
+                setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
         function changeSettings(){
-            const links = scrapeLinks.value.split("\n");
-            const unacceptable = unacceptableCities.value.split("\n")
+            const links = scrapeLinks.value.split('\n');
+            const unacceptable = unacceptableCities.value.split('\n')
             const sqrfilter = sqrfilterContainer.value;
-            fetch("/changeSettings", {
-                method:"POST",
+            fetch('/changeSettings', {
+                method:'POST',
                 body:{
                     yad2ResultsURL:links,
                     cityFilter:{
@@ -238,7 +238,7 @@ input:focus~.bar:after {
             }).then((res)=>{
                 snackBar.innerText = res;
                 snackBar.classList = 'active';
-                setTimeout(()=>{snackBar.classList = ""}, 2000)
+                setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
@@ -255,18 +255,18 @@ app.post('/changeSettings', (req, res) => {
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
-    fs.writeFile("./config.js", stringifiedBody, "utf8", (err, data) => {
+    fs.writeFile('./config.js', stringifiedBody, 'utf8', (err, data) => {
         if (err) {
             log(err);
-            res.send("FAILED TO CHANGE SETTINGS.");
-            messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "http://172.104.211.48:3000" });
+            res.send('FAILED TO CHANGE SETTINGS.');
+            messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'http://172.104.211.48:3000' });
             return;
         }
-        messageBot.customMessage({ "err": "SETTINGS CHANGED. SERVER RESTARTED", "url": "http://172.104.211.48:3000" });
+        messageBot.customMessage({ 'err': 'SETTINGS CHANGED. SERVER RESTARTED', 'url': 'http://172.104.211.48:3000' });
 
-        log("SETTINGS CHANGED. SERVER RESTARTED");
+        log('SETTINGS CHANGED. SERVER RESTARTED');
 
-        res.send("SETTINGS CHANGED.\n SERVER RESTARTED");
+        res.send('SETTINGS CHANGED.\n SERVER RESTARTED');
         return;
     });
 });
@@ -277,15 +277,15 @@ app.get('/clearDB', (req, res) => {
     fs.writeFile('./adsDB.json', '', 'utf8', (err, data) => {
         if (err) {
             log(err);
-            res.send("FAILED TO CLEAR DB.");
-            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "http://172.104.211.48:3000" });
+            res.send('FAILED TO CLEAR DB.');
+            messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB.', 'url': 'http://172.104.211.48:3000' });
             return;
         }
-        messageBot.customMessage({ "err": "DB CLEARED", "url": "http://172.104.211.48:3000" });
+        messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'http://172.104.211.48:3000' });
 
-        log("DB CLEARED.\n SERVER RESTARTED");
+        log('DB CLEARED.\n SERVER RESTARTED');
 
-        res.send("DB CLEARED.\n SERVER RESTARTED");
+        res.send('DB CLEARED.\n SERVER RESTARTED');
         
     });
 
@@ -295,5 +295,5 @@ app.use(express.static('public'));
 
 
 app.listen(3000, function () {
-    log("GUI SERVER LISTENING ON 3000 PORT")
+    log('GUI SERVER LISTENING ON 3000 PORT')
 });
