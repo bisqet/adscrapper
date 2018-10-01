@@ -37,7 +37,7 @@ app.use(_.post('/changeSettings', async (ctx, next) => {
     return;
 }));
 
-app.use(_.get('/resetDB', async (ctx, next) => {
+app.use(_.post('/resetDB', async (ctx, next) => {
 
 
     fs.writeFile('../adsDN.json', '', 'utf8', (err, data) => {
