@@ -2,7 +2,8 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const config = require('../config.js');
 const request = require('request');
-const fs = require('fs');
+const fs = require('await-fs');
+const syncFs = require('fs');
 const messageBot = require('../messageBot.js')
 const log = require('../log.js');
 
@@ -14,13 +15,20 @@ const app = new Koa();
 
 app.use(bodyParser());
 
+
+app.use(_.get('/*', async (ctx, next) => {
+
+    ctx.body = syncFs.readFileSync('./index.html', 'utf8')
+    return;
+}));
+
 app.use(_.post('/changeSettings', async (ctx, next) => {
 
     const body = ctx.request.body;
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
-    fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
+    await fs.writeFile("../config.js", stringifiedBody, "utf8", (err, data) => {
         if (err) {
             log(err);
             ctx.body = "FAILED TO CHANGE SETTINGS.";
@@ -40,7 +48,7 @@ app.use(_.post('/changeSettings', async (ctx, next) => {
 app.use(_.post('/resetDB', async (ctx, next) => {
 
 
-    fs.writeFile('../adsDN.json', '', 'utf8', (err, data) => {
+    await fs.writeFile('../adsDN.json', '', 'utf8', (err, data) => {
         if (err) {
             log(err);
             ctx.body = "FAILED TO CLEAN DB.";
@@ -59,14 +67,6 @@ return;
 
 }));
 
-
-app.use(_.get('/*', async (ctx, next) => {
-    fs.readFile('./index.html', 'utf8', (err, data) => {
-
-        ctx.body = data;
-    });
-    return;
-}));
 
 
 app.listen(8081);

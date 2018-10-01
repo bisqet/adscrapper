@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
+const Router = require('koa-router');
 const config = require('../config.js');
 const request = require('request');
 const fs = require('await-fs');
@@ -8,19 +9,22 @@ const messageBot = require('../messageBot.js')
 const log = require('../log.js');
 
 
-const _ = require('koa-route');
 
 
 const app = new Koa();
+const router = new Router();
 
-app.use(bodyParser());
+app.use(bodyParser())
+	.use(router.routes())
+  .use(router.allowedMethods());
 
+router.get('/*', async (ctx, next) => {
 
-app.use(_.get('/*', async (ctx, next) => {
-    ctx.body = syncFs.readFileSync('./index.html', 'utf8');
-}));
+    ctx.body = syncFs.readFileSync('./index.html', 'utf8')
+    return;
+});
 
-app.use(_.post('/changeSettings', async (ctx, next) => {
+router.post('/changeSettings', async (ctx, next) => {
 
     const body = ctx.request.body;
 
@@ -41,9 +45,9 @@ app.use(_.post('/changeSettings', async (ctx, next) => {
         return;
     });
     return;
-}));
+});
 
-app.use(_.post('/resetDB', async (ctx, next) => {
+router.post('/resetDB', async (ctx, next) => {
 
 
     await fs.writeFile('../adsDN.json', '', 'utf8', (err, data) => {
@@ -63,9 +67,10 @@ app.use(_.post('/resetDB', async (ctx, next) => {
 
 return;
 
-}));
+});
 
 
 
 app.listen(8081);
+
 log("GUI SERVER LISTENING ON 8081 PORT")
