@@ -186,7 +186,11 @@ input:focus~.bar:after {
         width: 315px;
         background-color:#5264ae;
       }
-
+.custom-radios {
+  position: fixed;
+  bottom:5px;
+  right:5px;
+}
 .custom-radios div {
   display: inline-block;
 }
