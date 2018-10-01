@@ -16,7 +16,7 @@ const app = express();
 app.use(bodyParser())
 
 
-app.get('/', (ctx, next) => {
+app.get('/', (req, res) => {
 		console.log("request handled");
 		//ctx.res.end("GG!");
     res.send(syncFs.readFileSync('./index.html', 'utf8'));
