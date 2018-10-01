@@ -1,12 +1,14 @@
 module.exports = process.pid; //to relaunch server.
 const fs = require('fs');
+const log = require('./log.js');
 if (!module.parent) {
     indexApp();
     setInterval(() => {
-        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "" ? false : true
+        const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         if (isRestartNeeded) {
             process.on("exit", function() {
-                fs.writeFileSync('.restartNeeded',"" ,'utf8');
+                fs.writeFileSync('.restartNeeded',"false" ,'utf8');
+                log("SERVER RESTARTED");
                 require("child_process").spawn(process.argv.shift(), process.argv, {
                     cwd: process.cwd(),
                     detached: true,
@@ -24,10 +26,10 @@ function indexApp() {
     const deleteFile = util.promisify(fs.unlink);
     const puppeteer = require('puppeteer');
     const request = require('request');
+
     const low = require('lowdb');
     const config = require('./config.js');
     const messageBot = require('./messageBot.js')
-    const log = require('./log.js');
 
 
     // LowDB init 

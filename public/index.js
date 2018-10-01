@@ -312,9 +312,9 @@ app.get('/clearDB', (req, res) => {
 });
 
 
-app.get('/restartServer', (req, res) => {//scrapperPID
+app.get('/restartServer', (req, res) => {
 
-    fs.writeFile('.restartNeeded', scrapperPID, 'utf8', (err, data) => {
+    fs.writeFile('.restartNeeded', "true", 'utf8', (err, data) => {
         if (err) {
             log(err);
             res.send('FAILED RESTART SERVER');
