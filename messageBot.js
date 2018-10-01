@@ -19,6 +19,13 @@ exports.pushAdUpdate = async function(ad) {
     };
     request(reqOptions);
 }
+exports.clearDB = async function(){
+    const reqOptions = {
+        uri: 'https://flatbot.glitch.me/clearDB',
+        method: 'GET'
+    };
+    request(reqOptions);
+}
 
 exports.customMessage = async function(msg) {
     const reqOptions = {

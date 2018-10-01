@@ -301,6 +301,8 @@ app.get('/clearDB', (req, res) => {
             messageBot.customMessage({ 'err': 'FAILED TO CLEAR DB', 'url': 'https://linode.com' });
             return;
         }
+        messageBot.clearDB();
+        
         messageBot.customMessage({ 'err': 'DB CLEARED', 'url': 'https://linode.com' });
 
         log('DB CLEARED');
