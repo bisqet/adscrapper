@@ -5,6 +5,7 @@ if (!module.parent) {
 } //check if it required -- NOT LAUNCH SCRAPPER
 
 function indexApp() {
+    const reload = require('require-reload')(require)
     const fs = require('fs');
     const util = require('util');
     const readFile = util.promisify(fs.readFile);
@@ -13,7 +14,7 @@ function indexApp() {
     const request = require('request');
     const log = require('./log.js');
     const low = require('lowdb');
-    const config = require('./config.js');
+    const config = reload('./config.js');
     const messageBot = require('./messageBot.js')
 
 
@@ -64,7 +65,7 @@ function indexApp() {
     const publicFolder = './public/';
 
     const main = (async (yad2ResultsURL, browser) => {
-
+        reload('./config.js');
         const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         fs.writeFileSync('.restartNeeded',"false" ,'utf8');
         if (isRestartNeeded) {
