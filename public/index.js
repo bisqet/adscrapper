@@ -5,4 +5,4 @@ app.use((ctx) => {
   ctx.body = 'Hello World!';
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen( 8080);
