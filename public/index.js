@@ -177,12 +177,12 @@ input:focus~.bar:after {
     <main>
         <section id="settingsBar">
             <div class="section">
-                <textarea id="scrapeLinks" class="textarea" value="${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}"></textarea>
+                <textarea id="scrapeLinks" class="textarea" value=""></textarea>
                 <label class="scrapeLink">Links to scrape</label>
             </div>
             <div>
                 <div class="section">
-                    <textarea id="unacceptableCities" class="textarea" value="${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join('\n'):''}"></textarea>
+                    <textarea id="unacceptableCities" class="textarea" value=""></textarea>
                     <span class="bar"></span>
                     <label class="scrapeLink">Unacceptable cities</label>
                 </div>
@@ -214,7 +214,7 @@ input:focus~.bar:after {
                 return res.text()
             }).then((res)=>{
                 snackBar.innerText = res;
-                snackBar.classList = "active";
+                snackBar.classList = 'active';
                 setTimeout(()=>{snackBar.classList = ""}, 2000)
             })
         }
@@ -241,6 +241,8 @@ input:focus~.bar:after {
                 setTimeout(()=>{snackBar.classList = ""}, 2000)
             })
         }
+        scrapeLinks.value = `${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''`;
+        unacceptableCities.value = `${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join('\n'):''}`
     </script>
 </body>
 
