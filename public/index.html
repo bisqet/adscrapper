@@ -5,7 +5,7 @@
     <title>YAD2 ADS SCRAPPER</title>
     <style>
 .sendButtonContainer{
-  margin-top: 15px;
+  margin-top: 40px;
 }
 .sendButton{
   width: 315px;
@@ -160,19 +160,8 @@ input:focus~.bar:after {
 
 
    	 	function clearDB(){
-   	 		fetch("/clearDB", {
-   	 			method:"POST",
-   	 			body:{
-   	 				yad2ResultsURL:links,
-   	 				cityFilter:{
-   	 					unacceptable:unacceptable,
-   	 					acceptable:[],
-   	 					mode:1
-   	 				},
-   	 				sqrfilter:sqrfilter
-   	 			}
-   	 		}).then((res)=>{
-   	 			console.info(res);
+   	 		fetch("/clearDB").then((res)=>{
+   	 			console.info(res.text());
    	 		})	
    	 	}
    	 	function changeSettings(){
@@ -191,7 +180,7 @@ input:focus~.bar:after {
    	 				sqrfilter:sqrfilter
    	 			}
    	 		}).then((res)=>{
-   	 			console.info(res);
+   	 			console.info(res.text());
    	 		})	
    	 	}
 

@@ -14,7 +14,7 @@ const app = express();
 
 
 app.use(bodyParser())
-app.use(express.static());
+app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
@@ -46,7 +46,7 @@ app.post('/changeSettings', (req, res) => {
     });
 });
 
-app.post('/clearDB', (req, res) => {
+app.get('/clearDB', (req, res) => {
 
 
     fs.writeFile('../adsDB.json', '', 'utf8', (err, data) => {
