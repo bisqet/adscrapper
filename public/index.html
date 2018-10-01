@@ -121,6 +121,34 @@ input:focus~.bar:after {
     margin: 0 auto;
   }
 }
+
+     	#snackbar{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        background-color: var(--app-secondary-color);
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        will-change: transform;
+        transform: translate3d(0, 100%, 0);
+        transition-property: visibility, transform;
+        transition-duration: 0.2s;
+        visibility: hidden;
+      }
+      #snackbar.active {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+      }
+      @media (min-width: 460px) {
+        #snackbar {
+          width: 320px;
+          margin: auto;
+        }
+      }
     </style>
 </head>
 
@@ -153,6 +181,7 @@ input:focus~.bar:after {
             </div>
         </section>
     </main>
+    <footer id="snackBar"></footer>
    	<script type="text/javascript">
    	 	//scrapeLinks unacceptableCities sqrfilter
    	 	changeSettingsButton.addEventListener('click', changeSettings);
@@ -161,8 +190,12 @@ input:focus~.bar:after {
 
    	 	function clearDB(){
    	 		fetch("/clearDB").then((res)=>{
-   	 			console.info(res.text());
-   	 		})	
+   	 			return res.text()
+   	 		}).then((res)=>{
+   	 			snackbar.innerText = res;
+   	 			snackbar.classList = "active";
+   	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
+   	 		})
    	 	}
    	 	function changeSettings(){
    	 		const links = scrapeLinks.value.split("\n");
@@ -180,8 +213,12 @@ input:focus~.bar:after {
    	 				sqrfilter:sqrfilter
    	 			}
    	 		}).then((res)=>{
-   	 			console.info(res.text());
-   	 		})	
+   	 			return res.text()
+   	 		}).then((res)=>{
+   	 			snackbar.innerText = res;
+   	 			snackbar.classList = "active";
+   	 			setTimeout(()=>{snackbar.classList = ""}, 2000)
+   	 		})
    	 	}
 
    	</script>

@@ -34,10 +34,10 @@ app.post('/changeSettings', (req, res) => {
         if (err) {
             log(err);
             res.send("FAILED TO CHANGE SETTINGS.");
-            messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "172.104.211.48:3000" });
+            messageBot.customMessage({ "err": "FAILED TO CHANGE SETTINGS.", "url": "1http://172.104.211.48:3000" });
             return;
         }
-        messageBot.customMessage({ "err": "SETTINGS CHANGED. SERVER RESTARTED", "url": "172.104.211.48:3000" });
+        messageBot.customMessage({ "err": "SETTINGS CHANGED. SERVER RESTARTED", "url": "1http://172.104.211.48:3000" });
 
         log("SETTINGS CHANGED. SERVER RESTARTED");
 
@@ -53,10 +53,10 @@ app.get('/clearDB', (req, res) => {
         if (err) {
             log(err);
             res.send("FAILED TO CLEAR DB.");
-            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "172.104.211.48:3000" });
+            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "1http://172.104.211.48:3000" });
             return;
         }
-        messageBot.customMessage({ "err": "DB CLEARED", "url": "172.104.211.48:3000" });
+        messageBot.customMessage({ "err": "DB CLEARED", "url": "1http://172.104.211.48:3000" });
 
         log("DB CLEARED");
 
