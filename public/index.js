@@ -192,13 +192,6 @@ input:focus~.bar:after {
   margin: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-}
-
 .custom-radios div {
   display: inline-block;
 }
