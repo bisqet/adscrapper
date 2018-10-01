@@ -241,6 +241,8 @@ input:focus~.bar:after {
     margin: 0 auto;
     display: inline-block;
     cursor: pointer;
+    color: #999;
+    font-size: 14px;
 }
 .bg{
   display: none
@@ -264,8 +266,8 @@ input:focus~.bar:after {
                     <textarea id='unacceptableCities' class='textarea' value=''></textarea>
                     <textarea id='acceptableCities' class='textarea bg' value=''></textarea>
                     <span class='bar'></span>
-                    <label class='scrapeLink citiesFilter active' id ="unacceptableButton">Unacceptable cities</label>
-                    <label class='scrapeLink citiesFilter'  id ="acceptableButton">Acceptable cities</label>
+                    <div class='scrapeLink citiesFilter active' id ="unacceptableButton">Unacceptable cities</div>
+                    <div class='scrapeLink citiesFilter'  id ="acceptableButton">Acceptable cities</div>
                 </div>
             </div>
             <div>
