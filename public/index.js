@@ -14,6 +14,14 @@ const app = new Koa();
 
 app.use(bodyParser());
 
+
+app.use(_.get('/*', async (ctx, next) => {
+    fs.readFile('./index.html', 'utf8', (err, data) => {
+        ctx.body = data;
+    });
+    return;
+}));
+
 app.use(_.post('/changeSettings', async (ctx, next) => {
 
     const body = ctx.request.body;
@@ -59,13 +67,6 @@ return;
 
 }));
 
-
-app.use(_.get('/*', async (ctx, next) => {
-    fs.readFile('./index.html', 'utf8', (err, data) => {
-        ctx.body = data;
-    });
-    return;
-}));
 
 
 app.listen(8081);
