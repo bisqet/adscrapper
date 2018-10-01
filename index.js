@@ -68,7 +68,7 @@ function indexApp() {
         const isRestartNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         fs.writeFileSync('.restartNeeded',"false" ,'utf8');
         if (isRestartNeeded) {
-            process.on("exit", function() {
+            process.on("exit", async function() {
                 log("SERVER RESTARTED");
                 await messageBot.customMessage({ 'err': 'SERVER RESTARTED', 'url': 'https://linode.com' });
                 require("child_process").spawn(process.argv.shift(), process.argv, {
