@@ -1,6 +1,3 @@
-const Koa = require('koa');
-const bodyParser = require('koa-bodyparser');
-const Router = require('koa-router');
 const config = require('../config.js');
 const request = require('request');
 const fs = require('await-fs');
