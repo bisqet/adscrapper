@@ -7,25 +7,28 @@ const fs = require('await-fs');
 const syncFs = require('fs');
 const messageBot = require('../messageBot.js')
 const log = require('../log.js');
+const bodyParser = require('body-parser');
+
+
+const express = require('express');
+const app = express();
 
 
 
 
-const app = new Koa();
-const router = new Router();
+app.use(bodyParser().json())
 
 
-
-router.get('/*', (ctx, next) => {
+app.get('/', (ctx, next) => {
 		console.log("request handled");
-		ctx.res.end("GG!");
-    //ctx.body = syncFs.readFileSync('./index.html', 'utf8');
+		//ctx.res.end("GG!");
+    res.send(syncFs.readFileSync('./index.html', 'utf8'));
     //next();
 });
 
-/*router.post('/changeSettings', async (ctx, next) => {
+app.post('/changeSettings', (req, res) => {
 
-    const body = ctx.request.body;
+    const body = req.body;
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
 
@@ -46,32 +49,30 @@ router.get('/*', (ctx, next) => {
     return;
 });
 
-router.post('/resetDB', async (ctx, next) => {
+app.post('/clearDB', (req, res) => {
 
 
-    await fs.writeFile('../adsDN.json', '', 'utf8', (err, data) => {
+    await fs.writeFile('../adsDB.json', '', 'utf8', (err, data) => {
         if (err) {
             log(err);
-            ctx.body = "FAILED TO CLEAN DB.";
-            messageBot.customMessage({ "err": "FAILED TO CLEAN DB.", "url": "172.104.211.48:8081" });
+            ctx.body = "FAILED TO CLEAR DB.";
+            messageBot.customMessage({ "err": "FAILED TO CLEAR DB.", "url": "172.104.211.48:8081" });
             return;
         }
-        messageBot.customMessage({ "err": "DB CLEANED", "url": "172.104.211.48:8081" });
+        messageBot.customMessage({ "err": "DB CLEARED", "url": "172.104.211.48:8081" });
 
-        log("DB CLEANED");
+        log("DB CLEARED");
 
-        ctx.body = "DB CLEANED";
+        ctx.body = "DB CLEARED";
         
     });
 
 return;
 
-});*/
+});
 
-app.use(bodyParser())
-	.use(router.routes())
-  .use(router.allowedMethods());
 
-app.listen(8081);
 
-log("GUI SERVER LISTENING ON 8081 PORT")
+app.listen(8081, function () {
+	log("GUI SERVER LISTENING ON 8081 PORT")
+});

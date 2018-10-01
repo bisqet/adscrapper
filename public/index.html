@@ -4,7 +4,7 @@
 <head>
     <title>YAD2 ADS SCRAPPER</title>
     <style>
-        .sendButtonContainer{
+.sendButtonContainer{
   margin-top: 15px;
 }
 .sendButton{
@@ -127,37 +127,77 @@ input:focus~.bar:after {
     <main>
         <section id="settingsBar">
             <div class="section">
-                <textarea class="textarea"></textarea>
+                <textarea id="scrapeLinks" class="textarea"></textarea>
                 <label class="scrapeLink">Links to scrape</label>
-            </div>
+            </div>-
             <div>
-                <div class="group section">
-                    <textarea class="textarea"></textarea>
-                    <span class="bar"></span>
-                    <label>Unacceptable cities</label>
-                </div>
                 <div class="section">
-                    <textarea class="textarea"></textarea>
+                    <textarea id="unacceptableCities" class="textarea"></textarea>
                     <span class="bar"></span>
-                    <label>Acceptable cities</label>
+                    <label class="scrapeLink">Unacceptable cities</label>
                 </div>
-                <input type="checkbox" name="">
             </div>
             <div>
                 <div class="group section">
-                    <input type="text" required>
+                    <input id="sqrfilter"  type="text">
                     <span class="bar"></span>
                     <label>SQR filter</label>
+                    <div style="font-size: small; color: #999 ">f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
+                    </div>
                 </div>
             </div>
             <div class="sendButtonContainer">
-                <button class="sendButton">CHANGE SETTINGS</button>
+                <button id="changeSettingsButton" class="sendButton">CHANGE SETTINGS</button>
+                <button id="clearDBButton" class="sendButton" style="">CHANGE SETTINGS</button>
             </div>
         </section>
         <section id="console">
         	<iframe src="https://manager.linode.com/linodes/weblish/linode10288541"></iframe>
         </section>
     </main>
+   	<script type="text/javascript">
+   	 	//scrapeLinks unacceptableCities sqrfilter
+   	 	changeSettingsButton.addEventListener('click', changeSettings);
+   	 	clearDBDutton.addEventListener('click', clearDB);
+
+
+   	 	function clearDB(){
+   	 		fetch("/clearDB", {
+   	 			method:"POST",
+   	 			body:{
+   	 				yad2ResultsURL:links,
+   	 				cityFilter:{
+   	 					unacceptable:unacceptable,
+   	 					acceptable:[],
+   	 					mode:1
+   	 				},
+   	 				sqrfilter:sqrfilter
+   	 			}
+   	 		}).then((res)=>{
+   	 			console.info(res);
+   	 		})	
+   	 	}
+   	 	function changeSettings(){
+   	 		const links = scrapeLinks.value.split("\n");
+   	 		const unacceptable = unacceptableCities.value.split("\n")
+   	 		const sqrfilter = sqrfilter.value;
+   	 		fetch("/changeSettings", {
+   	 			method:"POST",
+   	 			body:{
+   	 				yad2ResultsURL:links,
+   	 				cityFilter:{
+   	 					unacceptable:unacceptable,
+   	 					acceptable:[],
+   	 					mode:1
+   	 				},
+   	 				sqrfilter:sqrfilter
+   	 			}
+   	 		}).then((res)=>{
+   	 			console.info(res);
+   	 		})	
+   	 	}
+
+   	</script>
 </body>
 
 </html>
