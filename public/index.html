@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YAD2 ADS SCRAPPER</title>
+    <style>
+.sendButtonContainer{
+  margin-top: 40px;
+}
+.sendButton{
+  width: 315px;
+  transition: all .5s;
+  padding: 9px 35px !important;
+  text-transform: capitalize;
+  position: relative;
+  font-family: "'Karla', Arial, sans-serif";
+  font-weight: 700;
+  background: #5264ae;
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+}
+.group {
+  position: relative;
+  height: 64px;
+}
+
+input {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 600px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  margin: 0 auto;
+  color: #999;
+  font-size: 14px;
+  font-weight: normal;
+  position: relative;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+
+/* active state */
+
+input:focus~label,
+input:valid~label {
+  font-size: 14px;
+  top:0;
+  color: #5264ae;
+}
+
+.bar {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 615px;
+}
+
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.scrapeLink{
+    position: static;
+
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+.section{
+  margin-bottom: 15px;
+}
+.textarea{
+  width: 100%;
+  height: 200px;
+}
+
+/* active state */
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+  width: 50%;
+}
+#settingsBar{
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+@media (max-width: 530px) {
+  #settingsBar{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+        #snackBar{
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px;
+        background-color: ;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        will-change: transform;
+        transform: translate3d(0, 100%, 0);
+        transition-property: visibility, transform;
+        transition-duration: 0.2s;
+        visibility: hidden;
+      }
+      #snackBar.active {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+      }
+      @media (min-width: 460px) {
+        #snackBar {
+          width: 320px;
+          margin: auto;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="settingsBar">
+            <div class="section">
+                <textarea id="scrapeLinks" class="textarea" value="${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join("\n"):''}"></textarea>
+                <label class="scrapeLink">Links to scrape</label>
+            </div>
+            <div>
+                <div class="section">
+                    <textarea id="unacceptableCities" class="textarea" value="${config.cityFilter.unacceptable!==undefined?config.cityFilter.unacceptable.join("\n"):''}"></textarea>
+                    <span class="bar"></span>
+                    <label class="scrapeLink">Unacceptable cities</label>
+                </div>
+            </div>
+            <div>
+                <div class="group section">
+                    <input id="sqrfilterContainer"  type="text" value="${config.sqrFilter!==undefined?config.sqrFilter:''}">
+                    <span class="bar"></span>
+                    <label>SQR filter</label>
+                    <div style="font-size: small; color: #999 ">f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
+                    </div>
+                </div>
+            </div>
+            <div class="sendButtonContainer">
+                <button id="changeSettingsButton" class="sendButton">CHANGE SETTINGS</button>
+                <button id="clearDBButton" class="sendButton" style="">CLEAR DB</button>
+            </div>
+        </section>
+    </main>
+    <footer id="snackBar"></footer>
+    <script type="text/javascript">
+        //scrapeLinks unacceptableCities sqrfilter
+        changeSettingsButton.addEventListener('click', changeSettings);
+        clearDBButton.addEventListener('click', clearDB);
+
+
+        function clearDB(){
+            fetch("/clearDB").then((res)=>{
+                return res.text()
+            }).then((res)=>{
+                snackBar.innerText = res;
+                snackBar.classList = "active";
+                setTimeout(()=>{snackBar.classList = ""}, 2000)
+            })
+        }
+        function changeSettings(){
+            const links = scrapeLinks.value.split("\n");
+            const unacceptable = unacceptableCities.value.split("\n")
+            const sqrfilter = sqrfilterContainer.value;
+            fetch("/changeSettings", {
+                method:"POST",
+                body:{
+                    yad2ResultsURL:links,
+                    cityFilter:{
+                        unacceptable:unacceptable,
+                        acceptable:[],
+                        mode:1
+                    },
+                    sqrfilter:sqrfilter
+                }
+            }).then((res)=>{
+                return res.text()
+            }).then((res)=>{
+                snackBar.innerText = res;
+                snackBar.classList = "active";
+                setTimeout(()=>{snackBar.classList = ""}, 2000)
+            })
+        }
+    </script>
+</body>
+
+</html>
