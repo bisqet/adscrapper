@@ -310,12 +310,12 @@ app.post('/changeSettings', (req, res) => {
 });
 app.get('/startServer', (req, res) => {
 
-    const cmd = "node index.js";
+    const cmd = "node ../index.js";
 
     const exec = require('child_process').exec;
 
     exec(cmd, function() {
-
+        log("SERVER STARTING")
     });
         
 });
