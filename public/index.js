@@ -17,7 +17,7 @@ app.use(bodyParser());
 
 
 app.use(_.get('/*', async (ctx, next) => {
-    ctx.body = syncFs.readFileSync('./index.html', 'utf8')
+    ctx.body = syncFs.readFileSync('./index.html', 'utf8');
 }));
 
 app.use(_.post('/changeSettings', async (ctx, next) => {
