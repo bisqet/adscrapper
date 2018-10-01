@@ -17,6 +17,7 @@ function indexApp() {
     const config = reload('./config.js');
     const messageBot = require('./messageBot.js')
 
+    messageBot.customMessage({ 'err': 'SERVER STARTED', 'url': 'https://linode.com' });
 
     // LowDB init 
     // const FileSync = require('lowdb/adapters/FileSync');

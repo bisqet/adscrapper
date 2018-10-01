@@ -294,7 +294,7 @@ input:focus~.bar:after {
 
         let currentServerStatus = ""
 
-
+        checkServerAvailibility();
         function clearDB(){
             fetch('/clearDB').then((res)=>{
                 return res.text()
@@ -363,7 +363,7 @@ input:focus~.bar:after {
                 return res.text()
             }).then((res)=>{
               if(currentServerStatus=='stopping'){
-                if(res==="color-4"){
+                if(res==="color-1"){
                   res = "color-3"
                 }
               }
@@ -412,10 +412,9 @@ app.get('/startServer', (req, res) => {
             function(err, data, stderr){
                 if(err){
                   console.log(stderr)
-                  //messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
+                  messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
                   return;
                 }
-                messageBot.customMessage({ 'err': 'SERVER STARTED', 'url': 'https://linode.com' });
             }
         );  
     }
