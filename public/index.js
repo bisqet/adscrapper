@@ -174,18 +174,17 @@ input:focus~.bar:after {
         }
       }
       .stopServer{
-        display: block;
     background: #ff3a3a;
     margin: auto;
     margin-top: 5px;
     width: 315px;
       }
       .startServer{
-        display: block;
         background: #ff3a3a;
         margin: auto;
         margin-top: 5px;
         width: 315px;
+        background-color:#5264ae;
       }
     </style>
 </head>
@@ -216,6 +215,8 @@ input:focus~.bar:after {
             <div class='sendButtonContainer'>
                 <button id='changeSettingsButton' class='sendButton'>SAVE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
+            </div>
+            <div>
                 <button id='restartServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
