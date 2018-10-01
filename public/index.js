@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 <head>
     <title>YAD2 ADS SCRAPPER</title>
     <style>
-.sendButtonContainer{
+        .sendButtonContainer{
   margin-top: 40px;
 }
 .sendButton{
@@ -236,6 +236,18 @@ input:focus~.bar:after {
 .bg{
   display:none;
 }
+.citiesFilter{
+  width: 49%;
+    margin: 0 auto;
+    display: inline-block;
+    cursor: pointer;
+}
+.bg{
+  display: none
+}
+.active{
+  color: #5264ae;
+}
 
     </style>
 </head>
@@ -252,13 +264,13 @@ input:focus~.bar:after {
                     <textarea id='unacceptableCities' class='textarea' value=''></textarea>
                     <textarea id='acceptableCities' class='textarea bg' value=''></textarea>
                     <span class='bar'></span>
-                    <label class='scrapeLink'>Unacceptable cities</label>
-                    <label class='scrapeLink'>Acceptable cities</label>
+                    <label class='scrapeLink citiesFilter active' id ="unacceptableButton">Unacceptable cities</label>
+                    <label class='scrapeLink citiesFilter'  id ="acceptableButton">Acceptable cities</label>
                 </div>
             </div>
             <div>
                 <div class='group section'>
-                    <input id='sqrFilterContainer'  type='text' value=''>
+                    <input id='sqrFilterContainer' type='text' value=''>
                     <span class='bar'></span>
                     <label>SQR filter</label>
                     <div style='font-size: small; color: #999 '>f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
@@ -269,117 +281,131 @@ input:focus~.bar:after {
                 <button id='changeSettingsButton' class='sendButton'>SAVE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
             </div>
-
-
             <div>
                 <button id='stopServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
         </section>
         <section>
-          <div class="custom-radios serverStatus">
-            <div>
-              <input type="radio" id="color-1" name="color" value="color-1" checked>
-              <label id = 'labelForStatus'for="color-1">
-                <span>
+            <div class="custom-radios serverStatus">
+                <div>
+                    <input type="radio" id="color-1" name="color" value="color-1" checked>
+                    <label id='labelForStatus' for="color-1">
+                        <span>
                   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
                 </span>
-              </label>
-            </div>
+                    </label>
+                </div>
         </section>
     </main>
     <footer id='snackBar'></footer>
     <script type='text/javascript'>
-        //scrapeLinks unacceptableCities sqrFilter
-        changeSettingsButton.addEventListener('click', changeSettings);
-        clearDBButton.addEventListener('click', clearDB);
-        stopServerButton.addEventListener('click', stopServer);
-        startServerButton.addEventListener('click', startServer)
+    unacceptableButton.addEventListener('click', citiesHandler)
+    acceptableButton.addEventListener('click', citiesHandler)
+    //scrapeLinks unacceptableCities sqrFilter
+    changeSettingsButton.addEventListener('click', changeSettings);
+    clearDBButton.addEventListener('click', clearDB);
+    stopServerButton.addEventListener('click', stopServer);
+    startServerButton.addEventListener('click', startServer)
 
-        let currentServerStatus = ""
+    let currentServerStatus = ""
+    let mode = 1;
+    checkServerAvailibility();
 
-        checkServerAvailibility();
-        function clearDB(){
-            fetch('/clearDB').then((res)=>{
-                return res.text()
-            }).then((res)=>{
-                snackBar.innerText = res;
-                snackBar.classList = 'active';
-                setTimeout(()=>{snackBar.classList = ''}, 2000)
-            })
+    function citiesHandler() {
+      unacceptableCities.classList.toggle("bg");
+      acceptableCities.classList.toggle("bg");
+      unacceptableButton.classList.toggle("active");
+      acceptableButton.classList.toggle("active");
+      mode===1?mode=0:mode=1;
+    }
+    function clearDB() {
+        fetch('/clearDB').then((res) => {
+            return res.text()
+        }).then((res) => {
+            snackBar.innerText = res;
+            snackBar.classList = 'active';
+            setTimeout(() => { snackBar.classList = '' }, 2000)
+        })
+    }
+
+    function startServer() {
+        if (currentServerStatus == "stopping") {
+            snackBar.innerText = "Server is running now.";
+            snackBar.classList = 'active red';
+            setTimeout(() => { snackBar.classList = '' }, 2000)
+            return;
         }
-        function startServer(){
-            if(currentServerStatus=="stopping"){
-                snackBar.innerText = "Server is running now.";
-                snackBar.classList = 'active red';
-                setTimeout(()=>{snackBar.classList = ''}, 2000)
-              return;}
-            fetch('/startServer').then((res)=>{
-                return res.text()
-            }).then((res)=>{
-                snackBar.innerText = res;
-                snackBar.classList = 'active red';
-                setTimeout(()=>{snackBar.classList = ''}, 2000)
+        fetch('/startServer').then((res) => {
+            return res.text()
+        }).then((res) => {
+            snackBar.innerText = res;
+            snackBar.classList = 'active red';
+            setTimeout(() => { snackBar.classList = '' }, 2000)
+        })
+    }
+
+    function changeSettings() {
+        const links = scrapeLinks.value.split('\\n');
+        const unacceptable = unacceptableCities.value.split('\\n');
+        const acceptable = acceptableCities.value.split('\\n');
+        const sqrFilter = sqrFilterContainer.value;
+        fetch('/changeSettings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                yad2ResultsURL: links,
+                cityFilter: {
+                    unacceptable: unacceptable,
+                    acceptable: acceptable,
+                    mode: mode
+                },
+                sqrFilter: sqrFilter
             })
-        }
-        function changeSettings(){
-            const links = scrapeLinks.value.split('\\n');
-            const unacceptable = unacceptableCities.value.split('\\n');
-            const sqrFilter = sqrFilterContainer.value;
-            fetch('/changeSettings', {
-                method:'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                body:JSON.stringify({
-                    yad2ResultsURL:links,
-                    cityFilter:{
-                        unacceptable:unacceptable,
-                        acceptable:[],
-                        mode:1
-                    },
-                    sqrFilter:sqrFilter
-                })
-            }).then((res)=>{
-                return res.text()
-            }).then((res)=>{
-                snackBar.innerText = res;
-                snackBar.classList = 'active';
-                setTimeout(()=>{snackBar.classList = ''}, 2000)
-            })
-        }
-        const serverIndicator = document.getElementById('color-1');
-        function stopServer(){
-            fetch('/stopServer').then((res)=>{
-                return res.text()
-            }).then((res)=>{
-                currentServerStatus = "stopping"
-                serverIndicator.checked = "false";
-                serverIndicator.id = "color-3";
-                labelForStatus.for = "color-3";
-                snackBar.innerText = res;
-                snackBar.classList = 'active red';
-                setTimeout(()=>{snackBar.classList = ''}, 2000)
-            })
-        }
-        function checkServerAvailibility (){
-          fetch('/checkServerAvailibility').then((res)=>{
-                return res.text()
-            }).then((res)=>{
-              if(currentServerStatus=='stopping'){
-                if(res==="color-1"){
-                  res = "color-3"
+        }).then((res) => {
+            return res.text()
+        }).then((res) => {
+            snackBar.innerText = res;
+            snackBar.classList = 'active';
+            setTimeout(() => { snackBar.classList = '' }, 2000)
+        })
+    }
+    const serverIndicator = document.getElementById('color-1');
+
+    function stopServer() {
+        fetch('/stopServer').then((res) => {
+            return res.text()
+        }).then((res) => {
+            currentServerStatus = "stopping"
+            serverIndicator.checked = "false";
+            serverIndicator.id = "color-3";
+            labelForStatus.for = "color-3";
+            snackBar.innerText = res;
+            snackBar.classList = 'active red';
+            setTimeout(() => { snackBar.classList = '' }, 2000)
+        })
+    }
+
+    function checkServerAvailibility() {
+        fetch('/checkServerAvailibility').then((res) => {
+            return res.text()
+        }).then((res) => {
+            if (currentServerStatus == 'stopping') {
+                if (res === "color-1") {
+                    res = "color-3"
                 }
-              }
-                res === "color-1"?(serverIndicator.checked = true, currentServerStatus = ""):serverIndicator.checked = false;
+            }
+            res === "color-1" ? (serverIndicator.checked = true, currentServerStatus = "") : serverIndicator.checked = false;
 
-                serverIndicator.id = res;
-                labelForStatus.for = res;
-            })
-        }
-        setInterval(checkServerAvailibility,5000);
+            serverIndicator.id = res;
+            labelForStatus.for = res;
+        })
+    }
+    setInterval(checkServerAvailibility, 5000);
 
-        scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
+    scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
         sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
