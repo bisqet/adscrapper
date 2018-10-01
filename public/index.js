@@ -67,6 +67,6 @@ app.post('/clearDB', (req, res) => {
 
 
 
-app.listen(8081, function () {
-	log("GUI SERVER LISTENING ON 8081 PORT")
+app.listen(3000, function () {
+	log("GUI SERVER LISTENING ON 3000 PORT")
 });
