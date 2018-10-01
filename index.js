@@ -223,9 +223,15 @@ function indexApp() {
                 //log('Fetching images and map data');
                 await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
                     const adMetaData = await page.evaluate(() => {
+                        if(mapOptions===undefined){
+                            mapOptions = [];
+                        }
+                        if(ImageArr === undefined){
+                            ImageArr =[]
+                        }
                         return {
-                            images: ImageArr ? ImageArr : [],
-                            map: mapOptions ? mapOptions : []
+                            images: ImageArr,
+                            map: mapOptions
                         };
                     });
                     adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
