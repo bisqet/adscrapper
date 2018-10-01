@@ -14,7 +14,7 @@ const app = express();
 
 
 app.use(bodyParser())
-app.use(express.static('public'));
+app.use(express.static());
 
 
 app.get('/', (req, res) => {
