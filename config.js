@@ -42,6 +42,6 @@ const config = {
     "acceptable": [],
     "mode": 1
   },
-  "sqrfilter": "all"
+  "sqrFilter": "all"
 };
 module.exports = config;

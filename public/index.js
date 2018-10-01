@@ -258,7 +258,7 @@ input:focus~.bar:after {
             </div>
             <div>
                 <div class='group section'>
-                    <input id='sqrfilterContainer'  type='text' value=''>
+                    <input id='sqrFilterContainer'  type='text' value=''>
                     <span class='bar'></span>
                     <label>SQR filter</label>
                     <div style='font-size: small; color: #999 '>f.e. sqr>90//&& - and; || - or; ! - not; >= - more or equal; all - accept all
@@ -290,7 +290,7 @@ input:focus~.bar:after {
     </main>
     <footer id='snackBar'></footer>
     <script type='text/javascript'>
-        //scrapeLinks unacceptableCities sqrfilter
+        //scrapeLinks unacceptableCities sqrFilter
         changeSettingsButton.addEventListener('click', changeSettings);
         clearDBButton.addEventListener('click', clearDB);
         stopServerButton.addEventListener('click', stopServer);
@@ -325,7 +325,7 @@ input:focus~.bar:after {
         function changeSettings(){
             const links = scrapeLinks.value.split('\\n');
             const unacceptable = unacceptableCities.value.split('\\n');
-            const sqrfilter = sqrfilterContainer.value;
+            const sqrFilter = sqrFilterContainer.value;
             fetch('/changeSettings', {
                 method:'POST',
                   headers: {
@@ -338,7 +338,7 @@ input:focus~.bar:after {
                         acceptable:[],
                         mode:1
                     },
-                    sqrfilter:sqrfilter
+                    sqrFilter:sqrFilter
                 })
             }).then((res)=>{
                 return res.text()
@@ -381,7 +381,7 @@ input:focus~.bar:after {
 
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
-        sqrfilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
+        sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
 </body>
 
