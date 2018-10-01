@@ -20,10 +20,10 @@ router.get('/*', async (ctx, next) => {
 		console.log("request handled");
 		ctx.body = 'Hello World!';
     //ctx.body = syncFs.readFileSync('./index.html', 'utf8');
-    next();
+    //next();
 });
 
-router.post('/changeSettings', async (ctx, next) => {
+/*router.post('/changeSettings', async (ctx, next) => {
 
     const body = ctx.request.body;
 
@@ -66,7 +66,7 @@ router.post('/resetDB', async (ctx, next) => {
 
 return;
 
-});
+});*/
 
 app.use(bodyParser())
 	.use(router.routes())
