@@ -186,11 +186,6 @@ input:focus~.bar:after {
         width: 315px;
         background-color:#5264ae;
       }
-      html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
 
 .custom-radios div {
   display: inline-block;
@@ -225,17 +220,19 @@ input:focus~.bar:after {
 .custom-radios input[type="radio"]#color-1 + label span {
   background-color: #2ecc71;
 }
-.custom-radios input[type="radio"]#color-2 + label span {
-  background-color: #3498db;
-}
-.custom-radios input[type="radio"]#color-3 + label span {
-  background-color: #f1c40f;
-}
 .custom-radios input[type="radio"]#color-4 + label span {
   background-color: #e74c3c;
 }
 .custom-radios input[type="radio"]:checked + label span img {
   opacity: 1;
+}
+.custom-radios input[type="radio"]#color-3 + label span {
+  background-color: #f1c40f;
+}
+.serverStatus{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }
 
     </style>
@@ -268,27 +265,22 @@ input:focus~.bar:after {
                 <button id='changeSettingsButton' class='sendButton'>SAVE SETTINGS</button>
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
             </div>
-            <div class="custom-radios">
-  <div>
-    <input type="radio" id="color-1" name="color" value="color-1" checked>
-    <label for="color-1">
-      <span>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-      </span>
-    </label>
-  </div>
-    <div>
-    <input type="radio" id="color-4" name="color" value="color-4" >
-    <label for="color-4">
-      <span>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-      </span>
-    </label>
-  </div>
-</div>
+
+
             <div>
                 <button id='restartServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
+            </div>
+        </section>
+        <section>
+          <div class="custom-radios">
+            <div>
+              <input type="radio" id="color-1" name="color" value="color-1" checked>
+              <label id = 'labelForStatus'for="color-1">
+                <span>
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                </span>
+              </label>
             </div>
         </section>
     </main>
@@ -300,6 +292,9 @@ input:focus~.bar:after {
         restartServerButton.addEventListener('click', restartServer);
         startServerButton.addEventListener('click', startServer)
 
+        let currentServerStatus = ""
+
+
         function clearDB(){
             fetch('/clearDB').then((res)=>{
                 return res.text()
@@ -310,6 +305,11 @@ input:focus~.bar:after {
             })
         }
         function startServer(){
+            if(currentServerStatus){
+                snackBar.innerText = "Server is running now.";
+                snackBar.classList = 'active red';
+                setTimeout(()=>{snackBar.classList = ''}, 2000)
+              return;}
             fetch('/startServer').then((res)=>{
                 return res.text()
             }).then((res)=>{
@@ -344,15 +344,37 @@ input:focus~.bar:after {
                 setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
-        function restartServer(){
-            fetch('/restartServer').then((res)=>{
+        const serverIndicator = document.getElementById('color-1');
+        function stopServer(){
+            fetch('/stopServer').then((res)=>{
                 return res.text()
             }).then((res)=>{
+                currentServerStatus = "stopping"
+                serverIndicator.checked = "false";
+                serverIndicator.id = "color-3";
+                labelForStatus.for = "color-3";
                 snackBar.innerText = res;
                 snackBar.classList = 'active red';
                 setTimeout(()=>{snackBar.classList = ''}, 2000)
             })
         }
+        function checkServerAvailibility (){
+          fetch('/checkServerAvailibility').then((res)=>{
+                return res.text()
+            }).then((res)=>{
+              if(currentServerStatus==stopping){
+                if(res==="color-4"){
+                  res = "color-3"
+                }
+              }
+                res === "color-1"?:serverIndicator.checked = "true", currentServerStatus = "":serverIndicator.checked = "false";
+
+                serverIndicator.id = res;
+                labelForStatus.for = res;
+            })
+        }
+        setInterval(checkServerAvailibility,1000);
+
         scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
         unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     </script>
@@ -366,7 +388,6 @@ app.post('/changeSettings', (req, res) => {
     const body = req.body;
 
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
-
     fs.writeFile('./config.js', stringifiedBody, 'utf8', (err, data) => {
         if (err) {
             log(err);
@@ -400,6 +421,15 @@ app.get('/startServer', (req, res) => {
 
         
 });
+
+
+app.get('/checkServerAvailibility', (req, res) => {
+    const isWakeUpable = fs.readFileSync('../.isServerWakeUpable');
+    return isWakeUpable==="true"?"color-4":"color-1"
+});
+
+
+
 app.get('/stopServer', (req, res) => {
 
     fs.writeFile('.restartNeeded', "true", 'utf8', (err, data) => {

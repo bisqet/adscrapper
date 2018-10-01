@@ -255,7 +255,7 @@ function indexApp() {
         }
         log(`Total skipped-duplicate - due to DB: ${parsedAds.length-count}`);
         log('Total skipped due to city filter: ', filteredByCity);
-        //log('Total skipped due to SQR filter: ', filteredBySqr);
+        log('Total skipped due to SQR filter: ', filteredBySqr);
         log('Total msgs: ', count - filteredByCity - filteredBySqr);
     });
 
@@ -286,7 +286,7 @@ function indexApp() {
     async function sqrFilter(sqr) {
         if (!sqr) return true;
         const filter = config.sqrFilter;
-        if (filter === "all") return true
+        if (filter === "all"||filter === "") return true
         try {
             //log(`SQRfilter IS: ${filter}`);
             //log(`SQR IS: ${sqr}`);
