@@ -441,7 +441,7 @@ input:focus~.bar:after {
           const res = cityWithHoods.split('|')
           if(res.length==1)return res[0]
           return res
-        });
+        })
 :''}\`;
     sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
