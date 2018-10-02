@@ -429,8 +429,8 @@ input:focus~.bar:after {
     setInterval(checkServerAvailibility, 5000);
 
     scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
-        unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
-        sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
+    unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
+    sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
 </body>
 
