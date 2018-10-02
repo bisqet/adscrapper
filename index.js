@@ -259,7 +259,7 @@ function indexApp() {
     async function sqrFilter(sqr) {
         if (!sqr) return true;
         const filter = config.sqrFilter;
-        if (filter === "all" || filter === "") return true
+        if (filter.match("all") !== null || filter === "") return true
         try {
             log(`SQRfilter IS: ${filter}`);
             log(`SQR IS: ${sqr}`);
