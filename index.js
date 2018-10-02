@@ -324,11 +324,10 @@ function indexApp() {
         if (isStopNeeded) {
             await messageBot.customMessage({ 'err': 'SCRAPPER STOPPED', 'url': 'https://linode.com' });
             log("SCRAPPER STOPPED");
+            fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
             await delay(3000);
 
-            process.on("exit", async function() {
-                fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
-            });
+            //process.on("exit", async function() {});
             process.exit();
         }
     }

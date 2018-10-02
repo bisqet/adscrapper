@@ -461,20 +461,20 @@ app.post('/changeSettings', (req, res) => {
 app.get('/startServer', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
     if (isWakeUpable == "true"){
-          res.send("SERVER STARTED");
+          res.send("SCRAPPER STARTED");
             cmd.get(
             `cd /root/adscrapper/
             npm run scrapper`,
             function(err, data, stderr){
                 if(err){
                   console.log(stderr)
-                  messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SERVER', 'url': 'https://linode.com' });
+                  messageBot.customMessage({ 'err': 'ERROR WHILE STARTING SCRAPPER', 'url': 'https://linode.com' });
                   return;
                 }
             }
         );  
     }else{
-      res.send("SERVER CAN'T BE STARTED RIGHT NOW.");
+      res.send("SCRAPPER CAN'T BE STARTED RIGHT NOW.");
     }
 
         
@@ -493,15 +493,15 @@ app.get('/stopServer', (req, res) => {
     fs.writeFile('.restartNeeded', "true", 'utf8', (err, data) => {
         if (err) {
             log(err);
-            res.send('FAILED STOP SERVER');
-            messageBot.customMessage({ 'err': 'FAILED STOP SERVER', 'url': 'https://linode.com' });
+            res.send('FAILED STOP SCRAPPER');
+            messageBot.customMessage({ 'err': 'FAILED STOP SCRAPPER', 'url': 'https://linode.com' });
             return;
         }
-        messageBot.customMessage({ 'err': 'SERVER WILL BE STOPPED IN NEXT TICK', 'url': 'https://linode.com' });
+        messageBot.customMessage({ 'err': 'SCRAPPER WILL BE STOPPED IN NEXT TICK', 'url': 'https://linode.com' });
 
-        log('SERVER WILL BE STOPPED IN NEXT TICK');
+        log('SCRAPPER WILL BE STOPPED IN NEXT TICK');
 
-        res.send('SERVER WILL BE STOPPED IN NEXT TICK');        
+        res.send('SCRAPPER WILL BE STOPPED IN NEXT TICK');        
     });
         
 });
@@ -535,14 +535,14 @@ app.get('/restartServer', (req, res) => {
     fs.writeFile('.restartNeeded', "true", 'utf8', (err, data) => {
         if (err) {
             log(err);
-            res.send('FAILED RESTART SERVER');
-            messageBot.customMessage({ 'err': 'FAILED RESTART SERVER', 'url': 'https://linode.com' });
+            res.send('FAILED RESTART SCRAPPER');
+            messageBot.customMessage({ 'err': 'FAILED RESTART SCRAPPER', 'url': 'https://linode.com' });
             return;
         }
 
-        log('SERVER WILL BE RESTARTED IN NEXT TICK');
+        log('SCRAPPER WILL BE RESTARTED IN NEXT TICK');
 
-        res.send('SERVER WILL BE RESTARTED IN NEXT TICK');        
+        res.send('SCRAPPER WILL BE RESTARTED IN NEXT TICK');        
     });
 
         
