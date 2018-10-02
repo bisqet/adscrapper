@@ -69,7 +69,6 @@ function indexApp() {
     reload('./config.js');
 
     const main = (async (yad2ResultsURL, browser) => {
-        await isServerNeedsToStop();
 
         const page = await browser.newPage();
 
@@ -349,6 +348,9 @@ function indexApp() {
                     i--;
                 });
             await browser.close();
+            
+            await isServerNeedsToStop();
+
             await delay(60000); // every 0ne min
         }
         for(let i = 0;i<240;i++){
