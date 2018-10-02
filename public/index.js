@@ -268,8 +268,8 @@ input:focus~.bar:after {
                     <textarea id='unacceptableCities' class='textarea' value=''></textarea>
                     <textarea id='acceptableCities' class='textarea bg' value=''></textarea>
                     <span class='bar'></span>
-                    <div class='scrapeLink citiesFilter active' id ="unacceptableButton">Unacceptable cities</div>
-                    <div class='scrapeLink citiesFilter'  id ="acceptableButton">Acceptable cities</div>
+                    <div class='scrapeLink citiesFilter active' id ="unacceptableButton">City filter</div>
+                    <div class='scrapeLink citiesFilter' sylle="display:none"  id ="acceptableButton">Acceptable cities</div>
                 </div>
             </div>
             <div>

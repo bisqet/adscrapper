@@ -291,14 +291,14 @@ function indexApp() {
                     return true;
                 }//cities without approved hoods will be approved
                 if(typeof acceptable[i]!=="object"){
-                    return false;
+                    continue;
                 }//check is this city without hoods or no
                 for (let o in acceptable[i]) {
 
                     if (o === 0 && acceptable[i][o] !== city) {
                         break;
                     }
-                    if (acceptable[i][o] == hood) {
+                    if (acceptable[i][o] == hood&&acceptable[i][0] ===city) {
                         return true
                     }
 
@@ -314,18 +314,18 @@ function indexApp() {
                 //log(`CITY RESULT IS: FALSE`);
                 return false
             }//unacceptable cities without acceptable hoods will be rejected
-            if(typeof acceptable[i]!=="object"){
-                return true;
+            if(typeof unacceptable[i]!=="object"){
+                continue;
             }//if city haven't hoods then
-            for (let o in acceptable[i]) {
-              if (o === 0 && acceptable[i][o] !== city) {
+            for (let o in unacceptable[i]) {
+              if (o === 0 && unacceptable[i][o] !== city) {
                 break;
               }
-              if (acceptable[i][o] == hood) {
+              if (unacceptable[i][o] == hood&&unacceptable[i][0] ===city) {
                 return true
               }
             }
-            return false
+            if(unacceptable[i][0] ===city)return false
         }
         return true
     }
