@@ -260,7 +260,7 @@ input:focus~.bar:after {
     <main>
         <section id='settingsBar'>
             <div class='section'>
-                <textarea id='scrapeLinkl's class='textarea' value='' style='font-size:80%'></textarea>
+                <textarea id='scrapeLinks's class='textarea' value='' style='font-size:80%'></textarea>
                 <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
