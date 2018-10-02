@@ -457,7 +457,7 @@ app.post('/changeSettings', (req, res) => {
             messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'https://linode.com' });
             return;
         }
-        reload('./config.js');
+        reload('../config.js');
         messageBot.customMessage({ 'err': 'SETTINGS CHANGED', 'url': 'https://linode.com' });
 
         log('SETTINGS CHANGED');
