@@ -138,7 +138,8 @@ function indexApp() {
         let count = 0;
         let filteredBySqr = 0;
         let filteredByCity = 0;
-        for (const ad of parsedAds) {
+        for (let i=0;i<parsedAds.length;i++) {
+            let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
                 .value();
@@ -153,6 +154,7 @@ function indexApp() {
                 await page.waitFor(15000);
 
                 await page.waitFor("#mainFrame", { timeout: 60000 * 3 }).catch(err=>{
+                    i++;
                     log("Error HAPPENED:"+ad.link)
                     throw new Error(err);
                 }); // max 5 minutes
