@@ -309,10 +309,23 @@ function indexApp() {
         }
 
         for (let i in unacceptable) {
+
             if (unacceptable[i] == city) {
                 //log(`CITY RESULT IS: FALSE`);
                 return false
+            }//unacceptable cities without acceptable hoods will be rejected
+            if(typeof acceptable[i]!=="object"){
+                return true;
+            }//if city haven't hoods then
+            for (let o in acceptable[i]) {
+              if (o === 0 && acceptable[i][o] !== city) {
+                break;
+              }
+              if (acceptable[i][o] == hood) {
+                return true
+              }
             }
+            return false
         }
         return true
     }
