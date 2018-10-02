@@ -260,7 +260,7 @@ input:focus~.bar:after {
     <main>
         <section id='settingsBar'>
             <div class='section'>
-                <textarea id='scrapeLinks' class='textarea' value='' style='font-size:80%'></textarea>
+                <textarea id='scrapeLink's class='textarea' value='' style='font-size:80%'></textarea>
                 <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
@@ -286,16 +286,16 @@ input:focus~.bar:after {
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
             </div>
             <div>
-              <button id='restartServerButton' class='restartServer sendButton' style='color:mediumpurple'>RESTART SERVER</button>
+              <button id='restartServerButton' class='restartServer sendButton' style='color:mediumpurple'>RESTART SCRAPPER</button>
             </div>
             <div>
-                <button id='stopServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
-                <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
+                <button id='stopServerButton' class='stopServer sendButton' style=''>STOP SCRAPPER</button>
+                <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SCRAPPER</button>
             </div>
         </section>
-        <section>
+        <section style="text-align:center">
             <div class="custom-radios serverStatus">
-                Server Status:
+                Scrapper Status:
                 <div>
                     <input type="radio" id="color-1" name="color" value="color-1" checked>
                     <label id='labelForStatus' for="color-1">
