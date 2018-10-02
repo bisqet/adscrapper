@@ -322,8 +322,8 @@ function indexApp() {
         const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         fs.writeFileSync('.restartNeeded', "false", 'utf8');
         if (isStopNeeded) {
-            await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
-            log("SERVER STOPPED");
+            await messageBot.customMessage({ 'err': 'SCRAPPER STOPPED', 'url': 'https://linode.com' });
+            log("SCRAPPER STOPPED");
             await delay(3000);
 
             process.on("exit", async function() {
