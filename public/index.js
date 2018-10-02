@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 
-const config = reload('../config.js');
+let config = reload('../config.js');
 const request = require('request');
 const fs = require('await-fs');
 const syncFs = require('fs');
@@ -457,7 +457,7 @@ app.post('/changeSettings', (req, res) => {
             messageBot.customMessage({ 'err': 'FAILED TO CHANGE SETTINGS.', 'url': 'https://linode.com' });
             return;
         }
-        reload('../config.js');
+        config = reload('../config.js');
         messageBot.customMessage({ 'err': 'SETTINGS CHANGED', 'url': 'https://linode.com' });
 
         log('SETTINGS CHANGED');
