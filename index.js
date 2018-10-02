@@ -66,20 +66,10 @@ function indexApp() {
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser) => {
-        reload('./config.js');
-        const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
-        fs.writeFileSync('.restartNeeded', "false", 'utf8');
-        if (isStopNeeded) {
-            await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
-            log("SERVER STOPPED");
-            await delay(3000);
+    reload('./config.js');
 
-            process.on("exit", async function() {
-                fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
-            });
-            process.exit();
-        }
+    const main = (async (yad2ResultsURL, browser) => {
+        await isServerNeedsToStop();
 
         const page = await browser.newPage();
 
@@ -267,31 +257,6 @@ function indexApp() {
         log('Total skipped due to SQR filter: ', filteredBySqr);
         log('Total msgs: ', count - filteredByCity - filteredBySqr);
     });
-
-    async function mainWrapper(yad2ResultsURL) {
-        for (let i = 0; i < yad2ResultsURL.length; i++) {
-            const browser = await puppeteer.launch({
-                args: ['--no-sandbox']
-            });
-            let curUrl = yad2ResultsURL[i];
-            //log(`Current scrape for ${curUrl}`);
-            log(`URL №${i+1}`);
-            await main(curUrl, browser)
-                .then(async () => {
-                    log('Successful.');
-                })
-                .catch(async (err) => {
-                    log('ERROR HAPPENED', err);
-                    i--;
-                });
-            await browser.close();
-            await delay(60000); // every 0ne min
-        }
-        await delay(60000 * 60); // every 30 min
-        //log('calling main again!');
-        mainWrapper(yad2ResultsURL);
-    }
-
     async function sqrFilter(sqr) {
         if (!sqr) return true;
         const filter = config.sqrFilter;
@@ -352,6 +317,51 @@ function indexApp() {
         }
         return true
     }
+
+    async function isServerNeedsToStop(){
+        const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
+        fs.writeFileSync('.restartNeeded', "false", 'utf8');
+        if (isStopNeeded) {
+            await messageBot.customMessage({ 'err': 'SERVER STOPPED', 'url': 'https://linode.com' });
+            log("SERVER STOPPED");
+            await delay(3000);
+
+            process.on("exit", async function() {
+                fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
+            });
+            process.exit();
+        }
+    }
+
+    async function mainWrapper(yad2ResultsURL) {
+        for (let i = 0; i < yad2ResultsURL.length; i++) {
+            const browser = await puppeteer.launch({
+                args: ['--no-sandbox']
+            });
+            let curUrl = yad2ResultsURL[i];
+            //log(`Current scrape for ${curUrl}`);
+            log(`URL №${i+1}`);
+            await main(curUrl, browser)
+                .then(async () => {
+                    log('Successful.');
+                })
+                .catch(async (err) => {
+                    log('ERROR HAPPENED', err);
+                    i--;
+                });
+            await browser.close();
+            await delay(60000); // every 0ne min
+        }
+        for(let i = 0;i<240;i++){
+            await delay(15000); 
+            await isServerNeedsToStop();//check for stop each 15 secs
+        }// every 60 min
+        //log('calling main again!');
+        mainWrapper(yad2ResultsURL);
+    }
+
+
+
 
 
 

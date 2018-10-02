@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 <html>
 
 <head>
-    <title>YAD2 ADS SCRAPPER</title>
+    <title>YAD2 Scraper Bot Personal Ads (NO REALTORS)</title>
     <style>
         .sendButtonContainer{
   margin-top: 40px;
@@ -229,9 +229,7 @@ input:focus~.bar:after {
   background-color: #f1c40f;
 }
 .serverStatus{
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
+  line-height: 44px;
 }
 .bg{
   display:none;
@@ -250,7 +248,11 @@ input:focus~.bar:after {
 .active{
   color: #5264ae;
 }
-
+.restartServer{
+  margin: auto;
+  margin-top: 5px;
+  width: 630px;
+}
     </style>
 </head>
 
@@ -284,12 +286,16 @@ input:focus~.bar:after {
                 <button id='clearDBButton' class='sendButton' style=''>CLEAR DB</button>
             </div>
             <div>
+              <button id='restartServerButton' class='restartServer sendButton' style='color:mediumpurple'>RESTART SERVER</button>
+            </div>
+            <div>
                 <button id='stopServerButton' class='stopServer sendButton' style=''>STOP SERVER</button>
                 <button id='startServerButton' class='startServer sendButton' style='color:mediumpurple'>START SERVER</button>
             </div>
         </section>
         <section>
             <div class="custom-radios serverStatus">
+                Server Status:
                 <div>
                     <input type="radio" id="color-1" name="color" value="color-1" checked>
                     <label id='labelForStatus' for="color-1">
@@ -309,8 +315,10 @@ input:focus~.bar:after {
     clearDBButton.addEventListener('click', clearDB);
     stopServerButton.addEventListener('click', stopServer);
     startServerButton.addEventListener('click', startServer)
+    restartServerButton.addEventListener('click', restartServer)
 
-    let currentServerStatus = ""
+    let currentServerStatus = "";
+    let isRestarting = 0;
     let mode = 1;
     checkServerAvailibility();
 
@@ -329,6 +337,9 @@ input:focus~.bar:after {
             snackBar.classList = 'active';
             setTimeout(() => { snackBar.classList = '' }, 2000)
         })
+    }
+    function restartServer(){
+      stopServer();
     }
 
     function startServer() {
@@ -405,7 +416,12 @@ input:focus~.bar:after {
                 }
             }
             res === "color-1" ? (serverIndicator.checked = true, currentServerStatus = "") : serverIndicator.checked = false;
-            if(res === "color-4")currentServerStatus = "";
+            if(res === "color-4"){
+              currentServerStatus = "";
+              if(isRestarting){
+                startServer();
+              }
+            }
             serverIndicator.id = res;
             labelForStatus.for = res;
         })
