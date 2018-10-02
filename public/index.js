@@ -260,7 +260,7 @@ input:focus~.bar:after {
     <main>
         <section id='settingsBar'>
             <div class='section'>
-                <textarea id='scrapeLink's class='textarea' value='' style='font-size:80%'></textarea>
+                <textarea id='scrapeLinkl's class='textarea' value='' style='font-size:80%'></textarea>
                 <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
@@ -428,7 +428,7 @@ input:focus~.bar:after {
     }
     setInterval(checkServerAvailibility, 5000);
 
-    scrapeLink.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
+    scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
     unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
