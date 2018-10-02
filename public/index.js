@@ -339,6 +339,7 @@ input:focus~.bar:after {
         })
     }
     function restartServer(){
+      isRestarting = 1
       stopServer();
     }
 
@@ -419,6 +420,7 @@ input:focus~.bar:after {
             if(res === "color-4"){
               currentServerStatus = "";
               if(isRestarting){
+                isRestarting = 0;
                 startServer();
               }
             }
