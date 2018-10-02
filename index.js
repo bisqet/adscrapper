@@ -349,12 +349,19 @@ function indexApp() {
     }
 
     async function mainWrapper(yad2ResultsURL) {
+        let errorsInARow = 0
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             const browser = await puppeteer.launch({
                 args: ['--no-sandbox']
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
+            if(errorsInARow===3){
+                if(i==yad2ResultsURL.length-1){
+                    break;
+                }
+                i++;
+            }
             log(`URL №${i+1}`);
             await main(curUrl, browser)
                 .then(async () => {
@@ -364,6 +371,7 @@ function indexApp() {
                     log('ERROR HAPPENED', err);
                     i--;
                 });
+            errorsInARow = 0;
             await browser.close();
             
             await isServerNeedsToStop();
