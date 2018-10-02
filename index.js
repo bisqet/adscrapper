@@ -211,8 +211,9 @@ function indexApp() {
                 // get the images and the map location
                 //log('Fetching images and map data');
                 await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
+                let  adMetaData = {}
                 try{
-                const adMetaData = await page.evaluate(() => {
+                adMetaData = await page.evaluate(() => {
                     if (mapOptions === undefined) {
                         mapOptions = [];
                     }
