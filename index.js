@@ -266,7 +266,7 @@ function indexApp() {
             log(`SQR RESULT IS: ${!!(eval(filter))}`);
             return !!(eval(filter));
         } catch (err) {
-            await sendErrorMessage({ err: "ERROR WITH PARSING CITYFILTER!!!" })
+            await sendErrorMessage({ err: "ERROR WITH PARSING SQRFILTER!!!" })
             log("ERROR WITH PARSING SQRFILTER!!!");
             log(err);
             return false;
