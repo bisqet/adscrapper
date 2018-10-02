@@ -351,6 +351,7 @@ function indexApp() {
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
         for (let i = 0; i < yad2ResultsURL.length; i++) {
+            await isServerNeedsToStop();
             const browser = await puppeteer.launch({
                 args: ['--no-sandbox']
             });
