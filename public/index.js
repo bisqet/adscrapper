@@ -364,12 +364,12 @@ input:focus~.bar:after {
     function changeSettings() {
         const links = scrapeLinks.value.split('\\n');
         const unacceptable = unacceptableCities.value.split('\\n').map(cityWithHoods=>{
-          const res = cityWithHoods.split('|')
+          const res = cityWithHoods.split(',')
           if(res.length==1)return res[0]
           return res
         });
         const acceptable = acceptableCities.value.split('\\n').map(cityWithHoods=>{
-          const res = cityWithHoods.split('|')
+          const res = cityWithHoods.split(',')
           if(res.length==1)return res[0]
           return res
         })
@@ -437,12 +437,7 @@ input:focus~.bar:after {
     setInterval(checkServerAvailibility, 5000);
 
     scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
-    unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n').map(cityWithHoods=>{
-          const res = cityWithHoods.split('|')
-          if(res.length==1)return res[0]
-          return res
-        })
-:''}\`;
+    unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
 </body>
