@@ -152,7 +152,10 @@ function indexApp() {
 
                 await page.waitFor(15000);
 
-                await page.waitFor("#mainFrame", { timeout: 60000 * 5 }); // max 5 minutes
+                await page.waitFor("#mainFrame", { timeout: 60000 * 3 }).catch(err=>{
+                    log("Error HAPPENED:"+ad.link)
+                    throw new Error(err);
+                }); // max 5 minutes
                 const adDetails = await page.evaluate(() => {
                     const data = {};
                     $('.innerDetailsDataGrid').each((index, dataBlock) => {
@@ -357,7 +360,7 @@ function indexApp() {
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
-            if(errorsInARow===3){
+            if(errorsInARow===2){
                 if(i==yad2ResultsURL.length-1){
                     break;
                 }
