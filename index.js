@@ -17,7 +17,7 @@ function indexApp() {
     const config = reload('./config.js');
     const messageBot = require('./messageBot.js')
 
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
+    messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
 
     // LowDB init 
     // const FileSync = require('lowdb/adapters/FileSync');
@@ -152,7 +152,7 @@ function indexApp() {
                 await page.goto(ad.link);
 
                 var error = 0;
-                await page.waitFor("#mainFrame", { timeout: 60000 }).catch(err=>{
+                await page.waitFor("#mainFrame", { timeout: 60000 * 2}).catch(err=>{
                     error+=1;
                     log("Error HAPPENED:"+ad.link)
                 }); // max 5 minutes
@@ -386,7 +386,7 @@ function indexApp() {
             
             await isServerNeedsToStop();
 
-            //await delay(60000); // every 0ne min
+            await delay(60000); // every 0ne min
         }
         for(let i = 0;i<240;i++){
             await delay(15000); 
