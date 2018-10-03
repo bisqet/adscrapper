@@ -17,7 +17,7 @@ function indexApp() {
     const config = reload('./config.js');
     const messageBot = require('./messageBot.js')
 
-    messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
 
     // LowDB init 
     // const FileSync = require('lowdb/adapters/FileSync');
@@ -148,19 +148,19 @@ function indexApp() {
                 // new ad
                 count += 1;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
-                //log('Fetching', ad.link);
+                log('Fetching', ad.link);
                 await page.goto(ad.link);
 
-                await page.waitFor(15000);
-                let err =0
-                await page.waitFor("#mainFrame", { timeout: 60000 * 3 }).catch(err=>{
+                let err =0;
+                await page.waitFor("#mainFrame", { timeout: 60000 }).catch(err=>{
                     err++;
                     log("Error HAPPENED:"+ad.link)
                 }); // max 5 minutes
                 if(err!==0){
-                    err=0
+                    err=0;
                     continue;
                 }
+                log('Waited');
                 const adDetails = await page.evaluate(() => {
                     const data = {};
                     $('.innerDetailsDataGrid').each((index, dataBlock) => {
@@ -365,7 +365,7 @@ function indexApp() {
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
-            if(errorsInARow===2){
+            if(errorsInARow===3){
                 if(i==yad2ResultsURL.length-1){
                     break;
                 }
