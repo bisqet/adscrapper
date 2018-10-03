@@ -220,6 +220,7 @@ function indexApp() {
                 //log('Fetching images and map data');
                 await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
                 let  adMetaData = {}
+                adMetaData.images = [];
                 try{
                 adMetaData = await page.evaluate(() => {
                     if (mapOptions === undefined) {
@@ -235,6 +236,7 @@ function indexApp() {
                 });}catch(e){
                     log("MAP OPTIONS IS NOT DEFINED ERROR")
                 }
+
                 adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
                 ad.meta = adMetaData;
 
@@ -365,7 +367,7 @@ function indexApp() {
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
-            if(errorsInARow===3){
+            if(errorsInARow >= 3){
                 if(i==yad2ResultsURL.length-1){
                     break;
                 }
