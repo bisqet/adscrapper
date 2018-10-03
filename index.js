@@ -151,7 +151,7 @@ function indexApp() {
                 //log('Fetching', ad.link);
                 await page.goto(ad.link);
 
-                var error = 0;
+                let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2}).catch(err=>{
                     error+=1;
                     log("Error HAPPENED:"+ad.link)
