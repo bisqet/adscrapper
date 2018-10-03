@@ -148,19 +148,19 @@ function indexApp() {
                 // new ad
                 count += 1;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
-                log('Fetching', ad.link);
+                //log('Fetching', ad.link);
                 await page.goto(ad.link);
 
-                let err =0;
+                var error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 }).catch(err=>{
-                    err++;
+                    error+=1;
                     log("Error HAPPENED:"+ad.link)
                 }); // max 5 minutes
-                if(err!==0){
-                    err=0;
+                if(error!==0){
+                    error=0;
                     continue;
                 }
-                log('Waited');
+                //log('Waited');
                 const adDetails = await page.evaluate(() => {
                     const data = {};
                     $('.innerDetailsDataGrid').each((index, dataBlock) => {
