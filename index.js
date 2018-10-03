@@ -386,7 +386,7 @@ function indexApp() {
             
             await isServerNeedsToStop();
 
-            await delay(60000); // every 0ne min
+            //await delay(60000); // every 0ne min
         }
         for(let i = 0;i<240;i++){
             await delay(15000); 
