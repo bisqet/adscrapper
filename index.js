@@ -152,7 +152,7 @@ function indexApp() {
                 await page.goto(ad.link);
 
                 await page.waitFor(15000);
-                 let err =0
+                let err =0
                 await page.waitFor("#mainFrame", { timeout: 60000 * 3 }).catch(err=>{
                     err++;
                     log("Error HAPPENED:"+ad.link)
@@ -378,6 +378,7 @@ function indexApp() {
                 })
                 .catch(async (err) => {
                     log('ERROR HAPPENED', err);
+                    errorsInARow++;
                     i--;
                 });
             errorsInARow = 0;
