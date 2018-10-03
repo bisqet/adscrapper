@@ -180,7 +180,7 @@ function indexApp() {
                                 if (td.lastChild.textContent.match('מ"ר בנוי') !== null) { data.sqrin = td.nextElementSibling.innerText; }
                                 if (td.lastChild.textContent.match('מ"ר גינה:') !== null) { data.sqrgarden = td.nextElementSibling.innerText }
                                 if (td.lastChild.textContent.match('השכרה לטווח ארוך') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "ארוך" : "קצר!!"; }
-                                if (td.lastChild.textContent.match('משופצת') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "שופץ" : "לא-שופץ"; }
+                                if (td.lastChild.textContent.match('משופצת') !== null) { data.renov = td.children[0].classList.value == "v_checked" ? "שופץ" : "לא-שופץ"; }
                             });
                             let container = dataBlock.nextElementSibling;
                             data.more = container.lastElementChild.innerText;
