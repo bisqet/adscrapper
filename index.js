@@ -72,12 +72,13 @@ function indexApp() {
 
         const page = await browser.newPage();
 
+        page.setViewport({width: 1400, height:800})
         page.setDefaultNavigationTimeout(120000 * 2);
 
         await page.goto(yad2ResultsURL);
 
         // check for captcha
-        await page.waitFor("#main_table", { timeout: 180000 })
+        await page.waitFor("#main_table", { timeout: 60000 })
         //log("main table found")
 
         const searchSource = await page.content();
@@ -179,6 +180,7 @@ function indexApp() {
                                 if (td.lastChild.textContent.match('מ"ר בנוי') !== null) { data.sqrin = td.nextElementSibling.innerText; }
                                 if (td.lastChild.textContent.match('מ"ר גינה:') !== null) { data.sqrgarden = td.nextElementSibling.innerText }
                                 if (td.lastChild.textContent.match('השכרה לטווח ארוך') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "ארוך" : "קצר!!"; }
+                                if (td.lastChild.textContent.match('משופצת') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "שופץ" : "לא-שופץ"; }
                             });
                             let container = dataBlock.nextElementSibling;
                             data.more = container.lastElementChild.innerText;
