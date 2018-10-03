@@ -234,6 +234,8 @@ function indexApp() {
                         map: mapOptions
                     };
                 });}catch(e){
+                    adMetaData = {}
+                    adMetaData.images = [];
                     log("MAP OPTIONS IS NOT DEFINED ERROR")
                 }
 
