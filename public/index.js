@@ -457,7 +457,7 @@ input:focus~.bar:after {
 	for(let i = 0; i<100;i++)a.push('\\n')
 	livelogsContainer.innerText = a
 
-	livelogsContainer.scrollTop = 1500
+	livelogsContainer.scrollTop = 1520
     setInterval(()=>{
 		checkServerAvailibility();
 		getLogs();
