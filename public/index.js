@@ -454,7 +454,7 @@ input:focus~.bar:after {
 		})
     }
 	let a =[];
-	for(let i = 0; i<100;i++)a.push('\n')
+	for(let i = 0; i<100;i++)a.push('\\n')
 	livelogsContainer.innerText = a
 
 	livelogsContainer.scrollTop = 1500
