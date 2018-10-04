@@ -155,7 +155,7 @@ function indexApp() {
                 let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2}).catch(err=>{
                     error+=1;
-                    log("Error HAPPENED:"+ad.link)
+                    log("CAPTCHA ERROR:"+ad.link)
                 }); // max 5 minutes
                 if(error!==0){
                     error=0;
