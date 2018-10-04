@@ -258,7 +258,10 @@ input:focus~.bar:after {
 #livelogsContainer{
 	width:80%;
 	height:600px;
-	
+	background: black;
+	color:white;
+	margin:auto;
+	overflow: scroll;
 }
     </style>
 </head>
@@ -444,12 +447,16 @@ input:focus~.bar:after {
     }
 	function getLogs() {
         fetch('/getLogs').then((res) => {
-            return res.text()
+            return res.json()
         }).then((res)=>{
-			livelogsContainer.innerText = \`${}\`
+			res = JSON.stringify(res.logs.slice(-100), null , 2)
+			livelogsContainer.innerText = res
 		})
     }
-    setInterval(checkServerAvailibility, 5000);
+    setInterval(()=>{
+		checkServerAvailibility();
+		getLogs();
+		}, 5000);
 
     scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
     unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
@@ -485,9 +492,10 @@ app.post('/changeSettings', (req, res) => {
 
 
 app.get('/getLogs', (req, res) => {
-    const logs = syncFs.readFileSync('.data/logsDB.json', "utf8")
+    const logs = syncFs.readFileSync('./.data/logsDB.json', "utf8");
     res.send(logs);
 });
+
 
 
 
