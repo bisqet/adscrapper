@@ -13,6 +13,6 @@ module.exports = function log() {
     const text = Array.prototype.join.call(arguments, ' ');
     console.log(text);
     logsDB.get('logs')
-        .push(Date() + ' - ' + text)
+        .push(Date().replace( / \(.*?\)/g, "" ) + ' - ' + text)
         .write();
 };

@@ -255,6 +255,11 @@ input:focus~.bar:after {
   margin-top: 5px;
   width: 630px;
 }
+#livelogsContainer{
+	width:80%;
+	height:600px;
+	
+}
     </style>
 </head>
 
@@ -308,6 +313,7 @@ input:focus~.bar:after {
                     </label>
                 </div>
         </section>
+		<section id ="livelogsContainer"></section>
     </main>
     <footer id='snackBar'></footer>
     <script type='text/javascript'>
@@ -318,7 +324,8 @@ input:focus~.bar:after {
     clearDBButton.addEventListener('click', clearDB);
     stopServerButton.addEventListener('click', stopServer);
     startServerButton.addEventListener('click', startServer)
-    restartServerButton.addEventListener('click', restartServer)
+    restartServerButton.addEventListener('click', restartServer);
+	
 
     let currentServerStatus = "";
     let isRestarting = 0;
@@ -435,11 +442,18 @@ input:focus~.bar:after {
             labelForStatus.for = res;
         })
     }
+	function getLogs() {
+        fetch('/getLogs').then((res) => {
+            return res.text()
+        }).then((res)=>{
+			livelogsContainer.innerText = \`${}\`
+		})
+    }
     setInterval(checkServerAvailibility, 5000);
 
     scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
     unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
-    sqrFilterContainer.value =\` ${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
+    sqrFilterContainer.value =\`${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
     </script>
 </body>
 
@@ -449,7 +463,7 @@ input:focus~.bar:after {
 app.post('/changeSettings', (req, res) => {
 
     const body = req.body;
-
+	
     let stringifiedBody = `const config = ${JSON.stringify(body, null, 2)};\nmodule.exports = config;`;
     fs.writeFile('./config.js', stringifiedBody, 'utf8', (err, data) => {
         if (err) {
@@ -467,6 +481,29 @@ app.post('/changeSettings', (req, res) => {
         return;
     });
 });
+
+
+
+app.get('/getLogs', (req, res) => {
+    const logs = syncFs.readFileSync('.data/logsDB.json', "utf8")
+    res.send(logs);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.get('/startServer', (req, res) => {
     const isWakeUpable = syncFs.readFileSync('./.isServerWakeUpable', "utf8")
