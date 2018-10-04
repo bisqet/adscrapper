@@ -18,6 +18,7 @@ function indexApp() {
     const messageBot = require('./messageBot.js')
 
     messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
+    log('SCRAPPER STARTED');
 
     // LowDB init 
     // const FileSync = require('lowdb/adapters/FileSync');
@@ -279,9 +280,9 @@ function indexApp() {
         const filter = config.sqrFilter;
         if (filter.match("all") !== null || filter === "") return true
         try {
-            log(`SQRfilter IS: ${filter}`);
-            log(`SQR IS: ${sqr}`);
-            log(`SQR RESULT IS: ${!!(eval(filter))}`);
+            //log(`SQRfilter IS: ${filter}`);
+            //log(`SQR IS: ${sqr}`);
+            //log(`SQR RESULT IS: ${!!(eval(filter))}`);
             return !!(eval(filter));
         } catch (err) {
             await sendErrorMessage({ err: "ERROR WITH PARSING SQRFILTER!!!" })
