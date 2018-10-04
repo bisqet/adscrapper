@@ -450,9 +450,14 @@ input:focus~.bar:after {
             return res.json()
         }).then((res)=>{
 			res = JSON.stringify(res.logs.slice(-100), null , 2)
-			livelogsContainer.innerText = res
+			livelogsContainer.innerText = res;
 		})
     }
+	let a =[];
+	for(let i = 0; i<100;i++)a.push('\n')
+	livelogsContainer.innerText = a
+
+	livelogsContainer.scrollTop = 1500
     setInterval(()=>{
 		checkServerAvailibility();
 		getLogs();
