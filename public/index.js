@@ -478,7 +478,7 @@ input:focus~.bar:after {
     scrapeLinks.value = \`${config.yad2ResultsURL!==undefined?config.yad2ResultsURL.join('\n'):''}\`;
     unacceptableCities.value = \`${config.cityFilter!==undefined?config.cityFilter.unacceptable.join('\n'):''}\`;
     sqrFilterContainer.value =\`${config.sqrFilter!==undefined?config.sqrFilter:''}\`;
-    unacceptableIds.value = \`${config.unacceptableIDs!==undefined?config.unacceptableIDs.unacceptableIDs.join('\n'):''}\`
+    unacceptableIds.value = \`${config.unacceptableIDs!==undefined?config.unacceptableIDs.join('\n'):''}\`
     </script>
 </body>
 
