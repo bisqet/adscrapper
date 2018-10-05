@@ -6,10 +6,10 @@
   "version": "0.0.1",
   "description": "What am I about??",
   "scripts": {
-    "start": "npm run scrapper & npm run staticAndGui",
+    "start": "npm run scrapper & npm run gui",
     "static": "http-server ./public/ -p 3000",
     "scrapper": "node index.js",
-    "staticAndGui": "node ./public/index.js"
+    "gui": "node ./public/index.js"
   },
   "dependencies": {
     "await-fs": "^1.0.0",
