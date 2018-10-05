@@ -63,6 +63,9 @@ function indexApp() {
             }, 30000); // two minutes
         });
     }
+    async function isCaptchaHere(){
+        //TODO:CAPTCHA CHECK;
+    }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
@@ -73,7 +76,8 @@ function indexApp() {
 
         const page = await browser.newPage();
 
-        page.setViewport({width: 1400, height:800})
+        page.setViewport({width: 1400, height:800});
+        
         page.setDefaultNavigationTimeout(120000 * 2);
 
         await page.goto(yad2ResultsURL);
@@ -300,6 +304,7 @@ function indexApp() {
     });
     async function sqrFilter(sqr) {
         if (!sqr) return true;
+        sqr = parseInt(sqr);
         const filter = config.sqrFilter;
         if (filter.match("all") !== null || filter === "") return true
         try {
