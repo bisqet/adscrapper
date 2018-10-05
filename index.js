@@ -150,7 +150,7 @@ function indexApp() {
 
         for(let i in config.unacceptableIDs){
             for(let o = 0;o< parsedAds.length;o++){
-                if(config.unacceptableIDs[i] == parsedAds[o]){
+                if(config.unacceptableIDs[i] == parsedAds[o].id){
                     filteredID++;
                     parsedAds.splice(o,1)
                     i--;
@@ -159,7 +159,7 @@ function indexApp() {
         }
 
 
-        log('Total ads on page:', parsedAds.length-filteredID);
+        log('Total ads on page:', parsedAds.length+filteredID);
 
         for (let i=0;i<parsedAds.length;i++) {
             let ad = parsedAds[i];
@@ -182,6 +182,8 @@ function indexApp() {
                     log("CAPTCHA ERROR:"+ad.link)
                 }); // max 5 minutes
                 if(error!==0){
+                    log("WAITING FOR 5min:"+ad.link)
+                    delay(60300*5)//wait for 5 mins
                     error=0;
                     continue;
                 }
