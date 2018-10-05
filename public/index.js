@@ -326,9 +326,9 @@ input:focus~.bar:after {
                     </label>
                 </div>
         </section>
-		<section id ="livelogsContainer"></section>
+		<section id ="livelogsContainer" style="font-size:80%"></section>
     </main>
-    <footer id='snackBar' style="font-size:80%"></footer>
+    <footer id='snackBar'></footer>
     <script type='text/javascript'>
     unacceptableButton.addEventListener('click', citiesHandler)
     acceptableButton.addEventListener('click', citiesHandler)
