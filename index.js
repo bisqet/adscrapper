@@ -236,20 +236,16 @@ function indexApp() {
                 adMetaData.images = [];
                 try{
                 adMetaData = await page.evaluate(() => {
-                    if (mapOptions === undefined) {
-                        mapOptions = [];
-                    }
                     if (ImageArr === undefined) {
                         ImageArr = []
                     }
                     return {
-                        images: ImageArr,
-                        map: mapOptions
+                        images: ImageArr
                     };
                 });}catch(e){
-                    adMetaData = {}
+                    adMetaData = {};
                     adMetaData.images = [];
-                    log("MAP OPTIONS IS NOT DEFINED ERROR")
+                    log(e);
                 }
 
                 adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
