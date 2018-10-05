@@ -263,6 +263,14 @@ input:focus~.bar:after {
 	margin:auto;
 	overflow: scroll;
 }
+.leftField{
+  width:49%;
+  float: left;
+}
+.rightField{
+  width:49%;
+  float: right;
+}
     </style>
 </head>
 
@@ -275,12 +283,14 @@ input:focus~.bar:after {
                 <label class='scrapeLink'>Links to scrape</label>
             </div>
             <div>
-                <div class='section'>
-                    <textarea id='unacceptableCities' class='textarea' value=''></textarea>
-                    <textarea id='acceptableCities' class='textarea bg' value=''></textarea>
+                <div class='section' style="height: 220px;">
+                    <textarea id='unacceptableCities' class='leftField textarea' value=''></textarea>
+                    <textarea id='acceptableCities' class='leftField textarea bg' value=''></textarea>
+                    <textarea id='unacceptableIds' class='rightField textarea bg' value='' style='font-size:80%'></textarea>
                     <span class='bar'></span>
-                    <div class='scrapeLink citiesFilter active' id ="unacceptableButton">City filter</div>
-                    <div class='scrapeLink citiesFilter' style="display:none"  id ="acceptableButton">Acceptable cities</div>
+                    <div class='leftField scrapeLink citiesFilter active' id ="unacceptableButton">City filter</div>
+                    <div class='leftField scrapeLink citiesFilter' style="display:none"  id ="acceptableButton">Acceptable cities</div>
+                    <div class='rightField scrapeLink citiesFilter' style=""  id ="unacceptableIdsButton">Specific ad IDs filter</div>
                 </div>
             </div>
             <div>
@@ -318,7 +328,7 @@ input:focus~.bar:after {
         </section>
 		<section id ="livelogsContainer"></section>
     </main>
-    <footer id='snackBar'></footer>
+    <footer id='snackBar' style="font-size:80%"></footer>
     <script type='text/javascript'>
     unacceptableButton.addEventListener('click', citiesHandler)
     acceptableButton.addEventListener('click', citiesHandler)
