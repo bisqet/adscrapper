@@ -115,15 +115,18 @@ function indexApp() {
         // start scraping
 
         await page.screenshot({ path: publicFolder + 'homepage.png' });
+        
+        let count = 0;
+        let skippedDueCaptcha = 0;
+        let filteredBySqr = 0;
+        let filteredByCity = 0;
+        let filteredID = 0;
+        
         const parsedAds = await page.evaluate(() => {
             const adsResults = [];
             const ads = $("#main_table .main_table tr.showPopupUnder");
             console.info(ads);
-            let count = 0;
-            let skippedDueCaptcha = 0;
-            let filteredBySqr = 0;
-            let filteredByCity = 0;
-            let filteredID = 0;
+
 
             ads.each(function(i, ad) {
                 // get the href attribute of each link
@@ -144,7 +147,7 @@ function indexApp() {
             return adsResults;
         });
 
-        
+
         for(let i in config.unacceptableIDs){
             for(let o = 0;o< parsedAds.length;o++){
                 if(config.unacceptableIDs[i] == parsedAds[o]){
@@ -155,7 +158,7 @@ function indexApp() {
             }
         }
 
-        
+
         log('Total ads on page:', parsedAds.length-filteredID);
 
         for (let i=0;i<parsedAds.length;i++) {
