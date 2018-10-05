@@ -129,9 +129,6 @@ function indexApp() {
                 // get the href attribute of each link
                 var adResult = {};
                 adResult.id = $(ad).attr("id").split("_").splice(-1)[0];
-                for(let o in config.unacceptableIDs){
-                    if(config.unacceptableIDs[adResult.id]!==undefined)continue;
-                }
 
                 $(ad).find('td').each(function(idx, td) {
                     if (idx === 4) { adResult.type = $(td).text().trim(); }
@@ -146,6 +143,19 @@ function indexApp() {
             });
             return adsResults;
         });
+
+        
+        for(let i in config.unacceptableIDs){
+            for(let o = 0;o< parsedAds.length;o++){
+                if(config.unacceptableIDs[i] == parsedAds[o]){
+                    filteredID++;
+                    parsedAds.splice(o,1)
+                    i--;
+                }
+            }
+        }
+
+        
         log('Total ads on page:', parsedAds.length-filteredID);
 
         for (let i=0;i<parsedAds.length;i++) {
