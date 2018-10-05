@@ -394,6 +394,7 @@ input:focus~.bar:after {
           if(res.length==1)return res[0]
           return res
         })
+        const unacceptableIDs = unacceptableIds.value.split('\\n');
         const sqrFilter = sqrFilterContainer.value;
 
         fetch('/changeSettings', {
@@ -408,6 +409,7 @@ input:focus~.bar:after {
                     acceptable: acceptable,
                     mode: mode
                 },
+                unacceptableIDs : unacceptableIDs
                 sqrFilter: sqrFilter
             })
         }).then((res) => {
