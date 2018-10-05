@@ -326,7 +326,7 @@ input:focus~.bar:after {
                     </label>
                 </div>
         </section>
-		<section id ="livelogsContainer" style="font-size:80%"></section>
+		<section id ="livelogsContainer" style="font-size:80%; font-family: consolas;"></section>
     </main>
     <footer id='snackBar'></footer>
     <script type='text/javascript'>
