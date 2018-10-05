@@ -11,7 +11,7 @@ function indexApp() {
     const readFile = util.promisify(fs.readFile);
     const deleteFile = util.promisify(fs.unlink);
     const puppeteer = require('puppeteer');
-    const request = require('request');
+    //const request = require('request');
     const log = require('./log.js');
     const low = require('lowdb');
     const config = reload('./config.js');
