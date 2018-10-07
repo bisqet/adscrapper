@@ -152,6 +152,18 @@ function indexApp() {
         });
 
 
+        //checking existing in unacceptable cities
+        for(let i in config.unacceptable){          
+            for(let o = 0;o< parsedAds.length;o++){
+                //log(parsedAds[o])
+                if(config.unacceptable[i] == parsedAds[o].city){
+                    filteredByCity++;
+                    parsedAds.splice(o,1)
+                    o--;
+                }
+            }
+        }
+        //checking existing in unacceptable IDs
         for(let i in config.unacceptableIDs){
             for(let o = 0;o< parsedAds.length;o++){
                 if(config.unacceptableIDs[i] == parsedAds[o].id){
