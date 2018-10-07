@@ -307,7 +307,7 @@ function indexApp() {
 
             }
         }
-        log(`Total skipped-duplicate - due to DB: ${parsedAds.length+filteredID-count}`);
+        log(`Total skipped-duplicate - due to DB: ${parsedAds.length-count}`);
         log(`Total skipped due captcha: ${skippedDueCaptcha}`)
         log('Total skipped due to city filter: ', filteredByCity);
         log('Total skipped due to SQR filter: ', filteredBySqr);
