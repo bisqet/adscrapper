@@ -83,10 +83,11 @@ function indexApp() {
         await page.goto(yad2ResultsURL);
         await delay(15000);//15s delay.
 
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
+
         // check for captcha
         await page.waitFor("#main_table", { timeout: 60000 })
         //log("main table found")
-        await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         const searchSource = await page.content();
         //log("searchSource found");
