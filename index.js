@@ -97,7 +97,7 @@ function indexApp() {
         if (searchSource.indexOf('Are you human?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!!!", "url": yad2ResultsURL });
-            return;
+            throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
             /*/ get the image
             const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
             const { buffer } = parseDataUrl(captchaImg);
@@ -419,7 +419,11 @@ function indexApp() {
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
-                args: ['--no-sandbox']
+                args: ['--no-sandbox'],
+                headless: false,
+                defaultViewport:{
+                    isMobile:true
+                }
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
@@ -433,13 +437,14 @@ function indexApp() {
             await main(curUrl, browser)
                 .then(async () => {
                     log('Successful.');
+                    errorsInARow = 0;
                 })
                 .catch(async (err) => {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
+                    await delay(getRandomInt(60000, 120000))
                 });
-            errorsInARow = 0;
             await browser.close();
             
             await isServerNeedsToStop();
