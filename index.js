@@ -1,3 +1,5 @@
+const WARN_CONFIG = require ('./WARN_CONFIG.js');
+
 module.exports = process.pid; //to relaunch server.
 
 if (!module.parent) {
@@ -76,7 +78,7 @@ function indexApp() {
 
         const page = await browser.newPage();
 
-        page.setViewport({width: 1400, height:800});
+        page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
         
         page.setDefaultNavigationTimeout(120000 * 2);
 
@@ -283,7 +285,7 @@ function indexApp() {
                     log(e);
                 }
 
-                adMetaData.images.unshift(`http://172.104.211.48:3000/${ad.id}-info.png`);
+                adMetaData.images.unshift(`${WARN_CONFIG.DOMAIN}/${ad.id}-info.png`);
                 ad.meta = adMetaData;
 
                 // write to DB
@@ -400,12 +402,17 @@ function indexApp() {
             await messageBot.customMessage({ 'err': 'SCRAPPER STOPPED', 'url': 'https://linode.com' });
             log("SCRAPPER STOPPED");
             fs.writeFileSync('.isServerWakeUpable', "true", 'utf8');
-            await delay(3000);
+            await delay(getRandomInt(3000, 4000));
 
             //process.on("exit", async function() {});
             process.exit();
         }
     }
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
 
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
@@ -437,11 +444,11 @@ function indexApp() {
             
             await isServerNeedsToStop();
 
-            await delay(60000); // every 0ne min
+            await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
         }
         for(let i = 0;i<240;i++){
-            await delay(15000); 
-            await isServerNeedsToStop();//check for stop each 15 secs
+            await delay(getRandomInt(15000, 16000)); 
+            await isServerNeedsToStop();//check for stop each 15-16 secs
         }// every 60 min
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
