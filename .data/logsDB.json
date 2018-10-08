@@ -6808,6 +6808,17 @@
     "2018-10-08 08:32:00 - SCRAPPER STARTED",
     "2018-10-08 08:32:00 - URL №1",
     "2018-10-08 08:33:01 - ERROR HAPPENED TimeoutError: waiting for selector \"#main_table\" failed: timeout 60000ms exceeded",
-    "2018-10-08 08:34:01 - SCRAPPER STOPPED"
+    "2018-10-08 08:34:01 - SCRAPPER STOPPED",
+    "2018-10-08 13:29:01 - GUI SERVER LISTENING ON 3000 PORT",
+    "2018-10-08 13:37:00 - SCRAPPER STARTED",
+    "2018-10-08 13:37:01 - URL №1",
+    "2018-10-08 13:38:01 - SCRAPPER STARTED",
+    "2018-10-08 13:38:01 - URL №1",
+    "2018-10-08 13:39:25 - ERROR HAPPENED TimeoutError: waiting for selector \"#main_table\" failed: timeout 60000ms exceeded",
+    "2018-10-08 13:40:25 - URL №1",
+    "2018-10-08 13:41:41 - ERROR HAPPENED TimeoutError: waiting for selector \"#main_table\" failed: timeout 60000ms exceeded",
+    "2018-10-08 13:57:13 - SCRAPPER STARTED",
+    "2018-10-08 13:57:13 - URL №1",
+    "2018-10-08 13:58:30 - ERROR HAPPENED TimeoutError: waiting for selector \"#main_table\" failed: timeout 60000ms exceeded"
   ]
 }
