@@ -78,7 +78,7 @@ function indexApp() {
 
         const page = await browser.newPage();
 
-        //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
+        page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
         
         page.setDefaultNavigationTimeout(120000 * 2);
 
@@ -434,11 +434,13 @@ function indexApp() {
             if(errorsInARow >= 3){
                 if(i==yad2ResultsURL.length-1){
                     break;
+
+
                 }
-                for(let i = 0;i<240;i++){
-                    await delay(getRandomInt(15000, 16000)); 
-                    await isServerNeedsToStop();//check for stop each 15-16 secs
-                }// wait 60 min
+                                    for(let i = 0;i<240;i++){
+                        await delay(getRandomInt(15000, 16000)); 
+                        await isServerNeedsToStop();//check for stop each 15-16 secs
+                         }// every 60 min
                 i++;
             }
             log(`URL №${i+1}`);
