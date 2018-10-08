@@ -421,7 +421,12 @@ function indexApp() {
             const browser = await puppeteer.launch({
                 args: ['--no-sandbox'],
                 defaultViewport:{
-                    isMobile:true
+                    width: 600,
+                    height:800,
+                    deviceScaleFactor: 1,
+                    isMobile:true,
+                    hasTouch:false,
+                    isLandscape: false
                 }
             });
             let curUrl = yad2ResultsURL[i];
