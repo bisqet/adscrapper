@@ -1,3 +1,3 @@
 module.exports = {
-	DOMAIN:"http://172.104.211.48:3002"
+	DOMAIN:"http://172.104.211.48:3000"
 }
