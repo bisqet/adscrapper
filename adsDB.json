@@ -1,75 +1,68 @@
 {
   "ads": [
     {
-      "id": "3605583",
-      "type": "פרטי/קוטג'",
-      "address": "בני עטרות - התאנה",
-      "price": "8,500 ₪",
-      "rooms": "5",
-      "entranceDate": "15.10.18",
-      "floor": "קרקע",
-      "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3605583",
+      "id": "3583170",
+      "type": "גג/פנטהאוז",
+      "address": "גני תקווה - עין שמש",
+      "price": "7,800 ₪",
+      "rooms": "5.5",
+      "entranceDate": "01.11.18",
+      "floor": "8",
+      "adDate": "01.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3583170",
       "data": {
-        "city": "בני עטרות",
-        "fullAddress": "התאנה 12",
-        "sqrmeter": 164,
-        "sqrin": "164",
-        "sqrgarden": "340",
-        "term": "ארוך",
-        "more": "תוספות: בית חד קומתי , ארבע חדרי שינה חללמרכזי המכיל סלון פינת אוכל מטבח וחדר משפחה.",
+        "city": "גני תקווה",
+        "hood": "נוף סביון",
+        "fullAddress": "עין שמש 23",
+        "sqrmeter": 200,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות:",
         "tax/m": "*",
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/3605583-info.png",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_1_728883_20180915190940.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_2_727118_20180915190944.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_3_723651_20180915190949.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_4_727916_20180915190938.jpg"
-        ],
-        "map": {
-          "lat": 32.027305,
-          "lng": 34.920203,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/3583170-info.png",
+          "http://images.yad2.co.il/Pic/201808/21/2_2/o/o2_2_1_722878_20180821150819.jpg",
+          "http://images.yad2.co.il/Pic/201808/21/2_2/o/o2_2_2_724010_20180821150822.jpg"
+        ]
       }
     },
     {
-      "id": "2ea8958dd030ed4b601f09d1bcba94512b0",
+      "id": "2bd9514bdf8bea08e20b2931fe89f557132",
       "type": "פרטי/קוטג'",
-      "address": "בני עטרות - דרך הראשונים",
+      "address": "אזור - אחד העם",
       "price": "7,800 ₪",
-      "rooms": "6.5",
-      "entranceDate": "מיידי",
+      "rooms": "5",
+      "entranceDate": "31.12.18",
       "floor": "קרקע",
-      "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=2ea8958dd030ed4b601f09d1bcba94512b0",
+      "adDate": "04.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=2bd9514bdf8bea08e20b2931fe89f557132",
       "data": {
-        "city": "בני עטרות",
-        "fullAddress": "דרך הראשונים 17",
-        "sqrmeter": 160,
-        "sqrin": "*",
-        "sqrgarden": "*",
+        "city": "אזור",
+        "hood": "בן גוריון",
+        "fullAddress": "אחד העם 1",
+        "sqrmeter": 200,
+        "sqrin": "160",
+        "sqrgarden": "50",
+        "renov": "שופץ",
         "term": "ארוך",
-        "more": "תוספות: משופצת, אופי מיוחד, חדרים מרווחים,מרפסות גדולות, דוד\"ש, מזגנים, גינה",
-        "tax/m": "*",
+        "more": "תוספות: בית שנבנה לפני ארבע שנים, תוכנן עםמעצבת, רצפת שיש , ויטרינות ורשתות בכל הבית, תריסים חשמליים, מזגנים, לרציניים בלבד!",
+        "tax/m": 700,
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/2ea8958dd030ed4b601f09d1bcba94512b0-info.png",
-          "http://images.yad2.co.il/Pic/201809/21/2_2/o/o2_2_2_734774_20180921090942.jpg",
-          "http://images.yad2.co.il/Pic/201809/21/2_2/o/o2_2_3_738071_20180921090929.jpg",
-          "http://images.yad2.co.il/Pic/201809/21/2_2/o/o2_2_4_739291_20180921090905.jpg",
-          "http://images.yad2.co.il/Pic/201809/21/2_2/o/o2_2_5_731546_20180921090933.jpg"
-        ],
-        "map": {
-          "lat": 0,
-          "lng": 0,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/2bd9514bdf8bea08e20b2931fe89f557132-info.png",
+          "http://images.yad2.co.il/Pic/201810/04/2_2/o/o2_2_1_717016_20181004191043.jpg",
+          "http://images.yad2.co.il/Pic/201810/04/2_2/o/o2_2_2_716357_20181004191043.jpg",
+          "http://images.yad2.co.il/Pic/201810/04/2_2/o/o2_2_3_714006_20181004191044.jpg",
+          "http://images.yad2.co.il/Pic/201810/04/2_2/o/o2_2_4_715790_20181004191044.jpg",
+          "http://images.yad2.co.il/Pic/201810/04/2_2/o/o2_2_5_716629_20181004191006.jpg"
+        ]
       }
     },
     {
@@ -88,6 +81,7 @@
         "sqrmeter": 130,
         "sqrin": "130",
         "sqrgarden": "150",
+        "renov": "לא-שופץ",
         "term": "קצר!!",
         "more": "תוספות: בית פסטוראלי, כולל חדר מגורים עם יציאה לגינה, מטבח עם מזווה, 3 חדר שינה, חדררחצה כללי, ושירותים.",
         "tax/m": "*",
@@ -96,194 +90,7 @@
       "meta": {
         "images": [
           "http://172.104.211.48:3000/6ace5e48db6bc41a647ed86cd2b5d815a63-info.png"
-        ],
-        "map": {
-          "lat": 32.066701,
-          "lng": 34.89454,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "3593618",
-      "type": "פרטי/קוטג'",
-      "address": "משמר השבעה - הורד",
-      "price": "7,500 ₪",
-      "rooms": "5",
-      "entranceDate": "מיידי",
-      "floor": "קרקע",
-      "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3593618",
-      "data": {
-        "city": "משמר השבעה",
-        "fullAddress": "הורד 203",
-        "sqrmeter": 500,
-        "sqrin": "180",
-        "sqrgarden": "400",
-        "term": "קצר!!",
-        "more": "תוספות: בית שסיים שיפוץ בימים האחרונים במושב היוקרתי משמר השבעה, 5 דקות מתלאביב. הבית נמצא ברחוב שקט ופסטורלי.",
-        "tax/m": "*",
-        "vaad": "*"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/3593618-info.png",
-          "http://images.yad2.co.il/Pic/201808/30/2_2/o/o2_2_1_719701_20180830090806.jpg",
-          "http://images.yad2.co.il/Pic/201808/30/2_2/o/o2_2_2_714686_20180830090843.jpg",
-          "http://images.yad2.co.il/Pic/201808/30/2_2/o/o2_2_3_712507_20180830090841.jpg",
-          "http://images.yad2.co.il/Pic/201808/30/2_2/o/o2_2_4_715972_20180830090855.jpg",
-          "http://images.yad2.co.il/Pic/201808/30/2_2/o/o2_2_5_711502_20180830090816.jpg"
-        ],
-        "map": {
-          "lat": 32.010528,
-          "lng": 34.821735,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "191af89ac146cfa1742f426da278f63928b",
-      "type": "פרטי/קוטג'",
-      "address": "מעש - ההדרים",
-      "price": "6,500 ₪",
-      "rooms": "4.5",
-      "entranceDate": "מיידי",
-      "floor": "קרקע",
-      "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=191af89ac146cfa1742f426da278f63928b",
-      "data": {
-        "city": "מעש",
-        "fullAddress": "ההדרים 4 כניסה:מי",
-        "sqrmeter": 150,
-        "sqrin": "150",
-        "sqrgarden": "300",
-        "term": "ארוך",
-        "more": "תוספות: בית פרטי עם חצר 4 חדרים וחצי הולגדול וסלון ענק",
-        "tax/m": 900,
-        "vaad": "*"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/191af89ac146cfa1742f426da278f63928b-info.png"
-        ],
-        "map": {
-          "lat": 0,
-          "lng": 0,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "3605282",
-      "type": "פרטי/קוטג'",
-      "address": "גנות - הערבה",
-      "price": "6,500 ₪",
-      "rooms": "4",
-      "entranceDate": "מיידי",
-      "floor": "קרקע",
-      "adDate": "01.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3605282",
-      "data": {
-        "city": "גנות",
-        "fullAddress": "הערבה 72",
-        "sqrmeter": 120,
-        "sqrin": "*",
-        "sqrgarden": "*",
-        "term": "קצר!!",
-        "more": "תוספות:",
-        "tax/m": "*",
-        "vaad": "*"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/3605282-info.png",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_1_723741_20180915090922.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_2_722012_20180915090924.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_3_727500_20180915090926.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_4_723184_20180915090924.jpg",
-          "http://images.yad2.co.il/Pic/201809/15/2_2/o/o2_2_5_722352_20180915090950.jpg"
-        ],
-        "map": {
-          "lat": 0,
-          "lng": 0,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "3602702",
-      "type": "פרטי/קוטג'",
-      "address": "סביון - הקשת",
-      "price": "9,000 ₪",
-      "rooms": "5",
-      "entranceDate": "מיידי",
-      "floor": "קרקע",
-      "adDate": "26.09.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3602702",
-      "data": {
-        "city": "סביון",
-        "hood": "סביון",
-        "fullAddress": "הקשת 22",
-        "sqrmeter": 150,
-        "sqrin": "150",
-        "sqrgarden": "40",
-        "term": "קצר!!",
-        "more": "תוספות: יחידת דיור שקטה ומקסימה עם כניסהנפרדת, בית פרטי, חצר גדולה, סלון ומטבח גדולים. מקלט חיצוני. ללא כלבים. חוזה התחלתי לשנה פלוס אופציה לשנה נוספת.",
-        "tax/m": "*",
-        "vaad": "*"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/3602702-info.png",
-          "http://images.yad2.co.il/Pic/201809/12/2_2/o/o2_2_1_748128_20180912100937.jpg",
-          "http://images.yad2.co.il/Pic/201809/12/2_2/o/o2_2_2_743628_20180912100951.jpg",
-          "http://images.yad2.co.il/Pic/201809/12/2_2/o/o2_2_3_746217_20180912100923.jpg",
-          "http://images.yad2.co.il/Pic/201809/12/2_2/o/o2_2_4_745703_20180912100934.jpg",
-          "http://images.yad2.co.il/Pic/201809/12/2_2/o/o2_2_5_743465_20180912100944.jpg"
-        ],
-        "map": {
-          "lat": 32.049294,
-          "lng": 34.867951,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "3511297",
-      "type": "דירת גן",
-      "address": "גני תקווה - עין שמש",
-      "price": "8,200 ₪",
-      "rooms": "5.5",
-      "entranceDate": "מיידי",
-      "floor": "קרקע",
-      "adDate": "21.09.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3511297",
-      "data": {
-        "city": "גני תקווה",
-        "hood": "נוף סביון",
-        "fullAddress": "עין שמש 19",
-        "sqrmeter": 160,
-        "sqrin": "160",
-        "sqrgarden": "120",
-        "term": "קצר!!",
-        "more": "תוספות: בשכונת נוף סביון הדתית דירת גןמשופצת, מוארת, חדר שינה גדול וחדרים יפים וסלון מרווח ביחד עם המטבח. חניה מקורה וצמודה לדירה. תבואו ותתרשמו.",
-        "tax/m": 700,
-        "vaad": "220"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/3511297-info.png",
-          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_1_32952_20180614140612.jpg",
-          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_2_38996_20180614140616.jpg",
-          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_3_31286_20180614140647.jpg",
-          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_4_39742_20180614140622.jpg",
-          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_5_36982_20180614140619.jpg"
-        ],
-        "map": {
-          "lat": 32.061631,
-          "lng": 34.866814,
-          "zoom": 16
-        }
+        ]
       }
     },
     {
@@ -303,6 +110,7 @@
         "sqrmeter": 120,
         "sqrin": "120",
         "sqrgarden": "250",
+        "renov": "שופץ",
         "term": "קצר!!",
         "more": "תוספות: לתקופה עד חצי שנה פתרון לחגיםקומקום חשמלי מיקסר מיקרו טוסטר אובן כיריים",
         "tax/m": "*",
@@ -316,193 +124,504 @@
           "http://images.yad2.co.il/Pic/201809/03/2_2/o/o2_2_3_743352_20180903230923.jpg",
           "http://images.yad2.co.il/Pic/201809/03/2_2/o/o2_2_4_748585_20180903230929.jpg",
           "http://images.yad2.co.il/Pic/201809/03/2_2/o/o2_2_5_741098_20180903230935.jpg"
-        ],
-        "map": {
-          "lat": 32.048577,
-          "lng": 34.873668,
-          "zoom": 16
-        }
+        ]
       }
     },
     {
-      "id": "3354713",
-      "type": "דו משפחתי",
-      "address": "יהוד מונוסון - מוהליבר",
-      "price": "7,900 ₪",
-      "rooms": "5",
-      "entranceDate": "01.11.18",
-      "floor": "קרקע",
-      "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3354713",
-      "data": {
-        "city": "יהוד מונוסון",
-        "fullAddress": "מוהליבר 19",
-        "sqrmeter": 300,
-        "sqrin": "180",
-        "sqrgarden": "120",
-        "term": "קצר!!",
-        "more": "תוספות: מציאה! קוטג' במחיר של דירה. הנכס בן 7 שנים, מפרט בנייה גבוה,מרפסות שמש גדולות, מקלחות מפנקות ומרווחות, מטבח מרווח,סלון עם מרפסת מקורה לאירוח,גינה עם ג'קוזי מקצועי ל-8 איש.",
-        "tax/m": 1100,
-        "vaad": "*"
-      },
-      "meta": {
-        "images": [
-          "http://172.104.211.48:3000/3354713-info.png",
-          "http://images.yad2.co.il/Pic/201711/27/2_2/o/o2_2_1_38826_20171127141124.jpg",
-          "http://images.yad2.co.il/Pic/201807/23/2_2/o/o2_2_2_748802_20180723110705.jpg",
-          "http://images.yad2.co.il/Pic/201807/23/2_2/o/o2_2_3_745502_20180723120732.jpg",
-          "http://images.yad2.co.il/Pic/201807/23/2_2/o/o2_2_4_744920_20180723110731.jpg",
-          "http://images.yad2.co.il/Pic/201807/23/2_2/o/o2_2_5_745237_20180723120702.jpg"
-        ],
-        "map": {
-          "lat": 32.03272,
-          "lng": 34.897511,
-          "zoom": 16
-        }
-      }
-    },
-    {
-      "id": "6ae60a41a07c42194e169a3f343c90107dd",
-      "type": "דו משפחתי",
-      "address": "יהוד מונוסון - גורדון",
-      "price": "7,800 ₪",
-      "rooms": "5",
+      "id": "3594605",
+      "type": "פרטי/קוטג'",
+      "address": "קרית אונו - החשמל",
+      "price": "9,500 ₪",
+      "rooms": "4",
       "entranceDate": "מיידי",
       "floor": "קרקע",
-      "adDate": "01.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=6ae60a41a07c42194e169a3f343c90107dd",
+      "adDate": "06.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3594605",
       "data": {
-        "city": "יהוד מונוסון",
-        "hood": "מרכז העיר יהוד",
-        "fullAddress": "גורדון 4",
-        "sqrmeter": 140,
-        "sqrin": "*",
-        "sqrgarden": "*",
-        "term": "ארוך",
-        "more": "תוספות: קוטג משופץ חדש!! 5 חדרים חדר הוריםגדול מאוד עם מרפסת מקלחת שירותים פינת דק מקורה ונעימה לישיבה חצר גדולה ויפה 2 חדרי אמבטיה 3 חדרי שירותים מיזוג בכל הבית מטבחחדש",
+        "city": "קרית אונו",
+        "hood": "שאר העיר",
+        "fullAddress": "החשמל 29 כניסה:מי",
+        "sqrmeter": 160,
+        "sqrin": "160",
+        "sqrgarden": "330",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות:",
         "tax/m": "*",
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/6ae60a41a07c42194e169a3f343c90107dd-info.png",
-          "http://images.yad2.co.il/Pic/201809/30/2_2/o/o2_2_1_717055_20180930180953.jpg",
-          "http://images.yad2.co.il/Pic/201809/30/2_2/o/o2_2_2_712961_20180930180902.jpg",
-          "http://images.yad2.co.il/Pic/201809/30/2_2/o/o2_2_3_718660_20180930180914.jpg",
-          "http://images.yad2.co.il/Pic/201809/30/2_2/o/o2_2_4_717800_20180930180924.jpg"
-        ],
-        "map": {
-          "lat": 32.03158,
-          "lng": 34.883463,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/3594605-info.png",
+          "http://images.yad2.co.il/Pic/201809/01/2_2/o/o2_2_1_739457_20180901070940.jpg",
+          "http://images.yad2.co.il/Pic/201809/01/2_2/o/o2_2_2_735910_20180901070940.jpg",
+          "http://images.yad2.co.il/Pic/201809/01/2_2/o/o2_2_3_732565_20180901070930.jpg",
+          "http://images.yad2.co.il/Pic/201809/01/2_2/o/o2_2_4_739371_20180901070935.jpg",
+          "http://images.yad2.co.il/Pic/201809/01/2_2/o/o2_2_5_739185_20180901070919.jpg"
+        ]
       }
     },
     {
-      "id": "51f60b29d2268c79f14e2bd7708a3bd138b",
+      "id": "3472144",
       "type": "פרטי/קוטג'",
-      "address": "רמת גן - שדרות בן צבי",
-      "price": "8,500 ₪",
+      "address": "גבעת שמואל - טרומפלדור",
+      "price": "",
+      "rooms": "4.5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "06.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3472144",
+      "data": {
+        "city": "גבעת שמואל",
+        "hood": "השחר, הוותיקה",
+        "fullAddress": "טרומפלדור 17",
+        "sqrmeter": 120,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: קוטג שמור ברח' שקט . מתאים למשפחות או לשותפים. חצר +גג",
+        "tax/m": 950,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3472144-info.png",
+          "http://images.yad2.co.il/Pic/201805/07/2_2/o/o2_2_1_35556_20180507200510.jpg",
+          "http://images.yad2.co.il/Pic/201805/07/2_2/o/o2_2_2_33212_20180507200502.jpg",
+          "http://images.yad2.co.il/Pic/201805/07/2_2/o/o2_2_3_33597_20180507200527.jpg",
+          "http://images.yad2.co.il/Pic/201805/07/2_2/o/o2_2_4_31162_20180507200515.jpg"
+        ]
+      }
+    },
+    {
+      "id": "7e69079334102080564c02686c82d7032e7",
+      "type": "פרטי/קוטג'",
+      "address": "גבעת שמואל - העבודה",
+      "price": "6,000 ₪",
+      "rooms": "5.5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "20.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=7e69079334102080564c02686c82d7032e7",
+      "data": {
+        "city": "גבעת שמואל",
+        "hood": "השחר, הוותיקה",
+        "fullAddress": "העבודה 4 כניסה:4",
+        "sqrmeter": 140,
+        "sqrin": "140",
+        "sqrgarden": "40",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה גדולה ויפה אחלה בעל בית",
+        "tax/m": 900,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/7e69079334102080564c02686c82d7032e7-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3592147",
+      "type": "פרטי/קוטג'",
+      "address": "פתח תקווה - עד\"ש שפיק",
+      "price": "5,000 ₪",
       "rooms": "4",
       "entranceDate": "מיידי",
       "floor": "קרקע",
       "adDate": "02.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=51f60b29d2268c79f14e2bd7708a3bd138b",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3592147",
       "data": {
-        "city": "רמת גן",
-        "hood": "שיכון צנחנים",
-        "fullAddress": "שדרות בן צבי 00",
-        "sqrmeter": 120,
-        "sqrin": "*",
-        "sqrgarden": "*",
+        "city": "פתח תקווה",
+        "hood": "עמישב",
+        "fullAddress": "עד\"ש שפיק 18",
+        "sqrmeter": 80,
+        "sqrin": "80",
+        "sqrgarden": "100",
+        "renov": "שופץ",
         "term": "ארוך",
-        "more": "תוספות: ברמת חן רג. אזור יוקרה גינה .לכניסהמיידית. זה המחיר שבעל הדירה מבקש לא פחות**** באם אין מענה טלפוני נא לסמס שםוטלפון****",
+        "more": "תוספות: בית פרטי משופץ אפשרות לטווח ארוךאו קצר",
         "tax/m": "*",
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/51f60b29d2268c79f14e2bd7708a3bd138b-info.png",
-          "http://images.yad2.co.il/Pic/201809/22/2_2/o/o2_2_1_738402_20180922180917.jpg",
-          "http://images.yad2.co.il/Pic/201809/22/2_2/o/o2_2_2_736430_20180922180947.jpg",
-          "http://images.yad2.co.il/Pic/201809/22/2_2/o/o2_2_3_731529_20180922180904.jpg"
-        ],
-        "map": {
-          "lat": 32.058335,
-          "lng": 34.82654,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/3592147-info.png"
+        ]
       }
     },
     {
-      "id": "5f21e182555c78f9dc4e73b185f5dad54f8",
+      "id": "3568188",
       "type": "פרטי/קוטג'",
-      "address": "רמת גן - אלומות",
-      "price": "6,500 ₪",
+      "address": "פתח תקווה - הניצנים",
+      "price": "7,500 ₪",
       "rooms": "4.5",
       "entranceDate": "מיידי",
       "floor": "קרקע",
-      "adDate": "01.10.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=5f21e182555c78f9dc4e73b185f5dad54f8",
+      "adDate": "06.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3568188",
       "data": {
-        "city": "רמת גן",
-        "hood": "רמת אפעל",
-        "fullAddress": "אלומות 3",
-        "sqrmeter": 120,
-        "sqrin": "120",
-        "sqrgarden": "380",
-        "term": "קצר!!",
-        "more": "תוספות: השכרה לטווח קצר, למספר חודשים.",
+        "city": "פתח תקווה",
+        "hood": "נוה עוז",
+        "fullAddress": "הניצנים 32",
+        "sqrmeter": 650,
+        "sqrin": "124",
+        "sqrgarden": "650",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בית פרטי מקסים מחפש דיירים נחמדיםבמיוחד. בנווה עוז הישנה. ברחוב שקט, ללא מוצא. במרחק הליכה מבתי ספר וגנים איכותיים מאד. סלון ענק, מרפסת שמש על הגג, גינה ענקית.",
         "tax/m": "*",
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/5f21e182555c78f9dc4e73b185f5dad54f8-info.png"
-        ],
-        "map": {
-          "lat": 32.047883,
-          "lng": 34.833613,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/3568188-info.png",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_1_749220_20180805110852.jpg",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_3_748099_20180805110840.jpg",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_4_742472_20180805110806.jpg",
+          "http://images.yad2.co.il/Pic/201808/05/2_2/o/o2_2_5_746851_20180805110821.jpg",
+          "http://images.yad2.co.il/Pic/201808/06/2_2/o/o2_2_5_747323_20180806150823.jpg"
+        ]
       }
     },
     {
-      "id": "3563882",
+      "id": "615772b90591aa7f2f66f9798156dc109cd",
       "type": "פרטי/קוטג'",
-      "address": "רמת גן - השלושים ושלושה",
-      "price": "9,000 ₪",
-      "rooms": "5",
-      "entranceDate": "מיידי",
+      "address": "פתח תקווה - אלברט איינשטיין",
+      "price": "6,500 ₪",
+      "rooms": "4",
+      "entranceDate": "",
       "floor": "קרקע",
-      "adDate": "21.09.18",
-      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3563882",
+      "adDate": "05.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=615772b90591aa7f2f66f9798156dc109cd",
       "data": {
-        "city": "רמת גן",
-        "hood": "רמת חן",
-        "fullAddress": "השלושים ושלושה 16",
-        "sqrmeter": 500,
-        "sqrin": "110",
-        "sqrgarden": "390",
-        "term": "קצר!!",
-        "more": "תוספות: בית מקסים ברמת חן, מבנה ישן ששופץ לפני 4 שנים, אווירה של צימר...מתאים גם למשפחה עם ילדים. במיקום מצוין, 4 דקותהליכה מבית ספר רמת חן/בליך. הסכם לשנה + שנה עם גמישות אפשרית להארכת ההסכם לתקופה/ות נוספת",
-        "tax/m": 650,
+        "city": "פתח תקווה",
+        "hood": "קרית מטלון",
+        "fullAddress": "אלברט איינשטיין 36",
+        "sqrmeter": 120,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: 4 חדרים בקומת קרקע. יחידת הורים גדולה ומפנקת. 2 חדרי שינה בקומת מרתף עםמרפסת אנגלית.",
+        "tax/m": 600,
         "vaad": "*"
       },
       "meta": {
         "images": [
-          "http://172.104.211.48:3000/3563882-info.png",
-          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_1_714214_20180731230727.jpg",
-          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_2_713274_20180731230743.jpg",
-          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_3_714911_20180731230756.jpg",
-          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_4_732215_20180731230716.jpg",
-          "http://images.yad2.co.il/Pic/201807/31/2_2/o/o2_2_5_738260_20180731230758.jpg"
-        ],
-        "map": {
-          "lat": 32.055736,
-          "lng": 34.815259,
-          "zoom": 16
-        }
+          "http://172.104.211.48:3000/615772b90591aa7f2f66f9798156dc109cd-info.png",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_1_722695_20181005171032.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_2_721317_20181005171028.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_3_722545_20181005171037.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_4_729100_20181005171053.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_5_726146_20181005171034.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3571620",
+      "type": "פרטי/קוטג'",
+      "address": "פתח תקווה - לוי אשכול",
+      "price": "6,300 ₪",
+      "rooms": "4.5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "25.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3571620",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "נוה עוז",
+        "fullAddress": "לוי אשכול 5",
+        "sqrmeter": 600,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות:",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3571620-info.png",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_1_731163_20180925180949.jpg",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_2_733058_20180925180926.jpg",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_3_732018_20180925180927.jpg",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_4_734311_20180925180928.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3511297",
+      "type": "דירת גן",
+      "address": "גני תקווה - עין שמש",
+      "price": "8,200 ₪",
+      "rooms": "5.5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "21.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3511297",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "נוף סביון",
+        "fullAddress": "עין שמש 19",
+        "sqrmeter": 160,
+        "sqrin": "160",
+        "sqrgarden": "120",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: בשכונת נוף סביון הדתית דירת גןמשופצת, מוארת, חדר שינה גדול וחדרים יפים וסלון מרווח ביחד עם המטבח. חניה מקורה וצמודה לדירה. תבואו ותתרשמו.",
+        "tax/m": 700,
+        "vaad": "220"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3511297-info.png",
+          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_1_32952_20180614140612.jpg",
+          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_2_38996_20180614140616.jpg",
+          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_3_31286_20180614140647.jpg",
+          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_4_39742_20180614140622.jpg",
+          "http://images.yad2.co.il/Pic/201806/14/2_2/o/o2_2_5_36982_20180614140619.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3608617",
+      "type": "דירת גן",
+      "address": "קרית אונו - שאול המלך",
+      "price": "7,200 ₪",
+      "rooms": "4",
+      "entranceDate": "",
+      "floor": "קרקע",
+      "adDate": "20.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3608617",
+      "data": {
+        "city": "קרית אונו",
+        "hood": "אונו הירוקה",
+        "fullAddress": "שאול המלך 15",
+        "sqrmeter": 250,
+        "sqrin": "110",
+        "sqrgarden": "140",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירת גן חדשה מושקעת ברמהגבוהה.נמצאת במרכז העיר מרחק הליכה מהקניון.שתי חניות מחסן צמוד לבית",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3608617-info.png",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_1_733695_20180920150930.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_2_733984_20180920150935.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_3_733701_20180920150943.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_4_732879_20180920150952.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3574595",
+      "type": "דופלקס",
+      "address": "רמת גן - אלוף דוד",
+      "price": "8,800 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "3",
+      "adDate": "03.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3574595",
+      "data": {
+        "city": "רמת גן",
+        "hood": "רמת חן",
+        "fullAddress": "אלוף דוד 181",
+        "sqrmeter": 160,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: ברמת חן ללא תיווך: דופלקס מעוצב ומרווח, מטבח רחב, מרפסת 30 מ' דק עץ, חדר שירות, מיזוג מרכזי, 2 חניות מקורות, תריסיםחשמליים, מחסן צמוד",
+        "tax/m": 1000,
+        "vaad": "570"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3574595-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3d6d304cb06674f673057d209d85d1746e3",
+      "type": "פרטי/קוטג'",
+      "address": "גנות - האתרוג",
+      "price": "7,000 ₪",
+      "rooms": "4",
+      "entranceDate": "31.10.18",
+      "floor": "קרקע",
+      "adDate": "07.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3d6d304cb06674f673057d209d85d1746e3",
+      "data": {
+        "city": "גנות",
+        "fullAddress": "האתרוג 00",
+        "sqrmeter": 100,
+        "sqrin": "100",
+        "sqrgarden": "200",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: 4 חדרים , כולל חדר מסטר סהכ כ-100מר. חצר כ-200 מר חניה צמודה ממוזגת,דוד שמש",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3d6d304cb06674f673057d209d85d1746e3-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3335807",
+      "type": "פרטי/קוטג'",
+      "address": "רמת גן - יפה לייב",
+      "price": "8,500 ₪",
+      "rooms": "7",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "04.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3335807",
+      "data": {
+        "city": "רמת גן",
+        "hood": "קרית קריניצי",
+        "fullAddress": "יפה לייב 9",
+        "sqrmeter": 202,
+        "sqrin": "202",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות:",
+        "tax/m": 1546,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3335807-info.png",
+          "http://images.yad2.co.il/Pic/201711/02/2_2/o/o2_2_1_36082_20171102111121.jpg",
+          "http://images.yad2.co.il/Pic/201711/02/2_2/o/o2_2_2_36282_20171102111140.jpg",
+          "http://images.yad2.co.il/Pic/201711/02/2_2/o/o2_2_3_33590_20171102111156.jpg",
+          "http://images.yad2.co.il/Pic/201711/02/2_2/o/o2_2_4_38577_20171102111153.jpg"
+        ]
+      }
+    },
+    {
+      "id": "4a018f1ab69a645dc7434920a38c54a3d1a",
+      "type": "פרטי/קוטג'",
+      "address": "רמת גן - מנדס",
+      "price": "",
+      "rooms": "6",
+      "entranceDate": "01.11.18",
+      "floor": "קרקע",
+      "adDate": "03.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4a018f1ab69a645dc7434920a38c54a3d1a",
+      "data": {
+        "city": "רמת גן",
+        "hood": "קרית קריניצי",
+        "fullAddress": "מנדס 5",
+        "sqrmeter": 600,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: להשכרה וילה מרוהטת בתל השומר, קרוב לבית היולדות. 2 קומות, יחידת הורים + 3 חדרי שינה, מטבח, חדר אוכל סלון ומרפסתגדולים. עדיפות לתקופת השכרה עד שנתיים.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/4a018f1ab69a645dc7434920a38c54a3d1a-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3523388",
+      "type": "דירת גן",
+      "address": "רמת גן - חיים בר לב",
+      "price": "8,750 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "14.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3523388",
+      "data": {
+        "city": "רמת גן",
+        "hood": "קרית קריניצי",
+        "fullAddress": "חיים בר לב 7",
+        "sqrmeter": 123,
+        "sqrin": "20",
+        "sqrgarden": "120",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירת גן משודרגת.גינה מטופחת. מערכתהשקיה אוטומטית .מטבח דקור.פרקט בחדרי שינה.מזוג אוויר מולטי .פרגולה בחצר בהיזדמנות",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3523388-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3553246",
+      "type": "פרטי/קוטג'",
+      "address": "מגשימים - הזית",
+      "price": "",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "07.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3553246",
+      "data": {
+        "city": "מגשימים",
+        "fullAddress": "הזית 4",
+        "sqrmeter": 247,
+        "sqrin": "247",
+        "sqrgarden": "350",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: 247 מ׳ר על חצי דונם. ארבעה חדרישינה -שתי יחידות הכוללות אמבטיה פרטית וחדר ארונות + שני חדרים. סלון גדול ומואר. מרפסת גדולה, מזגנים, אזעקה, מצלמות, חצר סגורה, חניה מקורה.",
+        "tax/m": 1150,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/3553246-info.png"
+        ]
+      }
+    },
+    {
+      "id": "4b5e13c813a0303e6c8648382507e8b2c4d",
+      "type": "יחידת דיור",
+      "address": "מגשימים - דוד נבון",
+      "price": "",
+      "rooms": "4",
+      "entranceDate": "01.12.18",
+      "floor": "קרקע",
+      "adDate": "07.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4b5e13c813a0303e6c8648382507e8b2c4d",
+      "data": {
+        "city": "מגשימים",
+        "fullAddress": "דוד נבון 20",
+        "sqrmeter": 110,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: חדר שינה מאד גדול ומרווח מזגניםומאוררים בכל חדר",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://172.104.211.48:3000/4b5e13c813a0303e6c8648382507e8b2c4d-info.png"
+        ]
       }
     }
   ]
