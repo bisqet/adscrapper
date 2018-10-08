@@ -81,10 +81,12 @@ function indexApp() {
         page.setDefaultNavigationTimeout(120000 * 2);
 
         await page.goto(yad2ResultsURL);
+        await delay(15000);//15s delay.
 
         // check for captcha
         await page.waitFor("#main_table", { timeout: 60000 })
         //log("main table found")
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         const searchSource = await page.content();
         //log("searchSource found");
@@ -178,6 +180,7 @@ function indexApp() {
         log('Total ads on page:', parsedAds.length+filteredID);
 
         for (let i=0;i<parsedAds.length;i++) {
+            await delay(15000);//15s delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
