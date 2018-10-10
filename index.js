@@ -416,15 +416,17 @@ function indexApp() {
 
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
+        let mobileView = true;
+
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
                 args: ['--no-sandbox'],
                 defaultViewport:{
-                    width: 600,
-                    height:800,
+                    width: mobileView===true?600:1280,
+                    height: mobileView===true?800:600,
                     deviceScaleFactor: 1,
-                    isMobile:true,
+                    isMobile: mobileView,
                     hasTouch:false,
                     isLandscape: false
                 }
@@ -467,7 +469,6 @@ function indexApp() {
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
     }
-
 
 
 
