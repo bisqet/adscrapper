@@ -90,7 +90,7 @@ function indexApp() {
         const cookies = await page.cookies();
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
-        fs.writeFileSync('./public/cookies.html', cookies, 'utf8');
+        fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies), 'utf8');
         // check for captcha
 
 
