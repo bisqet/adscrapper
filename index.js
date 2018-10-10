@@ -83,7 +83,6 @@ function indexApp() {
         page.setDefaultNavigationTimeout(180000 * 2);
 
         await page.goto(yad2ResultsURL);
-        await delay(60000);//1m delay.
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
@@ -183,7 +182,7 @@ function indexApp() {
         log('Total ads on page:', parsedAds.length+filteredID);
 
         for (let i=0;i<parsedAds.length;i++) {
-            await delay(15000);//15s delay.
+            await delay(60000);//1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
