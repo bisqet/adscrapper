@@ -99,16 +99,15 @@ function indexApp() {
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
-            //for (i in cookies) {
-            //    await page.deleteCookie(cookies[i]);
-            //}
-            //await page.deleteCookie({name:"SPSI"})
+            for (i in cookies) {
+                await page.deleteCookie(cookies[i]);
+            }
             await page.setCookie({
-    'value':
-        '',
+    'value':'',
     'domain': 'www.yad2.co.il',
-    'expires': Date.now() / 1000 + 10000000,
-    'name': 'SPSI'
+    'expires': -1,
+    'name': 'SPSI',
+    "session": true
   });
             await page.setCookie({name:"random", value:""})
             const afterCookies = await page.cookies();
