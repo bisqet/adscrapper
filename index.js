@@ -437,7 +437,7 @@ function indexApp() {
 
 
                 }
-                                    for(let i = 0;i<240;i++){
+                                    for(let i = 0;i<600;i++){
                         await delay(getRandomInt(15000, 16000)); 
                         await isServerNeedsToStop();//check for stop each 15-16 secs
                          }// every 60 min
