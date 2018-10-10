@@ -1,4 +1,4 @@
-const WARN_CONFIG = require ('./WARN_CONFIG.js');
+const WARN_CONFIG = require('./WARN_CONFIG.js');
 
 module.exports = process.pid; //to relaunch server.
 
@@ -65,7 +65,7 @@ function indexApp() {
             }, 30000); // two minutes
         });
     }
-    async function isCaptchaHere(){
+    async function isCaptchaHere() {
         //TODO:CAPTCHA CHECK;
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
@@ -79,11 +79,11 @@ function indexApp() {
         const page = await browser.newPage();
 
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
-        
+
         page.setDefaultNavigationTimeout(180000 * 2);
 
         await page.goto(yad2ResultsURL);
-        await delay(60000);//1m delay.
+        await delay(60000); //1m delay.
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
@@ -96,8 +96,12 @@ function indexApp() {
 
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
-            await sendErrorMessage({ "err": "ERROR CAPTCHA!!!", "url": yad2ResultsURL });
+            await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
+            for (i of cookies) {
+                await page.deleteCookie(i);
+            }
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
+
             /*/ get the image
             const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
             const { buffer } = parseDataUrl(captchaImg);
@@ -120,18 +124,20 @@ function indexApp() {
             //const res = await navigationPromise; // The navigationPromise resolves after navigation has finished
             //console.log(await res.text()); */
         }
-
+        if(isCaptchaHere){
+            messageBot.customMessage({ 'err': 'Captcha bypassed succesfully!', 'url': 'https://linode.com' });
+        }
         // start scraping
         await page.waitFor("#main_table", { timeout: 60000 })
 
         await page.screenshot({ path: publicFolder + 'homepage.png' });
-        
+
         let count = 0;
         let skippedDueCaptcha = 0;
         let filteredBySqr = 0;
         let filteredByCity = 0;
         let filteredID = 0;
-        
+
         const parsedAds = await page.evaluate(() => {
             const adsResults = [];
             const ads = $("#main_table .main_table tr.showPopupUnder");
@@ -159,32 +165,32 @@ function indexApp() {
 
 
         //checking existing in unacceptable cities
-        for(let i in config.unacceptable){          
-            for(let o = 0;o< parsedAds.length;o++){
+        for (let i in config.unacceptable) {
+            for (let o = 0; o < parsedAds.length; o++) {
                 //log(parsedAds[o])
-                if(config.unacceptable[i] == parsedAds[o].city){
+                if (config.unacceptable[i] == parsedAds[o].city) {
                     filteredByCity++;
-                    parsedAds.splice(o,1)
+                    parsedAds.splice(o, 1)
                     o--;
                 }
             }
         }
         //checking existing in unacceptable IDs
-        for(let i in config.unacceptableIDs){
-            for(let o = 0;o< parsedAds.length;o++){
-                if(config.unacceptableIDs[i] == parsedAds[o].id){
+        for (let i in config.unacceptableIDs) {
+            for (let o = 0; o < parsedAds.length; o++) {
+                if (config.unacceptableIDs[i] == parsedAds[o].id) {
                     filteredID++;
-                    parsedAds.splice(o,1)
+                    parsedAds.splice(o, 1)
                     i--;
                 }
             }
         }
 
 
-        log('Total ads on page:', parsedAds.length+filteredID);
+        log('Total ads on page:', parsedAds.length + filteredID);
 
-        for (let i=0;i<parsedAds.length;i++) {
-            await delay(60000);//1m delay.
+        for (let i = 0; i < parsedAds.length; i++) {
+            await delay(60000); //1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
@@ -198,16 +204,16 @@ function indexApp() {
                 await page.goto(ad.link);
 
                 let error = 0;
-                await page.waitFor("#mainFrame", { timeout: 60000 * 2}).catch(err=>{
+                await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
                     error++;
                     skippedDueCaptcha++;
                     count--;
-                    log("CAPTCHA ERROR:"+ad.link)
+                    log("CAPTCHA ERROR:" + ad.link)
                 }); // max 5 minutes
-                if(error!==0){
+                if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
-                   //delay(60300*5)//wait for 5 mins
-                    error=0;
+                    //delay(60300*5)//wait for 5 mins
+                    error = 0;
                     continue;
                 }
                 //log('Waited');
@@ -270,17 +276,18 @@ function indexApp() {
                 // get the images and the map location
                 //log('Fetching images and map data');
                 await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
-                let  adMetaData = {}
+                let adMetaData = {}
                 adMetaData.images = [];
-                try{
-                adMetaData = await page.evaluate(() => {
-                    if (ImageArr === undefined) {
-                        ImageArr = []
-                    }
-                    return {
-                        images: ImageArr
-                    };
-                });}catch(e){
+                try {
+                    adMetaData = await page.evaluate(() => {
+                        if (ImageArr === undefined) {
+                            ImageArr = []
+                        }
+                        return {
+                            images: ImageArr
+                        };
+                    });
+                } catch (e) {
                     adMetaData = {};
                     adMetaData.images = [];
                     log(e);
@@ -353,18 +360,18 @@ function indexApp() {
         if (mode === 0) {
 
             for (let i in acceptable) {
-                if(acceptable[i]===city){
+                if (acceptable[i] === city) {
                     return true;
-                }//cities without approved hoods will be approved
-                if(typeof acceptable[i]!=="object"){
+                } //cities without approved hoods will be approved
+                if (typeof acceptable[i] !== "object") {
                     continue;
-                }//check is this city without hoods or no
+                } //check is this city without hoods or no
                 for (let o in acceptable[i]) {
 
                     if (o === 0 && acceptable[i][o] !== city) {
                         break;
                     }
-                    if (acceptable[i][o] == hood&&acceptable[i][0] ===city) {
+                    if (acceptable[i][o] == hood && acceptable[i][0] === city) {
                         return true
                     }
 
@@ -379,24 +386,24 @@ function indexApp() {
             if (unacceptable[i] == city) {
                 //log(`CITY RESULT IS: FALSE`);
                 return false
-            }//unacceptable cities without acceptable hoods will be rejected
-            if(typeof unacceptable[i]!=="object"){
+            } //unacceptable cities without acceptable hoods will be rejected
+            if (typeof unacceptable[i] !== "object") {
                 continue;
-            }//if city haven't hoods then
+            } //if city haven't hoods then
             for (let o in unacceptable[i]) {
-              if (o === 0 && unacceptable[i][o] !== city) {
-                break;
-              }
-              if (unacceptable[i][o] == hood&&unacceptable[i][0] ===city) {
-                return true
-              }
+                if (o === 0 && unacceptable[i][o] !== city) {
+                    break;
+                }
+                if (unacceptable[i][o] == hood && unacceptable[i][0] === city) {
+                    return true
+                }
             }
-            if(unacceptable[i][0] ===city)return false
+            if (unacceptable[i][0] === city) return false
         }
         return true
     }
 
-    async function isServerNeedsToStop(){
+    async function isServerNeedsToStop() {
         const isStopNeeded = fs.readFileSync('.restartNeeded', 'utf8') === "true" ? true : false
         fs.writeFileSync('.restartNeeded', "false", 'utf8');
         if (isStopNeeded) {
@@ -423,31 +430,31 @@ function indexApp() {
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
                 args: ['--no-sandbox'],
-                defaultViewport:{
-                    width: mobileView===true?600:1280,
-                    height: mobileView===true?800:600,
+                defaultViewport: {
+                    width: mobileView === true ? 600 : 1280,
+                    height: mobileView === true ? 800 : 600,
                     deviceScaleFactor: 1,
                     isMobile: mobileView,
-                    hasTouch:false,
+                    hasTouch: false,
                     isLandscape: false
                 }
             });
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
-            if(errorsInARow >= 3){
-                if(i==yad2ResultsURL.length-1){
+            let isCaptchaHere = errorsInARow>0?true:false;
+
+            if (errorsInARow >= 3) {
+                if (i == yad2ResultsURL.length - 1) {
                     break;
-
-
                 }
-                                    for(let i = 0;i<600;i++){
-                        await delay(getRandomInt(15000, 16000)); 
-                        await isServerNeedsToStop();//check for stop each 15-16 secs
-                         }// every 60 min
+                for (let i = 0; i < 600; i++) {
+                    await delay(getRandomInt(15000, 16000));
+                    await isServerNeedsToStop(); //check for stop each 15-16 secs
+                } // every 60 min
                 i++;
             }
             log(`URL №${i+1}`);
-            await main(curUrl, browser)
+            await main(curUrl, browser, isCaptchaHere)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
@@ -456,18 +463,18 @@ function indexApp() {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
-                    mobileView = mobileView===true?false:true;
+                    mobileView = mobileView === true ? false : true;
                 });
             await browser.close();
-            
+
             await isServerNeedsToStop();
 
             await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
         }
-        for(let i = 0;i<240;i++){
-            await delay(getRandomInt(15000, 16000)); 
-            await isServerNeedsToStop();//check for stop each 15-16 secs
-        }// every 60 min
+        for (let i = 0; i < 240; i++) {
+            await delay(getRandomInt(15000, 16000));
+            await isServerNeedsToStop(); //check for stop each 15-16 secs
+        } // every 60 min
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
     }
