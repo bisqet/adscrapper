@@ -102,8 +102,8 @@ function indexApp() {
             for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
-            const afterCookies = await page.cookies();
-            fs.appendFileSync('./public/cookies.html', `And after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
+            const afterCookies = await page.cookies("www.yad2.co.il","my.yad2.co.il", "yad2.co.il");
+            fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
