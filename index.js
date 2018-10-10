@@ -81,13 +81,15 @@ function indexApp() {
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
         page.setDefaultNavigationTimeout(180000 * 2);
-
-        await page.goto(yad2ResultsURL);
-        pendingccs = await page.cookies();
+        
+        pendingccs = await page.cookies(yad2ResultsURL);
         fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');
+      
+        await delay(30000);
+        await page.goto(yad2ResultsURL);
 
         //await delay(30000); //1m delay.
-        await delay(30000);
+        
         const content = await page.content();
         const cookies = await page.cookies();
         
