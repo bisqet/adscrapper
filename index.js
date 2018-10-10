@@ -85,7 +85,7 @@ function indexApp() {
         await page.goto(yad2ResultsURL);
         
         await delay(60000); //1m delay.
-        const cookies = await page.cookies("www.yad2.co.il","my.yad2.co.il", "yad2.co.il");
+        const cookies = await page.cookies("http://www.yad2.co.il","http://my.yad2.co.il", "http://yad2.co.il");
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
@@ -102,7 +102,7 @@ function indexApp() {
             for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
-            const afterCookies = await page.cookies("www.yad2.co.il","my.yad2.co.il", "yad2.co.il");
+            const afterCookies = await page.cookies("http://www.yad2.co.il","http://my.yad2.co.il", "http://yad2.co.il");
             fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
