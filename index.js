@@ -86,7 +86,9 @@ function indexApp() {
         await delay(60000);//1m delay.
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
+        const content = await page.content();
 
+        fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         // check for captcha
         await page.waitFor("#main_table", { timeout: 60000 })
         //log("main table found")
@@ -416,7 +418,7 @@ function indexApp() {
 
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
-        let mobileView = false;
+        let mobileView = true;
 
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
