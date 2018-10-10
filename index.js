@@ -83,9 +83,10 @@ function indexApp() {
         page.setDefaultNavigationTimeout(180000 * 2);
 
         await page.goto(yad2ResultsURL);
-        const cookies = await page.cookies();
+        
         await delay(60000); //1m delay.
-
+        const cookies = await page.cookies();
+        
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
         
