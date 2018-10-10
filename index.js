@@ -84,12 +84,12 @@ function indexApp() {
 
         await page.goto(yad2ResultsURL);
         
-        await delay(30000); //1m delay.
-        const cookies = await page.cookies();
+        //await delay(30000); //1m delay.
 
-        await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
-        
+        const cookies = await page.cookies();
+        await delay(5000);
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
@@ -195,7 +195,7 @@ function indexApp() {
         log('Total ads on page:', parsedAds.length + filteredID);
 
         for (let i = 0; i < parsedAds.length; i++) {
-            await delay(60000); //1m delay.
+            //await delay(60000); //1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
@@ -311,7 +311,7 @@ function indexApp() {
                 //log('webhook bot data => ', JSON.stringify(ad));
                 //console.info(ad);
                 messageBot.pushNewAd(ad)
-                await delay(15000);
+                //await delay(15000);
             } else {
                 // existing ad, check for price change
                 // if changed update the new price and alert
