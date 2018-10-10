@@ -104,7 +104,22 @@ function indexApp() {
             //}
             //await page.deleteCookie({name:"SPSI"})
             await page.setCookie({name:"SPSI", value:""})
+            await page.setCookie({name:"random", value:""})
             const afterCookies = await page.cookies();
+            await browser.close();
+
+            browser = await puppeteer.launch({
+                args: ['--no-sandbox'],
+                defaultViewport: {
+                    width: mobileView === true ? 600 : 1280,
+                    height: mobileView === true ? 800 : 600,
+                    deviceScaleFactor: 1,
+                    isMobile: mobileView,
+                    hasTouch: false,
+                    isLandscape: false
+                }
+            });
+            
             fs.appendFileSync('./public/cookies.html', `<br>And after:<br>${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
