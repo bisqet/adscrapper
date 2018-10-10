@@ -87,16 +87,14 @@ function indexApp() {
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
+        const cookies = await page.cookies();
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
+        fs.writeFileSync('./public/cookies.html', cookies, 'utf8');
         // check for captcha
-        await page.waitFor("#main_table", { timeout: 60000 })
-        //log("main table found")
 
-        const searchSource = await page.content();
-        //log("searchSource found");
 
-        if (searchSource.indexOf('Are you human?') > -1) {
+        if (searchSource.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!!!", "url": yad2ResultsURL });
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
@@ -124,6 +122,7 @@ function indexApp() {
         }
 
         // start scraping
+        await page.waitFor("#main_table", { timeout: 60000 })
 
         await page.screenshot({ path: publicFolder + 'homepage.png' });
         
