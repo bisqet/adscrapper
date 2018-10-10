@@ -85,8 +85,8 @@ function indexApp() {
         await page.goto(yad2ResultsURL);
         
         await delay(60000); //1m delay.
-        const cookies = await page.cookies();
-        
+        const cookies = await page.cookies("www.yad2.co.il","my.yad2.co.il", "yad2.co.il");
+
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
         
