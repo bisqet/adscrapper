@@ -92,7 +92,7 @@ function indexApp() {
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
-        fs.writeFileSync('./public/.cookies', JSON.stringify(cookies, null, 2), 'utf8');
+        fs.writeFileSync('./public/cookies', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
 
 
@@ -104,7 +104,7 @@ function indexApp() {
             }
             //await page.deleteCookie({name:"SPSI"})
             const afterCookies = await page.cookies();
-            fs.appendFileSync('./public/.cookies', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
+            fs.appendFileSync('./public/cookies', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
