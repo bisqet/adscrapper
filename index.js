@@ -91,7 +91,7 @@ function indexApp() {
         
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
-        fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies), 'utf8');
+        fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
 
 
@@ -101,6 +101,8 @@ function indexApp() {
             for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
+            const afterCookies = await page.cookies();
+            fs.appendFileSync('./public/cookies.html', `And after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
