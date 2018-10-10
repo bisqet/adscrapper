@@ -88,7 +88,7 @@ function indexApp() {
 
         const content = await page.content();
         const cookies = await page.cookies();
-        await delay(5000);
+        await delay(15000);
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
@@ -207,7 +207,20 @@ function indexApp() {
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
                 await page.goto(ad.link);
+                const contentAd = await page.content();
 
+                if (contentAd.indexOf('האם אתה אנושי?') > -1) {
+                    log("ERROR CAPTCHA!!!");
+                    await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
+                    for (i in cookies) {
+                        await page.deleteCookie(cookies[i]);
+                    }
+                    //await page.deleteCookie({name:"SPSI"})
+                    const afterCookies = await page.cookies();
+                    fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
+                    throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
+                }
+                
                 let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
                     error++;
