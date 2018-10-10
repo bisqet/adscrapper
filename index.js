@@ -82,11 +82,10 @@ function indexApp() {
 
         page.setDefaultNavigationTimeout(180000 * 2);
 
-      
-        
-        await page.goto(yad2ResultsURL);
         pendingccs = await page.cookies(yad2ResultsURL);
-        fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');
+        fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');        
+        await page.goto(yad2ResultsURL);
+
 
         //await delay(30000); //1m delay.
         await delay(30000);
