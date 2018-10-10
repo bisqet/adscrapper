@@ -103,7 +103,13 @@ function indexApp() {
             //    await page.deleteCookie(cookies[i]);
             //}
             //await page.deleteCookie({name:"SPSI"})
-            await page.setCookie({name:"SPSI", value:""})
+            await page.setCookie({
+    'value':
+        '',
+    'domain': 'www.yad2.co.il',
+    'expires': Date.now() / 1000 + 10000000,
+    'name': 'SPSI'
+  });
             await page.setCookie({name:"random", value:""})
             const afterCookies = await page.cookies();
             
