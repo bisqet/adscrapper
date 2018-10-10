@@ -455,6 +455,7 @@ function indexApp() {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
+                    mobileView===true?false:true;
                 });
             await browser.close();
             
