@@ -416,7 +416,7 @@ function indexApp() {
 
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
-        let mobileView = true;
+        let mobileView = false;
 
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
@@ -455,7 +455,7 @@ function indexApp() {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
-                    mobileView===true?false:true;
+                    mobileView = mobileView===true?false:true;
                 });
             await browser.close();
             
