@@ -83,12 +83,15 @@ function indexApp() {
         page.setDefaultNavigationTimeout(180000 * 2);
 
         await page.goto(yad2ResultsURL);
-
+        const cookies = await page.cookies();
         await delay(60000); //1m delay.
 
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
         
 
+        fs.writeFileSync('./public/bancheck.html', content, 'utf8');
+        fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies), 'utf8');
         // check for captcha
 
 
@@ -98,12 +101,6 @@ function indexApp() {
             for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
-            const cookies = await page.cookies();
-            await page.screenshot({ path: publicFolder + 'bancheck.png' });
-
-            fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies), 'utf8');
-            fs.writeFileSync('./public/bancheck.html', content, 'utf8');
-
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
