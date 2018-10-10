@@ -99,10 +99,10 @@ function indexApp() {
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
-            //for (i in cookies) {
-            //    await page.deleteCookie(cookies[i]);
-            //}
-            await page.deleteCookie({name:"SPSI"})
+            for (i in cookies) {
+                await page.deleteCookie(cookies[i]);
+            }
+            //await page.deleteCookie({name:"SPSI"})
             const afterCookies = await page.cookies();
             fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
