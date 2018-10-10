@@ -81,15 +81,15 @@ function indexApp() {
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
         page.setDefaultNavigationTimeout(180000 * 2);
+
+      
         
+        await page.goto(yad2ResultsURL);
         pendingccs = await page.cookies(yad2ResultsURL);
         fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');
-      
-        await delay(30000);
-        await page.goto(yad2ResultsURL);
 
         //await delay(30000); //1m delay.
-        
+        await delay(30000);
         const content = await page.content();
         const cookies = await page.cookies();
         
@@ -103,7 +103,7 @@ function indexApp() {
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
-            for (i in cookies) {
+            /*for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
             await page.setCookie({
@@ -116,7 +116,7 @@ function indexApp() {
             await page.setCookie({name:"random", value:""})
             const afterCookies = await page.cookies();
             
-            fs.appendFileSync('./public/cookies.html', `<br>And after:<br>${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
+            fs.appendFileSync('./public/cookies.html', `<br>And after:<br>${JSON.stringify(afterCookies, null, 2)}`, 'utf8');*/
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
