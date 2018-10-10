@@ -1,21 +1,9 @@
 const config = {
   "yad2ResultsURL": [
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=10&arrCity=&arrHomeTypeID=3%2C6%2C7%2C51&fromRooms=3.5&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=&arrArea=&arrCity=627%2C530%2C407%2C656%2C78%2C509%2C657%2C163%2C150&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=&arrArea=&arrCity=627%2C530%2C407%2C656%2C78%2C509%2C657%2C163%2C150&arrHomeTypeID=39&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=10&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=6500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=10&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=6501&untilPrice=9500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?AreaID=10&City=&HomeTypeID=39&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=526%2C330%2C332%2C170%2C450%2C442&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=526%2C330%2C332%2C170%2C450%2C442&arrHomeTypeID=39%2C11&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=1970&Neighborhood=&arrHomeTypeID=3%2C7%2C51&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?AreaID=&City=%F8%EE%FA+%E2%EF&Neighborhood=&HomeTypeID=39&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=78&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=78&City=&HomeTypeID=39&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=&untilPrice=6000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4&arrCity=&arrHomeTypeID=5%2C32%2C55&fromRooms=3.5&untilRooms=&fromPrice=6001&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&EnterDate=&Info=",
-    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=4&City=&HomeTypeID=39&fromRooms=3.5&untilRooms=&fromPrice=1000&untilPrice=9000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=&untilSquareMeter=&Meshupatz=1&EnterDate=&Info="
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=3%2C10%2C78&arrCity=&arrHomeTypeID=3%2C6&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=343%2C627%2C530%2C407%2C584%2C330%2C509%2C657%2C1970%2C487%2C651%2C593%2C592&arrHomeTypeID=5%2C39&fromRooms=3.5&untilRooms=&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4%2C10%2C98&arrCity=&arrHomeTypeID=5&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&EnterDate=&Info=",
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4%2C10%2C98&arrCity=&arrHomeTypeID=39&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&EnterDate=&Info="
   ],
   "cityFilter": {
     "unacceptable": [
@@ -48,6 +36,7 @@ const config = {
         "יהוד מונוסון",
         "נוה אפרים"
       ],
+      'גבעתיים',
       "גבעת כ\"ח",
       "ראש העין",
       "בני ברק",
