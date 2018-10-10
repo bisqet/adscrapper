@@ -80,10 +80,10 @@ function indexApp() {
 
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
         
-        page.setDefaultNavigationTimeout(120000 * 2);
+        page.setDefaultNavigationTimeout(180000 * 2);
 
         await page.goto(yad2ResultsURL);
-        await delay(15000);//15s delay.
+        await delay(60000);//1m delay.
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
