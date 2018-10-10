@@ -94,7 +94,7 @@ function indexApp() {
         // check for captcha
 
 
-        if (searchSource.indexOf('האם אתה אנושי?') > -1) {
+        if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!!!", "url": yad2ResultsURL });
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
