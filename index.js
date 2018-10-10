@@ -84,8 +84,8 @@ function indexApp() {
 
         await page.goto(yad2ResultsURL);
         
-        await delay(60000); //1m delay.
-        const cookies = await page.cookies("http://www.yad2.co.il","http://my.yad2.co.il", "http://yad2.co.il");
+        await delay(30000); //1m delay.
+        const cookies = await page.cookies();
 
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
         const content = await page.content();
@@ -99,10 +99,11 @@ function indexApp() {
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
             await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
-            for (i in cookies) {
-                await page.deleteCookie(cookies[i]);
-            }
-            const afterCookies = await page.cookies("http://www.yad2.co.il","http://my.yad2.co.il", "http://yad2.co.il");
+            //for (i in cookies) {
+            //    await page.deleteCookie(cookies[i]);
+            //}
+            await page.deleteCookie({name:"SPSI"})
+            const afterCookies = await page.cookies();
             fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
             throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
@@ -473,7 +474,7 @@ function indexApp() {
 
             await isServerNeedsToStop();
 
-            await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
+            //await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
         }
         for (let i = 0; i < 240; i++) {
             await delay(getRandomInt(15000, 16000));
