@@ -425,7 +425,7 @@ function indexApp() {
             const browser = await puppeteer.launch({
                 ignoreHTTPSErrors: true,
                 args: ['--no-sandbox',
-                '--proxy-server=192.117.146.110:80'],
+                '--proxy-server=109.226.17.8:32645'],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
                     height: mobileView === true ? 800 : 600,
