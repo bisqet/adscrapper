@@ -118,7 +118,7 @@ function indexApp() {
         await page.waitFor("#main_table", { timeout: 60000 })
 
         if(captchaExist){
-            messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
+            //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
         await page.screenshot({ path: publicFolder + 'homepage.png' });
 
