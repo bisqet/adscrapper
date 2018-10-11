@@ -194,8 +194,8 @@ function indexApp() {
                 await page.goto(ad.link);
                 const contentAd = await page.content();
 
-                await delay(20000);
-                captchaExist = await checkForCaptcha(content, page);
+                //await delay(20000);
+                //captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
