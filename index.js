@@ -121,8 +121,7 @@ function indexApp() {
             //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
         await page.screenshot({ path: publicFolder + 'homepage.png' });
-        await page.evaluate(() => {document.querySelector("#main_table .main_table tr.showPopupUnder");});
-        console.log('$handled')
+
         let count = 0;
         let skippedDueCaptcha = 0;
         let filteredBySqr = 0;
