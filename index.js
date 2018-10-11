@@ -94,7 +94,7 @@ function indexApp() {
 
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
-        page.setDefaultNavigationTimeout(180000 * 2);
+        page.setDefaultNavigationTimeout(120000);
 
         pendingccs = await page.cookies(yad2ResultsURL);
         fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');        
