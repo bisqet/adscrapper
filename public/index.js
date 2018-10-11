@@ -529,6 +529,10 @@ app.post('/banAds', (req, res) => {
     });
 });
 
+app.post('/captchaSolve', (req, res) => {
+    const body = req.body;
+    fs.writeFile('./captchaSolve', body.answer ,'utf8')
+});
 
 app.get('/getLogs', (req, res) => {
     const logs = syncFs.readFileSync('./.data/logsDB.json', "utf8");

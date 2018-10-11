@@ -52,22 +52,20 @@ function indexApp() {
 
     const waitForCaptchaInput = () => {
         return new Promise((resolve, reject) => {
-            setTimeout(async () => {
-                if (fs.existsSync('./captcha.txt')) {
+            const waitingInterval = setInterval(async () => {
+                if (fs.existsSync('./public/captchaSolve')) {
                     log('found captcha');
-                    const solution = await readFile('./captcha.txt', "utf8");
-                    await deleteFile('./captcha.txt');
-                    log('delete captch and resolving..');
+                    const solution = await readFile('./public/captchaSolve', "utf8");
+                    await deleteFile('./public/captchaSolve');
+                    clearInterval(waitingInterval);
+                    log('delete captcha and resolving..');
                     return resolve(solution);
                 }
-                reject('no captcha solution file found');
-
-            }, 30000); // two minutes
+                
+            }, 1000); // two minutes
         });
     }
-    async function isCaptchaHere() {
-        //TODO:CAPTCHA CHECK;
-    }
+
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
@@ -98,36 +96,31 @@ function indexApp() {
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
 
-        await delay(30000);
         if (content.indexOf('האם אתה אנושי?') > -1) {
             log("ERROR CAPTCHA!!!");
-            await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
+            await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
+            const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
+            const isCaptchaHere = true;
+            const { buffer } = parseDataUrl(captchaImg);
+            fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
+            log('ERROR CAPTCHA! Waiting for solution..');
+            const solution = await waitForCaptchaInput();
+            await page.type('#captchaInput', solution);
+            await page.click('#submitObject');
             /*for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
-            await page.setCookie({
-    'value':'',
-    'domain': 'www.yad2.co.il',
-    'expires': -1,
-    'name': 'SPSI',
-    "session": true
-  });
+
             await page.setCookie({name:"random", value:""})
             const afterCookies = await page.cookies();
             
             fs.appendFileSync('./public/cookies.html', `<br>And after:<br>${JSON.stringify(afterCookies, null, 2)}`, 'utf8');*/
-            throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
 
             /*/ get the image
-            const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
-            const { buffer } = parseDataUrl(captchaImg);
-            fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
-            log('saved captcha, waiting for solution..');
+
             await page.screenshot({ path: publicFolder + 'before-captcha.png' });
-            const solution = await waitForCaptchaInput();
             log('found solution: ', solution);
             await page.screenshot({ path: publicFolder + 'after-captcha.png' });
-            await page.type('#captchaInput', solution);
             await page.screenshot({ path: publicFolder + 'after-captcha2.png' });
             // const [response] = await Promise.all([
             //   page.waitForNavigation(waitOptions),
@@ -136,12 +129,12 @@ function indexApp() {
             //const navigationPromise = page.waitForNavigation({waitUntil: 'networkidle0'});
             await page.screenshot({ path: publicFolder + 'solved-captcha.png' });
             await page.waitFor(3000);
-            //await page.click('#submitObject'); // Clicking the link will indirectly cause a navigation
+            // // Clicking the link will indirectly cause a navigation
             //const res = await navigationPromise; // The navigationPromise resolves after navigation has finished
             //console.log(await res.text()); */
         }
         if(isCaptchaHere){
-            messageBot.customMessage({ 'err': 'Captcha bypassed succesfully!', 'url': 'https://linode.com' });
+            messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
         // start scraping
         await page.waitFor("#main_table", { timeout: 60000 })
