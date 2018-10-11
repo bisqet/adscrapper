@@ -109,7 +109,6 @@ function indexApp() {
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);
             await page.click('#submitObject');
-            throw new Error('Captcha handled')
             /*for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
@@ -139,6 +138,9 @@ function indexApp() {
         if(isCaptchaHere){
             messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
+        await delay(30000);
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
+
         // start scraping
         await page.waitFor("#main_table", { timeout: 60000 })
 
