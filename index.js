@@ -65,7 +65,9 @@ function indexApp() {
             }, 1000); // two minutes
         });
     }
+    const checkForCaptcha = (content) =>{
 
+    }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
@@ -103,6 +105,7 @@ function indexApp() {
             const isCaptchaHere = true;
             const { buffer } = parseDataUrl(captchaImg);
             fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
+            messageBot.captchaMsg(publicFolder + 'captcha.png')
             log('ERROR CAPTCHA! Waiting for solution..');
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);

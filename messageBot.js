@@ -41,7 +41,7 @@ exports.captchaMsg = async function(img) {
         uri: 'https://flatbot.glitch.me/captchaMsg',
         method: 'POST',
         json: true,
-        body: ad
+        body: {img}
     };
     request(reqOptions);
 }
