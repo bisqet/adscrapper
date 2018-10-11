@@ -425,7 +425,7 @@ function indexApp() {
             const browser = await puppeteer.launch({
                 ignoreHTTPSErrors: true,
                 args: ['--no-sandbox',
-                '--proxy-server=185.229.224.61:80'],
+                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].host}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
                     height: mobileView === true ? 800 : 600,
@@ -439,7 +439,7 @@ function indexApp() {
             //log(`Current scrape for ${curUrl}`);
             let isCaptchaHere = errorsInARow>0?true:false;
 
-            if (errorsInARow >= 3) {
+            /*if (errorsInARow >= 3) {
                 if (i == yad2ResultsURL.length - 1) {
                     break;
                 }
@@ -448,7 +448,7 @@ function indexApp() {
                     await isServerNeedsToStop(); //check for stop each 15-16 secs
                 } // every 60 min
                 i++;
-            }
+            }*/
             log(`URL №${i+1}`);
             await main(curUrl, browser, isCaptchaHere)
                 .then(async () => {
@@ -459,6 +459,9 @@ function indexApp() {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
+                    WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
+                    let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG', 'utf8');
+                    fs.writeFileSync('./WARN_CONFIG',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
                     mobileView = mobileView === true ? false : true;
                 });
             await browser.close();
@@ -467,7 +470,7 @@ function indexApp() {
 
             //await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
         }
-        for (let i = 0; i < 720; i++) {
+        for (let i = 0; i < 240; i++) {
             await delay(getRandomInt(15000, 16000));
             await isServerNeedsToStop(); //check for stop each 15-16 secs
         } // every 60 min
