@@ -423,7 +423,9 @@ function indexApp() {
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
-                args: ['--no-sandbox'],
+                ignoreHTTPSErrors: true,
+                args: ['--no-sandbox',
+                '--proxy-server=192.117.146.110:80'],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
                     height: mobileView === true ? 800 : 600,
