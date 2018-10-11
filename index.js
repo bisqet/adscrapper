@@ -78,8 +78,9 @@ function indexApp() {
             await page.type('#captchaInput', solution);
             await page.click('#submitObject');
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
@@ -115,6 +116,7 @@ function indexApp() {
 
         // start scraping
         await page.waitFor("#main_table", { timeout: 60000 })
+
         if(captchaExist){
             messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
@@ -192,18 +194,9 @@ function indexApp() {
                 await page.goto(ad.link);
                 const contentAd = await page.content();
 
-                if (contentAd.indexOf('האם אתה אנושי?') > -1) {
-                    log("ERROR CAPTCHA!!!");
-                    await sendErrorMessage({ "err": "ERROR CAPTCHA!Bypassing...", "url": yad2ResultsURL });
-                    for (i in cookies) {
-                        await page.deleteCookie(cookies[i]);
-                    }
-                    //await page.deleteCookie({name:"SPSI"})
-                    const afterCookies = await page.cookies();
-                    fs.appendFileSync('./public/cookies.html', `\nAnd after:\n${JSON.stringify(afterCookies, null, 2)}`, 'utf8');
-                    throw new Error('ARE YOU HUMAN CAPTCHA HANDLED');
-                }
-                
+                await delay(20000);
+                captchaExist = await checkForCaptcha();
+
                 let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
                     error++;
@@ -425,7 +418,7 @@ function indexApp() {
 
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
-        let mobileView = true;
+        let mobileView = false;
 
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             await isServerNeedsToStop();
