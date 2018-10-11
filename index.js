@@ -112,12 +112,12 @@ function indexApp() {
         // check for captcha
         let captchaExist = await checkForCaptcha(content);
 
+
+        // start scraping
+        await page.waitFor("#main_table", { timeout: 60000 })
         if(captchaExist){
             messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
-        // start scraping
-        await page.waitFor("#main_table", { timeout: 60000 })
-
         await page.screenshot({ path: publicFolder + 'homepage.png' });
 
         let count = 0;
