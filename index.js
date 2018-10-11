@@ -65,8 +65,21 @@ function indexApp() {
             }, 1000); // two minutes
         });
     }
-    const checkForCaptcha = (content) =>{
-
+    const checkForCaptcha = async (content) =>{
+        if (content.indexOf('האם אתה אנושי?') > -1) {
+            //log("ERROR CAPTCHA!!!");
+            //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
+            const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
+            const { buffer } = parseDataUrl(captchaImg);
+            fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
+            messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/captcha.png')
+            log('ERROR CAPTCHA! Waiting for solution..');
+            const solution = await waitForCaptchaInput();
+            await page.type('#captchaInput', solution);
+            await page.click('#submitObject');
+            return true;
+        }
+        return false;
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
@@ -97,47 +110,8 @@ function indexApp() {
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
-        let captchaExist = false
-        if (content.indexOf('האם אתה אנושי?') > -1) {
-            //log("ERROR CAPTCHA!!!");
-            //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
-            const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
-            const { buffer } = parseDataUrl(captchaImg);
-            fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
-            messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/captcha.png')
-            log('ERROR CAPTCHA! Waiting for solution..');
-            const solution = await waitForCaptchaInput();
-            await page.type('#captchaInput', solution);
-            await page.click('#submitObject');
-            captchaExist = true;
-            /*for (i in cookies) {
-                await page.deleteCookie(cookies[i]);
-            }
+        let captchaExist = await checkForCaptcha(content);
 
-            await page.setCookie({name:"random", value:""})
-            const afterCookies = await page.cookies();
-            
-            fs.appendFileSync('./public/cookies.html', `<br>And after:<br>${JSON.stringify(afterCookies, null, 2)}`, 'utf8');*/
-
-            /*/ get the image
-
-            await page.screenshot({ path: publicFolder + 'before-captcha.png' });
-            log('found solution: ', solution);
-            await page.screenshot({ path: publicFolder + 'after-captcha.png' });
-            await page.screenshot({ path: publicFolder + 'after-captcha2.png' });
-            // const [response] = await Promise.all([
-            //   page.waitForNavigation(waitOptions),
-            //   page.click(selector, clickOptions),
-            // ]);
-            //const navigationPromise = page.waitForNavigation({waitUntil: 'networkidle0'});
-            await page.screenshot({ path: publicFolder + 'solved-captcha.png' });
-            await page.waitFor(3000);
-            // // Clicking the link will indirectly cause a navigation
-            //const res = await navigationPromise; // The navigationPromise resolves after navigation has finished
-            //console.log(await res.text()); */
-        }
-
-        await page.screenshot({ path: publicFolder + 'bancheck.png' });
         if(captchaExist){
             messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
