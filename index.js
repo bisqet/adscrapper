@@ -198,7 +198,7 @@ function indexApp() {
                 //captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
-                await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
+                await page.waitFor("#mainFrame", { timeout: 60000 }).catch(err => {
                     error++;
                     skippedDueCaptcha++;
                     count--;
@@ -435,6 +435,7 @@ function indexApp() {
                     isLandscape: false
                 }
             });
+            console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].host}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
             let isCaptchaHere = errorsInARow>0?true:false;
@@ -460,8 +461,8 @@ function indexApp() {
                     errorsInARow++;
                     i--;
                     WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
-                    let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG', 'utf8');
-                    fs.writeFileSync('./WARN_CONFIG',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
+                    let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG.js', 'utf8');
+                    fs.writeFileSync('./WARN_CONFIG.js',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
                     mobileView = mobileView === true ? false : true;
                     console.info(' WARN_CONFIG.LAST_PROXY_INDEX:',  WARN_CONFIG.LAST_PROXY_INDEX)
                 });
