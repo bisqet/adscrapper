@@ -116,7 +116,7 @@ function indexApp() {
 
 
         // start scraping
-        await page.waitFor("#main_table", { timeout: 60000 })
+        await page.waitFor("#main_table", { timeout: 30000 })
 
         if(captchaExist){
             //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
