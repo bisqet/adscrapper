@@ -192,9 +192,10 @@ function indexApp() {
                 count++;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
+                console.log('go to ', ad.link)
                 await page.goto(ad.link);
                 const contentAd = await page.content();
-
+                console.log('got ', ad.link)
                 //await delay(20000);
                 //captchaExist = await checkForCaptcha(content, page);
 
