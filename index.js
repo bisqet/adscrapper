@@ -65,7 +65,7 @@ function indexApp() {
             }, 1000); // two minutes
         });
     }
-    const checkForCaptcha = async (content) =>{
+    const checkForCaptcha = async (content, page) =>{
         if (content.indexOf('האם אתה אנושי?') > -1) {
             //log("ERROR CAPTCHA!!!");
             //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
@@ -111,7 +111,7 @@ function indexApp() {
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
-        let captchaExist = await checkForCaptcha(content);
+        let captchaExist = await checkForCaptcha(content, page);
 
 
         // start scraping
@@ -195,7 +195,7 @@ function indexApp() {
                 const contentAd = await page.content();
 
                 await delay(20000);
-                captchaExist = await checkForCaptcha();
+                captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
                 await page.waitFor("#mainFrame", { timeout: 60000 * 2 }).catch(err => {
