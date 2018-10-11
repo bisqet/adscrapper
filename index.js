@@ -97,7 +97,7 @@ function indexApp() {
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         // check for captcha
-
+        let captchaExist = false
         if (content.indexOf('האם אתה אנושי?') > -1) {
             //log("ERROR CAPTCHA!!!");
             //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
@@ -109,6 +109,7 @@ function indexApp() {
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);
             await page.click('#submitObject');
+            captchaExist = true;
             /*for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
@@ -135,12 +136,11 @@ function indexApp() {
             //const res = await navigationPromise; // The navigationPromise resolves after navigation has finished
             //console.log(await res.text()); */
         }
-        if(isCaptchaHere){
+
+        await page.screenshot({ path: publicFolder + 'bancheck.png' });
+        if(captchaExist){
             messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         }
-        await delay(30000);
-        await page.screenshot({ path: publicFolder + 'bancheck.png' });
-
         // start scraping
         await page.waitFor("#main_table", { timeout: 60000 })
 
