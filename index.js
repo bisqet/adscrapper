@@ -455,7 +455,7 @@ function indexApp() {
                     log('Successful.');
                     errorsInARow = 0;
                 })
-                .catch(async (err) => {
+                .catch((err) => {
                     log('ERROR HAPPENED', err);
                     errorsInARow++;
                     i--;
@@ -463,6 +463,7 @@ function indexApp() {
                     let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG', 'utf8');
                     fs.writeFileSync('./WARN_CONFIG',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
                     mobileView = mobileView === true ? false : true;
+                    console.info(' WARN_CONFIG.LAST_PROXY_INDEX:',  WARN_CONFIG.LAST_PROXY_INDEX)
                 });
             await browser.close();
 
