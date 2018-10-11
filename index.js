@@ -99,13 +99,13 @@ function indexApp() {
         // check for captcha
 
         if (content.indexOf('האם אתה אנושי?') > -1) {
-            log("ERROR CAPTCHA!!!");
+            //log("ERROR CAPTCHA!!!");
             //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
             const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
             const isCaptchaHere = true;
             const { buffer } = parseDataUrl(captchaImg);
             fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
-            messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/public/captcha.png')
+            messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/captcha.png')
             log('ERROR CAPTCHA! Waiting for solution..');
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);
