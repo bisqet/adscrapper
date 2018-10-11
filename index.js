@@ -53,10 +53,10 @@ function indexApp() {
     const waitForCaptchaInput = () => {
         return new Promise((resolve, reject) => {
             const waitingInterval = setInterval(async () => {
-                if (fs.existsSync('./public/captchaSolve')) {
+                if (fs.existsSync('./public/captcha.solve')) {
                     log('found captcha');
-                    const solution = await readFile('./public/captchaSolve', "utf8");
-                    await deleteFile('./public/captchaSolve');
+                    const solution = await readFile('./public/captcha.solve', "utf8");
+                    await deleteFile('./public/captcha.solve');
                     clearInterval(waitingInterval);
                     log('delete captcha and resolving..');
                     return resolve(solution);

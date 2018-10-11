@@ -532,7 +532,7 @@ app.post('/banAds', (req, res) => {
 app.post('/captchaSolve', (req, res) => {
     const {answer} = req.body;
     messageBot.customMessage({ 'err': `Got solve, ${answer}`, 'url': 'https://linode.com' });
-    syncFs.writeFileSync('./captchaSolve', answer ,'utf8')
+    syncFs.writeFileSync('./captcha.solve', answer ,'utf8')
 });
 
 app.get('/getLogs', (req, res) => {
