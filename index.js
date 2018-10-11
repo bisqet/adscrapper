@@ -102,7 +102,7 @@ function indexApp() {
 
 
         //await delay(30000); //1m delay.
-        await delay(30000);
+        //await delay(30000);
         const content = await page.content();
         const cookies = await page.cookies(yad2ResultsURL);
         
