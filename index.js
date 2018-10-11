@@ -74,7 +74,7 @@ function indexApp() {
 
     reload('./config.js');
 
-    const main = (async (yad2ResultsURL, browser) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere) => {
 
         const page = await browser.newPage();
 
@@ -102,7 +102,6 @@ function indexApp() {
             //log("ERROR CAPTCHA!!!");
             //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
             const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
-            const isCaptchaHere = true;
             const { buffer } = parseDataUrl(captchaImg);
             fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
             messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/captcha.png')
@@ -110,6 +109,7 @@ function indexApp() {
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);
             await page.click('#submitObject');
+            throw new Error('Captcha handled')
             /*for (i in cookies) {
                 await page.deleteCookie(cookies[i]);
             }
