@@ -110,6 +110,7 @@ function indexApp() {
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
+        console.info('content wrote to bancheck.html')
         // check for captcha
         let captchaExist = await checkForCaptcha(content, page);
 
