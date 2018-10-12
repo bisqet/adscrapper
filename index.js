@@ -114,7 +114,7 @@ function indexApp() {
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
         console.info('content wrote to bancheck.html')
         // check for captcha
-        let captchaExist = await checkForCaptcha(content, page);
+        //let captchaExist = await checkForCaptcha(content, page);
 
 
         // start scraping
@@ -202,12 +202,7 @@ function indexApp() {
                 //captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
-                await page.waitFor("#mainFrame", { timeout: 60000 }).catch(err => {
-                    error++;
-                    skippedDueCaptcha++;
-                    count--;
-                    log("CAPTCHA ERROR:" + ad.link)
-                }); // max 5 minutes
+                await page.waitFor("#mainFrame", { timeout: 60000 })
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
                     //delay(60300*5)//wait for 5 mins
