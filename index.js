@@ -456,7 +456,7 @@ function indexApp() {
                     errorsInARow = 0;
                 })
                 .catch((err) => {
-                    log('PROXY CHANGED');
+                    log(err);
                     errorsInARow++;
                     i--;
                     WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
