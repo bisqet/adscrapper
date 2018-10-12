@@ -120,9 +120,9 @@ function indexApp() {
         // start scraping
         await page.waitFor("#main_table", { timeout: 30000 })
 
-        if(captchaExist){
+        //if(captchaExist){
             //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
-        }
+        //}
         await page.screenshot({ path: publicFolder + 'homepage.png' });
 
         let count = 0;
@@ -456,7 +456,7 @@ function indexApp() {
                     errorsInARow = 0;
                 })
                 .catch((err) => {
-                    log(err);
+                    log('PROXY CHANGED');
                     errorsInARow++;
                     i--;
                     WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
