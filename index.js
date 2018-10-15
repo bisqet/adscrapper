@@ -107,7 +107,9 @@ function indexApp() {
         const content = await page.content();
         console.info('content')
         const cookies = await page.cookies(yad2ResultsURL);
-        
+        if(content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1){
+            throw new Error('proxy detected as bot. changing')
+        }
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
