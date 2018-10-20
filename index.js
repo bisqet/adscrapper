@@ -112,12 +112,12 @@ function indexApp() {
         }
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
-        fs.writeFileSync('./public/bancheck.html', content, 'utf8');
         fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
-        console.info('content wrote to bancheck.html')
         // check for captcha
         //let captchaExist = await checkForCaptcha(content, page);
-
+        await delay(30000)
+        fs.writeFileSync('./public/bancheck.html', content, 'utf8');
+        console.info('content wrote to bancheck.html')
 
         // start scraping
         await page.waitFor("#main_table", { timeout: 30000 })
