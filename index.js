@@ -100,6 +100,7 @@ function indexApp() {
     const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions) => {
 
         let page = await browser.newPage();
+        await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
 
         const preloadFile = fs.readFileSync('./preload.js', 'utf8');
         await page.evaluateOnNewDocument(preloadFile);
@@ -210,9 +211,11 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
 
             if (!existingAd) {
-                            let incognito =  await browser.createIncognitoBrowserContext();
+            let incognito =  await browser.createIncognitoBrowserContext();
             page = await incognito.newPage();
             page.setDefaultNavigationTimeout(120000);
+            await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
+
                 // new ad
                 count++;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
