@@ -210,7 +210,6 @@ function indexApp() {
                 //let cookiesAd = await page.cookies();
                 //await page.deleteCookie(...cookiesAd)
                 await page.goto(ad.link);
-                await 
                 const contentAd = await page.content();
                 console.log('got ', ad.link)
                 //await delay(20000);
