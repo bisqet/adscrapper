@@ -1,5 +1,3 @@
-const WARN_CONFIG = require('./WARN_CONFIG.js');
-
 module.exports = process.pid; //to relaunch server.
 
 if (!module.parent) {
@@ -16,7 +14,9 @@ function indexApp() {
     //const request = require('request');
     const log = require('./log.js');
     const low = require('lowdb');
-    const config = reload('./config.js');
+    let config = reload('./config.js');
+    let WARN_CONFIG = reload('./WARN_CONFIG.js');
+
     const messageBot = require('./messageBot.js')
 
     messageBot.customMessage({ 'err': 'SCRAPPER STARTED', 'url': 'https://linode.com' });
@@ -82,13 +82,22 @@ function indexApp() {
             return false;
         }
     }
+    const checkforErrs = (content, proxyIndex)=>{
+        if(content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1){
+            throw new Error('Bot')
+        }
+        if (content.indexOf('האם אתה אנושי?') > -1){
+            throw new Error('captchaExist')
+        }
+        if (content.indexOf('Loading site please wait') > -1){
+            throw new Error('Loading')
+        }
+    }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
 
-    reload('./config.js');
-
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex) => {
 
         const page = await browser.newPage();
 
@@ -107,9 +116,8 @@ function indexApp() {
         const content = await page.content();
         console.info('content')
         const cookies = await page.cookies(yad2ResultsURL);
-        if(content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1){
-            throw new Error('proxy detected as bot. changing')
-        }
+
+        checkforErrs(content, proxyIndex);
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
@@ -204,9 +212,13 @@ function indexApp() {
                 //captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
-                        fs.writeFileSync('./public/bancheck.html', contentAd, 'utf8');
+                fs.writeFileSync('./public/bancheck.html', contentAd, 'utf8');
 
-        console.info('content wrote to bancheck.html')
+                console.info('contentAD wrote to bancheck.html');
+
+                checkforErrs(contentAd, proxyIndex);
+
+                
                 await page.waitFor("#mainFrame", { timeout: 60000 })
 
                 if (error !== 0) {
@@ -216,7 +228,7 @@ function indexApp() {
                     continue;
                 }
 
-                log('Waited');
+                console.log('Waited');
                 const adDetails = await page.evaluate(() => {
                     const data = {};
                     $('.innerDetailsDataGrid').each((index, dataBlock) => {
@@ -427,6 +439,9 @@ function indexApp() {
         let mobileView = true;
 
         for (let i = 0; i < yad2ResultsURL.length; i++) {
+            config = reload('./config.js');
+            //WARN_CONFIG = reload('./config.js');
+
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
                 ignoreHTTPSErrors: true,
@@ -459,7 +474,7 @@ function indexApp() {
                 i++;
             }*/
             log(`URL №${i+1}`);
-            await main(curUrl, browser, isCaptchaHere)
+            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
@@ -488,7 +503,6 @@ function indexApp() {
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
     }
-
 
 
 
