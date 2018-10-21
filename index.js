@@ -208,13 +208,15 @@ function indexApp() {
 
         console.info('content wrote to bancheck.html')
                 await page.waitFor("#mainFrame", { timeout: 60000 })
+
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
                     //delay(60300*5)//wait for 5 mins
                     error = 0;
                     continue;
                 }
-                //log('Waited');
+
+                log('Waited');
                 const adDetails = await page.evaluate(() => {
                     const data = {};
                     $('.innerDetailsDataGrid').each((index, dataBlock) => {
