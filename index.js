@@ -191,7 +191,7 @@ function indexApp() {
 
 
         log('Total ads on page:', parsedAds.length + filteredID);
-        await delay(5000);
+        await delay(5000)
         for (let i = 0; i < parsedAds.length; i++) {
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
@@ -446,7 +446,7 @@ function indexApp() {
             const browser = await puppeteer.launch({
                 ignoreHTTPSErrors: true,
                 args: ['--no-sandbox',
-                //`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
+                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
                 ],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
@@ -457,7 +457,7 @@ function indexApp() {
                     isLandscape: false
                 }
             });
-            //console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
+            console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
             let isCaptchaHere = errorsInARow>0?true:false;
