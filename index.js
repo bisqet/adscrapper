@@ -204,6 +204,9 @@ function indexApp() {
                 //captchaExist = await checkForCaptcha(content, page);
 
                 let error = 0;
+                        fs.writeFileSync('./public/bancheck.html', content, 'utf8');
+
+        console.info('content wrote to bancheck.html')
                 await page.waitFor("#mainFrame", { timeout: 60000 })
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
