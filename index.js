@@ -461,6 +461,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
         ignoreHTTPSErrors: true,
         userDataDir: './tmp',
                 args: ['--no-sandbox',
+                 '--incognito',
         '--disable-setuid-sandbox',
         '--disable-infobars',
         '--window-position=0,0',
