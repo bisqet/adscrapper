@@ -431,7 +431,7 @@ function indexApp() {
             const browser = await puppeteer.launch({
                 ignoreHTTPSErrors: true,
                 args: ['--no-sandbox',
-                '--proxy-server=5.39.48.34:443'
+                '--proxy-server=51.255.28.62:53281'
                 //`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].host}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`
                 ],
                 defaultViewport: {
