@@ -214,7 +214,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
                 let cookiesAd = await page.cookies();
-                fs.writeFileSync('./public/cookies.html', cookiesAd, 'utf8');
+                fs.writeFileSync('./public/cookies.html', JSON.stringify(cookiesAd), 'utf8');
                 console.log('cookies wrote to cookies.html', ad.link);
                 await page.waitFor(50000)
                 //await page.deleteCookie(...cookiesAd)
