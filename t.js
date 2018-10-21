@@ -57,8 +57,8 @@ async function test(){
                 `--proxy-server=98.152.68.30:31438`
                 ],
                 defaultViewport: {
-                    width: mobileView === 1280,
-                    height: mobileView === 600,
+                    width:  1280,
+                    height: 600,
                     deviceScaleFactor: 1,
                     isMobile: false,
                     hasTouch: false,
