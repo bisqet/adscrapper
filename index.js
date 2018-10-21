@@ -465,6 +465,7 @@ function indexApp() {
                     errorsInARow = 0;
                 })
                 .catch((err) => {
+                    console.log(err)
                     log('PROXY CHANGED');
                     errorsInARow++;
                     i--;
