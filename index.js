@@ -205,6 +205,7 @@ function indexApp() {
                 // new ad
                 count++;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
+                if(ad.link ==="http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4cf417113b56b7d8002f30a2736d21a043b"){continue}
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
                 //let cookiesAd = await page.cookies();
