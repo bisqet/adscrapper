@@ -105,17 +105,17 @@ function indexApp() {
 
         page.setDefaultNavigationTimeout(120000);
 
-        pendingccs = await page.cookies(yad2ResultsURL);
-        fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');        
+        //pendingccs = await page.cookies(yad2ResultsURL);
+        //fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');        
         await page.goto(yad2ResultsURL);
         console.info('goto')
 
-        
+
         //await delay(30000); //1m delay.
-        await delay(30000);
+        //await delay(30000);
         const content = await page.content();
         console.info('content')
-        const cookies = await page.cookies(yad2ResultsURL);
+        const cookies = await page.cookies();
 
         checkforErrs(content, proxyIndex);
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
