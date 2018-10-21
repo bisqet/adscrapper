@@ -207,9 +207,10 @@ function indexApp() {
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
-                let cookiesAd = await page.cookies();
-                await page.deleteCookie(...cookiesAd)
+                //let cookiesAd = await page.cookies();
+                //await page.deleteCookie(...cookiesAd)
                 await page.goto(ad.link);
+                await 
                 const contentAd = await page.content();
                 console.log('got ', ad.link)
                 //await delay(20000);
@@ -448,7 +449,7 @@ function indexApp() {
 
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
-                       headless: true,
+                       headless: false,
         ignoreHTTPSErrors: true,
         userDataDir: './tmp',
                 args: ['--no-sandbox',
