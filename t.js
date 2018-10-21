@@ -67,10 +67,15 @@ async function test(){
             });
 
             const page = await browser.newPage();
-
+        page.setDefaultNavigationTimeout(120000);
 await page.goto('http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4cf417113b56b7d8002f30a2736d21a043b')
+console.log('goto')
 const content = await page.content()
+console.log('cntnt')
+
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
+        console.log('ccs')
+
         const cookies = await page.cookies();
 
                 fs.writeFileSync('./public/cookies.html', JSON.stringify(cookies, null, 2), 'utf8');
