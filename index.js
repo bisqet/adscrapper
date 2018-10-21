@@ -126,7 +126,7 @@ function indexApp() {
         // check for captcha
         //let captchaExist = await checkForCaptcha(content, page);
 
-
+        await page.waitFor(1000);
         // start scraping
         await page.waitFor("#main_table", { timeout: 30000 })
 
@@ -191,7 +191,7 @@ function indexApp() {
 
 
         log('Total ads on page:', parsedAds.length + filteredID);
-
+        await delay(5000);
         for (let i = 0; i < parsedAds.length; i++) {
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
