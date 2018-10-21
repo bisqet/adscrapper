@@ -448,7 +448,7 @@ function indexApp() {
 
             await isServerNeedsToStop();
             const browser = await puppeteer.launch({
-                       headless: false,
+                       headless: true,
         ignoreHTTPSErrors: true,
         userDataDir: './tmp',
                 args: ['--no-sandbox',
