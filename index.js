@@ -128,7 +128,7 @@ function indexApp() {
         // check for captcha
         //let captchaExist = await checkForCaptcha(content, page);
 
-        await page.waitFor(1000);
+        //await page.waitFor(1000);
         // start scraping
         await page.waitFor("#main_table", { timeout: 30000 })
 
@@ -220,7 +220,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 let cookiesAd = await page.cookies();
                 fs.writeFileSync('./public/cookies.html', JSON.stringify(cookiesAd), 'utf8');
                 console.log('cookies wrote to cookies.html', ad.link);
-                await page.waitFor(50000)
+                //await page.waitFor(50000)
                 //await page.deleteCookie(...cookiesAd)
                 await page.goto(ad.link);
                 const contentAd = await page.content();
