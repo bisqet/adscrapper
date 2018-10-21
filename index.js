@@ -97,7 +97,7 @@ function indexApp() {
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions) => {
 
         const page = await browser.newPage();
 
@@ -207,6 +207,8 @@ http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4cf417113b56b7d8002f30a2736d
 CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029nv8gl3vhhnv3; y2018-2-cohort=51; y2018-2-access=false; SaveSearch_CustID=hjj1617274001; realEstateBanner=20181021; favorites_userid=gjb9126643850; yad2upload=1694498826.20480.0000; LPVID=FjNGRiYTRkMzk1NTc2ZWM4; LPSID-72457022=i-It2JHVQeqMlCKsQ6noVA; _ga=GA1.3.6330954.1540149226; _gid=GA1.3.99456894.1540149226; SPSI=abe640550a513827373be80567859727; UTGv2=h4c5e37464205186dcffe06a3c191d15e740; searchB144FromYad2=2_C_1970; sp_lit=sa73P5HksV4yiR1VytQRtg==; PRLST=AQ; spcsrf=22cb1520849d9586e237c2a79c8ae3ae; adOtr=46b0a5P055a
 
 */
+            await browser.close();
+            await browser.launch(browserOptions)
             if (!existingAd) {
                 // new ad
                 count++;
@@ -456,7 +458,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
             //WARN_CONFIG = reload('./config.js');
 
             await isServerNeedsToStop();
-            const browser = await puppeteer.launch({
+            const browserOptions = {
                        headless: true,
         ignoreHTTPSErrors: true,
         userDataDir: './tmp',
@@ -479,7 +481,8 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                     hasTouch: false,
                     isLandscape: false
                 }
-            });
+            }
+            const browser = await puppeteer.launch(browserOptions);
             console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
@@ -496,7 +499,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 i++;
             }*/
             log(`URL №${i+1}`);
-            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX)
+            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
