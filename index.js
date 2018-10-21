@@ -337,7 +337,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 //console.info(ad);
                 messageBot.pushNewAd(ad)
                 //await delay(15000);
-                incognito.close()
+                await incognito.close()
             } else {
                 // existing ad, check for price change
                 // if changed update the new price and alert
