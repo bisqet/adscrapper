@@ -20,7 +20,8 @@
     "node-cmd": "^3.0.0",
     "puppeteer": "^1.6.0",
     "request": "^2.87.0",
-    "require-reload": "^0.2.2"
+    "require-reload": "^0.2.2",
+    "tor-control": "0.0.3"
   },
   "engines": {
     "node": "9.x"
