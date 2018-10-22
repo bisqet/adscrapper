@@ -228,6 +228,12 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 await page.goto(ad.link);
                 const contentAd = await page.content();
                 console.log('got ', ad.link)
+
+                if(contentAd.indexOf('שפרו את חווית הגלישה שלכם!')>-1){
+                    i--
+                    incognito.close();
+                    continue;
+                }
                 //await delay(20000);
                 //captchaExist = await checkForCaptcha(content, page);
 
