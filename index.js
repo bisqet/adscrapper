@@ -92,6 +92,9 @@ function indexApp() {
         if (content.indexOf('Loading site please wait') > -1){
             await page.waitForNavigation({timeout: 60000})
         }
+        if (content.indexOf('Bad Gateway') > -1){
+            await page.reload();
+        }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
