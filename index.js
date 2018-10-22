@@ -82,7 +82,7 @@ function indexApp() {
             return false;
         }
     }
-    const checkforErrs = (content, proxyIndex)=>{
+    const checkforErrs = async (content, proxyIndex, page)=>{
         if(content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1){
             throw new Error('Bot')
         }
@@ -90,7 +90,7 @@ function indexApp() {
             throw new Error('captchaExist')
         }
         if (content.indexOf('Loading site please wait') > -1){
-            throw new Error('Loading')
+
         }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
@@ -120,7 +120,7 @@ function indexApp() {
         console.info('content')
         const cookies = await page.cookies();
 
-        checkforErrs(content, proxyIndex);
+        page = await checkforErrs(content, proxyIndex, page);
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
@@ -218,6 +218,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 // new ad
                 count++;
+                //if(count>9)continue;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
@@ -232,7 +233,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 if(contentAd.indexOf('שפרו את חווית הגלישה שלכם!')>-1){
                     i--
-                    incognito.close();
+                    await incognito.close();
                     continue;
                 }
                 //await delay(20000);
@@ -243,7 +244,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 console.info('contentAD wrote to bancheck.html');
 
-                checkforErrs(contentAd, proxyIndex);
+                page = await checkforErrs(contentAd, proxyIndex, page);
 
                 
                 await page.waitFor("#mainFrame", { timeout: 60000 })
@@ -486,7 +487,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
         '--ignore-certifcate-errors-spki-list',
         '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"',
 
-                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
+                `--proxy-server=97.89.178.50:53281`//${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
                 ],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
