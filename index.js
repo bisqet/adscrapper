@@ -498,8 +498,8 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 //`--proxy-server=95.47.221.225:53002`//${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
                 ],
                 defaultViewport: {
-                    width: mobileView === true ? 600 : 1280,
-                    height: mobileView === true ? 800 : 600,
+                    width: mobileView === true ? 400 : 1280,
+                    height: mobileView === true ? 600 : 600,
                     deviceScaleFactor: 1,
                     isMobile: mobileView,
                     hasTouch: false,
