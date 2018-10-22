@@ -97,7 +97,7 @@ function indexApp() {
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL) => {
 
         let page = await browser.newPage();
         await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
@@ -193,8 +193,7 @@ function indexApp() {
         }
 
 
-        log('Total ads on page:', parsedAds.length + filteredID);
-        await delay(5000)
+        ///await delay(5000)
         for (let i = 0; i < parsedAds.length; i++) {
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
@@ -355,6 +354,8 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
             }
         }
+        log(`URL №${indexOfURL}`);
+        log('Total ads on page:', parsedAds.length + filteredID);
         log(`Total skipped-duplicate - due to DB: ${parsedAds.length-count}`);
         log(`Total skipped due captcha: ${skippedDueCaptcha}`)
         log('Total skipped due to city filter: ', filteredByCity);
@@ -505,15 +506,15 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 } // every 60 min
                 i++;
             }*/
-            log(`URL №${i+1}`);
-            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions)
+            
+            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions, i+1)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
                 })
                 .catch((err) => {
                     console.log(err)
-                    log('PROXY CHANGED');
+                    //log('PROXY CHANGED');
                     errorsInARow++;
                     i--;
                     WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
@@ -529,8 +530,8 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
             //await delay(getRandomInt(60000, 120000)); // every 0ne - 2 min
         }
         for (let i = 0; i < 240; i++) {
-            await delay(getRandomInt(15000, 16000));
-            await isServerNeedsToStop(); //check for stop each 15-16 secs
+            await delay(getRandomInt(12000, 13000));
+            await isServerNeedsToStop(); //check for stop each 12-13 secs
         } // every 60 min
         //log('calling main again!');
         mainWrapper(yad2ResultsURL);
