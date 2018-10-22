@@ -210,6 +210,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
 
             if (!existingAd) {
+            await delay(5000);
             let incognito =  await browser.createIncognitoBrowserContext();
             page = await incognito.newPage();
             page.setDefaultNavigationTimeout(120000);
