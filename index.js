@@ -94,7 +94,7 @@ function indexApp() {
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
              console.log('wtd1')
              let ccs =  await page.cookies();
-             console.log(JSON.stringify(css))
+             console.log(JSON.stringify(ccs))
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
              console.log('wtd2')
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
