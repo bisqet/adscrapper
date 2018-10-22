@@ -227,7 +227,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 // new ad
                 count++;
-                if(count>9)continue;
+                //if(count>9)continue;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
@@ -240,7 +240,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 const contentAd = await page.content();
                 console.log('got ', ad.link)
 
-                if(contentAd.indexOf('שפרו את חווית הגלישה שלכם!')>-1){
+                if(contentAd.indexOf('שפרו את חווית הגלישה שלכם!')>-1&& content.indexOf('Loading site please wait') > -1){
                     i--
                     await incognito.close();
                     continue;
