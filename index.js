@@ -93,7 +93,7 @@ function indexApp() {
             await page.waitForNavigation({timeout: 60000})
         }
         if (content.indexOf('Bad Gateway') > -1){
-            await page.reload();
+            await page.reload({waitUntil:"domcontentloaded"});
         }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
