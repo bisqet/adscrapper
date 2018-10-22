@@ -499,7 +499,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 }
             }
             const browser = await puppeteer.launch(browserOptions);
-            console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
+            console.info(`--proxy-server=97.89.178.50:53281`//${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
             let isCaptchaHere = errorsInARow>0?true:false;
