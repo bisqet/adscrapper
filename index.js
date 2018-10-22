@@ -90,7 +90,7 @@ function indexApp() {
             throw new Error('captchaExist')
         }
         if (content.indexOf('Loading site please wait') > -1){
-            page.waitForNavigation({timeout: 60000})
+            await page.waitForNavigation({timeout: 60000})
         }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
