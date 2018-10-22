@@ -90,11 +90,12 @@ function indexApp() {
             throw new Error('captchaExist')
         }
         if (content.indexOf('Loading site please wait') > -1){
-            console.log('startWaitfn')
+            /*console.log('startWaitfn')
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
              console.log('wtd1')
              let ccs =  await page.cookies();
-             console.log(JSON.stringify(ccs))
+             console.log(JSON.stringify(ccs))*/
+            throw new Error('Loading site')
         }
         if (content.indexOf('Bad Gateway') > -1){
             await page.reload({waitUntil:"domcontentloaded"});
