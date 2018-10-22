@@ -218,7 +218,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 // new ad
                 count++;
-                //if(count>9)continue;
+                if(count>9)continue;
                 ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
                 //log('Fetching', ad.link);
                 console.log('go to ', ad.link);
@@ -487,7 +487,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
         '--ignore-certifcate-errors-spki-list',
         '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"',
 
-                `--proxy-server=97.89.178.50:53281`/*${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`*/
+                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
                 ],
                 defaultViewport: {
                     width: mobileView === true ? 600 : 1280,
