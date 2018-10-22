@@ -90,7 +90,7 @@ function indexApp() {
             throw new Error('captchaExist')
         }
         if (content.indexOf('Loading site please wait') > -1){
-
+            page.waitForNavigation({timeout: 60000})
         }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
@@ -100,6 +100,7 @@ function indexApp() {
     const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL) => {
 
         let page = await browser.newPage();
+
         await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
 
         const preloadFile = fs.readFileSync('./preload.js', 'utf8');
@@ -120,7 +121,7 @@ function indexApp() {
         console.info('content')
         const cookies = await page.cookies();
 
-        page = await checkforErrs(content, proxyIndex, page);
+        await checkforErrs(content, proxyIndex, page);
         await page.screenshot({ path: publicFolder + 'bancheck.png' });
 
         fs.writeFileSync('./public/bancheck.html', content, 'utf8');
@@ -244,7 +245,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
                 console.info('contentAD wrote to bancheck.html');
 
-                page = await checkforErrs(contentAd, proxyIndex, page);
+                await checkforErrs(contentAd, proxyIndex, page);
 
                 
                 await page.waitFor("#mainFrame", { timeout: 60000 })
