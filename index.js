@@ -92,6 +92,8 @@ function indexApp() {
         if (content.indexOf('Loading site please wait') > -1){
             console.log('startWaitfn')
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
+            await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
+            await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
             console.log('wtd')
         }
         if (content.indexOf('Bad Gateway') > -1){
