@@ -105,7 +105,8 @@ function indexApp() {
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL, count) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL, indexOfAd) => {
+        console.log(indexOfAd)
 
         let page = await browser.newPage();
 
@@ -143,7 +144,7 @@ function indexApp() {
             //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         //}
         await page.screenshot({ path: publicFolder + 'homepage.png' });
-        if(count === undefined)count = 0;
+        let count = 0;
 
         let skippedDueCaptcha = 0;
         let filteredBySqr = 0;
@@ -200,7 +201,7 @@ function indexApp() {
 
 
         ///await delay(5000)
-        for (let i = 0; i < parsedAds.length; i++) {
+        for (let i = indexOfAd===undefined:0?indexOfAd; i < parsedAds.length; i++) {
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
@@ -253,7 +254,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 try{
                     await page.waitFor("#mainFrame", { timeout: 80000 })
                 }catch(err){
-                    throw new Error(`cnt:${count}`)
+                    throw new Error(`cnt:${i}`)
                 }
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
