@@ -105,7 +105,7 @@ function indexApp() {
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL) => {
+    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL, count) => {
 
         let page = await browser.newPage();
 
@@ -115,10 +115,7 @@ function indexApp() {
         await page.evaluateOnNewDocument(preloadFile);
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
-        page.setDefaultNavigationTimeout(120000);
-
-        //await page.setCookie({ "name": "LPVID", "value": "ZmYzgwMWE5ZTk0NWFiZjgy", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 27, "httpOnly": false, "secure": false, "session": false }, { "name": "__gads", "value": "ID=b9a9e789e5177634:T=1540139029:S=ALNI_MavviTj33UKAqCJb4ePNNiWCZFWEw", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 75, "httpOnly": false, "secure": false, "session": false }, { "name": "favorites_userid", "value": "hbc6646092529", "domain": ".yad2.co.il", "path": "/", "expires": 1540743818.036674, "size": 29, "httpOnly": false, "secure": false, "session": false }, { "name": "UTGv2", "value": "D-h4619bfc24ecb94c6fb5eb49aa4ee2be0631", "domain": "www.yad2.co.il", "path": "/", "expires":-1, "size": 43, "httpOnly": false, "secure": false, "session": false }, { "name": "realEstateBanner", "value": "20181021", "domain": "www.yad2.co.il", "path": "/", "expires":-1, "size": 24, "httpOnly": false, "secure": false, "session": false }, { "name": "sp_lit", "value": "E0FQ2YAt6/A9GRopJQdyEw==", "domain": "www.yad2.co.il", "path": "/", "expires":-1, "size": 30, "httpOnly": true, "secure": false, "session": false, "sameSite": "Strict" }, { "name": "LPSID-72457022", "value": "U1bCTgfkQ92YQqNtrEYsEQ", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 36, "httpOnly": false, "secure": false, "session": true }, { "name": "spcsrf", "value": "49b330b6480dac09d7756ece51326647", "domain": "www.yad2.co.il", "path": "/", "expires":-1, "size": 38, "httpOnly": true, "secure": false, "session": false, "sameSite": "Strict" }, { "name": "SaveSearch_CustID", "value": "dai228208188", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 29, "httpOnly": false, "secure": false, "session": false }, { "name": "yad2upload", "value": "2248146954.20480.0000", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 31, "httpOnly": true, "secure": false, "session": true }, { "name": "CLIENT_WIDTH_DIR", "value": "1280", "domain": "www.yad2.co.il", "path": "/Nadlan", "expires":-1, "size": 20, "httpOnly": false, "secure": false, "session": false }, { "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false }, { "name": "SPSI", "value": "bbffee9d54b3054b7fc2e80b9cb76429", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 36, "httpOnly": false, "secure": false, "session": true }, { "name": "PHPSESSID", "value": "dgq0pf84fkrlgk1hj6o8hop9p2", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 35, "httpOnly": false, "secure": false, "session": true }, { "name": "PRLST", "value": "rD", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 7, "httpOnly": false, "secure": false, "session": true }, { "name": "y2018-2-cohort", "value": "10", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 16, "httpOnly": false, "secure": false, "session": false }, { "name": "adOtr", "value": "efbebdf59b4", "domain": "www.yad2.co.il", "path": "/", "expires": -1, "size": 16, "httpOnly": false, "secure": false, "session": true }, { "name": "MAIN_WIDTH_DIR", "value": "1280", "domain": "www.yad2.co.il", "path": "/Nadlan", "expires":-1, "size": 18, "httpOnly": false, "secure": false, "session": false });
-        //fs.writeFileSync('./public/cookies.html', JSON.stringify(pendingccs, null, 2), 'utf8');        
+        page.setDefaultNavigationTimeout(120000); 
         await page.goto(yad2ResultsURL);
         console.info('goto')
 
@@ -146,8 +143,8 @@ function indexApp() {
             //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         //}
         await page.screenshot({ path: publicFolder + 'homepage.png' });
+        if(count === undefined)count = 0;
 
-        let count = 0;
         let skippedDueCaptcha = 0;
         let filteredBySqr = 0;
         let filteredByCity = 0;
@@ -219,7 +216,6 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
 
 
             if (!existingAd) {
-            await delay(5000);
             let incognito =  await browser.createIncognitoBrowserContext();
             page = await incognito.newPage();
             page.setDefaultNavigationTimeout(120000);
@@ -254,10 +250,11 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 console.info('contentAD wrote to bancheck.html');
 
                 await checkforErrs(contentAd, proxyIndex, page);
-
-                
-                await page.waitFor("#mainFrame", { timeout: 60000 })
-
+                try{
+                    await page.waitFor("#mainFrame", { timeout: 80000 })
+                }catch(err){
+                    throw new Error(`cnt:${count}`)
+                }
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
                     //delay(60300*5)//wait for 5 mins
@@ -477,6 +474,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
     async function mainWrapper(yad2ResultsURL) {
         let errorsInARow = 0
         let mobileView = true;
+        let lastCount = 0;
 
         for (let i = 0; i < yad2ResultsURL.length; i++) {
             config = reload('./config.js');
@@ -496,7 +494,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
         '--ignore-certifcate-errors-spki-list',
         '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"',
 
-                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`
+                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].ipAddress}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`
                 ],
                 defaultViewport: {
                     width: mobileView === true ? 400 : 1280,
@@ -508,7 +506,7 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 }
             }
             const browser = await puppeteer.launch(browserOptions);
-            console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].adress}`)
+            console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].ipAddress}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
             let isCaptchaHere = errorsInARow>0?true:false;
@@ -524,16 +522,18 @@ CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029
                 i++;
             }*/
             
-            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions, i+1)
+            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions, i+1, lastCount)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
+                    lastCount =0;
                 })
                 .catch((err) => {
                     console.log(err)
                     //log('PROXY CHANGED');
                     errorsInARow++;
                     i--;
+                    if(err.message.indexOf('cnt:')>-1)lastCount = err.message.match(/cnt:([0-9]*)/)[1];
                     WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
                     let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG.js', 'utf8');
                     fs.writeFileSync('./WARN_CONFIG.js',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
