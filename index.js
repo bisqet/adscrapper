@@ -202,6 +202,7 @@ function indexApp() {
 
         ///await delay(5000)
         for (let i = indexOfAd; i < parsedAds.length; i++) {
+            try{
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
@@ -244,11 +245,8 @@ function indexApp() {
                 console.info('contentAD wrote to bancheck.html');
 
                 await checkforErrs(contentAd, proxyIndex, page);
-                try{
-                    await page.waitFor("#mainFrame", { timeout: 80000 })
-                }catch(err){
-                    throw new Error(`cnt:${i}`)
-                }
+                                    await page.waitFor("#mainFrame", { timeout: 80000 })
+
                 if (error !== 0) {
                     //log("WAITING FOR 5min:"+ad.link)
                     //delay(60300*5)//wait for 5 mins
@@ -360,7 +358,9 @@ function indexApp() {
                         .write()
                 }
 
-            }
+            }                }catch(err){
+                    throw new Error(`cnt:${i}`)
+                }
         }
         log(`URL №${indexOfURL}`);
         log('Total ads on page:', parsedAds.length + filteredID);
