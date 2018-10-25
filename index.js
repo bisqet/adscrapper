@@ -61,35 +61,35 @@ function indexApp() {
                     log('delete captcha and resolving..');
                     return resolve(solution);
                 }
-                
+
             }, 1000); // two minutes
         });
     }
-    const checkForCaptcha = async (content, page) =>{
+    const checkForCaptcha = async (content, page) => {
         if (content.indexOf('האם אתה אנושי?') > -1) {
             //log("ERROR CAPTCHA!!!");
             //await sendErrorMessage({ "err": "ERROR CAPTCHA! Waiting for solution..", "url": yad2ResultsURL });
             const captchaImg = await page.evaluate(() => document.querySelector('#captchaImageInline').src);
             const { buffer } = parseDataUrl(captchaImg);
             fs.writeFileSync(publicFolder + 'captcha.png', buffer, 'base64');
-            messageBot.captchaMsg(WARN_CONFIG.DOMAIN+'/captcha.png')
+            messageBot.captchaMsg(WARN_CONFIG.DOMAIN + '/captcha.png')
             log('ERROR CAPTCHA! Waiting for solution..');
             const solution = await waitForCaptchaInput();
             await page.type('#captchaInput', solution);
             await page.click('#submitObject');
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    const checkforErrs = async (content, proxyIndex, page)=>{
-        if(content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1){
+    const checkforErrs = async (content, proxyIndex, page) => {
+        if (content.indexOf('מתנצלים, המחשב חסום לגישה לאתר.') > -1) {
             throw new Error('Bot')
         }
-        if (content.indexOf('האם אתה אנושי?') > -1){
+        if (content.indexOf('האם אתה אנושי?') > -1) {
             throw new Error('captchaExist')
         }
-        if (content.indexOf('Loading site please wait') > -1){
+        if (content.indexOf('Loading site please wait') > -1) {
             /*console.log('startWaitfn')
             await page.waitForNavigation({timeout: 60000, waitUntil:"domcontentloaded"})
              console.log('wtd1')
@@ -97,26 +97,26 @@ function indexApp() {
              console.log(JSON.stringify(ccs))*/
             throw new Error('Loading site')
         }
-        if (content.indexOf('Bad Gateway') > -1){
-            await page.reload({waitUntil:"domcontentloaded"});
+        if (content.indexOf('Bad Gateway') > -1) {
+            await page.reload({ waitUntil: "domcontentloaded" });
         }
     }
     fs.writeFileSync('.isServerWakeUpable', "false", 'utf8');
 
     const publicFolder = './public/';
 
-    const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL, indexOfAd) => {
+    const main = (async (yad2ResultsURL, browser, isCaptchaHere, proxyIndex, browserOptions, indexOfURL, indexOfAd) => {
         console.log('current index of ad is: ', indexOfAd);
 
         let page = await browser.newPage();
 
-        await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
+        await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires": -1, "size": 19, "httpOnly": false, "secure": false, "session": false })
 
         const preloadFile = fs.readFileSync('./preload.js', 'utf8');
         await page.evaluateOnNewDocument(preloadFile);
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
-        page.setDefaultNavigationTimeout(120000); 
+        page.setDefaultNavigationTimeout(120000);
         await page.goto(yad2ResultsURL);
         console.info('goto')
 
@@ -141,7 +141,7 @@ function indexApp() {
         await page.waitFor("#main_table", { timeout: 30000 })
 
         //if(captchaExist){
-            //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
+        //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
         //}
         await page.screenshot({ path: publicFolder + 'homepage.png' });
         let count = 0;
@@ -202,165 +202,168 @@ function indexApp() {
 
         ///await delay(5000)
         for (let i = indexOfAd; i < parsedAds.length; i++) {
-            try{
-            //await delay(60000); //1m delay.
-            let ad = parsedAds[i];
-            const existingAd = adsDB.get('ads')
-                .find({ id: ad.id })
-                .value();
+            try {
+                //await delay(60000); //1m delay.
+                let ad = parsedAds[i];
+                const existingAd = adsDB.get('ads')
+                    .find({ id: ad.id })
+                    .value();
 
 
-            if (!existingAd) {
-            let incognito =  await browser.createIncognitoBrowserContext();
-            page = await incognito.newPage();
-            page.setDefaultNavigationTimeout(120000);
-            await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires":-1, "size": 19, "httpOnly": false, "secure": false, "session": false })
+                if (!existingAd) {
+                    let incognito = await browser.createIncognitoBrowserContext();
+                    page = await incognito.newPage();
+                    page.setDefaultNavigationTimeout(120000);
+                    await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires": -1, "size": 19, "httpOnly": false, "secure": false, "session": false })
 
-                // new ad
-                count++;
-                //if(count>9)continue;
-                ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
-                //log('Fetching', ad.link);
-                console.log('go to ', ad.link);
-                let cookiesAd = await page.cookies();
-                fs.writeFileSync('./public/cookies.html', JSON.stringify(cookiesAd), 'utf8');
-                console.log('cookies wrote to cookies.html', ad.link);
-                //await page.waitFor(50000)
-                //await page.deleteCookie(...cookiesAd)
-                await page.goto(ad.link);
-                const contentAd = await page.content();
-                console.log('got ', ad.link)
+                    // new ad
+                    count++;
+                    //if(count>9)continue;
+                    ad.link = "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=" + ad.id;
+                    //log('Fetching', ad.link);
+                    console.log('go to ', ad.link);
+                    let cookiesAd = await page.cookies();
+                    fs.writeFileSync('./public/cookies.html', JSON.stringify(cookiesAd), 'utf8');
+                    console.log('cookies wrote to cookies.html', ad.link);
+                    //await page.waitFor(50000)
+                    //await page.deleteCookie(...cookiesAd)
+                    await page.goto(ad.link);
+                    const contentAd = await page.content();
+                    console.log('got ', ad.link)
 
-                if(contentAd.indexOf('שפרו את חווית הגלישה שלכם!')>-1&& content.indexOf('Loading site please wait') > -1){
-                    i--
-                    await incognito.close();
-                    continue;
-                }
-                //await delay(20000);
-                //captchaExist = await checkForCaptcha(content, page);
+                    if (contentAd.indexOf('שפרו את חווית הגלישה שלכם!') > -1 && content.indexOf('Loading site please wait') > -1) {
+                        i--
+                        await incognito.close();
+                        continue;
+                    }
+                    //await delay(20000);
+                    //captchaExist = await checkForCaptcha(content, page);
 
-                let error = 0;
-                fs.writeFileSync('./public/bancheck.html', contentAd, 'utf8');
+                    let error = 0;
+                    fs.writeFileSync('./public/bancheck.html', contentAd, 'utf8');
 
-                console.info('contentAD wrote to bancheck.html');
+                    console.info('contentAD wrote to bancheck.html');
 
-                await checkforErrs(contentAd, proxyIndex, page);
-                                    await page.waitFor("#mainFrame", { timeout: 80000 })
+                    await checkforErrs(contentAd, proxyIndex, page);
+                    await page.waitFor("#mainFrame", { timeout: 80000 })
 
-                if (error !== 0) {
-                    //log("WAITING FOR 5min:"+ad.link)
-                    //delay(60300*5)//wait for 5 mins
-                    error = 0;
-                    continue;
-                }
+                    if (error !== 0) {
+                        //log("WAITING FOR 5min:"+ad.link)
+                        //delay(60300*5)//wait for 5 mins
+                        error = 0;
+                        continue;
+                    }
 
-                console.log('Waited');
-                const adDetails = await page.evaluate(() => {
-                    const data = {};
-                    $('.innerDetailsDataGrid').each((index, dataBlock) => {
-                        if (index === 0) {
-                            $(dataBlock).find('td').each(function(idx, td) {
-                                if (td.textContent.match('ישוב') !== null) { data.city = td.nextElementSibling.innerText; }
-                                if (td.textContent.match("שכונה:") !== null && td.textContent.match("על השכונה:") === null) { data.hood = td.nextElementSibling.innerText }
-                                if (td.textContent.match("כתובת:") !== null) { data.fullAddress = td.nextElementSibling.innerText }
-                                if (td.textContent.match('גודל במ"ר:') !== null) { data.sqrmeter = parseInt(td.nextElementSibling.innerText) }
-                            });
-                        };
-                        if (index === 1) {
-                            data.sqrin = "*";
-                            data.sqrgarden = "*";
-                            $(dataBlock).find('td').each(function(idx, td) {
-                                if (td.lastChild.textContent.match('מ"ר בנוי') !== null) { data.sqrin = td.nextElementSibling.innerText; }
-                                if (td.lastChild.textContent.match('מ"ר גינה:') !== null) { data.sqrgarden = td.nextElementSibling.innerText }
-                                if (td.lastChild.textContent.match('השכרה לטווח ארוך') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "ארוך" : "קצר!!"; }
-                                if (td.lastChild.textContent.match('משופצת') !== null) { data.renov = td.children[0].classList.value == "v_checked" ? "שופץ" : "לא-שופץ"; }
-                            });
-                            let container = dataBlock.nextElementSibling;
-                            data.more = container.lastElementChild.innerText;
-                            data["tax/m"] = "*";
-                            data.vaad = "*";
-                            for (let i = 0; i < container.children[2].childNodes.length; i++) {
-                                let cell = container.children[2].childNodes[i];
-                                if (cell.textContent.match('ארנונה לחודשיים') !== null) {
-                                    data["tax/m"] = cell.nextSibling.innerText.slice(1).replace(",", "") / 2
+                    console.log('Waited');
+                    const adDetails = await page.evaluate(() => {
+                        const data = {};
+                        $('.innerDetailsDataGrid').each((index, dataBlock) => {
+                            if (index === 0) {
+                                $(dataBlock).find('td').each(function(idx, td) {
+                                    if (td.textContent.match('ישוב') !== null) { data.city = td.nextElementSibling.innerText; }
+                                    if (td.textContent.match("שכונה:") !== null && td.textContent.match("על השכונה:") === null) { data.hood = td.nextElementSibling.innerText }
+                                    if (td.textContent.match("כתובת:") !== null) { data.fullAddress = td.nextElementSibling.innerText }
+                                    if (td.textContent.match('גודל במ"ר:') !== null) { data.sqrmeter = parseInt(td.nextElementSibling.innerText) }
+                                });
+                            };
+                            if (index === 1) {
+                                data.sqrin = "*";
+                                data.sqrgarden = "*";
+                                $(dataBlock).find('td').each(function(idx, td) {
+                                    if (td.lastChild.textContent.match('מ"ר בנוי') !== null) { data.sqrin = td.nextElementSibling.innerText; }
+                                    if (td.lastChild.textContent.match('מ"ר גינה:') !== null) { data.sqrgarden = td.nextElementSibling.innerText }
+                                    if (td.lastChild.textContent.match('השכרה לטווח ארוך') !== null) { data.term = td.children[0].classList.value == "v_checked" ? "ארוך" : "קצר!!"; }
+                                    if (td.lastChild.textContent.match('משופצת') !== null) { data.renov = td.children[0].classList.value == "v_checked" ? "שופץ" : "לא-שופץ"; }
+                                });
+                                let container = dataBlock.nextElementSibling;
+                                data.more = container.lastElementChild.innerText;
+                                data["tax/m"] = "*";
+                                data.vaad = "*";
+                                for (let i = 0; i < container.children[2].childNodes.length; i++) {
+                                    let cell = container.children[2].childNodes[i];
+                                    if (cell.textContent.match('ארנונה לחודשיים') !== null) {
+                                        data["tax/m"] = cell.nextSibling.innerText.slice(1).replace(",", "") / 2
+                                    }
+                                    if (cell.textContent.match('תשלום לועד בית') !== null) {
+                                        data.vaad = cell.nextSibling.innerText.slice(1)
+                                    }
                                 }
-                                if (cell.textContent.match('תשלום לועד בית') !== null) {
-                                    data.vaad = cell.nextSibling.innerText.slice(1)
-                                }
-                            }
-                        };
+                            };
+                        });
+
+                        // remove info divs scrollbars for screenshots
+                        $('.details_block_296 .details_block_body div:nth-child(2)').css({ height: 'inherit' });
+                        return data;
                     });
 
-                    // remove info divs scrollbars for screenshots
-                    $('.details_block_296 .details_block_body div:nth-child(2)').css({ height: 'inherit' });
-                    return data;
-                });
+                    if (!(await sqrFilter(adDetails.sqrmeter))) {
+                        filteredBySqr++;
+                        continue;
+                    }
+                    if (!(await cityFilter(adDetails.city, adDetails.hood))) {
+                        filteredByCity++;
+                        continue;
+                    }
+                    ad.data = adDetails;
 
-                if (!(await sqrFilter(adDetails.sqrmeter))) {
-                    filteredBySqr++;
-                    continue;
-                }
-                if (!(await cityFilter(adDetails.city, adDetails.hood))) {
-                    filteredByCity++;
-                    continue;
-                }
-                ad.data = adDetails;
+                    // screenshot the data
+                    const infoElement = await page.$('#mainFrame > div.right_column > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)');
+                    await infoElement.screenshot({ path: `${publicFolder}${ad.id}-info.png` });
+                    //log('ad info screenshot created ' + `${publicFolder}${ad.id}-info.png`);
 
-                // screenshot the data
-                const infoElement = await page.$('#mainFrame > div.right_column > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)');
-                await infoElement.screenshot({ path: `${publicFolder}${ad.id}-info.png` });
-                //log('ad info screenshot created ' + `${publicFolder}${ad.id}-info.png`);
-
-                // get the images and the map location
-                //log('Fetching images and map data');
-                await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
-                let adMetaData = {}
-                adMetaData.images = [];
-                try {
-                    adMetaData = await page.evaluate(() => {
-                        if (ImageArr === undefined) {
-                            ImageArr = []
-                        }
-                        return {
-                            images: ImageArr
-                        };
-                    });
-                } catch (e) {
-                    adMetaData = {};
+                    // get the images and the map location
+                    //log('Fetching images and map data');
+                    await page.goto(`http://www.yad2.co.il/Nadlan/ViewImage.php?CatID=2&SubCatID=2&RecordID=${ad.id}`, { waitUntil: ['load', 'domcontentloaded', 'networkidle0'] });
+                    let adMetaData = {}
                     adMetaData.images = [];
-                    log(e);
-                }
+                    try {
+                        adMetaData = await page.evaluate(() => {
+                            if (ImageArr === undefined) {
+                                ImageArr = []
+                            }
+                            return {
+                                images: ImageArr
+                            };
+                        });
+                    } catch (e) {
+                        adMetaData = {};
+                        adMetaData.images = [];
+                        log(e);
+                    }
 
-                adMetaData.images.unshift(`${WARN_CONFIG.DOMAIN}/${ad.id}-info.png`);
-                ad.meta = adMetaData;
+                    adMetaData.images.unshift(`${WARN_CONFIG.DOMAIN}/${ad.id}-info.png`);
+                    ad.meta = adMetaData;
 
-                // write to DB
-                adsDB.get('ads')
-                    .push(ad)
-                    .write();
-
-                //messenger
-
-                //log('webhook bot data => ', JSON.stringify(ad));
-                //console.info(ad);
-                messageBot.pushNewAd(ad)
-                //await delay(15000);
-                await incognito.close()
-            } else {
-                // existing ad, check for price change
-                // if changed update the new price and alert
-                if (existingAd.price != ad.price) {
-                    messageBot.pushAdUpdate(ad);
-                    log('found existing ad with price change, sending update ');
+                    // write to DB
                     adsDB.get('ads')
-                        .find({ id: existingAd.id })
-                        .assign({ price: ad.price })
-                        .write()
-                }
+                        .push(ad)
+                        .write();
 
-            }                }catch(err){
-                    throw new Error(`cnt:${i}`)
+                    //messenger
+
+                    //log('webhook bot data => ', JSON.stringify(ad));
+                    //console.info(ad);
+                    messageBot.pushNewAd(ad)
+                    //await delay(15000);
+                    await incognito.close()
+                } else {
+                    // existing ad, check for price change
+                    // if changed update the new price and alert
+                    if (existingAd.price != ad.price) {
+                        messageBot.pushAdUpdate(ad);
+                        log('found existing ad with price change, sending update ');
+                        adsDB.get('ads')
+                            .find({ id: existingAd.id })
+                            .assign({ price: ad.price })
+                            .write()
+                    }
+
                 }
+            } catch (err) {
+                console.log(err)
+
+                throw new Error(`cnt:${i}`)
+            }
         }
         log(`URL №${indexOfURL}`);
         log('Total ads on page:', parsedAds.length + filteredID);
@@ -476,19 +479,19 @@ function indexApp() {
 
             await isServerNeedsToStop();
             const browserOptions = {
-                       headless: true,
-        ignoreHTTPSErrors: true,
-        userDataDir: './tmp',
+                headless: true,
+                ignoreHTTPSErrors: true,
+                userDataDir: './tmp',
                 args: ['--no-sandbox',
-                 '--incognito',
-        '--disable-setuid-sandbox',
-        '--disable-infobars',
-        '--window-position=0,0',
-        '--ignore-certifcate-errors',
-        '--ignore-certifcate-errors-spki-list',
-        '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"',
+                    '--incognito',
+                    '--disable-setuid-sandbox',
+                    '--disable-infobars',
+                    '--window-position=0,0',
+                    '--ignore-certifcate-errors',
+                    '--ignore-certifcate-errors-spki-list',
+                    '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"',
 
-                `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].ipAddress}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`
+                    `--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].ipAddress}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`
                 ],
                 defaultViewport: {
                     width: mobileView === true ? 400 : 1280,
@@ -503,7 +506,7 @@ function indexApp() {
             console.info(`--proxy-server=${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].ipAddress}:${WARN_CONFIG.PROXIES[WARN_CONFIG.LAST_PROXY_INDEX].port}`)
             let curUrl = yad2ResultsURL[i];
             //log(`Current scrape for ${curUrl}`);
-            let isCaptchaHere = errorsInARow>0?true:false;
+            let isCaptchaHere = errorsInARow > 0 ? true : false;
 
             /*if (errorsInARow >= 3) {
                 if (i == yad2ResultsURL.length - 1) {
@@ -515,24 +518,24 @@ function indexApp() {
                 } // every 60 min
                 i++;
             }*/
-            
-            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions, i+1, lastCount)
+
+            await main(curUrl, browser, isCaptchaHere, WARN_CONFIG.LAST_PROXY_INDEX, browserOptions, i + 1, lastCount)
                 .then(async () => {
                     log('Successful.');
                     errorsInARow = 0;
-                    lastCount =0;
+                    lastCount = 0;
                 })
                 .catch((err) => {
                     console.log(err)
                     //log('PROXY CHANGED');
                     errorsInARow++;
                     i--;
-                    if(err.message.indexOf('cnt:')>-1)lastCount = err.message.match(/cnt:([0-9]*)/)[1];
-                    WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX===WARN_CONFIG.PROXIES.length-1?0:WARN_CONFIG.LAST_PROXY_INDEX+1;
+                    if (err.message.indexOf('cnt:') > -1) lastCount = err.message.match(/cnt:([0-9]*)/)[1];
+                    WARN_CONFIG.LAST_PROXY_INDEX = WARN_CONFIG.LAST_PROXY_INDEX === WARN_CONFIG.PROXIES.length - 1 ? 0 : WARN_CONFIG.LAST_PROXY_INDEX + 1;
                     let WARN_CONFIG_plain = fs.readFileSync('./WARN_CONFIG.js', 'utf8');
-                    fs.writeFileSync('./WARN_CONFIG.js',WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
+                    fs.writeFileSync('./WARN_CONFIG.js', WARN_CONFIG_plain.replace(/LAST_PROXY_INDEX:([0-9].*?)\n/, `LAST_PROXY_INDEX:${WARN_CONFIG.LAST_PROXY_INDEX}\n`), 'utf8');
                     //mobileView = mobileView === true ? false : true;
-                    console.info(' WARN_CONFIG.LAST_PROXY_INDEX:',  WARN_CONFIG.LAST_PROXY_INDEX)
+                    console.info(' WARN_CONFIG.LAST_PROXY_INDEX:', WARN_CONFIG.LAST_PROXY_INDEX)
                 });
             await browser.close();
 
