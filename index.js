@@ -201,7 +201,7 @@ function indexApp() {
 
 
         ///await delay(5000)
-        for (let i = indexOfAd===undefined:0?indexOfAd; i < parsedAds.length; i++) {
+        for (let i = indexOfAd; i < parsedAds.length; i++) {
             //await delay(60000); //1m delay.
             let ad = parsedAds[i];
             const existingAd = adsDB.get('ads')
