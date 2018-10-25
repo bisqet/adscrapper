@@ -106,7 +106,7 @@ function indexApp() {
     const publicFolder = './public/';
 
     const main = (async (yad2ResultsURL, browser,isCaptchaHere, proxyIndex, browserOptions, indexOfURL, indexOfAd) => {
-        console.log(indexOfAd)
+        console.log('current index of ad is: ', indexOfAd);
 
         let page = await browser.newPage();
 
@@ -207,13 +207,6 @@ function indexApp() {
             const existingAd = adsDB.get('ads')
                 .find({ id: ad.id })
                 .value();
-/*http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=3%2C10%2C78&arrCity=&arrHomeTypeID=3%2C6&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=
-http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4cf417113b56b7d8002f30a2736d21a043b
-
-
-CLIENT_WIDTH_DIR=1263; MAIN_WIDTH_DIR=1263; sbtsck=jav; PHPSESSID=fm8i87nhhep029nv8gl3vhhnv3; y2018-2-cohort=51; y2018-2-access=false; SaveSearch_CustID=hjj1617274001; realEstateBanner=20181021; favorites_userid=gjb9126643850; yad2upload=1694498826.20480.0000; LPVID=FjNGRiYTRkMzk1NTc2ZWM4; LPSID-72457022=i-It2JHVQeqMlCKsQ6noVA; _ga=GA1.3.6330954.1540149226; _gid=GA1.3.99456894.1540149226; SPSI=abe640550a513827373be80567859727; UTGv2=h4c5e37464205186dcffe06a3c191d15e740; searchB144FromYad2=2_C_1970; sp_lit=sa73P5HksV4yiR1VytQRtg==; PRLST=AQ; spcsrf=22cb1520849d9586e237c2a79c8ae3ae; adOtr=46b0a5P055a
-
-*/
 
 
             if (!existingAd) {
