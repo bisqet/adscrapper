@@ -1,0 +1,82 @@
+[
+  {
+    "name": "SPC",
+    "value": "0XPeHGzhoh2X11aETP5Bgd9/m5jfrOcb0x3rAdlALdkaEzhQpe+vKivpolwBFIJAMB8wPNn+CSnJDBXBZmd/+wizF2JwxoFYgdSY0nEwzEdoQlhgWodeZNUZZmKUVoiP4d3zMYAH4OfpsDa8kqz4mQ==",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": 1539569304.623291,
+    "size": 155,
+    "httpOnly": true,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "spcsrf",
+    "value": "cd22affeb6c6d1eaa45866fc1300aeb7",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": 1539216504.623219,
+    "size": 38,
+    "httpOnly": true,
+    "secure": false,
+    "session": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "adOtr",
+    "value": "3fd71b9d6dc",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": -1,
+    "size": 16,
+    "httpOnly": false,
+    "secure": false,
+    "session": true
+  },
+  {
+    "name": "PRLST",
+    "value": "jN",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": -1,
+    "size": 7,
+    "httpOnly": false,
+    "secure": false,
+    "session": true
+  },
+  {
+    "name": "sbtsck",
+    "value": "jav",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": 1539295703,
+    "size": 9,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "UTGv2",
+    "value": "h47c1b9b382645f4c3cad6fed460f795e998",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": 1924905600,
+    "size": 41,
+    "httpOnly": false,
+    "secure": false,
+    "session": false
+  },
+  {
+    "name": "SPSI",
+    "value": "1d9f376bdcdb2973fc5cf6a1925abc4c",
+    "domain": "www.yad2.co.il",
+    "path": "/",
+    "expires": -1,
+    "size": 36,
+    "httpOnly": false,
+    "secure": false,
+    "session": true
+  }
+]
+And after:
+[]

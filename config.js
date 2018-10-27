@@ -1,5 +1,7 @@
 const config = {
   "yad2ResultsURL": [
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&AreaID=&arrArea=&arrCity=149&Neighborhood=&arrHomeTypeID=1%2C3%2C6%2C7%2C51&fromRooms=4&untilRooms=6&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=110&untilSquareMeter=&EnterDate=&Info=",
+    "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=487&Neighborhood=%F8%EE%FA+%E0%E9%EC%EF&arrHomeTypeID=1%2C3%2C6%2C7%2C51&fromRooms=4&untilRooms=6&fromPrice=1000&untilPrice=6500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=110&untilSquareMeter=&sunpatio=1&EnterDate=&Info=",
     "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=3%2C10%2C78&arrCity=&arrHomeTypeID=3%2C6&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&Meshupatz=1&EnterDate=&Info=",
     "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=&arrCity=343%2C627%2C530%2C407%2C584%2C330%2C509%2C657%2C1970%2C487%2C651%2C593%2C592&arrHomeTypeID=5%2C39&fromRooms=3.5&untilRooms=&fromPrice=1000&untilPrice=8000&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=90&untilSquareMeter=&EnterDate=&Info=",
     "http://www.yad2.co.il/Nadlan/rent.php?multiSearch=1&arrArea=4%2C10%2C98&arrCity=&arrHomeTypeID=5&fromRooms=3.5&untilRooms=5.5&fromPrice=1000&untilPrice=8500&PriceType=1&FromFloor=&ToFloor=&fromSquareMeter=100&untilSquareMeter=&EnterDate=&Info=",
@@ -36,7 +38,7 @@ const config = {
         "יהוד מונוסון",
         "נוה אפרים"
       ],
-      'גבעתיים',
+      "גבעתיים",
       "גבעת כ\"ח",
       "ראש העין",
       "בני ברק",
@@ -101,7 +103,20 @@ const config = {
     "3507951",
     "2e199ba68aa0fa1e972c49be07fb315997a",
     "1004291",
-    "3553246"
+    "3553246",
+    "37d709e4f94cb90cf12b940ac4c4fb73e3c",
+    "325a779d9328061f5f1e3822161a8e719ab",
+    "2fd2e93949940622b54ff24034228155ff3",
+    "307b4cccfa92f648b92e42e67f7d7e03143",
+    "3586732",
+    "1ab0ff4d0f5d1647a19b01c5a1bef343b6f",
+    "3236179",
+    "2efd08355e0912839a43f1027b643466038",
+    "224e6472a247112580582da83dfb986125b",
+    "21064cf546876f12c696bfa38f2d72763bb",
+    "",
+    "1049149",
+    "1026885"
   ],
   "sqrFilter": "all"
 };
