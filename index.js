@@ -15,7 +15,7 @@ function indexApp() {
     const log = require('./log.js');
     const low = require('lowdb');
     let config = reload('./config.js');
-    let WARN_CONFIG = reload('./WARN_CONFIG.js');
+    let WARN_CONFIG = require('./WARN_CONFIG.js');
 
     const messageBot = require('./messageBot.js')
 
@@ -116,7 +116,7 @@ function indexApp() {
         await page.evaluateOnNewDocument(preloadFile);
         //page.setViewport({width: getRandomInt(600, 1400), height:getRandomInt(600, 1400)})
 
-        page.setDefaultNavigationTimeout(120000);
+        page.setDefaultNavigationTimeout(180000);
         await page.goto(yad2ResultsURL);
         console.info('goto')
 
@@ -138,7 +138,7 @@ function indexApp() {
 
         //await page.waitFor(1000);
         // start scraping
-        await page.waitFor("#main_table", { timeout: 30000 })
+        await page.waitFor("#main_table", { timeout: 120000 })
 
         //if(captchaExist){
         //messageBot.customMessage({ 'err': 'Captcha solved succesfully!', 'url': 'https://linode.com' });
