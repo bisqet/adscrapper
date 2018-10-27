@@ -290,7 +290,7 @@
       "id": "615772b90591aa7f2f66f9798156dc109cd",
       "type": "פרטי/קוטג'",
       "address": "פתח תקווה - אלברט איינשטיין",
-      "price": "6,500 ₪",
+      "price": "6,000 ₪",
       "rooms": "4",
       "entranceDate": "",
       "floor": "קרקע",
@@ -621,6 +621,1220 @@
       "meta": {
         "images": [
           "http://172.104.153.19:3000/4b5e13c813a0303e6c8648382507e8b2c4d-info.png"
+        ]
+      }
+    },
+    {
+      "id": "6932b2cec3652d2ccd593fe93ac076f4f88",
+      "type": "פרטי/קוטג'",
+      "address": "אזור - הפלמ\"ח",
+      "price": "5,300 ₪",
+      "rooms": "3.5",
+      "entranceDate": "25.12.18",
+      "floor": "קרקע",
+      "adDate": "11.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=6932b2cec3652d2ccd593fe93ac076f4f88",
+      "data": {
+        "city": "אזור",
+        "hood": "שיכון גג",
+        "fullAddress": "הפלמ\"ח 7",
+        "sqrmeter": 93,
+        "sqrin": "*",
+        "sqrgarden": "500",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בית פרטי מרווח ונעים באזור שקט עםחניה בשפע. חצי דונם גינה, חדרים גדולים, חלל לפינת אוכל, מרפסת ענקית, שני מזגנים וריהוט חלקי.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/6932b2cec3652d2ccd593fe93ac076f4f88-info.png",
+          "http://images.yad2.co.il/Pic/201810/09/2_2/o/o2_2_1_738868_20181009171059.jpg",
+          "http://images.yad2.co.il/Pic/201810/09/2_2/o/o2_2_2_739913_20181009171021.jpg",
+          "http://images.yad2.co.il/Pic/201810/09/2_2/o/o2_2_3_736072_20181009171030.jpg",
+          "http://images.yad2.co.il/Pic/201810/09/2_2/o/o2_2_4_738184_20181009171056.jpg",
+          "http://images.yad2.co.il/Pic/201810/09/2_2/o/o2_2_5_733627_20181009171033.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3589820",
+      "type": "פרטי/קוטג'",
+      "address": "גבעת שמואל - הרב הרצוג",
+      "price": "6,500 ₪",
+      "rooms": "7",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "12.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3589820",
+      "data": {
+        "city": "גבעת שמואל",
+        "hood": "השחר, הוותיקה",
+        "fullAddress": "הרב הרצוג 31",
+        "sqrmeter": 212,
+        "sqrin": "212",
+        "sqrgarden": "500",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות:",
+        "tax/m": 1200,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3589820-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3c0ff0620db2e614f899dd7c15ca85949f0",
+      "type": "פרטי/קוטג'",
+      "address": "אזור - אחד העם",
+      "price": "7,500 ₪",
+      "rooms": "4",
+      "entranceDate": "15.11.18",
+      "floor": "קרקע",
+      "adDate": "13.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3c0ff0620db2e614f899dd7c15ca85949f0",
+      "data": {
+        "city": "אזור",
+        "hood": "שבענה",
+        "fullAddress": "אחד העם 4",
+        "sqrmeter": 170,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בית פרטי 4 חדרי שינה (אחד מתוכםמשמש לאיחסון והוא נעול), חדר אוכל, סלון גדול, מטבח מרווח, גינה גדולה, 5 מדרגות בלבד בתוךהבית, פטיו + מרפסת, מזגנים, מקלט",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3c0ff0620db2e614f899dd7c15ca85949f0-info.png",
+          "http://images.yad2.co.il/Pic/201810/13/2_2/o/o2_2_1_735762_20181013211001.jpg",
+          "http://images.yad2.co.il/Pic/201810/13/2_2/o/o2_2_2_736247_20181013211016.jpg",
+          "http://images.yad2.co.il/Pic/201810/13/2_2/o/o2_2_3_738597_20181013211038.jpg",
+          "http://images.yad2.co.il/Pic/201810/13/2_2/o/o2_2_4_732597_20181013211014.jpg",
+          "http://images.yad2.co.il/Pic/201810/13/2_2/o/o2_2_5_737601_20181013211046.jpg"
+        ]
+      }
+    },
+    {
+      "id": "5610f99442c422c3ca7bf6b450dac6e71c7",
+      "type": "דירה",
+      "address": "פתח תקווה - חיים זכאי",
+      "price": "6,000 ₪",
+      "rooms": "5",
+      "entranceDate": "30.11.18",
+      "floor": "3",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=5610f99442c422c3ca7bf6b450dac6e71c7",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "חיים זכאי 7",
+        "sqrmeter": 126,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה יפהפיה בכפר גנים ג' היוקרתי,בנייןחדש פונה לגינה גדולה ויפה,מושקעת,ארונות בחדרים, סורגים, מיזוג אויר, חוזה ארוך טווח, אפשרות למקרר,מדיח,תנור וכיריים.קרובה לטיילת ומרכזי קניות,כולל מחסן צמוד ו-2 ח",
+        "tax/m": 700,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/5610f99442c422c3ca7bf6b450dac6e71c7-info.png",
+          "http://images.yad2.co.il/Pic/201810/07/2_2/o/o2_2_2_747650_20181007131024.jpg",
+          "http://images.yad2.co.il/Pic/201810/07/2_2/o/o2_2_3_743066_20181007131025.jpg",
+          "http://images.yad2.co.il/Pic/201810/07/2_2/o/o2_2_3_746847_20181007141030.jpg",
+          "http://images.yad2.co.il/Pic/201810/07/2_2/o/o2_2_5_746966_20181007131020.jpg",
+          "http://images.yad2.co.il/Pic/201810/07/2_2/o/o2_2_5_744002_20181007141023.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3547489",
+      "type": "דירה",
+      "address": "פתח תקווה - הרב ד\"ר משה אויערבך",
+      "price": "5,600 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3547489",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "הרב ד\"ר משה אויערבך 5",
+        "sqrmeter": 135,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בבנין בוטיק באזור הכי טוב בפתחתקווה, ברחוב שקט בנין קטן ומבודד מוקף מדשאות ופארקים מרחק נסיעה קצר ל 471 ו- 5 דקות הליכה מקניון כפר גנים ו-4 דקות הליכה ממרכז קניות אחר. לובי מפואר, חדר אופניים מע' טמס",
+        "tax/m": "*",
+        "vaad": "330"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3547489-info.png",
+          "http://images.yad2.co.il/Pic/201807/16/2_2/o/o2_2_1_714180_20180716100720.jpg",
+          "http://images.yad2.co.il/Pic/201807/16/2_2/o/o2_2_2_714138_20180716100739.jpg",
+          "http://images.yad2.co.il/Pic/201807/16/2_2/o/o2_2_3_718870_20180716100754.jpg",
+          "http://images.yad2.co.il/Pic/201807/16/2_2/o/o2_2_4_714257_20180716100707.jpg",
+          "http://images.yad2.co.il/Pic/201807/16/2_2/o/o2_2_5_717920_20180716100708.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3556384",
+      "type": "דירה",
+      "address": "פתח תקווה - ליאון בלום",
+      "price": "5,800 ₪",
+      "rooms": "5",
+      "entranceDate": "",
+      "floor": "5",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3556384",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "ליאון בלום 4",
+        "sqrmeter": 114,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות:",
+        "tax/m": 641,
+        "vaad": "300"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3556384-info.png",
+          "http://images.yad2.co.il/Pic/201807/26/2_2/o/o2_2_1_718292_20180726110706.jpg",
+          "http://images.yad2.co.il/Pic/201808/04/2_2/o/o2_2_2_748711_20180804080802.jpg",
+          "http://images.yad2.co.il/Pic/201808/04/2_2/o/o2_2_3_726744_20180804110837.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3536540",
+      "type": "דירה",
+      "address": "פתח תקווה - בן גוריון",
+      "price": "5,700 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "4",
+      "adDate": "13.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3536540",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "בן גוריון 38",
+        "sqrmeter": 113,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: הדירה כחדשה. שתי חניות עצמאיות.ללא המחסן. מיזוג מרכזי. סורגים בכל הדירה. לא בשבת. ערבות פיקדון על 3 חודשים.",
+        "tax/m": 665,
+        "vaad": "300"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3536540-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3601842",
+      "type": "דירה",
+      "address": "פתח תקווה - משה דוד מייזנר",
+      "price": "5,850 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "12.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3601842",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "משה דוד מייזנר 6",
+        "sqrmeter": 113,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: מרווחת, שמורה, 3 כיווני אוויר מלאים(דרום, מערב וצפון), אפשרות לריהוט חלקי. מרפסת שמש עם סוכך, 2 חניות. מטבח גדול,ארונות קיר בחדרים, ארונות בחדרי אמבטיה.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3601842-info.png",
+          "http://images.yad2.co.il/Pic/201809/10/2_2/o/o2_2_1_738023_20180910210939.jpg",
+          "http://images.yad2.co.il/Pic/201809/10/2_2/o/o2_2_2_735791_20180910210948.jpg",
+          "http://images.yad2.co.il/Pic/201809/10/2_2/o/o2_2_3_739770_20180910210901.jpg",
+          "http://images.yad2.co.il/Pic/201809/10/2_2/o/o2_2_4_733187_20180910210913.jpg",
+          "http://images.yad2.co.il/Pic/201809/10/2_2/o/o2_2_5_731845_20180910210903.jpg"
+        ]
+      }
+    },
+    {
+      "id": "283ae30a9ed1b32d0532cd7f8a3bc250a3b",
+      "type": "דירה",
+      "address": "פתח תקווה - אהרון מסקין",
+      "price": "5,800 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "05.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=283ae30a9ed1b32d0532cd7f8a3bc250a3b",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "אהרון מסקין 19",
+        "sqrmeter": 125,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה מעוצבת כחדשה,מטבח סמללבן.הדירה בקרבת גנים,בתי ספר,בתי כנסת וקניון גנים.תחבורה ציבורית ונגישות לצירים מרכזיים.מחסן גדול צמוד לדירה,מרפסת סוכה ושתיי חניות תת קרקעיות.",
+        "tax/m": 650,
+        "vaad": "300"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/283ae30a9ed1b32d0532cd7f8a3bc250a3b-info.png",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_1_711631_20180925130956.jpg",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_2_712688_20180925130955.jpg",
+          "http://images.yad2.co.il/Pic/201809/25/2_2/o/o2_2_3_716857_20180925130954.jpg"
+        ]
+      }
+    },
+    {
+      "id": "4a1612435cd530bf997bda5b39484cb6a28",
+      "type": "דירה",
+      "address": "פתח תקווה - סמיר משה נקאש",
+      "price": "5,250 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "4",
+      "adDate": "27.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4a1612435cd530bf997bda5b39484cb6a28",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "סמיר משה נקאש 15",
+        "sqrmeter": 130,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בניין בן 5 שנים,דירה יפייפיהומתוחזקת,מרפסת שמש גדולה.קיים ריהוט שניתן לקנות לא חובה",
+        "tax/m": 600,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/4a1612435cd530bf997bda5b39484cb6a28-info.png",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_1_728725_20180927180943.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_2_721062_20180927180956.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_3_727715_20180927180904.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3569874",
+      "type": "דירה",
+      "address": "פתח תקווה - יטקובסקי אחים",
+      "price": "6,000 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3569874",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "יטקובסקי אחים 42",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: ללא תיווך. בבניין חדש לגמרי. קומה 1 על עמודים. דירה מרווחת ומשודרגת + 19 מ\"ר מרפסת. שתי חניות. הבניין גובל בפארק גדול. 3שרותים, אמבטיה ומקלחת.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3569874-info.png",
+          "http://images.yad2.co.il/Pic/201808/06/2_2/o/o2_2_1_713574_20180806130829.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_2_745903_20180920120911.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_3_747443_20180920120957.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_4_748877_20180920120934.jpg",
+          "http://images.yad2.co.il/Pic/201809/20/2_2/o/o2_2_5_742378_20180920120908.jpg"
+        ]
+      }
+    },
+    {
+      "id": "4c9ee9c158a254d9f46e9843a5e778b76be",
+      "type": "דירה",
+      "address": "פתח תקווה - אושר גולדוסר",
+      "price": "6,100 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "13.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4c9ee9c158a254d9f46e9843a5e778b76be",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "אושר גולדוסר 3",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה מרווחת מחסן צמוד +2 חניותמקורות מרפסת שמש גדולה",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/4c9ee9c158a254d9f46e9843a5e778b76be-info.png"
+        ]
+      }
+    },
+    {
+      "id": "40501f45d8e2fb73dc3a64e4dc3d99a5a2f",
+      "type": "דירה",
+      "address": "פתח תקווה - יטקובסקי אחים",
+      "price": "5,500 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "11.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=40501f45d8e2fb73dc3a64e4dc3d99a5a2f",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "יטקובסקי אחים 44",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה מקבלן איכלוס מיידי ללאתיווך מיקום מעולה קרוב לפארק בתי ספר",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/40501f45d8e2fb73dc3a64e4dc3d99a5a2f-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3571971",
+      "type": "דירה",
+      "address": "פתח תקווה - בן גוריון",
+      "price": "6,000 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "28.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3571971",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "בן גוריון 49",
+        "sqrmeter": 154,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות:",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3571971-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3601565",
+      "type": "דירה",
+      "address": "פתח תקווה - יטקובסקי אחים",
+      "price": "5,700 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "13.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3601565",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים א",
+        "fullAddress": "יטקובסקי אחים 17",
+        "sqrmeter": 123,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה בת ארבע שנים,היתה מושכרת זמןקצר,משודרגת כחדשה.",
+        "tax/m": "*",
+        "vaad": "320"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3601565-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3571305",
+      "type": "דירה",
+      "address": "פתח תקווה - יטקובסקי אחים",
+      "price": "5,300 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "12.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3571305",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים א",
+        "fullAddress": "יטקובסקי אחים 2",
+        "sqrmeter": 110,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות:",
+        "tax/m": 600,
+        "vaad": "300"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3571305-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3599795",
+      "type": "דירה",
+      "address": "פתח תקווה - בן גוריון",
+      "price": "5,500 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "09.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3599795",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים א",
+        "fullAddress": "בן גוריון 25",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה מקבלן מיקום טוב ונגישללא תיווך -----------",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3599795-info.png",
+          "http://images.yad2.co.il/Pic/201809/06/2_2/o/o2_2_1_745993_20180906130941.jpg",
+          "http://images.yad2.co.il/Pic/201809/06/2_2/o/o2_2_2_745110_20180906130906.jpg",
+          "http://images.yad2.co.il/Pic/201809/06/2_2/o/o2_2_3_742296_20180906130923.jpg"
+        ]
+      }
+    },
+    {
+      "id": "49b88d9af6512eb7de61503e7260beb7698",
+      "type": "דירה",
+      "address": "גבעת שמואל - השקד",
+      "price": "6,200 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "12.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=49b88d9af6512eb7de61503e7260beb7698",
+      "data": {
+        "city": "גבעת שמואל",
+        "hood": "רמת אילן",
+        "fullAddress": "השקד 4",
+        "sqrmeter": 150,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה גדולה ומוארת +מרפסת שמש 25מטר .",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/49b88d9af6512eb7de61503e7260beb7698-info.png",
+          "http://images.yad2.co.il/Pic/201810/08/2_2/o/o2_2_1_737495_20181008121055.jpg",
+          "http://images.yad2.co.il/Pic/201810/08/2_2/o/o2_2_2_739448_20181008121056.jpg",
+          "http://images.yad2.co.il/Pic/201810/08/2_2/o/o2_2_3_733004_20181008121056.jpg",
+          "http://images.yad2.co.il/Pic/201810/08/2_2/o/o2_2_4_739614_20181008121056.jpg",
+          "http://images.yad2.co.il/Pic/201810/08/2_2/o/o2_2_5_739812_20181008121056.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3589486",
+      "type": "דירה",
+      "address": "פתח תקווה - דניאל ליפשיץ",
+      "price": "6,000 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "5",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3589486",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "דניאל ליפשיץ 75",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: ברחוב הכי שקט ומבוקש בכפר גנים ג',בקרבה לבתי ספר, גנים, מרכזי קניות, נוף פתוח - דירה ענקית, מחסן צמוד, 2 חניות בטאבו, \"יחידתמתבגר\" נפרדת. ללא תיווך.",
+        "tax/m": "*",
+        "vaad": "300"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3589486-info.png",
+          "http://images.yad2.co.il/Pic/201808/26/2_2/o/o2_2_1_749927_20180826080804.jpg",
+          "http://images.yad2.co.il/Pic/201808/26/2_2/o/o2_2_2_746843_20180826080808.jpg"
+        ]
+      }
+    },
+    {
+      "id": "543e74de77698a494a0c3ba8a45d89c3482",
+      "type": "פרטי/קוטג'",
+      "address": "בית דגן - היסמין",
+      "price": "4,300 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=543e74de77698a494a0c3ba8a45d89c3482",
+      "data": {
+        "city": "בית דגן",
+        "fullAddress": "היסמין 14",
+        "sqrmeter": 95,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: שקטה, יפה יש רשתות וזכוכית נגדרעשים בחלונות. שכונת תקודת חן. דוד שמש דו מפלסית.",
+        "tax/m": 300,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/543e74de77698a494a0c3ba8a45d89c3482-info.png"
+        ]
+      }
+    },
+    {
+      "id": "49a7ba8a9718dfb7c00bd82912ced497f32",
+      "type": "דירה",
+      "address": "פתח תקווה - היבנר",
+      "price": "5,000 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "1",
+      "adDate": "14.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=49a7ba8a9718dfb7c00bd82912ced497f32",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים א",
+        "fullAddress": "היבנר 16",
+        "sqrmeter": 110,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: הדירה במקור 5 חדרים שונתה ל-4חדרים.",
+        "tax/m": "*",
+        "vaad": "250"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/49a7ba8a9718dfb7c00bd82912ced497f32-info.png",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_1_711711_20181014231049.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_2_719242_20181014231055.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_3_714479_20181014231001.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_4_713529_20181014231008.jpg"
+        ]
+      }
+    },
+    {
+      "id": "323e2607926776e97f9228429cfdb790893",
+      "type": "פרטי/קוטג'",
+      "address": "גני תקווה - הגולן",
+      "price": "8,000 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "15.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=323e2607926776e97f9228429cfdb790893",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גבעת סביון",
+        "fullAddress": "הגולן 21",
+        "sqrmeter": 150,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: בית קרקע במקום הכי טוב בגני תיקווהקרוב להכל מרחק הליכה מהקניון הבית בנוימשתי קומות והשכירות המוצעת היא בקומתהקרקע ישנה חצר וממד מרוהט קומפלט",
+        "tax/m": 500,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/323e2607926776e97f9228429cfdb790893-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3a1ac59228a41efa563b9a9c18b7dd873ae",
+      "type": "פרטי/קוטג'",
+      "address": "בית נחמיה - דרך היסמין",
+      "price": "8,100 ₪",
+      "rooms": "4.5",
+      "entranceDate": "01.01.19",
+      "floor": "קרקע",
+      "adDate": "15.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3a1ac59228a41efa563b9a9c18b7dd873ae",
+      "data": {
+        "city": "בית נחמיה",
+        "fullAddress": "דרך היסמין 148",
+        "sqrmeter": 130,
+        "sqrin": "130",
+        "sqrgarden": "370",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: בית מקסים , מעוצב חמים ונעים . סלוןמטבח ופינת אוכל בחלל אחד , פינת עבודה /חדר משפחה פתוח , מקלחת כללית מרווחת,מקלחת קטנה בחדר שינה הורים ועוד שני חדרי שינה גינהמקיפה את כל הבית ,לגינה יש נוף פתוח",
+        "tax/m": 800,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3a1ac59228a41efa563b9a9c18b7dd873ae-info.png",
+          "http://images.yad2.co.il/Pic/201810/15/2_2/o/o2_2_1_735281_20181015131055.jpg",
+          "http://images.yad2.co.il/Pic/201810/15/2_2/o/o2_2_2_736180_20181015131005.jpg",
+          "http://images.yad2.co.il/Pic/201810/15/2_2/o/o2_2_3_735299_20181015131014.jpg",
+          "http://images.yad2.co.il/Pic/201810/15/2_2/o/o2_2_4_739572_20181015131031.jpg",
+          "http://images.yad2.co.il/Pic/201810/15/2_2/o/o2_2_5_734152_20181015131026.jpg"
+        ]
+      }
+    },
+    {
+      "id": "8c054f095741d0bfd58f0054cfc073282b6",
+      "type": "פרטי/קוטג'",
+      "address": "גבעת שמואל - הרב הרצוג",
+      "price": "6,500 ₪",
+      "rooms": "7",
+      "entranceDate": "15.11.18",
+      "floor": "1",
+      "adDate": "16.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=8c054f095741d0bfd58f0054cfc073282b6",
+      "data": {
+        "city": "גבעת שמואל",
+        "hood": "השחר, הוותיקה",
+        "fullAddress": "הרב הרצוג 31",
+        "sqrmeter": 240,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: בית פרטי דירה עעענקית ! 7 חדרים !! חדר עם יציאה לגג ענק 120 מטר ..גינה גדולה. 2דק הליכה מהאוניברסיטה.מיקום מרכזי.חניה . דירה מאד מיוחדת ומרווחת.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/8c054f095741d0bfd58f0054cfc073282b6-info.png",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_1_723988_20180927110946.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_2_726864_20180927110919.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_3_726584_20180927110901.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_4_727588_20180927110915.jpg",
+          "http://images.yad2.co.il/Pic/201809/27/2_2/o/o2_2_5_722716_20180927110958.jpg"
+        ]
+      }
+    },
+    {
+      "id": "2ae8012bacfa35bcf41653dc57cb50512a3",
+      "type": "דירה",
+      "address": "פתח תקווה - משה דוד מייזנר",
+      "price": "5,800 ₪",
+      "rooms": "5",
+      "entranceDate": "02.12.18",
+      "floor": "3",
+      "adDate": "16.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=2ae8012bacfa35bcf41653dc57cb50512a3",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "כפר גנים ג",
+        "fullAddress": "משה דוד מייזנר 3",
+        "sqrmeter": 127,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה מרווחת ועורפית 2 חניות מזגן מינימרכזי בכל הדירה",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/2ae8012bacfa35bcf41653dc57cb50512a3-info.png"
+        ]
+      }
+    },
+    {
+      "id": "1054d8d09ce7db1ca61c8ce6847cfc21bba",
+      "type": "דירה",
+      "address": "גני תקווה - דרך אילות",
+      "price": "6,100 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "4",
+      "adDate": "16.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=1054d8d09ce7db1ca61c8ce6847cfc21bba",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך אילות 14",
+        "sqrmeter": 150,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה מדהימה, שכונת גנים. 5 חדרים,חדר ארונות, מזגן מרכזי מפוצל, כיוונים מערב ודרום. מוארת ומאווררת, עם נוף פתוח. שתי חניות צמודות ומחסן. 3 שירותים, 2 מקלחות. תאריך כניסה כ 3 שבועות מחתימת החוזה.",
+        "tax/m": "*",
+        "vaad": "465"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/1054d8d09ce7db1ca61c8ce6847cfc21bba-info.png",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_1_722963_20181014101020.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_2_724468_20181014101013.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_3_729598_20181014101017.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_4_726285_20181014101003.jpg",
+          "http://images.yad2.co.il/Pic/201810/14/2_2/o/o2_2_5_722031_20181014101058.jpg"
+        ]
+      }
+    },
+    {
+      "id": "58e612c231104275d339322e81601ad5102",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "6,000 ₪",
+      "rooms": "5",
+      "entranceDate": "01.02.19",
+      "floor": "3",
+      "adDate": "15.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=58e612c231104275d339322e81601ad5102",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "שאר העיר",
+        "fullAddress": "דרך הים 10",
+        "sqrmeter": 125,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה בפרויקט סביוני גני תקוה. מושקעת. הכניסה בינואר/פברואר 2019. מרפסת25 מ\"ר, 2 חניות ומחסן.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/58e612c231104275d339322e81601ad5102-info.png"
+        ]
+      }
+    },
+    {
+      "id": "1b716f8685d1c2d08d79f7e9e774fe464ed",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "7,500 ₪",
+      "rooms": "4",
+      "entranceDate": "01.12.18",
+      "floor": "16",
+      "adDate": "13.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=1b716f8685d1c2d08d79f7e9e774fe464ed",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים א'",
+        "fullAddress": "דרך הים 11",
+        "sqrmeter": 135,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה מעוצבת ומרווחת מתאימהלמשפחות. סוויטת הורים גדולה ומפוארת כולל חדר ארונות ענק ומאובזר (במקור הדירה הייתה 5חדרים). דירה משויכת לפרויקט עם בריכה, חדר כושר וסאונה. נוף פתוח, שתי חניות ומחסן.",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/1b716f8685d1c2d08d79f7e9e774fe464ed-info.png",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_1_729152_20181005091045.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_2_721571_20181005091045.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_3_723381_20181005091045.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_4_723730_20181005091045.jpg",
+          "http://images.yad2.co.il/Pic/201810/05/2_2/o/o2_2_5_726097_20181005091045.jpg"
+        ]
+      }
+    },
+    {
+      "id": "3541796",
+      "type": "דירה",
+      "address": "גני תקווה - הרי יהודה",
+      "price": "4,300 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "2",
+      "adDate": "10.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3541796",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "ישמח משה",
+        "fullAddress": "הרי יהודה 62",
+        "sqrmeter": 120,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בשכונה דתית שכנים נפלאים קומה שניהללא מעלית דירה ממוזגת ומוארת בברכה:",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3541796-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3596616",
+      "type": "דירה",
+      "address": "גני תקווה - הרי יהודה",
+      "price": "4,200 ₪",
+      "rooms": "4",
+      "entranceDate": "20.09.18",
+      "floor": "6",
+      "adDate": "05.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3596616",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גבעת סביון",
+        "fullAddress": "הרי יהודה 65",
+        "sqrmeter": 120,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה מוארת ופתוחה לנוף,מרפסת סוכה,3 כיווני אויר,מעלית שבת. שכונה דתית",
+        "tax/m": "*",
+        "vaad": "150"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3596616-info.png"
+        ]
+      }
+    },
+    {
+      "id": "547891ac01a3ffe25d965d9620fb91e9a54",
+      "type": "דירה",
+      "address": "גני תקווה - דרך אילות",
+      "price": "6,600 ₪",
+      "rooms": "5",
+      "entranceDate": "02.12.18",
+      "floor": "8",
+      "adDate": "29.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=547891ac01a3ffe25d965d9620fb91e9a54",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך אילות 16",
+        "sqrmeter": 125,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: צפון מזרח פונה לכביש",
+        "tax/m": 725,
+        "vaad": "400"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/547891ac01a3ffe25d965d9620fb91e9a54-info.png",
+          "http://images.yad2.co.il/Pic/201809/29/2_2/o/o2_2_1_743281_20180929150939.jpg",
+          "http://images.yad2.co.il/Pic/201809/29/2_2/o/o2_2_2_749861_20180929150901.jpg",
+          "http://images.yad2.co.il/Pic/201809/29/2_2/o/o2_2_3_746373_20180929150941.jpg",
+          "http://images.yad2.co.il/Pic/201809/29/2_2/o/o2_2_4_741247_20180929150932.jpg",
+          "http://images.yad2.co.il/Pic/201809/29/2_2/o/o2_2_5_748364_20180929150936.jpg"
+        ]
+      }
+    },
+    {
+      "id": "4b540a0ffbfa17f237185a005bec60a006b",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "6,500 ₪",
+      "rooms": "4",
+      "entranceDate": "01.11.18",
+      "floor": "5",
+      "adDate": "28.09.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4b540a0ffbfa17f237185a005bec60a006b",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "שאר העיר",
+        "fullAddress": "דרך הים 10",
+        "sqrmeter": 110,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה מקבלן בבניין הכי טובבפרוייקט גנים. נוף פתוח לכפר מעש. הדירה כוללת מחסן וחניה תת קרקעית. כל הקודם זוכה!!!",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/4b540a0ffbfa17f237185a005bec60a006b-info.png",
+          "http://images.yad2.co.il/Pic/201809/28/2_2/o/o2_2_1_738663_20180928090952.jpg",
+          "http://images.yad2.co.il/Pic/201809/28/2_2/o/o2_2_2_736768_20180928090951.jpg"
+        ]
+      }
+    },
+    {
+      "id": "1e0d841d9fedb8f957767e6061679b4858a",
+      "type": "פרטי/קוטג'",
+      "address": "אזור - הרצוג",
+      "price": "7,000 ₪",
+      "rooms": "6",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "17.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=1e0d841d9fedb8f957767e6061679b4858a",
+      "data": {
+        "city": "אזור",
+        "hood": "גני אזור",
+        "fullAddress": "הרצוג 103",
+        "sqrmeter": 160,
+        "sqrin": "*",
+        "sqrgarden": "180",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות:",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/1e0d841d9fedb8f957767e6061679b4858a-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3c1299b1d00208ebdd4084d71e0b1281550",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "7,500 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "15",
+      "adDate": "19.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3c1299b1d00208ebdd4084d71e0b1281550",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך הים 18",
+        "sqrmeter": 135,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה מקבלן משודרגת מרווחתממוזגת מחסן שתי חנויות בקרבה לגנים בתי ספר ותיכון לכניסה מיידית ללא תיווך לפרטים לפנות ל ליה",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/3c1299b1d00208ebdd4084d71e0b1281550-info.png"
+        ]
+      }
+    },
+    {
+      "id": "57e759ccb63e71b774443f918c9550d5541",
+      "type": "דירה",
+      "address": "גני תקווה - דרך המשי",
+      "price": "6,800 ₪",
+      "rooms": "5",
+      "entranceDate": "15.01.19",
+      "floor": "2",
+      "adDate": "21.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=57e759ccb63e71b774443f918c9550d5541",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גני תקווה מערב",
+        "fullAddress": "דרך המשי 10",
+        "sqrmeter": 140,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: בשכונת גני תקווה מערב! דירה נדירה,5 חד' 140 מ\"ר 24 מ\"ר מרפסת שמש,יפייפיה ,פונה לפארק,לטווח ארוך,כניסה 15.1.2019",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/57e759ccb63e71b774443f918c9550d5541-info.png"
+        ]
+      }
+    },
+    {
+      "id": "2570a014f300d12025192903864c34574f7",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "6,500 ₪",
+      "rooms": "5",
+      "entranceDate": "02.12.18",
+      "floor": "6",
+      "adDate": "24.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=2570a014f300d12025192903864c34574f7",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך הים 1",
+        "sqrmeter": 123,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה חדשה בפרויקט סביוני גני תקווה , מרפסת שמש גדולה (24 מ”ר) נוף פתוח יפהפה למושב כפר מעש , מטבח רגבה משודרג, מזגן בכל חדר, 2 חניות נפרדות. מחסן גדול, דוד חימום+ מערכת סולרית מרכזי. ללא תיווך",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/2570a014f300d12025192903864c34574f7-info.png"
+        ]
+      }
+    },
+    {
+      "id": "54fe09c927d5172e84584858eb3829d1749",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "6,300 ₪",
+      "rooms": "5",
+      "entranceDate": "01.02.19",
+      "floor": "קרקע",
+      "adDate": "23.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=54fe09c927d5172e84584858eb3829d1749",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך הים 26",
+        "sqrmeter": 125,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה בפרויקט סביוני גני תקוההנמצא לפני סיום בניה. דירה מושקעת בשטח של125 מ\"ר + מרפסת של 25 מ\"ר + מחסן ו-2 חניות. כניסה חודש ינואר/פברואר 2019",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/54fe09c927d5172e84584858eb3829d1749-info.png"
+        ]
+      }
+    },
+    {
+      "id": "491919defec29470634c7ac263f181a3d5f",
+      "type": "גג/פנטהאוז",
+      "address": "קרית אונו - חיים הרצוג",
+      "price": "7,350 ₪",
+      "rooms": "4",
+      "entranceDate": "07.04.19",
+      "floor": "8",
+      "adDate": "23.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=491919defec29470634c7ac263f181a3d5f",
+      "data": {
+        "city": "קרית אונו",
+        "hood": "פרדס רייספלד, קרית אונו החדשה",
+        "fullAddress": "חיים הרצוג 1",
+        "sqrmeter": 160,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: מיני פנטהאוז 5 חדרים שהוסב ל-4 ויצרהסוויטת הורים ענקית. משופצת לחלוטין, קרובה מאוד לפארק ולמרכז המסחרי החדש. 3 חניות(עילי ותת קרקעי) ומחסן גדול. בעל בית נוח ומתחשב. אידיאלית לזוג+2.",
+        "tax/m": 900,
+        "vaad": "350"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/491919defec29470634c7ac263f181a3d5f-info.png",
+          "http://images.yad2.co.il/Pic/201810/23/2_2/o/o2_2_1_725335_20181023171022.jpg",
+          "http://images.yad2.co.il/Pic/201810/23/2_2/o/o2_2_2_721005_20181023171030.jpg",
+          "http://images.yad2.co.il/Pic/201810/23/2_2/o/o2_2_3_722597_20181023171034.jpg",
+          "http://images.yad2.co.il/Pic/201810/23/2_2/o/o2_2_4_726227_20181023171039.jpg",
+          "http://images.yad2.co.il/Pic/201810/23/2_2/o/o2_2_5_726138_20181023171043.jpg"
+        ]
+      }
+    },
+    {
+      "id": "45d6d2f0fb7ca01fc58f3e3e0555bdb6e02",
+      "type": "דירה",
+      "address": "גני תקווה - דרך הים",
+      "price": "6,000 ₪",
+      "rooms": "4",
+      "entranceDate": "11.11.18",
+      "floor": "4",
+      "adDate": "25.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=45d6d2f0fb7ca01fc58f3e3e0555bdb6e02",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גנים צפון",
+        "fullAddress": "דרך הים 18",
+        "sqrmeter": 113,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: דירה חדשה מהניילונים בפרויקט 'רותםשני'. בשכונה מדהימה בגני תקווה. 2 חניות- עיליתותחתית (לא עוקבות!) מחסן לצד החניה. גמיש בתאריך כניסה",
+        "tax/m": 725,
+        "vaad": "428"
+      },
+      "meta": {
+        "images": [
+          "http://45.79.130.157:3000/45d6d2f0fb7ca01fc58f3e3e0555bdb6e02-info.png"
         ]
       }
     }
