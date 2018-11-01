@@ -211,9 +211,11 @@ function indexApp() {
 
 
                 if (!existingAd) {
-                    let incognito = await browser.createIncognitoBrowserContext();
-                    page = await incognito.newPage();
-                    page.setDefaultNavigationTimeout(120000);
+                    //let incognito = await browser.createIncognitoBrowserContext();
+                    //page = await incognito.newPage();
+                    //page.setDefaultNavigationTimeout(120000);
+                    let curCookies = await page.cookies();
+                    await page.deleteCookie(...curCookies);
                     await page.setCookie({ "name": "y2018-2-access", "value": "false", "domain": ".yad2.co.il", "path": "/", "expires": -1, "size": 19, "httpOnly": false, "secure": false, "session": false })
 
                     // new ad
