@@ -1837,6 +1837,150 @@
           "http://45.79.130.157:3000/45d6d2f0fb7ca01fc58f3e3e0555bdb6e02-info.png"
         ]
       }
+    },
+    {
+      "id": "1755114f71cd245ea763745e8919e247169",
+      "type": "פרטי/קוטג'",
+      "address": "קרית אונו - שטרן",
+      "price": "7,500 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "28.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=1755114f71cd245ea763745e8919e247169",
+      "data": {
+        "city": "קרית אונו",
+        "hood": "שאר העיר",
+        "fullAddress": "שטרן 86",
+        "sqrmeter": 180,
+        "sqrin": "155",
+        "sqrgarden": "80",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: קוטג לאחר שיפוץ מלא כניסה מרוצפתחדשה",
+        "tax/m": 1000,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://139.162.132.137:3000/1755114f71cd245ea763745e8919e247169-info.png"
+        ]
+      }
+    },
+    {
+      "id": "3ebf7f419a49328b02910aac9cd82394a08",
+      "type": "דירה",
+      "address": "גני תקווה - דרך אילות",
+      "price": "6,500 ₪",
+      "rooms": "5",
+      "entranceDate": "01.01.19",
+      "floor": "3",
+      "adDate": "28.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=3ebf7f419a49328b02910aac9cd82394a08",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גני תקווה מערב",
+        "fullAddress": "דרך אילות 9",
+        "sqrmeter": 130,
+        "sqrin": "*",
+        "sqrgarden": "*",
+        "renov": "לא-שופץ",
+        "term": "ארוך",
+        "more": "תוספות: דירה יפה, מרווחת ומוארת לכיוון דרום מערב. מטבח עם אי, סורגים בכל הדירה, 3שרותים-אסלות תלויות, יחידת הורים גדולה כוללת מקלחת הורים וחדר ארונות, 2 מזגנים מיני מרכזי, מחסן ו 2 חניות נפרדות.",
+        "tax/m": 767.5,
+        "vaad": "455"
+      },
+      "meta": {
+        "images": [
+          "http://139.162.132.137:3000/3ebf7f419a49328b02910aac9cd82394a08-info.png"
+        ]
+      }
+    },
+    {
+      "id": "4715e00c937c277d837273f05d5004b9b7d",
+      "type": "פרטי/קוטג'",
+      "address": "גני תקווה - הגולן",
+      "price": "8,000 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "30.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4715e00c937c277d837273f05d5004b9b7d",
+      "data": {
+        "city": "גני תקווה",
+        "hood": "גבעת סביון",
+        "fullAddress": "הגולן 21",
+        "sqrmeter": 150,
+        "sqrin": "150",
+        "sqrgarden": "*",
+        "renov": "שופץ",
+        "term": "קצר!!",
+        "more": "תוספות: הדירה היא קומת קרקע מתוך שתי קומות בבית פרטי בית גדול ומרווח חדרחם גדוליםמתאים לבעלי מוגבלות משופץ מזגנים בחדרים ובסלון גינה קטנה ובריכת זרמים מאחורה חניה כניסה נפרדת מהקומה השנייה המקום ה",
+        "tax/m": 550,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://139.162.132.137:3000/4715e00c937c277d837273f05d5004b9b7d-info.png"
+        ]
+      }
+    },
+    {
+      "id": "4f83dc1cf9968770af9d08b94ab2e2c30b8",
+      "type": "פרטי/קוטג'",
+      "address": "פתח תקווה - לוי אשכול",
+      "price": "6,500 ₪",
+      "rooms": "5",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "30.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=4f83dc1cf9968770af9d08b94ab2e2c30b8",
+      "data": {
+        "city": "פתח תקווה",
+        "hood": "נוה עוז",
+        "fullAddress": "לוי אשכול 5",
+        "sqrmeter": 580,
+        "sqrin": "177",
+        "sqrgarden": "300",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות: חניה לשתי מכוניות, שכונה שקטהויוקרתית, מיקום מעולה, דוד שמש, גינה מטופחת,",
+        "tax/m": 1000,
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://139.162.132.137:3000/4f83dc1cf9968770af9d08b94ab2e2c30b8-info.png"
+        ]
+      }
+    },
+    {
+      "id": "6fd43b508eb8dd83d52afba2145997f0245",
+      "type": "פרטי/קוטג'",
+      "address": "גנות - הערבה",
+      "price": "6,000 ₪",
+      "rooms": "4",
+      "entranceDate": "מיידי",
+      "floor": "קרקע",
+      "adDate": "31.10.18",
+      "link": "http://www.yad2.co.il/Nadlan/rent_info.php?NadlanID=6fd43b508eb8dd83d52afba2145997f0245",
+      "data": {
+        "city": "גנות",
+        "fullAddress": "הערבה 72",
+        "sqrmeter": 140,
+        "sqrin": "140",
+        "sqrgarden": "1,000",
+        "renov": "שופץ",
+        "term": "ארוך",
+        "more": "תוספות:",
+        "tax/m": "*",
+        "vaad": "*"
+      },
+      "meta": {
+        "images": [
+          "http://139.162.132.137:3000/6fd43b508eb8dd83d52afba2145997f0245-info.png"
+        ]
+      }
     }
   ]
 }
