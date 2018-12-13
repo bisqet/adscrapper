@@ -2282,6 +2282,7 @@
     "2018-11-01 20:50:30 - Total skipped due to SQR filter:  0",
     "2018-11-01 20:50:30 - Total skipped due specific ad ID filter: 0",
     "2018-11-01 20:50:30 - Total msgs:  0",
-    "2018-11-01 20:50:30 - Successful."
+    "2018-11-01 20:50:30 - Successful.",
+    "2018-11-27 01:18:26 - GUI SERVER LISTENING ON 3000 PORT"
   ]
 }
